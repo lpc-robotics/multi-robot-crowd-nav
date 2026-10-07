@@ -41,6 +41,17 @@ utils::Vector2d direction(const sfm::Agent & a, const sfm::Agent & b) {
   if (d.norm() < 1e-9) return utils::Vector2d(a.id < b.id ? -1.0 : 1.0, 0.0);
   return d / d.norm();
 }
+double robot_visibility(const sfm::Agent & me, const sfm::Agent & robot, const Config & cfg) {
+  const auto diff = robot.position - me.position;
+  // A coincident center has no bearing. Near-repulsion handles its geometry.
+  if (cfg.robot_fov_deg == 360.0 || (diff.getX() == 0 && diff.getY() == 0)) return 1.0;
+  const double forward = diff.getX() * me.yaw.cos() + diff.getY() * me.yaw.sin();
+  const double lateral = -diff.getX() * me.yaw.sin() + diff.getY() * me.yaw.cos();
+  const double angle_deg = std::abs(std::atan2(lateral, forward)) * 180.0 / std::acos(-1.0);
+  const double half = cfg.robot_fov_deg / 2.0;
+  if (cfg.robot_fov_fade_deg == 0) return angle_deg <= half ? 1.0 : 0.0;
+  return std::clamp((half - angle_deg) / cfg.robot_fov_fade_deg, 0.0, 1.0);
+}
 utils::Vector2d pair_force(const sfm::Agent & a, const sfm::Agent & b) {
   // Use the pinned LightSFM single-agent kernel. Subtract its non-social terms
   // by reading socialForce only; perturb singular inputs in this private copy.
@@ -68,6 +79,10 @@ Compute::Response integrate(const Compute::Request & req, const Config & cfg) {
       finite(v); require(v > 0, "invalid core configuration");
     }
     finite(cfg.robot_clearance); require(cfg.robot_clearance >= 0, "negative clearance");
+    finite(cfg.robot_fov_deg); finite(cfg.robot_fov_fade_deg);
+    require(cfg.robot_fov_deg > 0 && cfg.robot_fov_deg <= 360, "robot_fov_deg outside (0,360]");
+    require(cfg.robot_fov_fade_deg >= 0 && cfg.robot_fov_fade_deg <= cfg.robot_fov_deg / 2,
+      "robot_fov_fade_deg outside [0,robot_fov_deg/2]");
     std::set<int> ids; std::set<std::string> names;
     std::map<int, sfm::Agent> people, robots;
     for (const auto & a : req.current_agents.agents) {
@@ -106,7 +121,9 @@ Compute::Response integrate(const Compute::Request & req, const Config & cfg) {
         total += pair_force(me, other) * m.social_scale;
       for (const auto & [id, robot] : robots) {
         const double gap = (me.position - robot.position).norm() - me.radius - robot.radius;
-        auto force = pair_force(me, robot) * m.robot_scale;
+        const double social_weight = robot_visibility(me, robot, cfg) * m.robot_scale;
+        utils::Vector2d force;
+        if (social_weight > 0) force = pair_force(me, robot) * social_weight;
         // Short-range geometry term is always present, including when psychology
         // suppresses social avoidance. It is not a hard collision guarantee.
         force += direction(me, robot) * (cfg.near_gain * std::exp(std::clamp((cfg.robot_clearance - gap) / cfg.near_sigma, -50.0, 10.0)));
@@ -122,6 +139,11 @@ Compute::Response integrate(const Compute::Request & req, const Config & cfg) {
       me.forces.globalForce = total;
       const auto goals_before = me.goals.size();
       sfm::SFM.updatePosition(me, req.dt);
+      // LightSFM assigns atan2(0,0) when stopped; retain the last visual heading.
+      if (me.velocity.getX() == 0 && me.velocity.getY() == 0) {
+        me.yaw = people.at(msg.id).yaw;
+        me.angularVelocity = 0;
+      }
       finite(me.position.getX()); finite(me.position.getY());
       require(me.position.getX() >= me.radius && me.position.getX() <= cfg.width - me.radius &&
         me.position.getY() >= me.radius && me.position.getY() <= cfg.height - me.radius, "wall envelope violation");

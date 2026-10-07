@@ -2,6 +2,7 @@
 #include <gtest/gtest.h>
 #include <algorithm>
 #include <cmath>
+#include <limits>
 using namespace arena_multi_hunav_core;
 using Agent = hunav_msgs::msg::Agent;
 
@@ -128,4 +129,156 @@ TEST(Core, NearRepulsionUsesPhysicalConfigAndIgnoresPsychology) {
   q.modifiers[0].space_scale = 4;
   auto changed = integrate(q, cfg); ASSERT_TRUE(changed.success);
   EXPECT_EQ(original.influences, changed.influences);
+}
+
+Compute::Request robot_at(double relative_degrees, double distance = 1.2, double yaw = 0) {
+  auto q = fixture(); q.robots.agents.resize(1);
+  q.current_agents.agents[0].yaw = yaw;
+  const double bearing = yaw + relative_degrees * std::acos(-1.0) / 180;
+  q.robots.agents[0].position.position.x = 10 + distance * std::cos(bearing);
+  q.robots.agents[0].position.position.y = 10 + distance * std::sin(bearing);
+  return q;
+}
+
+TEST(Core, RobotSocialVisibilityHasFullFadeAndBlindRegions) {
+  Config all; all.robot_fov_deg = 360;
+  for (const auto & sample : std::vector<std::pair<double, double>>{
+      {0, 1}, {80, 1}, {90, 1}, {95, .5}, {99, .1}, {100, 0}, {110, 0}, {180, 0},
+      {-90, 1}, {-95, .5}, {-100, 0}, {-180, 0}}) {
+    auto q = robot_at(sample.first);
+    auto limited = integrate(q, {}), full = integrate(q, all);
+    q.modifiers[0].robot_scale = 0;
+    auto near = integrate(q, {});
+    ASSERT_TRUE(limited.success); ASSERT_TRUE(full.success); ASSERT_TRUE(near.success);
+    const auto a = limited.influences[0].force, b = full.influences[0].force, n = near.influences[0].force;
+    EXPECT_GT(std::hypot(b.x-n.x, b.y-n.y), .01);
+    EXPECT_NEAR(a.x-n.x, sample.second * (b.x-n.x), 1e-10) << sample.first;
+    EXPECT_NEAR(a.y-n.y, sample.second * (b.y-n.y), 1e-10) << sample.first;
+  }
+}
+
+TEST(Core, RobotFovCanBeNarrowHardOrOmnidirectional) {
+  Config hard; hard.robot_fov_deg = 180; hard.robot_fov_fade_deg = 0;
+  Config all; all.robot_fov_deg = 360;
+  for (double angle : {90.0, 90.01, -90.0, -90.01}) {
+    auto q = robot_at(angle);
+    auto limited = integrate(q, hard), full = integrate(q, all);
+    q.modifiers[0].robot_scale = 0; auto near = integrate(q, hard);
+    ASSERT_TRUE(limited.success); ASSERT_TRUE(full.success); ASSERT_TRUE(near.success);
+    const auto expected = std::abs(angle) <= 90 ? full.influences[0] : near.influences[0];
+    EXPECT_EQ(limited.influences[0], expected);
+  }
+  all.robot_fov_fade_deg = 180; // A full circle has no visual edges.
+  auto q = robot_at(180); auto full = integrate(q, all);
+  all.robot_fov_fade_deg = 0; auto nofade = integrate(q, all);
+  ASSERT_TRUE(full.success); ASSERT_TRUE(nofade.success);
+  EXPECT_EQ(full.influences, nofade.influences);
+  Config narrow; narrow.robot_fov_deg = 40; narrow.robot_fov_fade_deg = 5;
+  q = robot_at(17.5); auto limited = integrate(q, narrow);
+  auto reference = integrate(q, all);
+  q.modifiers[0].robot_scale = 0; auto near = integrate(q, narrow);
+  ASSERT_TRUE(limited.success); ASSERT_TRUE(reference.success); ASSERT_TRUE(near.success);
+  EXPECT_NEAR(limited.influences[0].force.x-near.influences[0].force.x,
+    .5*(reference.influences[0].force.x-near.influences[0].force.x), 1e-10);
+}
+
+TEST(Core, FovUsesWrappedPreStepYawEvenWhenVelocityDisagrees) {
+  auto q = robot_at(0, 1.2, 3.13);
+  q.current_agents.agents[0].velocity.linear.x = 1; // Velocity faces away from visual yaw.
+  q.robots.agents[0].position.position.x = 10 + 1.2*std::cos(-3.13);
+  q.robots.agents[0].position.position.y = 10 + 1.2*std::sin(-3.13);
+  Config narrow; narrow.robot_fov_deg = 20; narrow.robot_fov_fade_deg = 0;
+  Config all; all.robot_fov_deg = 360;
+  auto limited = integrate(q, narrow), full = integrate(q, all);
+  ASSERT_TRUE(limited.success); ASSERT_TRUE(full.success);
+  EXPECT_EQ(limited.influences, full.influences);
+}
+
+TEST(Core, StoppedPedestrianRetainsYawAcrossComputeSteps) {
+  auto q = robot_at(0, 1.2, 1.1); q.modifiers[0].speed_scale = 0;
+  const auto before = q.current_agents.agents[0];
+  for (int i = 0; i < 3; ++i) {
+    auto result = integrate(q, {}); ASSERT_TRUE(result.success);
+    const auto & person = result.updated_agents.agents[0];
+    EXPECT_DOUBLE_EQ(person.yaw, before.yaw);
+    EXPECT_DOUBLE_EQ(person.velocity.linear.x, 0);
+    EXPECT_DOUBLE_EQ(person.velocity.linear.y, 0);
+    EXPECT_DOUBLE_EQ(person.angular_vel, 0);
+    EXPECT_NEAR(person.position.orientation.z, std::sin(before.yaw/2), 1e-10);
+    q.current_agents = result.updated_agents;
+    q.robots.header.stamp = q.current_agents.header.stamp;
+  }
+}
+
+TEST(Core, RobotBehindStillHasNearRepulsionWhenSocialScaleIsZero) {
+  auto q = robot_at(180, .9);
+  auto original = integrate(q, {}); ASSERT_TRUE(original.success);
+  const auto & f = original.influences[0];
+  const double expected = 10 * std::exp((.1 - f.clearance) / .2);
+  EXPECT_NEAR(f.force.x, expected, 1e-10);
+  EXPECT_NEAR(f.force.y, 0, 1e-10);
+  EXPECT_GT(f.force.x, 3);
+  q.modifiers[0].robot_scale = 0; q.modifiers[0].space_scale = 4;
+  auto disabled = integrate(q, {}); ASSERT_TRUE(disabled.success);
+  EXPECT_EQ(original.influences, disabled.influences);
+}
+
+TEST(Core, RobotScaleChangesOnlyVisibleSocialContribution) {
+  auto q = robot_at(95);
+  auto normal = integrate(q, {}); ASSERT_TRUE(normal.success);
+  q.modifiers[0].robot_scale = 0; auto near = integrate(q, {}); ASSERT_TRUE(near.success);
+  q.modifiers[0].robot_scale = 4; auto amplified = integrate(q, {}); ASSERT_TRUE(amplified.success);
+  EXPECT_NEAR(amplified.influences[0].force.x-near.influences[0].force.x,
+    4*(normal.influences[0].force.x-near.influences[0].force.x), 1e-10);
+  EXPECT_NEAR(amplified.influences[0].force.y-near.influences[0].force.y,
+    4*(normal.influences[0].force.y-near.influences[0].force.y), 1e-10);
+}
+
+TEST(Core, VisibilityIsIndependentForEveryRobotPair) {
+  auto q = robot_at(0);
+  auto rear = q.robots.agents[0]; rear.id = -2; rear.name = "robot_2";
+  rear.position.position.x = 8.8; q.robots.agents.push_back(rear);
+  auto both = integrate(q, {}); ASSERT_TRUE(both.success); ASSERT_EQ(both.influences.size(), 2u);
+  for (int i = 0; i < 2; ++i) {
+    auto one = q; one.robots.agents = {q.robots.agents[i]};
+    auto only = integrate(one, {}); ASSERT_TRUE(only.success);
+    const auto found = std::find_if(both.influences.begin(), both.influences.end(),
+      [&](const auto & influence) {return influence.robot_name == only.influences[0].robot_name;});
+    ASSERT_NE(found, both.influences.end()); EXPECT_EQ(*found, only.influences[0]);
+  }
+}
+
+TEST(Core, FovDoesNotChangeHumanHumanInteractionsOrEmptyRobotMotion) {
+  auto q = fixture(); q.robots.agents.clear();
+  auto other = q.current_agents.agents[0]; other.id = 2; other.name = "other";
+  other.position.position.x = 8.8; q.current_agents.agents.push_back(other);
+  auto modifier = q.modifiers[0]; modifier.agent_id = 2; q.modifiers.push_back(modifier);
+  Config narrow; narrow.robot_fov_deg = 1; narrow.robot_fov_fade_deg = 0;
+  Config all; all.robot_fov_deg = 360;
+  auto a = integrate(q, narrow), b = integrate(q, all);
+  ASSERT_TRUE(a.success); ASSERT_TRUE(b.success);
+  EXPECT_EQ(a.updated_agents, b.updated_agents);
+}
+
+TEST(Core, CoincidentRobotRemainsFiniteAndVisible) {
+  auto q = robot_at(0, 0, 2.0);
+  Config narrow; narrow.robot_fov_deg = 1; narrow.robot_fov_fade_deg = 0;
+  Config all; all.robot_fov_deg = 360;
+  auto a = integrate(q, narrow), b = integrate(q, all);
+  ASSERT_TRUE(a.success); ASSERT_TRUE(b.success);
+  EXPECT_EQ(a.influences, b.influences);
+}
+
+TEST(Core, InvalidFovConfigurationFailsAtomically) {
+  auto q = fixture();
+  const double nan = std::numeric_limits<double>::quiet_NaN();
+  const double inf = std::numeric_limits<double>::infinity();
+  for (const auto & values : std::vector<std::pair<double, double>>{
+      {0, 0}, {-1, 0}, {361, 0}, {nan, 0}, {inf, 0}, {200, -1}, {200, 101}, {200, nan}, {200, inf}}) {
+    Config cfg; cfg.robot_fov_deg = values.first; cfg.robot_fov_fade_deg = values.second;
+    auto result = integrate(q, cfg);
+    EXPECT_FALSE(result.success); EXPECT_FALSE(result.error.empty());
+    EXPECT_EQ(result.updated_agents, q.current_agents); EXPECT_TRUE(result.influences.empty());
+    EXPECT_EQ(result.epoch, q.epoch); EXPECT_EQ(result.step, q.step);
+  }
 }
