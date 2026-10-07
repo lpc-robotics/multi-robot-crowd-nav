@@ -47,6 +47,7 @@ class Modifiers:
     speed_scale: float = 1.0
     social_scale: float = 1.0
     robot_scale: float = 1.0
+    # Reserved [1,4] compatibility field; multi_sfm ignores it for motion.
     space_scale: float = 1.0
 
     def validate(self):

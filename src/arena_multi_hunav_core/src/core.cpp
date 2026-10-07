@@ -87,7 +87,7 @@ Compute::Response integrate(const Compute::Request & req, const Config & cfg) {
       for (double v : {m.speed_scale, m.social_scale, m.robot_scale, m.space_scale}) {
         finite(v); require(v >= 0 && v <= 4, "modifier outside [0,4]");
       }
-      require(m.space_scale >= 1, "personal space cannot shrink below physical envelope");
+      require(m.space_scale >= 1, "reserved space_scale outside [1,4]");
     }
     require(mods.size() == people.size(), "missing modifiers");
     out.updated_agents = req.current_agents;
@@ -106,11 +106,10 @@ Compute::Response integrate(const Compute::Request & req, const Config & cfg) {
         total += pair_force(me, other) * m.social_scale;
       for (const auto & [id, robot] : robots) {
         const double gap = (me.position - robot.position).norm() - me.radius - robot.radius;
-        const double space = cfg.robot_clearance * m.space_scale;
         auto force = pair_force(me, robot) * m.robot_scale;
         // Short-range geometry term is always present, including when psychology
         // suppresses social avoidance. It is not a hard collision guarantee.
-        force += direction(me, robot) * (cfg.near_gain * std::exp(std::clamp((space - gap) / cfg.near_sigma, -50.0, 10.0)));
+        force += direction(me, robot) * (cfg.near_gain * std::exp(std::clamp((cfg.robot_clearance - gap) / cfg.near_sigma, -50.0, 10.0)));
         total += force;
         arena_multi_hunav_msgs::msg::RobotInfluence info;
         info.agent_id = me.id;

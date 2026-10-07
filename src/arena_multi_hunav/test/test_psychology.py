@@ -28,6 +28,10 @@ def test_bad_modifiers_fail(modifier):
     with pytest.raises(ValueError):
         Proposal({1: MentalState()}, {1: modifier}).validate([1])
 
+@pytest.mark.parametrize("scale", [1.0, 4.0])
+def test_reserved_space_scale_remains_accepted(scale):
+    Proposal({1: MentalState()}, {1: Modifiers(space_scale=scale)}).validate([1])
+
 def test_future_plugin_can_modulate_without_mutating_context():
     class Slower(NoOpPsychology):
         def step(self, context, previous_state):

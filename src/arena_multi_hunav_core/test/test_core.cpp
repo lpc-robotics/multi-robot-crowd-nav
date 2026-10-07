@@ -101,3 +101,31 @@ TEST(Core, AblatingEitherRobotChangesTrajectoryByTenCentimeters) {
     EXPECT_GE(maximum,.10)<<"robot index="<<omitted;
   }
 }
+
+TEST(Core, ReservedSpaceScaleDoesNotChangeMotionOrNearRepulsion) {
+  auto q = fixture();
+  auto original = integrate(q, {}); ASSERT_TRUE(original.success);
+  q.modifiers[0].space_scale = 4;
+  auto changed = integrate(q, {}); ASSERT_TRUE(changed.success);
+  EXPECT_EQ(original.updated_agents, changed.updated_agents);
+  EXPECT_EQ(original.influences, changed.influences);
+}
+
+TEST(Core, NearRepulsionUsesPhysicalConfigAndIgnoresPsychology) {
+  auto q = fixture(); q.robots.agents.resize(1);
+  q.robots.agents[0].position.position.x = 11.2;
+  q.robots.agents[0].position.position.y = 10;
+  q.current_agents.agents[0].behavior.social_force_factor = 0;
+  Config cfg; cfg.robot_clearance = .15; cfg.near_gain = 8; cfg.near_sigma = .1;
+  auto original = integrate(q, cfg); ASSERT_TRUE(original.success);
+  ASSERT_EQ(original.influences.size(), 1u);
+  const double gap = 1.2 - q.current_agents.agents[0].radius - q.robots.agents[0].radius;
+  EXPECT_NEAR(original.influences[0].force.x, -8 * std::exp((.15 - gap) / .1), 1e-10);
+  EXPECT_DOUBLE_EQ(original.influences[0].force.y, 0);
+  q.modifiers[0].speed_scale = 0;
+  q.modifiers[0].social_scale = 4;
+  q.modifiers[0].robot_scale = 0;
+  q.modifiers[0].space_scale = 4;
+  auto changed = integrate(q, cfg); ASSERT_TRUE(changed.success);
+  EXPECT_EQ(original.influences, changed.influences);
+}

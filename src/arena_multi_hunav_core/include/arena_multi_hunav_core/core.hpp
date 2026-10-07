@@ -3,6 +3,7 @@
 namespace arena_multi_hunav_core {
 struct Config {
   double width = 30.0, height = 23.0;
+  // Shared physical near-repulsion settings, independent of psychology.
   double robot_clearance = 0.1, near_gain = 10.0, near_sigma = 0.2;
   double max_acceleration = 3.0, max_speed = 1.0;
 };
