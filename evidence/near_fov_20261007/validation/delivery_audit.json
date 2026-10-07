@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "baseline_head": "f330dfcd29c6a1f711e3f091798e36852fac742d",
+  "code_commit": "45dbbad3aa3d0a5f6a277483aafc6f1f13ee0be7",
+  "branch": "feature/near-fov-decoupling",
+  "original_branch_preserved": true,
+  "wire_fields_unchanged": true,
+  "existing_cpp_tests_preserved": 9,
+  "source_evidence_install_hashes_verified": 34,
+  "overlay_packages_built": 7,
+  "python_tests_passed": 40,
+  "cpp_tests_passed": 21,
+  "cpu_trajectory_trials_passed": 120,
+  "cpu_min_clearance": 0.218552,
+  "isolated_ros_cases_passed": 5,
+  "scan_cases_per_configuration": 3060,
+  "scan_configurations": 3,
+  "full_circle_vs_baseline_max_absolute_delta": 0,
+  "snapshot_restore_entries_verified": 9629,
+  "snapshot_archive_sha256": "628c7760c2e38b1f55229686e533db7133e3e6cfd11e3606614dbcaf5ab3ac14",
+  "vendor_unchanged": true,
+  "isaac_gpu_validation_performed": false
+}

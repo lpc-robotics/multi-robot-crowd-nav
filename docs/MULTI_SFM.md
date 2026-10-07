@@ -22,7 +22,7 @@ scripts/run_multirobot.sh config/scenarios/two_robots_multi_sfm_1_nav2.yaml
 
 ## 运动和时间契约
 
-每个行人受目标吸引、四面墙体排斥、其他行人社会力和每台机器人的社会力/近距离排斥。LightSFM 使用本仓库固定的 BSD-3-Clause 副本，来源与哈希在 vendor/SOURCE.json。总加速度上限 3 m/s²、行人速度上限 1 m/s。机器人半径 0.35 m，行人配置半径 0.4 m。近距离排斥保留实体包络，心理参数不能关闭这一项。社会力不是任意冲突条件下的无碰撞证明。
+每个行人受目标吸引、四面墙体排斥、其他行人社会力和每台机器人的社会力/近距离排斥。LightSFM 使用本仓库固定的 BSD-3-Clause 副本，来源与哈希在 vendor/SOURCE.json。总加速度上限 3 m/s²、行人速度上限 1 m/s。机器人半径 0.35 m，行人配置半径 0.4 m。近距离排斥使用实体半径计算净距，心理参数不能关闭这一项；它不是硬碰撞约束。社会力不是任意冲突条件下的无碰撞证明。
 
 一次请求覆盖全部行人和机器人；只更新行人。内部行人 ID 为正数，机器人 ID 为负数。求力使用同一份步前状态，结果保留目标队列推进。场地尺寸来自现有 world YAML；首版只支持矩形边界、无分组普通行人。
 
@@ -46,6 +46,52 @@ odom 的速度由车体坐标转换到 map，五秒历史用于位置、速度�
 | `/multirobot/hunav/actual_people`  | `arena_people_msgs/Pedestrians`；Character Graph 实际位姿，非 USD 根变换或请求位姿 |
 
 服务请求中的 header.stamp 为积分开始时间，两个输入的时间戳相等且 frame 为 map；输出时间戳为开始时间加 dt。modifiers 必须恰好覆盖所有行人。调用者负责状态提交和串行请求；服务不维护另一个权威状态库。
+
+## 人机社会力视野与独立近距离项
+
+2026-10-07 更新保持原有事务和积分结构。每对行人与机器人分别计算：
+
+```text
+gap = center_distance - human_radius - robot_radius
+F_near = away_direction * near_gain * exp(clamp((robot_clearance-gap)/near_sigma, -50, 10))
+F_robot_pair = visibility * robot_scale * F_social + F_near
+```
+
+以下参数由 core `Config` 或 `multi_sfm_server` 同名 ROS 参数配置，所有行人共用，不来自心理模型；ROS 默认值直接读取 Config。现有参数默认值保持不变。
+
+| 参数 | 默认值 | 约束与含义 |
+|---|---:|---|
+| `robot_clearance` | 0.10 m | 有限、≥0；指数力的参考净距，不是保证的最小间距 |
+| `near_gain` | 10.0 m/s² | 有限、>0；参考净距处的近距离幅值 |
+| `near_sigma` | 0.20 m | 有限、>0；指数衰减长度 |
+| `robot_fov_deg` | 200° | 有限、(0,360]；总视野角 |
+| `robot_fov_fade_deg` | 10° | 有限、[0,FOV/2]；每侧外缘的过渡宽度 |
+| `max_acceleration` | 3.0 m/s² | 有限、>0；全部力合成后的向量模长上限 |
+| `max_speed` | 1.0 m/s | 有限、>0；核心速度上限，现有适配器仍按 1 m/s 验证输出 |
+
+视野以步前行人的 `yaw` 为中心，计算指向各机器人中心的相对方位。默认偏角绝对值 ≤90° 时权重为 1；90°–100° 线性减小；≥100° 为 0。本地原 HuNav `AgentManager::lineOfSight` 使用 `π/2+0.17` 的半角，即约 199.5° 总视野。选取 200° 保留前方与侧方感知，并通过每侧 10° 过渡避免硬边缘造成力跳变。它是角度模型，不包含遮挡、记忆或机器人侧视野。
+
+`robot_fov_fade_deg=0` 为包含边界的硬视野；`robot_fov_deg=360` 恒取权重 1，过渡宽度不影响计算。人机中心完全重合时权重取 1，并沿用确定性几何方向及有限值保护。移动后的 yaw 沿用 LightSFM 速度朝向；速度精确为零时 core 包装层保留步前 yaw，避免原内核 `atan2(0,0)` 重置视觉朝向。Human–Human 社会力不使用此 FOV。
+
+`F_near` 在所有方位存在，不乘 `robot_scale`、`space_scale`、其他心理倍率或 visibility，也不增加距离截断。背后机器人进入极近距离时仍有排斥。`/multirobot/hunav/interactions` 保持原消息结构，记录每对机器人社会力与近距离项的合力及净距，均在总加速度限幅前。
+
+ROS 启动配置示例（不要与现有场景同时启动同名服务）：
+
+```bash
+ros2 run arena_multi_hunav_core multi_sfm_server --ros-args \
+  -p robot_fov_deg:=200.0 -p robot_fov_fade_deg:=10.0 \
+  -p robot_clearance:=0.1 -p near_gain:=10.0 -p near_sigma:=0.2
+```
+
+这些参数在服务启动时读取并捕获；运行中 `ros2 param set` 不会改变已捕获的积分 Config，需要带新参数重启服务。非法 Config 在计算时返回失败、原行人状态和空 influences，保持事务原子性。
+
+### 参数对未来接近行为的限制
+
+半径之和为 0.75 m 时，单机器人近距离幅值在中心距离 1.10/1.20/1.30/1.50 m 分别约为 2.865/1.738/1.054/0.388 m/s²，约 1.091 m 时单项达到 3 m/s²。总力可能与目标力相消或叠加，不能据此断言每个场景都会饱和。
+
+独立 CPU 扫描见 `evidence/near_fov_20261007/README.md`。例如行人速度 0.8 m/s、期望速度 1 m/s、目标系数 2、松弛时间 0.5 s 时，目标加速度为 0.8 m/s²。关闭机器人社会力后，1.1 m 处前方单机器人的合加速度模长约 2.065 m/s²，后方约 3.665 m/s²，前方 ±30° 双机器人约 4.162 m/s²；后两者达到限幅。
+
+当前 near 默认值适合延续既有普通行人的较保守避让，本轮保留它们。它们仍会限制未来 curious/threatening 主动接近：在上述行走状态下，即使 `robot_scale=0`，1.3 m 处的前方近距离项已超过 0.8 m/s² 的目标加速度。降低社会排斥不能解决该冲突。后续模型需要明确接近目标、目标力与停留距离，再用独立物理参数校准并复验净距、到达与限幅；不能由心理状态动态修改物理包络或将近距离项关闭。当前 multi_sfm 尚未实现这两类行为，此扫描不验证其行为学有效性。
 
 ## 心理模型扩展
 

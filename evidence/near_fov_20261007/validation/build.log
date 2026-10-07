@@ -1,0 +1,74 @@
+Arena multi workspace: /home/lpc/workspace/arena5_multi_ws
+Stable underlay: /home/lpc/workspace/arena5_ws
+ROS domain: 71
+{
+  "passed": true,
+  "checks": 30,
+  "failures": []
+}
+Starting >>> arena_multi_hunav_msgs
+Starting >>> arena_isaac
+Starting >>> arena_multi_control
+Starting >>> arena_peer_costmap
+Finished <<< arena_isaac [1.67s]
+Finished <<< arena_multi_control [1.97s]
+--- stderr: arena_peer_costmap
+CMake Warning (deprecated) at CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+This warning is for project developers.  Use -Wno-author or -Wno-deprecated
+to suppress it.
+
+---
+Finished <<< arena_peer_costmap [3.23s]
+--- stderr: arena_multi_hunav_msgs
+CMake Warning (deprecated) at CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+  to tell CMake that the project requires at least <min> but has been updated
+  to work with policies introduced by <max> or earlier.
+This warning is for project developers.  Use -Wno-author or -Wno-deprecated
+to suppress it.
+
+CMake Warning (policy) at /home/lpc/workspace/arena5_ws/.conda/arena_ros/share/python_cmake_module/cmake/Modules/FindPythonExtra.cmake:52 (find_package):
+  Policy CMP0148 is not set: The FindPythonInterp and FindPythonLibs modules
+  are removed.  Run "cmake --help-policy CMP0148" for policy details.  Use
+  the cmake_policy command to set the policy and suppress this warning.
+Call Stack (most recent call first):
+  /home/lpc/workspace/arena5_ws/.conda/arena_ros/share/rosidl_generator_py/cmake/rosidl_generator_py_generate_interfaces.cmake:33 (find_package)
+  /home/lpc/workspace/arena5_ws/.conda/arena_ros/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)
+  /home/lpc/workspace/arena5_ws/.conda/arena_ros/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:286 (ament_execute_extensions)
+  CMakeLists.txt:8 (rosidl_generate_interfaces)
+This warning is for project developers.  Use -Wno-author or -Wno-policy to
+suppress it.
+
+CMake Warning (policy) at /home/lpc/workspace/arena5_ws/.conda/arena_ros/share/python_cmake_module/cmake/Modules/FindPythonExtra.cmake:140 (find_package):
+  Policy CMP0148 is not set: The FindPythonInterp and FindPythonLibs modules
+  are removed.  Run "cmake --help-policy CMP0148" for policy details.  Use
+  the cmake_policy command to set the policy and suppress this warning.
+Call Stack (most recent call first):
+  /home/lpc/workspace/arena5_ws/.conda/arena_ros/share/rosidl_generator_py/cmake/rosidl_generator_py_generate_interfaces.cmake:33 (find_package)
+  /home/lpc/workspace/arena5_ws/.conda/arena_ros/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)
+  /home/lpc/workspace/arena5_ws/.conda/arena_ros/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:286 (ament_execute_extensions)
+  CMakeLists.txt:8 (rosidl_generate_interfaces)
+This warning is for project developers.  Use -Wno-author or -Wno-policy to
+suppress it.
+
+---
+Finished <<< arena_multi_hunav_msgs [33.3s]
+Starting >>> arena_multi_hunav
+Starting >>> arena_multi_hunav_core
+Finished <<< arena_multi_hunav [1.61s]
+Finished <<< arena_multi_hunav_core [8.96s]
+Starting >>> arena_multi_bringup
+Finished <<< arena_multi_bringup [1min 0s]
+
+Summary: 7 packages finished [1min 43s]
+  2 packages had stderr output: arena_multi_hunav_msgs arena_peer_costmap
+MULTIROBOT_BUILD_OK overlay=/home/lpc/workspace/arena5_multi_ws/install
