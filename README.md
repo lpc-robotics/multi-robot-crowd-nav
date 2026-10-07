@@ -17,6 +17,7 @@ Dijkstra 或 A*，局部控制使用 DWB。各机器人独立导航；当前未�
 - 同伴机器人占据层：过滤自身机器人并处理过期同伴观测。
 - `legacy_hunav`：保留原 HuNav 普通行人与六行为模式，以 `robot_1` 为社会参考。
 - `multi_sfm`：使用同一时间快照中的全部机器人影响普通行人，并同步积分。
+- 逐对人机 FOV：默认总视野 200°、每侧 10° 过渡；近距离物理排斥在所有方位有效。
 - 心理模型扩展协议、候选状态回滚和健康心跳；当前注册模型仅为 `noop`。
 - WebRTC / Foxglove 可视化、轨迹对比、故障注入和运行指标采集工具。
 
@@ -141,6 +142,24 @@ scripts/cleanup.sh
 配置检查，以及固定版 LightSFM 的 5 个文件哈希。构建后使用
 `scripts/validate_offline.sh` 执行完整离线流程。详细运行测试和指标命令见
 [RUNBOOK.md](docs/RUNBOOK.md)。
+
+2026-10-07 更新将近距离项与 `space_scale` 解耦，新增
+`robot_fov_deg` / `robot_fov_fade_deg` 服务参数，并保留零速行人的步前朝向。
+视野只影响每对人机的社会项；物理近距离项不受视野或心理倍率缩放。
+详细参数合同见 [MULTI_SFM.md](docs/MULTI_SFM.md)，构建、21 项 C++ 测试、
+120 组 CPU 轨迹和 5 项隔离 ROS 服务测试的开发记录见
+[近距离与 FOV 验证](evidence/near_fov_20261007/README.md)。本轮开发记录未包含
+新的 Isaac/GPU 场景验收。
+
+在本仓库完成构建后，复现 CPU 力扫描时用初始源码提交作为基线：
+
+```bash
+source scripts/env.sh
+python evidence/near_fov_20261007/run.py --baseline-ref 5c0bfe86b7d9254f09b9ea92535b924f25e5d2a3
+```
+
+开发记录中的 `backup-near-fov-20261007` 标签及完整工作区备份属于原开发仓库；
+本仓库的初始提交提供相同的更新前 core 源码。
 
 已有 GPU 记录覆盖原平台的 1/2/4 机器人场景；八机记录显示容量限制，不能视为
 通过导航验收。多 SFM 的既有验收范围是两台机器人、1/6 名普通行人及当时
