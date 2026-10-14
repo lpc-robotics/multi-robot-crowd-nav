@@ -18,5 +18,9 @@ int main(int argc, char ** argv) {
     [cfg](const std::shared_ptr<Compute::Request> req, std::shared_ptr<Compute::Response> res) {
       *res = integrate(*req, cfg);
     });
+  auto service_v2 = node->create_service<ComputeV2>("/multirobot/hunav/compute_agents_v2",
+    [cfg](const std::shared_ptr<ComputeV2::Request> req, std::shared_ptr<ComputeV2::Response> res) {
+      *res = integrate(*req, cfg);
+    });
   rclcpp::spin(node); rclcpp::shutdown(); return 0;
 }

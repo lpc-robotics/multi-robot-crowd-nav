@@ -1,0 +1,193 @@
+{
+  "schema_version": 1,
+  "scope": "final actual run and validation artifacts; raw logs and traces retained locally",
+  "source_sha256": "2f08aca63f58fbf6ed242dd0dfdd132ee45f4da19613a60dd5f228d45646c478",
+  "run_directory": "logs/dynamic_psychology_20261013/verified_endurance/20261013_091001_two_robots_multi_sfm_6_multigoal_psychology_nav2_gpu3",
+  "artifacts": [
+    {
+      "path": "build/arena_multi_hunav_core/libmulti_sfm.a",
+      "bytes": 106546,
+      "sha256": "eaf35a92ca6a8c95ecdb3bbb3f698db99b456bd6621beaef88f4d6ca038934ad"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/figures/actual_closed_loop.png",
+      "bytes": 280160,
+      "sha256": "6a248811b541d74d6432f2f051dba4e697c8744696e214efe7df42f0b6322d10"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/figures/actual_closed_loop.svg",
+      "bytes": 389830,
+      "sha256": "e7b54647c64f7a47627864114e05b0f31e235f43e9dffd170e183a811cfbf8d8"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/figures/actual_trace_summary.json",
+      "bytes": 1928,
+      "sha256": "48bd9fe58a12badc47465cbeaedcb61ab087a6a8c7e567d25e900a913061314d"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/figures/propagation.png",
+      "bytes": 102031,
+      "sha256": "3bffa59327304278f783ddf52e211faa5817ac0833c55f517093887d8765900d"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/figures/propagation.svg",
+      "bytes": 59047,
+      "sha256": "4511cf226545946378fec7842c0e51df267f5de36c660ac7acae12735a7af588"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/figures/single_motion.png",
+      "bytes": 156212,
+      "sha256": "a140e6070343f8493a112a880c34bbbf5068464dea6994f2cec4f1864d5a6bd1"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/figures/single_motion.svg",
+      "bytes": 89927,
+      "sha256": "12ac37418fdb00ac5e9024ab270acf0825169043172a36f41ab9f155af4564fc"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/figures/six_comparison.png",
+      "bytes": 105239,
+      "sha256": "3f777b9c968548b230efdb9f88cd33127aad385da3bf6af5ee5d98a7f97cfe6b"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/figures/six_comparison.svg",
+      "bytes": 91232,
+      "sha256": "e3a3ab67431200edfc9e843f24133e3327d9f249cbeb4ca7a2e47b5de6aac5f8"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/actual_cleanup.log",
+      "bytes": 42,
+      "sha256": "79e286ea41e33b9bb19800024684b3c7bff2c35c0192a85a880c1b158783538d"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/actual_launch.log",
+      "bytes": 184431,
+      "sha256": "6dbc487ed269e7fdbcfd43f0d0fb858a1db1e468f9d1be530dbd6740dd25af89"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/actual_probe.log",
+      "bytes": 1784,
+      "sha256": "6a3716d1e10e800d116d005dc70641a02541ab87244337a569141ba10c517fbb"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/build.log",
+      "bytes": 794,
+      "sha256": "2a17bcc19922a69db478e31add19a0055c3af3527a2b5e98bcda02bb3b59dad6"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/cpu/cpu.json",
+      "bytes": 203251,
+      "sha256": "dc9e4d0bd5ab6995ccdbf0d2389ae6b520e38e11e1d378e0e5c12938b78fc196"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/demo_ros.json",
+      "bytes": 265,
+      "sha256": "90bee057e45e470bb2eca78eaa9cd476e5fe0f853c966d9380beb335e251c093"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/faults/faults.json",
+      "bytes": 1475,
+      "sha256": "0bd3e821f4d1023c3104cc2b7e491bcbcdcd7682fd5f9a7d9ecd61a00c0fd3bf"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/isaac_six_people_30min.json",
+      "bytes": 42957,
+      "sha256": "0f2e57efcd369857fc552e7c9efe8ea3bf413252ee48199a7f0fa44a7d5c7bfd"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/isaac_two_people.json",
+      "bytes": 33365,
+      "sha256": "7cd09ebb1860e593674ece626468b6ad3e07a9711481930c492db4674163ed2c"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/offline.json",
+      "bytes": 31821,
+      "sha256": "150c0ef42b77ffcab7b5196af691c6dcf1290e4351a78ed555b766edeb8623a2"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/offline.log",
+      "bytes": 5469,
+      "sha256": "49b86bdd5f4a82b1089114453b5a42ef924725522ae605e4e5e5cbd0dc905777"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/psychology_demo.json",
+      "bytes": 1285,
+      "sha256": "a941ac887be1be0a2a674449c73deefdd775005e1e6003a41b1d1ab2c38d36e7"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/regular_baseline.json",
+      "bytes": 631,
+      "sha256": "4215129ba024256bfe7976305ec11844def3cb334aa77441504579e646fab491"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/run_profile.json",
+      "bytes": 725,
+      "sha256": "d4f933b5cf893198c34f58daf03c80df56bc4081012d9e9574a13b501a1298d7"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/timing.json",
+      "bytes": 2389,
+      "sha256": "8f7309d997da8e25d407a3de33f5c18e37d5d4788e5c615e33fa401fb4ebb70f"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/underlay.json",
+      "bytes": 55,
+      "sha256": "3994190592a506208a8627d2f0a1c25eddf800cefffee32416f14ba2bfbb70ba"
+    },
+    {
+      "path": "logs/dynamic_psychology_20261013/verified_endurance/20261013_091001_two_robots_multi_sfm_6_multigoal_psychology_nav2_gpu3/config_sha256.txt",
+      "bytes": 5160,
+      "sha256": "23c26394a703f268388fa68e71719cffd08cc18a8c8547681d420471f50f4cf8"
+    },
+    {
+      "path": "logs/dynamic_psychology_20261013/verified_endurance/20261013_091001_two_robots_multi_sfm_6_multigoal_psychology_nav2_gpu3/isaac_kit.log",
+      "bytes": 39142778,
+      "sha256": "f3cbdd2a1791e1edbf907bd51bddc84464d357185e146bef911d2f978e5a9e41"
+    },
+    {
+      "path": "logs/dynamic_psychology_20261013/verified_endurance/20261013_091001_two_robots_multi_sfm_6_multigoal_psychology_nav2_gpu3/launch.exit_code",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "logs/dynamic_psychology_20261013/verified_endurance/20261013_091001_two_robots_multi_sfm_6_multigoal_psychology_nav2_gpu3/launch.pid",
+      "bytes": 7,
+      "sha256": "6b85b6dde624cea994e0de4fef0d21028a6db1c8f7d4e0dc6bc2cd73c50dee3e"
+    },
+    {
+      "path": "logs/dynamic_psychology_20261013/verified_endurance/20261013_091001_two_robots_multi_sfm_6_multigoal_psychology_nav2_gpu3/map.yaml",
+      "bytes": 122,
+      "sha256": "32a4f9338c9f79837065e12bbb63f8b18043be23f6e8eda739d829480ed94eef"
+    },
+    {
+      "path": "logs/dynamic_psychology_20261013/verified_endurance/20261013_091001_two_robots_multi_sfm_6_multigoal_psychology_nav2_gpu3/nav2_multirobot.yaml",
+      "bytes": 8527,
+      "sha256": "3b906776227fec6315ccbaf7fe394a31d9255994d32ad95236af7775fee0b05b"
+    },
+    {
+      "path": "logs/dynamic_psychology_20261013/verified_endurance/20261013_091001_two_robots_multi_sfm_6_multigoal_psychology_nav2_gpu3/psychology_12954437730687663594.jsonl",
+      "bytes": 762496200,
+      "sha256": "c118afc65299feeb97138025151526a4539549d8d2afc5dda4dcb9e66c7e1805"
+    },
+    {
+      "path": "logs/dynamic_psychology_20261013/verified_endurance/20261013_091001_two_robots_multi_sfm_6_multigoal_psychology_nav2_gpu3/psychology_demo.json",
+      "bytes": 1285,
+      "sha256": "a941ac887be1be0a2a674449c73deefdd775005e1e6003a41b1d1ab2c38d36e7"
+    },
+    {
+      "path": "logs/dynamic_psychology_20261013/verified_endurance/20261013_091001_two_robots_multi_sfm_6_multigoal_psychology_nav2_gpu3/runtime_manifest.txt",
+      "bytes": 312,
+      "sha256": "ffddd9c8568459de190490b405d2347e99f0e1708bff98bb1b3e7f481c625b5e"
+    },
+    {
+      "path": "logs/dynamic_psychology_20261013/verified_endurance/20261013_091001_two_robots_multi_sfm_6_multigoal_psychology_nav2_gpu3/scenario.yaml",
+      "bytes": 468,
+      "sha256": "55f9dd566b82dd0e7768270479fa120824d9f126b5b9422ef33a27fb5cdaa6e9"
+    },
+    {
+      "path": "logs/dynamic_psychology_20261013/verified_endurance/20261013_091001_two_robots_multi_sfm_6_multigoal_psychology_nav2_gpu3/world.yaml",
+      "bytes": 99,
+      "sha256": "ec66148d8a5bf6448c1c0a9e2fdf697b4c77e677ad33471b576e2847b05468bc"
+    }
+  ]
+}

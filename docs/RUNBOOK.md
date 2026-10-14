@@ -1,5 +1,20 @@
 # 构建、启动与验收手册
 
+## 动态心理场景
+
+首次或更新代码后执行`./scripts/build.sh`和`./scripts/validate_offline.sh`。
+沿用command.txt环境；启动脚本自行source环境。日常两种入口：
+
+```bash
+cd /home/lpc/workspace/arena5_multi_ws
+./scripts/run_multirobot.sh config/scenarios/two_robots_multi_sfm_6_multigoal_psychology_nav2.yaml
+./scripts/run_multirobot.sh config/scenarios/two_robots_multi_sfm_6_multigoal_psychology_nav2.yaml auto_demo:=true
+```
+
+第一种由人工发送机器人目标，第二种在就绪后自动运行有限任务；均由模型决定行人心理与行为。
+日志在启动脚本打印的运行目录，心理记录为JSONL。Ctrl+C退出，必要时用相同日志根运行cleanup.sh。
+模型说明、CPU工具和GPU验收范围见[DYNAMIC_PSYCHOLOGY.md](DYNAMIC_PSYCHOLOGY.md)。
+
 ## 开发工作区
 
 ```bash
@@ -104,3 +119,14 @@ scripts/compare_algorithms.py RUN_DIJKSTRA/navigation_benchmark.json \
 
 通过条件以开发计划为准。窄道冲突、不可达目标和独立 DWB 死锁应记录失败原因，不能
 解释成协同规划结果。
+
+## 动态心理复查与耐久验收（2026-10-13）
+
+模型、参数与人工命令见 [DYNAMIC_PSYCHOLOGY.md](DYNAMIC_PSYCHOLOGY.md)，
+代码复查见 [DYNAMIC_PSYCHOLOGY_REVIEW_20261013.md](DYNAMIC_PSYCHOLOGY_REVIEW_20261013.md)。
+执行长时间实际验收时，让本任务的一机两人检查、CPU批量试验先完成，再单独运行双机六人，
+避免在计时期间启动或关闭其他Isaac实例。本机多GPU仍可能共享CPU、I/O或驱动资源，
+不同GPU/ROS域不意味着时间性能完全隔离。曾在另一个实例退出期间出现观测超时，已保留失败证据。
+保持原观测超时、近场参数和几何验收阈值；保护触发后整轮判失败并重启场景。
+`env.sh`会保留调用者的`ROS_DOMAIN_ID`和`ROS_LOCALHOST_ONLY`；重复source后也保持一致。
+`validate_offline.sh`包含这项检查，避免场景和监测工具使用不同的ROS发现范围。

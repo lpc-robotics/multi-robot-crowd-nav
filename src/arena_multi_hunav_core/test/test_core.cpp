@@ -5,6 +5,16 @@
 #include <limits>
 using namespace arena_multi_hunav_core;
 using Agent = hunav_msgs::msg::Agent;
+Compute::Request fixture();
+
+ComputeV2::Request v2_fixture() {
+  const auto q = fixture();
+  ComputeV2::Request v;
+  v.epoch=q.epoch; v.step=q.step; v.dt=q.dt; v.current_agents=q.current_agents;
+  v.robots=q.robots; v.modifiers=q.modifiers;
+  arena_multi_hunav_msgs::msg::BehaviorIntent i; i.agent_id=1; i.allow_task_progress=true;
+  v.intents.push_back(i); return v;
+}
 
 Compute::Request fixture() {
   Compute::Request q;
@@ -23,6 +33,67 @@ Compute::Request fixture() {
     r.position.orientation.w=1; q.robots.agents.push_back(r);
   }
   return q;
+}
+
+TEST(CoreV2, NeutralIntentMatchesV1OverMultipleSteps) {
+  auto v=v2_fixture(); auto q=fixture();
+  for (int step=0; step<1200; ++step) {
+    q.robots.header.stamp=q.current_agents.header.stamp;
+    v.robots.header.stamp=v.current_agents.header.stamp;
+    auto a=integrate(q,{});auto b=integrate(v,{});
+    ASSERT_TRUE(a.success)<<a.error;ASSERT_TRUE(b.success)<<b.error;
+    EXPECT_EQ(a.updated_agents,b.updated_agents);EXPECT_EQ(a.influences,b.influences);
+    q.current_agents=a.updated_agents;v.current_agents=b.updated_agents;
+  }
+}
+TEST(CoreV2, TemporaryIntentPausesQueueAndRegularRestoresIt) {
+  auto v=v2_fixture();auto & i=v.intents[0];auto & p=v.current_agents.agents[0];
+  p.position.position.x=16;p.cyclic_goals=true;
+  auto next=p.goals.front();next.position.x=10;p.goals.push_back(next);
+  i.mode=i.CURIOUS;i.has_target_robot=true;i.target_robot_id=-1;i.override_desired_velocity=true;i.allow_task_progress=false;
+  const auto queue=p.goals;auto special=integrate(v,{});ASSERT_TRUE(special.success)<<special.error;
+  EXPECT_EQ(special.updated_agents.agents[0].goals,queue);
+  v.current_agents=special.updated_agents;v.robots.header.stamp=v.current_agents.header.stamp;
+  i=arena_multi_hunav_msgs::msg::BehaviorIntent();i.agent_id=1;i.allow_task_progress=true;
+  auto regular=integrate(v,{});ASSERT_TRUE(regular.success)<<regular.error;
+  Compute::Request baseline;baseline.epoch=v.epoch;baseline.step=v.step;baseline.dt=v.dt;
+  baseline.current_agents=v.current_agents;baseline.robots=v.robots;baseline.modifiers=v.modifiers;
+  EXPECT_EQ(regular.updated_agents,integrate(baseline,{}).updated_agents);
+  EXPECT_NE(regular.updated_agents.agents[0].goals,queue);
+}
+TEST(CoreV2, ZeroDesiredVelocityDeceleratesAndNearStillMovesPeople) {
+  auto v=v2_fixture();auto & i=v.intents[0];i.vigilant=true;i.override_desired_velocity=true;
+  v.current_agents.agents[0].velocity.linear.x=.8;
+  auto result=integrate(v,{});ASSERT_TRUE(result.success)<<result.error;
+  EXPECT_GE(result.updated_agents.agents[0].velocity.linear.x,.8-3*.025-1e-9);
+  v.current_agents.agents[0].velocity.linear.x=0;
+  v.robots.agents.resize(1);v.robots.agents[0].position.position.x=10.8;v.robots.agents[0].position.position.y=10;
+  v.modifiers[0].robot_scale=0;
+  result=integrate(v,{});ASSERT_TRUE(result.success)<<result.error;
+  EXPECT_LT(result.updated_agents.agents[0].velocity.linear.x,0);
+  EXPECT_LT(result.motion[0].robot_near_force.x,0);
+}
+TEST(CoreV2, NearIsIndependentOfModeAndDiagnosticSumIsExact) {
+  auto v=v2_fixture();auto a=integrate(v,{});ASSERT_TRUE(a.success);
+  auto & i=v.intents[0];i.mode=i.SCARED;i.has_target_robot=true;i.target_robot_id=-1;
+  i.override_desired_velocity=true;i.desired_velocity_x=-.8;i.allow_task_progress=false;
+  v.modifiers[0].robot_scale=0;
+  auto b=integrate(v,{});ASSERT_TRUE(b.success)<<b.error;
+  EXPECT_EQ(a.motion[0].robot_near_force,b.motion[0].robot_near_force);
+  const auto & d=b.motion[0];
+  EXPECT_NEAR(d.total_before_limit.x,d.desired_force.x+d.obstacle_force.x+d.human_social_force.x+d.robot_social_force.x+d.robot_near_force.x,1e-12);
+}
+TEST(CoreV2, InvalidIntentsFailAtomically) {
+  for (int error=0;error<5;++error) {
+    auto v=v2_fixture();
+    if(error==0)v.intents.clear();
+    if(error==1)v.intents.push_back(v.intents[0]);
+    if(error==2)v.intents[0].mode=99;
+    if(error==3){v.intents[0].has_target_robot=true;v.intents[0].target_robot_id=-999;}
+    if(error==4)v.intents[0].desired_velocity_x=NAN;
+    auto r=integrate(v,{});EXPECT_FALSE(r.success);EXPECT_EQ(r.updated_agents,v.current_agents);
+    EXPECT_TRUE(r.motion.empty());EXPECT_TRUE(r.influences.empty());
+  }
 }
 
 TEST(Core, AllRobotsHaveIndependentContributions) {
@@ -73,6 +144,59 @@ TEST(Core, GoalsAdvanceAndRobotsNeverIntegrated) {
   auto q=fixture(); q.robots.agents.clear();
   q.current_agents.agents[0].goals[0].position=q.current_agents.agents[0].position.position;
   auto r=integrate(q, {}); ASSERT_TRUE(r.success); EXPECT_TRUE(r.updated_agents.agents[0].goals.empty());
+}
+
+TEST(Core, MultiGoalCyclesAndFoldsAdvanceExactlyOneTargetPerStep) {
+  for (const auto & order : std::vector<std::vector<int>>{
+      {0, 1}, {0, 1, 2}, {0, 1, 2, 3}, {0, 1, 2, 1}, {0, 1, 2, 3, 2, 1}}) {
+    auto q = fixture(); q.robots.agents.clear(); q.modifiers[0].speed_scale = 0;
+    auto & person = q.current_agents.agents[0];
+    person.cyclic_goals = true; person.goals.clear();
+    for (int target : order) {
+      geometry_msgs::msg::Pose goal;
+      goal.position.x = 8 + 2 * target; goal.position.y = 10; goal.orientation.w = 1;
+      person.goals.push_back(goal);
+    }
+    auto expected = person.goals;
+    for (size_t step = 0; step < order.size() * 3; ++step) {
+      q.current_agents.agents[0].position.position = expected.front().position;
+      q.robots.header.stamp = q.current_agents.header.stamp;
+      const auto original = q.current_agents;
+      auto r = integrate(q, {}); ASSERT_TRUE(r.success) << r.error;
+      EXPECT_EQ(q.current_agents, original);
+      std::rotate(expected.begin(), expected.begin() + 1, expected.end());
+      EXPECT_EQ(r.updated_agents.agents[0].goals, expected);
+      q.current_agents = r.updated_agents;
+    }
+  }
+}
+
+TEST(Core, CyclicGoalAdvancesAtInclusiveRadiusOnly) {
+  for (double offset : {.249, .25, .251}) {
+    auto q = fixture(); q.robots.agents.clear(); q.modifiers[0].speed_scale = 0;
+    auto & person = q.current_agents.agents[0];
+    person.cyclic_goals = true; person.goal_radius = .25;
+    auto next = person.goals[0]; next.position.x = 8; person.goals.push_back(next);
+    person.position.position.x = 16 + offset;
+    auto expected = person.goals;
+    if (offset <= .25) std::rotate(expected.begin(), expected.begin() + 1, expected.end());
+    const auto r = integrate(q, {}); ASSERT_TRUE(r.success) << r.error;
+    EXPECT_EQ(r.updated_agents.agents[0].goals, expected);
+  }
+}
+
+TEST(Core, FailureAfterCandidateAdvanceRestoresEveryGoalQueue) {
+  auto q = fixture(); q.robots.agents.clear(); q.modifiers[0].speed_scale = 0;
+  auto & person = q.current_agents.agents[0]; person.cyclic_goals = true;
+  person.goals[0].position = person.position.position;
+  auto next = person.goals[0]; next.position.x = 15; person.goals.push_back(next);
+  auto invalid = person; invalid.id = 2; invalid.name = "outside";
+  invalid.position.position.x = 31; q.current_agents.agents.push_back(invalid);
+  auto modifier = q.modifiers[0]; modifier.agent_id = 2; q.modifiers.push_back(modifier);
+  auto result = integrate(q, {});
+  EXPECT_FALSE(result.success);
+  EXPECT_EQ(result.updated_agents, q.current_agents);
+  EXPECT_TRUE(result.influences.empty());
 }
 TEST(Core, ExactHeadOnStaticRobotDoesNotCausePermanentStop) {
   auto q=fixture(); q.robots.agents.resize(1); q.robots.agents[0].position.position.y=10;

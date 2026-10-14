@@ -5,6 +5,7 @@ import copy
 from dataclasses import asdict
 import json
 import math
+import os
 from pathlib import Path
 import time
 import uuid
@@ -21,15 +22,18 @@ from geometry_msgs.msg import Pose, Twist
 from hunav_msgs.msg import Agent, Agents
 from arena_people_msgs.msg import Pedestrian, SpawnPedestrian
 from arena_people_msgs.srv import SpawnPedestrians, UpdatePedestrians
-from arena_multi_hunav_msgs.msg import BehaviorModifiers, InteractionForces
-from arena_multi_hunav_msgs.srv import ComputeMultiAgents
+from arena_multi_hunav_msgs.msg import BehaviorModifiers, BehaviorIntent, InteractionForces
+from arena_multi_hunav_msgs.srv import ComputeMultiAgents, ComputeMultiAgentsV2
 import yaml
 
 from .psychology import Entity, MentalState, MODELS, make_context, prepare_step
 from .timeline import Timeline, Sample
+from .routes import compile_route
+from .psychology_config import load_psychology_config
+from .behavior import MODES
 
 
-def load_people(path):
+def load_people(path, *, world_bounds=None):
     document = yaml.safe_load(Path(path).read_text())
     spec = document["hunav_loader"]["ros__parameters"]
     models = document["arena_multi_hunav"]["character_models"]
@@ -39,13 +43,14 @@ def load_people(path):
     ids, names = set(), set()
     for name in spec["agents"]:
         item = spec[name]
+        route = compile_route(item, person=name, world_bounds=world_bounds)
         a = Agent(); a.id = int(item["id"]); a.name = name; a.type = Agent.PERSON
         if a.id <= 0 or a.id in ids or name in names:
             raise ValueError("invalid pedestrian identity")
         ids.add(a.id); names.add(name)
         a.group_id = -1; a.skin = int(item.get("skin", 0)); a.radius = float(item["radius"])
         a.desired_velocity = float(item["max_vel"]); a.goal_radius = float(item["goal_radius"])
-        a.cyclic_goals = bool(item["cyclic_goals"])
+        a.cyclic_goals = route.cyclic
         if int(item["behavior"]["type"]) != 1 or int(item.get("group_id", -1)) != -1:
             raise ValueError("multi_sfm v1 supports only ungrouped regular people")
         a.behavior.type = 1
@@ -55,8 +60,8 @@ def load_people(path):
         a.position.position.x = float(p["x"]); a.position.position.y = float(p["y"])
         a.yaw = float(p["h"])
         a.position.orientation.z = math.sin(a.yaw / 2); a.position.orientation.w = math.cos(a.yaw / 2)
-        for key in item["goals"]:
-            goal = Pose(); goal.position.x = float(item[key]["x"]); goal.position.y = float(item[key]["y"])
+        for x, y in route.points:
+            goal = Pose(); goal.position.x = x; goal.position.y = y
             goal.orientation.w = 1.0; a.goals.append(goal)
         values = [a.position.position.x, a.position.position.y, a.yaw, a.radius,
                   a.desired_velocity, a.goal_radius] + [v for g in a.goals for v in (g.position.x, g.position.y)]
@@ -71,7 +76,7 @@ def load_people(path):
 def entity(a):
     return Entity(a.id, a.name, a.position.position.x, a.position.position.y,
                   a.velocity.linear.x, a.velocity.linear.y, a.radius,
-                  tuple((g.position.x, g.position.y) for g in a.goals))
+                  tuple((g.position.x, g.position.y) for g in a.goals), a.yaw, a.desired_velocity, a.goal_radius)
 
 
 def validate_response(request, response):
@@ -91,11 +96,55 @@ def validate_response(request, response):
                   a.velocity.linear.x,a.velocity.linear.y,a.velocity.angular.z)
         if not all(math.isfinite(v) for v in values) or math.hypot(a.velocity.linear.x,a.velocity.linear.y)>1.00001:
             raise ValueError("invalid_compute_motion")
+        before = next(p for p in request.current_agents.agents if p.id == a.id)
+        queue = [(g.position.x, g.position.y) for g in a.goals]
+        old_queue = [(g.position.x, g.position.y) for g in before.goals]
+        if hasattr(request, "intents"):
+            intent = next(i for i in request.intents if i.agent_id == a.id)
+            if not intent.allow_task_progress and queue != old_queue:
+                raise ValueError("temporary_behavior_advanced_task")
+            if intent.override_desired_velocity and math.hypot(
+                    a.velocity.linear.x-before.velocity.linear.x, a.velocity.linear.y-before.velocity.linear.y) > 3*request.dt+1e-6:
+                raise ValueError("invalid_compute_acceleration")
+        if queue != old_queue:
+            expected_queue = old_queue[1:] + (old_queue[:1] if before.cyclic_goals else [])
+            if queue != expected_queue or not old_queue or math.dist(
+                    (a.position.position.x, a.position.position.y), old_queue[0]) > before.goal_radius+1e-6:
+                raise ValueError("invalid_compute_task_progress")
     expected_pairs={(a.id,r.name) for a in request.current_agents.agents for r in request.robots.agents}
     pairs={(v.agent_id,v.robot_name) for v in response.influences}
     if pairs!=expected_pairs or len(response.influences)!=len(expected_pairs):
         raise ValueError("invalid_compute_influences")
+    if any(not all(math.isfinite(v) for v in (i.force.x, i.force.y, i.clearance)) for i in response.influences):
+        raise ValueError("nonfinite_compute_influences")
+    if hasattr(response, "motion"):
+        if sorted(d.agent_id for d in response.motion) != sorted(a.id for a in request.current_agents.agents):
+            raise ValueError("invalid_motion_diagnostics")
+        for d in response.motion:
+            for field in ("desired_force", "obstacle_force", "human_social_force", "robot_social_force", "robot_near_force", "total_before_limit", "acceleration"):
+                v = getattr(d, field)
+                if not all(math.isfinite(x) for x in (v.x, v.y, v.z)):
+                    raise ValueError("nonfinite_motion_diagnostics")
     return expected
+
+
+def commit_candidate(model, snapshot, proposal, request, response):
+    """Validate everything, including plugin restore, before caller swaps state."""
+    stamp = validate_response(request, response)
+    proposal.validate(a.id for a in request.current_agents.agents)
+    before = copy.deepcopy(model.snapshot())
+    try:
+        model.restore(snapshot)
+    except Exception:
+        model.restore(before)
+        raise
+    return response.updated_agents, stamp, proposal.states
+
+
+def motion_json(d):
+    return {"agent_id": d.agent_id, "acceleration_limited": d.acceleration_limited,
+            "speed_limited": d.speed_limited, **{name: [getattr(d, name).x, getattr(d, name).y]
+            for name in ("desired_force", "obstacle_force", "human_social_force", "robot_social_force", "robot_near_force", "total_before_limit", "acceleration")}}
 
 
 class MultiSfmAdapter(Node):
@@ -103,6 +152,7 @@ class MultiSfmAdapter(Node):
         super().__init__("multi_sfm_adapter")
         for name, value in {"robot_names": ["robot_1", "robot_2"], "agent_config_file": "",
                             "random_seed": 1, "psychology_model": "noop",
+                            "psychology_config_file": "",
                             "observation_timeout": 0.6, "simulation_stamp_timeout": 1.0,
                             "service_timeout": 1.0}.items():
             self.declare_parameter(name, value)
@@ -120,8 +170,19 @@ class MultiSfmAdapter(Node):
         self.display_stamp = None; self.last_display_wall = 0.0
         self.compute_count = 0; self.update_count = 0; self.max_compute_wall = 0.0
         self.model = MODELS[str(self.get_parameter("psychology_model").value)]()
-        self.model.initialize({}, tuple(a.id for a in self.agents.agents), int(self.get_parameter("random_seed").value))
-        self.mental = {a.id: MentalState() for a in self.agents.agents}
+        self.use_v2 = self.model.name != "noop"
+        config_path = str(self.get_parameter("psychology_config_file").value)
+        config = load_psychology_config(config_path).document() if self.use_v2 else {}
+        if not self.use_v2 and config_path:
+            raise ValueError("noop accepts no psychology_config_file")
+        self.model.initialize(config, tuple(a.id for a in self.agents.agents), int(self.get_parameter("random_seed").value))
+        self.mental = self.model.initial_states() if self.use_v2 else {a.id: MentalState() for a in self.agents.agents}
+        self.last_psychology = {}
+        self.evidence_stream = None
+        if self.use_v2:
+            run_dir = Path(os.environ.get("ARENA_MULTI_RUN_DIR", str(Path(os.environ.get("ARENA_MULTI_WS", "/home/lpc/workspace/arena5_multi_ws")) / "runtime/psychology")))
+            run_dir.mkdir(parents=True, exist_ok=True)
+            self.evidence_stream = (run_dir / f"psychology_{self.epoch}.jsonl").open("x", buffering=1)
         self.agent_pub = self.create_publisher(Agents, "/multirobot/hunav/agents", 10)
         self.robot_pub = self.create_publisher(Agents, "/multirobot/hunav/robots", 10)
         self.force_pub = self.create_publisher(InteractionForces, "/multirobot/hunav/interactions", 10)
@@ -132,7 +193,8 @@ class MultiSfmAdapter(Node):
         self.create_subscription(ClockMsg, "/clock", self._on_clock, qos_profile_sensor_data)
         for name in self.names:
             self.create_subscription(Odometry, f"/{name}/odom", lambda m, n=name: self._odom(n, m), qos_profile_sensor_data)
-        self.compute = self.create_client(ComputeMultiAgents, "/multirobot/hunav/compute_agents")
+        self.compute_type = ComputeMultiAgentsV2 if self.use_v2 else ComputeMultiAgents
+        self.compute = self.create_client(self.compute_type, "/multirobot/hunav/compute_agents_v2" if self.use_v2 else "/multirobot/hunav/compute_agents")
         self.spawn = self.create_client(SpawnPedestrians, "/isaac/SpawnPedestrians")
         self.update = self.create_client(UpdatePedestrians, "/isaac/UpdatePedestrians")
         self.wall_clock = Clock(clock_type=ClockType.STEADY_TIME)
@@ -299,10 +361,18 @@ class MultiSfmAdapter(Node):
                 res = future.result()
                 if (req.epoch, req.step) != (self.epoch, self.step):
                     raise ValueError("late_or_invalid_compute_response")
-                expected_stamp = validate_response(req, res)
-                self.agents = res.updated_agents; self.stamp_ns = expected_stamp
-                self.mental = proposal.states; self.model.restore(plugin_snapshot)
+                self.agents, self.stamp_ns, self.mental = commit_candidate(self.model, plugin_snapshot, proposal, req, res)
                 self.compute_count += 1; self.max_compute_wall = max(self.max_compute_wall, now-started)
+                if self.use_v2:
+                    self.last_psychology = {"schema_version": 2, "stamp_ns": self.stamp_ns,
+                        "epoch": self.epoch, "step": req.step, "plugin": self.model.snapshot(),
+                        "states": {str(i): asdict(s) for i, s in self.mental.items()},
+                        **proposal.diagnostics, "motion": [motion_json(d) for d in res.motion],
+                        "people": {str(a.id): asdict(entity(a)) for a in self.agents.agents},
+                        "robots": {str(a.id): asdict(entity(a)) for a in req.robots.agents},
+                        "task_goals": {str(a.id): [(g.position.x, g.position.y) for g in a.goals] for a in self.agents.agents}}
+                    self.evidence_stream.write(json.dumps(self.last_psychology, sort_keys=True, allow_nan=False)+"\n")
+                    self.psych_pub.publish(String(data=json.dumps(self.last_psychology, sort_keys=True, allow_nan=False)))
                 self.agent_pub.publish(self.agents)
                 self.force_pub.publish(InteractionForces(header=self.agents.header, epoch=self.epoch, step=self.step, influences=res.influences))
             elif now-started > timeout:
@@ -320,10 +390,13 @@ class MultiSfmAdapter(Node):
         context = make_context(self.stamp_ns, 0.025, [entity(a) for a in self.agents.agents], [entity(a) for a in robots.agents])
         proposal, proposed_plugin = prepare_step(self.model, context, self.mental)
         self.step += 1
-        req = ComputeMultiAgents.Request(epoch=self.epoch, step=self.step, dt=0.025,
+        req = self.compute_type.Request(epoch=self.epoch, step=self.step, dt=0.025,
                                         current_agents=copy.deepcopy(self.agents), robots=robots)
         for agent_id, modifier in sorted(proposal.modifiers.items()):
             req.modifiers.append(BehaviorModifiers(agent_id=agent_id, **asdict(modifier)))
+        for agent_id, intent in sorted(proposal.intents.items()):
+            fields = asdict(intent); fields["mode"] = MODES[intent.mode]
+            req.intents.append(BehaviorIntent(agent_id=agent_id, **fields))
         self.robot_pub.publish(robots)
         self.pending = (self.compute.call_async(req), now, req, proposal, proposed_plugin)
 
@@ -337,12 +410,19 @@ class MultiSfmAdapter(Node):
         payload = {"backend": "multi_sfm", "interaction_scope": "all_robots", "robots": self.names,
                    "healthy": healthy, "fault": self.fault, "epoch": self.epoch, "step": self.step,
                    "compute": self.compute_count, "updates": self.update_count, "max_dt": 0.025,
+                   "psychology_model": self.model.name,
                    "max_compute_wall_s": self.max_compute_wall,
                    "integration_lag_s": None if self.stamp_ns is None else (self.clock_ns-self.stamp_ns)/1e9,
                    "display_lag_s": None if self.display_stamp is None else (self.clock_ns-self.display_stamp)/1e9}
         self.status_pub.publish(String(data=json.dumps(payload, sort_keys=True)))
-        self.psych_pub.publish(String(data=json.dumps({"schema_version": 1, "stamp_ns": self.stamp_ns,
-            "plugin": self.model.snapshot(), "states": {str(i): asdict(s) for i, s in self.mental.items()}}, sort_keys=True)))
+        if not self.use_v2:
+            self.psych_pub.publish(String(data=json.dumps({"schema_version": 1, "stamp_ns": self.stamp_ns,
+                "plugin": self.model.snapshot(), "states": {str(i): asdict(s) for i, s in self.mental.items()}}, sort_keys=True)))
+
+    def destroy_node(self):
+        if self.evidence_stream is not None:
+            self.evidence_stream.close()
+        return super().destroy_node()
 
 
 def main(args=None):

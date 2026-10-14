@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "passed": true,
+  "error": "",
+  "tasks": "/home/lpc/workspace/arena5_multi_ws/config/tasks/psychology_crossings.yaml",
+  "rounds_requested": 3,
+  "rounds": [
+    {
+      "round": 1,
+      "robots": {
+        "robot_1": {
+          "sent_ns": 3900000058,
+          "status": 4,
+          "completed_ns": 21250000316
+        },
+        "robot_2": {
+          "sent_ns": 3900000058,
+          "status": 4,
+          "completed_ns": 31850000474
+        }
+      }
+    },
+    {
+      "round": 2,
+      "robots": {
+        "robot_1": {
+          "sent_ns": 46850000698,
+          "status": 4,
+          "completed_ns": 71450001064
+        },
+        "robot_2": {
+          "sent_ns": 56850000847,
+          "status": 4,
+          "completed_ns": 97950001459
+        }
+      }
+    },
+    {
+      "round": 3,
+      "robots": {
+        "robot_1": {
+          "sent_ns": 112950001683,
+          "status": 4,
+          "completed_ns": 152650002274
+        },
+        "robot_2": {
+          "sent_ns": 112950001683,
+          "status": 4,
+          "completed_ns": 172400002568
+        }
+      }
+    }
+  ],
+  "wall_duration_s": 467.173388580999,
+  "sim_stamp_ns": 187400002792,
+  "scope": "robot_action_execution; psychological mechanisms require separate evidence"
+}

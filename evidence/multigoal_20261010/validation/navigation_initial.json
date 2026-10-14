@@ -1,0 +1,255 @@
+{
+  "passed": true,
+  "source_commit": "cd0ab0713abd3b11e4a49d0b39ad09388c8f8706",
+  "scenario": "/home/lpc/workspace/arena5_multi_ws/config/scenarios/two_robots_multi_sfm_6_multigoal_nav2.yaml",
+  "scenario_sha256": "ce2cb9df16ba57d223acf13244e3d58dd2c4415da899fce2d824da5923a66b70",
+  "tasks": "/home/lpc/workspace/arena5_multi_ws/config/tasks/two_robot_lanes.yaml",
+  "tasks_sha256": "4d5304e41ce435d7530e27382c9a9a6e999ce0b604f19667422a48f3ebfa0e1d",
+  "planner_algorithm": "dijkstra",
+  "rounds_requested": 10,
+  "rounds_completed": 10,
+  "minimum_center_separation_m": 3.9605734193937625,
+  "results": [
+    {
+      "round": 1,
+      "robots": {
+        "robot_1": {
+          "status": 4,
+          "xy_error_m": 0.19352120073442614,
+          "yaw_error_rad": 0.002634541049417738,
+          "path_length_m": 1.8065247955719903,
+          "passed": true,
+          "command_samples": 330,
+          "zero_command_samples": 22
+        },
+        "robot_2": {
+          "status": 4,
+          "xy_error_m": 0.18985319137573242,
+          "yaw_error_rad": 0.0,
+          "path_length_m": 1.8101468086242676,
+          "passed": true,
+          "command_samples": 324,
+          "zero_command_samples": 40
+        }
+      },
+      "wall_duration_s": 15.999543369049206
+    },
+    {
+      "round": 2,
+      "robots": {
+        "robot_1": {
+          "status": 4,
+          "xy_error_m": 0.1937772300436848,
+          "yaw_error_rad": 0.03715376555003891,
+          "path_length_m": 1.7215053905318227,
+          "passed": true,
+          "command_samples": 414,
+          "zero_command_samples": 12
+        },
+        "robot_2": {
+          "status": 4,
+          "xy_error_m": 0.1959092538067205,
+          "yaw_error_rad": 0.04257783202159349,
+          "path_length_m": 1.7181496802588345,
+          "passed": true,
+          "command_samples": 414,
+          "zero_command_samples": 30
+        }
+      },
+      "wall_duration_s": 20.699300411040895
+    },
+    {
+      "round": 3,
+      "robots": {
+        "robot_1": {
+          "status": 4,
+          "xy_error_m": 0.19514344595564276,
+          "yaw_error_rad": 0.020777418965012284,
+          "path_length_m": 1.7099650130691928,
+          "passed": true,
+          "command_samples": 410,
+          "zero_command_samples": 12
+        },
+        "robot_2": {
+          "status": 4,
+          "xy_error_m": 0.1952417762429872,
+          "yaw_error_rad": 0.03209304316480832,
+          "path_length_m": 1.6972051664260617,
+          "passed": true,
+          "command_samples": 410,
+          "zero_command_samples": 16
+        }
+      },
+      "wall_duration_s": 20.49935827194713
+    },
+    {
+      "round": 4,
+      "robots": {
+        "robot_1": {
+          "status": 4,
+          "xy_error_m": 0.19815256325706937,
+          "yaw_error_rad": 0.0746672024444277,
+          "path_length_m": 1.709019403525633,
+          "passed": true,
+          "command_samples": 453,
+          "zero_command_samples": 13
+        },
+        "robot_2": {
+          "status": 4,
+          "xy_error_m": 0.19822864703772927,
+          "yaw_error_rad": 0.07134564882278926,
+          "path_length_m": 1.7119708511398288,
+          "passed": true,
+          "command_samples": 452,
+          "zero_command_samples": 10
+        }
+      },
+      "wall_duration_s": 22.59948436706327
+    },
+    {
+      "round": 5,
+      "robots": {
+        "robot_1": {
+          "status": 4,
+          "xy_error_m": 0.1933703566634507,
+          "yaw_error_rad": 0.0056784138245391524,
+          "path_length_m": 1.710650271282704,
+          "passed": true,
+          "command_samples": 384,
+          "zero_command_samples": 13
+        },
+        "robot_2": {
+          "status": 4,
+          "xy_error_m": 0.19449060737835108,
+          "yaw_error_rad": 0.02292870871186148,
+          "path_length_m": 1.6976643605201076,
+          "passed": true,
+          "command_samples": 384,
+          "zero_command_samples": 12
+        }
+      },
+      "wall_duration_s": 19.200925830053166
+    },
+    {
+      "round": 6,
+      "robots": {
+        "robot_1": {
+          "status": 4,
+          "xy_error_m": 0.19381328442099263,
+          "yaw_error_rad": 0.040272169567041605,
+          "path_length_m": 1.7065012151840246,
+          "passed": true,
+          "command_samples": 426,
+          "zero_command_samples": 23
+        },
+        "robot_2": {
+          "status": 4,
+          "xy_error_m": 0.1946217223658157,
+          "yaw_error_rad": 0.04487550387134931,
+          "path_length_m": 1.7085508265851939,
+          "passed": true,
+          "command_samples": 426,
+          "zero_command_samples": 10
+        }
+      },
+      "wall_duration_s": 21.29924026306253
+    },
+    {
+      "round": 7,
+      "robots": {
+        "robot_1": {
+          "status": 4,
+          "xy_error_m": 0.1948004486840377,
+          "yaw_error_rad": 0.04657617676775416,
+          "path_length_m": 1.704867190733344,
+          "passed": true,
+          "command_samples": 392,
+          "zero_command_samples": 14
+        },
+        "robot_2": {
+          "status": 4,
+          "xy_error_m": 0.1932334947940239,
+          "yaw_error_rad": 0.027735254385690578,
+          "path_length_m": 1.7026753131599666,
+          "passed": true,
+          "command_samples": 392,
+          "zero_command_samples": 12
+        }
+      },
+      "wall_duration_s": 19.59935875807423
+    },
+    {
+      "round": 8,
+      "robots": {
+        "robot_1": {
+          "status": 4,
+          "xy_error_m": 0.19596476035651256,
+          "yaw_error_rad": 0.03924390886142248,
+          "path_length_m": 1.7003362403973092,
+          "passed": true,
+          "command_samples": 438,
+          "zero_command_samples": 22
+        },
+        "robot_2": {
+          "status": 4,
+          "xy_error_m": 0.19493292951851304,
+          "yaw_error_rad": 0.04835050875486635,
+          "path_length_m": 1.7096976032383857,
+          "passed": true,
+          "command_samples": 438,
+          "zero_command_samples": 9
+        }
+      },
+      "wall_duration_s": 21.89863251405768
+    },
+    {
+      "round": 9,
+      "robots": {
+        "robot_1": {
+          "status": 4,
+          "xy_error_m": 0.19517851526422159,
+          "yaw_error_rad": 0.025401515071509895,
+          "path_length_m": 1.700486289427385,
+          "passed": true,
+          "command_samples": 382,
+          "zero_command_samples": 12
+        },
+        "robot_2": {
+          "status": 4,
+          "xy_error_m": 0.1959742159496405,
+          "yaw_error_rad": 0.022560055963922743,
+          "path_length_m": 1.6988263014287899,
+          "passed": true,
+          "command_samples": 382,
+          "zero_command_samples": 19
+        }
+      },
+      "wall_duration_s": 19.098013443988748
+    },
+    {
+      "round": 10,
+      "robots": {
+        "robot_1": {
+          "status": 4,
+          "xy_error_m": 0.19520164132238338,
+          "yaw_error_rad": 0.08328639557718143,
+          "path_length_m": 1.7053246729127771,
+          "passed": true,
+          "command_samples": 444,
+          "zero_command_samples": 10
+        },
+        "robot_2": {
+          "status": 4,
+          "xy_error_m": 0.19121768338577355,
+          "yaw_error_rad": 0.06913128521438727,
+          "path_length_m": 1.7094351394623182,
+          "passed": true,
+          "command_samples": 444,
+          "zero_command_samples": 14
+        }
+      },
+      "wall_duration_s": 22.199683543061838
+    }
+  ],
+  "failures": []
+}

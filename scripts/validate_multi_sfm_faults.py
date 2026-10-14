@@ -29,6 +29,8 @@ class World(Node):
         super().__init__('multi_sfm_test_world')
         self.health=False; self.status={}; self.commands=[]; self.fail_update=False
         self.stop_updates=[]
+        self.psychology={}
+        self.create_subscription(String,'/multirobot/hunav/psychology',self.on_psychology,10)
         self.create_service(SpawnPedestrians,'/isaac/SpawnPedestrians',self.spawn)
         self.create_service(UpdatePedestrians,'/isaac/UpdatePedestrians',self.update)
         self.create_subscription(Bool,'/multirobot/hunav/health',lambda m:setattr(self,'health',m.data),10)
@@ -47,6 +49,9 @@ class World(Node):
     def on_status(self,msg):
         try: self.status=json.loads(msg.data)
         except ValueError: pass
+    def on_psychology(self,msg):
+        try:self.psychology=json.loads(msg.data)
+        except ValueError:pass
     def tick(self,sim,omit=None,frozen=None):
         ns=round(sim*1e9); clock=Clock(); clock.clock.sec,clock.clock.nanosec=divmod(ns,10**9); self.clock.publish(clock)
         self.ready.publish(String(data='MULTIROBOT_SCENE_READY count=2 robots=robot_1,robot_2'))
@@ -61,20 +66,24 @@ class World(Node):
         cmd=Twist(); cmd.linear.x=.1; self.cmd.publish(cmd)
 
 
-def run_case(case,outdir):
+def run_case(case,outdir,psychology_config=""):
     children=[]; logs=[]; node=None
     try:
         for name,command in [
             ('core',['ros2','run','arena_multi_hunav_core','multi_sfm_server']),
             ('adapter',['ros2','run','arena_multi_hunav','multi_sfm_adapter','--ros-args','-p','use_sim_time:=true','-p',f'agent_config_file:={ROOT}/config/hunav/multi_regular_1.yaml']),
             ('guard',['ros2','run','arena_multi_control','command_guard','--ros-args','-p','robot_name:=robot_1','-p','control_mode:=external','-p','peer_names:=[robot_2]','-p','require_pedestrian_health:=true'])]:
+            if name=='adapter' and psychology_config:
+                command.extend(['-p','psychology_model:=sis_cf_v1','-p',f'psychology_config_file:={psychology_config}'])
             log=open(outdir/f'{case}_{name}.log','w'); logs.append(log)
             children.append(subprocess.Popen(command,stdout=log,stderr=subprocess.STDOUT,start_new_session=True))
         node=World(); sim=10.0; started=time.monotonic(); injected=None; frozen=None; resumed=False; before_compute=0
-        zero_time=None; detected=None
+        zero_time=None; detected=None; latched_psychology=None
         while time.monotonic()-started<20:
             now=time.monotonic(); sim+=.005
-            if injected is None and node.health and any(abs(v)>.05 for t,v in node.commands):
+            psychology_ready = not psychology_config or (node.psychology.get('schema_version') == 2 and
+                node.psychology.get('step', 0) >= 2)
+            if injected is None and node.health and psychology_ready and any(abs(v)>.05 for t,v in node.commands):
                 injected=now; before_compute=node.status.get('compute',0); frozen=sim-.005
                 if case=='compute_late': os.killpg(children[0].pid,signal.SIGSTOP)
                 if case=='update_failure': node.fail_update=True
@@ -87,7 +96,8 @@ def run_case(case,outdir):
                 if case=='compute_late' and now-injected>1.6 and not resumed:
                     os.killpg(children[0].pid,signal.SIGCONT); resumed=True
                 fault=node.status.get('fault','')
-                if fault and detected is None: detected=now
+                if fault and detected is None:
+                    detected=now; latched_psychology=node.psychology
                 zeros=[t for t,v in node.commands if t>=injected and abs(v)<1e-8]
                 if zeros and zero_time is None: zero_time=zeros[0]
                 if now-injected>3.0: break
@@ -101,8 +111,11 @@ def run_case(case,outdir):
         if zero_time is None or detected is None or zero_time-detected>.6: errors.append('guard stop missing or late')
         if injected is None or not any(t>injected for t in node.stop_updates): errors.append('no pedestrian zero update')
         if detected and any(abs(v)>1e-8 for t,v in node.commands if t>detected+.6): errors.append('motion resumed after latch')
+        if psychology_config:
+            if node.psychology.get('schema_version')!=2:errors.append('missing v2 psychology state')
+            if latched_psychology!=node.psychology:errors.append('psychology advanced after latched fault')
         return {'case':case,'passed':not errors,'fault':fault,'stop_from_injection_s':None if zero_time is None else zero_time-injected,
-                'late_response_resumed':resumed,'failures':errors}
+                'late_response_resumed':resumed,'psychology_unchanged_after_fault':latched_psychology==node.psychology,'failures':errors}
     finally:
         if node: node.destroy_node()
         for child in children:
@@ -115,12 +128,14 @@ def run_case(case,outdir):
 
 
 def main():
-    ap=argparse.ArgumentParser(); ap.add_argument('--output-dir',required=True); args=ap.parse_args()
+    ap=argparse.ArgumentParser(); ap.add_argument('--output-dir',required=True)
+    ap.add_argument('--psychology-config',default=''); args=ap.parse_args()
     if os.environ.get('ROS_DOMAIN_ID') in ('51','71',None): raise SystemExit('set a dedicated ROS_DOMAIN_ID (e.g. 73)')
     out=Path(args.output_dir); out.mkdir(parents=True,exist_ok=True)
     rclpy.init()
-    results=[run_case(case,out) for case in ('odom_loss','duplicate_odom','compute_late','update_failure','clock_rewind')]
-    rclpy.shutdown(); report={'passed':all(v['passed'] for v in results),'scope':'real ROS nodes, synthetic world','cases':results}
+    results=[run_case(case,out,args.psychology_config) for case in ('odom_loss','duplicate_odom','compute_late','update_failure','clock_rewind')]
+    rclpy.shutdown(); report={'passed':all(v['passed'] for v in results),'scope':'real ROS nodes, synthetic world',
+                             'psychology_config':args.psychology_config,'cases':results}
     (out/'faults.json').write_text(json.dumps(report,indent=2)+'\n'); print(json.dumps(report,indent=2))
     return 0 if report['passed'] else 1
 if __name__=='__main__': raise SystemExit(main())

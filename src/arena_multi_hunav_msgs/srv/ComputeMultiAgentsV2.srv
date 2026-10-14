@@ -1,0 +1,17 @@
+# v1 snapshots/time contract, plus an exact-cover intent array.
+# Agent.behavior.type remains the regular compatibility value 1.
+uint64 epoch
+uint64 step
+float64 dt
+hunav_msgs/Agents current_agents
+hunav_msgs/Agents robots
+BehaviorModifiers[] modifiers
+BehaviorIntent[] intents
+---
+uint64 epoch
+uint64 step
+bool success
+string error
+hunav_msgs/Agents updated_agents
+RobotInfluence[] influences
+MotionDiagnostic[] motion

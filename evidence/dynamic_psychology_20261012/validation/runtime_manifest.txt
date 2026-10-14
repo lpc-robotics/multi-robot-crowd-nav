@@ -1,0 +1,7 @@
+source_commit=1301b05560d55f1555de329a58b5e8e25203e69e
+scenario=/home/lpc/workspace/arena5_multi_ws/config/scenarios/two_robots_multi_sfm_6_multigoal_psychology_nav2.yaml
+scenario_sha256=55f9dd566b82dd0e7768270479fa120824d9f126b5b9422ef33a27fb5cdaa6e9
+gpu_id=3
+gpu_free_mib=23602
+ros_domain_id=85
+random_seed=11

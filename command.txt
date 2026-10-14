@@ -1,0 +1,26 @@
+cd /home/lpc/workspace/arena5_multi_ws
+
+export ARENA_MULTI_STATE_ROOT=/home/lpc/workspace/arena5_ws/.multirobot-multi-sfm
+export ARENA_MULTI_LOG_ROOT="$ARENA_MULTI_STATE_ROOT/logs/runs"
+export ROS_DOMAIN_ID=71
+
+export LIVESTREAM=true
+export FOXGLOVE=true
+export ARENA_WEBRTC_IP=10.16.205.165
+export ARENA_WEBRTC_SIGNAL_PORT=49100
+export ARENA_WEBRTC_MEDIA_PORT=47998
+export ARENA_FOXGLOVE_ADDRESS=127.0.0.1
+export ARENA_FOXGLOVE_PORT=8765
+
+# 多目标点行人场景
+./scripts/run_multirobot.sh config/scenarios/two_robots_multi_sfm_6_multigoal_nav2.yaml
+
+# 双目标点往返行人
+./scripts/run_multirobot.sh \
+  /home/lpc/workspace/arena5_multi_ws/config/scenarios/two_robots_multi_sfm_6_nav2.yaml
+
+# 动态心理六人多目标场景：仅启动，机器人目标人工发送
+./scripts/run_multirobot.sh config/scenarios/two_robots_multi_sfm_6_multigoal_psychology_nav2.yaml
+
+# 动态心理六人多目标场景：自动执行有限轮双机 Nav2 演示任务
+./scripts/run_multirobot.sh config/scenarios/two_robots_multi_sfm_6_multigoal_psychology_nav2.yaml auto_demo:=true

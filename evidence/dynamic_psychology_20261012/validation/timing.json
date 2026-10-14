@@ -1,0 +1,93 @@
+{
+  "scope": "read-only arrival gaps, not a pass/fail acceptance test",
+  "maximum_arrival_gap_s": {
+    "monitor_loop": 0.04362730401044246,
+    "health": 0.13463184000283945,
+    "clock": 9.152704918000381,
+    "robot_1": 9.152763110003434,
+    "robot_2": 9.153084363002563
+  },
+  "sample_counts": {
+    "monitor_loop": 148089,
+    "health": 18530,
+    "clock": 19234,
+    "robot_1": 19220,
+    "robot_2": 19219
+  },
+  "events": [
+    {
+      "elapsed_wall_s": 34.04033207699831,
+      "topic": "clock",
+      "arrival_gap_s": 5.805207696001162,
+      "wall_time": 1791853833.9175315
+    },
+    {
+      "elapsed_wall_s": 39.345614171994384,
+      "topic": "clock",
+      "arrival_gap_s": 5.305282094996073,
+      "wall_time": 1791853839.22281
+    },
+    {
+      "elapsed_wall_s": 39.34647547900386,
+      "topic": "robot_1",
+      "arrival_gap_s": 5.3040751140069915,
+      "wall_time": 1791853839.2236683
+    },
+    {
+      "elapsed_wall_s": 43.43345235999732,
+      "topic": "clock",
+      "arrival_gap_s": 3.0949630859977333,
+      "wall_time": 1791853843.3106494
+    },
+    {
+      "elapsed_wall_s": 43.434750461994554,
+      "topic": "robot_1",
+      "arrival_gap_s": 3.0949126839987002,
+      "wall_time": 1791853843.3119457
+    },
+    {
+      "elapsed_wall_s": 43.4353184060019,
+      "topic": "robot_2",
+      "arrival_gap_s": 3.094496252000681,
+      "wall_time": 1791853843.3125134
+    },
+    {
+      "elapsed_wall_s": 52.5861572779977,
+      "topic": "clock",
+      "arrival_gap_s": 9.152704918000381,
+      "wall_time": 1791853852.4633539
+    },
+    {
+      "elapsed_wall_s": 52.58751357199799,
+      "topic": "robot_1",
+      "arrival_gap_s": 9.152763110003434,
+      "wall_time": 1791853852.4647093
+    },
+    {
+      "elapsed_wall_s": 52.58840276900446,
+      "topic": "robot_2",
+      "arrival_gap_s": 9.153084363002563,
+      "wall_time": 1791853852.4655998
+    }
+  ],
+  "last_status": {
+    "backend": "multi_sfm",
+    "compute": 38334,
+    "display_lag_s": 0.100014282,
+    "epoch": 12954437730687663594,
+    "fault": "",
+    "healthy": true,
+    "integration_lag_s": 0.050014282,
+    "interaction_scope": "all_robots",
+    "max_compute_wall_s": 0.040012611003476195,
+    "max_dt": 0.025,
+    "psychology_model": "sis_cf_v1",
+    "robots": [
+      "robot_1",
+      "robot_2"
+    ],
+    "step": 38335,
+    "updates": 16491
+  },
+  "duration_wall_s": 1859.108914662007
+}

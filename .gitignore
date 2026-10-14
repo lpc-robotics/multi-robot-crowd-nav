@@ -20,3 +20,9 @@ evidence/visualization_20260928/runtime.log
 
 # Rebuildable controlled-comparison executable.
 evidence/robot_response_comparison/compare
+
+# Generated psychology diagnostics remain local.
+runtime/psychology/
+evidence/dynamic_psychology_20261012/**/*.jsonl
+evidence/dynamic_psychology_20261012/**/*.log
+evidence/multigoal_20261010/**/*.log

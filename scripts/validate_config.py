@@ -75,6 +75,17 @@ def main() -> int:
     check("map/world origin", map_yaml["origin"][:2] == [-float(world["map_margin"])] * 2)
 
     for scenario in parsed:
+        if scenario.pedestrian_backend == "multi_sfm":
+            from arena_multi_hunav.multi_adapter import load_people
+            try:
+                load_people(scenario.pedestrian_config,
+                            world_bounds=(world["width"], world["height"]))
+                if scenario.psychology_config:
+                    from arena_multi_hunav.psychology_config import load_psychology_config
+                    load_psychology_config(scenario.psychology_config)
+                check("pedestrian routes:" + scenario.pedestrian_config, True)
+            except ValueError as error:
+                check("pedestrian routes:" + str(error), False)
         names = [robot.name for robot in scenario.robots]
         check("unique topics:" + ",".join(names), len(names) == len(set(names)))
         for robot in scenario.robots:

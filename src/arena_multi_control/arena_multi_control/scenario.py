@@ -30,6 +30,8 @@ class Scenario:
     max_linear: float = 1.0
     max_angular: float = 1.2
     physics_dt: float = 1.0 / 60.0
+    psychology_config: str = ""
+    demo_tasks: str = ""
 
 
 def _finite_number(value: Any, field: str) -> float:
@@ -94,8 +96,22 @@ def load_scenario(path: str | Path) -> Scenario:
         raise ValueError("unsupported pedestrian_backend")
     config = str(document.get("pedestrian_config", ""))
     psychology = str(document.get("psychology_model", "noop"))
-    if psychology != "noop":
-        raise ValueError("only noop psychology is registered in v1")
+    if psychology not in ("noop", "sis_cf_v1"):
+        raise ValueError("unsupported psychology model")
+    psychology_config = str(document.get("psychology_config", ""))
+    demo_tasks = str(document.get("demo_tasks", ""))
+    if psychology == "sis_cf_v1":
+        if backend != "multi_sfm" or not psychology_config:
+            raise ValueError("sis_cf_v1 requires multi_sfm and psychology_config")
+        psychology_config = str((Path(path).resolve().parent / psychology_config).resolve())
+        if not Path(psychology_config).is_file():
+            raise ValueError("psychology_config does not exist")
+    elif psychology_config:
+        raise ValueError("noop accepts no psychology_config")
+    if demo_tasks:
+        demo_tasks = str((Path(path).resolve().parent / demo_tasks).resolve())
+        if not Path(demo_tasks).is_file() or psychology == "noop" or any(r.control_mode != "nav2" for r in robots):
+            raise ValueError("demo_tasks requires a psychology Nav2 scenario and existing file")
     max_linear = _finite_number(document.get("max_linear", 1.0), "max_linear")
     max_angular = _finite_number(document.get("max_angular", 1.2), "max_angular")
     physics_dt = _finite_number(document.get("physics_dt", 1.0 / 60.0), "physics_dt")
@@ -124,4 +140,6 @@ def load_scenario(path: str | Path) -> Scenario:
         max_linear=max_linear,
         max_angular=max_angular,
         physics_dt=physics_dt,
+        psychology_config=psychology_config,
+        demo_tasks=demo_tasks,
     )

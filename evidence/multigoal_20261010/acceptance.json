@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "passed": true,
+  "scope": "multi-goal development acceptance; not a release certification",
+  "source_commit": "cd0ab0713abd3b11e4a49d0b39ad09388c8f8706",
+  "source_sha256": "681897ddc351610df089b586022440d248720de87b7716269910010a86153d4e",
+  "baseline_ref": "backup-multigoal-20261010",
+  "backup": "/home/lpc/workspace/arena5_multi_backups/20261010T090406Z-before-multigoal",
+  "underlay": {
+    "passed": true,
+    "checks": 30,
+    "failures": []
+  },
+  "preserved_files": {
+    "command.txt": "c08e4b4c905d5a3c18844f5b46ee03300f0e783cfa4eeae0746061ebaa82ac8c",
+    "config/hunav/multi_regular_1.yaml": "891c1a057340829f65b3343cc98b135f857e90a93477ab4a669c5459af1acd1e",
+    "config/hunav/multi_regular_6.yaml": "67ce7a65f71619baef1fdab00d0292c4d2ef91ebfb3e6276536d8e71aac267db",
+    "config/hunav/regular.yaml": "76e8c4132bddeed7def29100cd4d194e8eac202f7c1973c38e576442d5aac3a1",
+    "config/hunav/six_behaviors.yaml": "ac77047d69256d71fadca0aa958848cb9b30a0b15e3fcf91275514fc1a748b67",
+    "config/maps/map.png": "0230e5c9bf17a6110b7bfe5a45ac8c19d723fd51c3e0dfa67a53eceebe8b9882",
+    "config/maps/map.yaml": "32a4f9338c9f79837065e12bbb63f8b18043be23f6e8eda739d829480ed94eef",
+    "config/scenarios/eight_robots_capacity.yaml": "b660c00ed77904dd43461579ec3a95eea6bfb864d807a1665b23517f1ec7e739",
+    "config/scenarios/four_robots.yaml": "e457704273c06861e0ce94bce4eb552c17f0d69f0798c402f8f719fb398aa7f4",
+    "config/scenarios/one_robot.yaml": "45f6ada894d0af4b6391956756effa5f07ae8230a770a9accc2a71a7c2e2ca77",
+    "config/scenarios/two_robots_astar.yaml": "45ea75b58de11c48bc175d0ead9118fd0c563bccb543270d01595c91401e8375",
+    "config/scenarios/two_robots_dijkstra.yaml": "01e82919ede8febacd2734a07ed548e7fc9c8f560981ce0cb6c49954a0c13dd5",
+    "config/scenarios/two_robots_external.yaml": "0e052fde4a1b30e0e0c359daa028a6332d4113e3bd96706e573bb3b0ef1063ae",
+    "config/scenarios/two_robots_hunav_regular.yaml": "5af6ac00f4079e5aa7c06e6ee98cf3a7606cbf69a5e4dc3a57c4aa03ca517bdb",
+    "config/scenarios/two_robots_hunav_six.yaml": "de2a9983eb63d79cbf7c088d30aee3cbf195837b8af83a70c87dda213b5a1b53",
+    "config/scenarios/two_robots_multi_sfm_1_external.yaml": "0eb164173d5f69d2d8194fb7c41080c15817ecccf132efc85c9f46316638dfa5",
+    "config/scenarios/two_robots_multi_sfm_1_nav2.yaml": "f897b708a025df8291468ea32fde9fe9a9fefcbecee112829d1143ad3297c2bb",
+    "config/scenarios/two_robots_multi_sfm_6_external.yaml": "3c735b14aeff2725e1d898d8d3f29fe7a55b2b5255c1be8ad5e2471d778ab2b9",
+    "config/scenarios/two_robots_multi_sfm_6_nav2.yaml": "2a1f53bafcb3295c8de7d8deecb50b06aabdd12ac9ccc595567f38f7ade573e9",
+    "config/tasks/four_robot_lanes.yaml": "888c16856dddf8cb8dea1395cc1d82919329ce2f24e516f1a40e8af6a2df2405",
+    "config/tasks/one_robot_smoke.yaml": "e64c7a5b0f276ab47310dbaed012c1bc3070e31fba29f1d0e3c78fde95bef08b",
+    "config/tasks/two_robot_lanes.yaml": "4d5304e41ce435d7530e27382c9a9a6e999ce0b604f19667422a48f3ebfa0e1d",
+    "config/urdf/jackal.urdf": "04cad2ff6dd166b6e63013c3e925cd7bc1f225c9d52f56f73692397a9cdb7491",
+    "config/world/arena.yaml": "ec66148d8a5bf6448c1c0a9e2fdf697b4c77e677ad33471b576e2847b05468bc",
+    "src/arena_multi_hunav_core/include/arena_multi_hunav_core/core.hpp": "219bbce39677f5d94e21115aa89a6ae76b508628c3da1d0b4f1aede319c07639",
+    "src/arena_multi_hunav_core/src/benchmark.cpp": "00ac227c27b82d62a3972ce45097c9b536c8eaf44125bc0266bd8a7ce8dc4f25",
+    "src/arena_multi_hunav_core/src/core.cpp": "b1c3b6ae7babb9974ca4d5e3e823b9632473d97d05ec0440348df85bff52a0b3",
+    "src/arena_multi_hunav_core/src/server.cpp": "950c1d3ed97053cc8db8d94a59d915ff86a92b7ab584fc2f740c4c75b6db0cff",
+    "src/arena_multi_hunav_core/vendor/lightsfm/LICENSE": "d47fefe85fa2d856c769520b0dacbde1f7acd01b66a0518990bca9e9705ec9c0",
+    "src/arena_multi_hunav_core/vendor/lightsfm/SOURCE.json": "5a71819448c87de3ef52c27dc63692467e7087fbf6fdc3d0eb7072023e937925",
+    "src/arena_multi_hunav_core/vendor/lightsfm/include/angle.hpp": "697117842b99acfca8120b05c01e13cb7e83df342fab630f127ed4d3261633e8",
+    "src/arena_multi_hunav_core/vendor/lightsfm/include/map.hpp": "601a58e43671791c228ac8b3c02211561c63b00ba2057720ffb8623e11b60ee1",
+    "src/arena_multi_hunav_core/vendor/lightsfm/include/sfm.hpp": "ec99ee797e5f9b675121a2d7bf92a7fbdbe6b095b65f20fc9a71ce9d46d47f2f",
+    "src/arena_multi_hunav_core/vendor/lightsfm/include/vector2d.hpp": "9d6ec78fcf9af4ca9bdae40510d5a87e4348c7b8938407ffa9d37b4c2bb47c38",
+    "src/arena_multi_hunav_msgs/CMakeLists.txt": "9a50c321f35f00b468716e2d8e512c949f1793699946283d66b2a26f7a3c5f9a",
+    "src/arena_multi_hunav_msgs/msg/BehaviorModifiers.msg": "1b9cf7ef0e4579cd664f6142d6876ab38006f654a94228e894376e9a935a41ca",
+    "src/arena_multi_hunav_msgs/msg/InteractionForces.msg": "25d712d73c11cfb63f019e540adc5c47625deacc93604f7681ac7885e14bfe11",
+    "src/arena_multi_hunav_msgs/msg/RobotInfluence.msg": "2c8a99a86383d878adf6360cb857878d3e342b5c93499a55748573c615ceed5b",
+    "src/arena_multi_hunav_msgs/package.xml": "d492ec7a0d91ff21adfcd9612926d74845769048fec75d83fefb7494904b4eed",
+    "src/arena_multi_hunav_msgs/srv/ComputeMultiAgents.srv": "9a416c717ef5443f6bf82378fdc577718defb4d03c52faa4dc7656a6560c16d5"
+  },
+  "reports": {
+    "offline": {
+      "path": "evidence/multigoal_20261010/validation/offline.json",
+      "sha256": "799c94a5a4b1eb55704d32a310283f5106d15d5801539a7f93538046f6c511fb",
+      "passed": true
+    },
+    "cpu_routes": {
+      "path": "evidence/multigoal_20261010/validation/cpu_routes.json",
+      "sha256": "6382ae7c59c3fbc8f996e7a80db14804bc53bc7c9ba14f02a5b55b7af776de5c",
+      "passed": true
+    },
+    "isaac_routes_30min": {
+      "path": "evidence/multigoal_20261010/validation/isaac_routes_30min.json",
+      "sha256": "dde8857af82c6faeb85c267b48234db9ebbc75927edf04cda4d4919d63301a8f",
+      "passed": true
+    },
+    "navigation": {
+      "path": "evidence/multigoal_20261010/validation/navigation.json",
+      "sha256": "69154298316e32d4c20dfb8a65a0875ac257719b266baff24a9a099ffadc3249",
+      "passed": true
+    },
+    "restore_check": {
+      "path": "evidence/multigoal_20261010/validation/restore_check.json",
+      "sha256": "91fd3b51e4cc8ee413917ff4f48efcc279b6e92402510cb473b89cdc48ee6c62",
+      "passed": true
+    },
+    "preservation": {
+      "path": "evidence/multigoal_20261010/validation/preservation.json",
+      "sha256": "6e5454e1b0b13abd3a4a2deb1e8fb54162fddecbd30aba2deb1712b936d6c850",
+      "passed": true
+    },
+    "installed_source_check": {
+      "path": "evidence/multigoal_20261010/validation/installed_source_check.json",
+      "sha256": "3f9a9dd85c1eb9ed4025e9d8976a44365504870594fe37bf322b58c35d48eb47",
+      "passed": true
+    }
+  }
+}

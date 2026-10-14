@@ -1,0 +1,52 @@
+{
+  "passed": true,
+  "scope": "real ROS nodes, synthetic world",
+  "psychology_config": "/home/lpc/workspace/arena5_multi_ws/config/psychology/sis_cf_v1.yaml",
+  "cases": [
+    {
+      "case": "odom_loss",
+      "passed": true,
+      "fault": "robot_stale:robot_2",
+      "stop_from_injection_s": 0.6205763510006364,
+      "late_response_resumed": false,
+      "psychology_unchanged_after_fault": true,
+      "failures": []
+    },
+    {
+      "case": "duplicate_odom",
+      "passed": true,
+      "fault": "robot_stale:robot_2",
+      "stop_from_injection_s": 0.6794734299983247,
+      "late_response_resumed": false,
+      "psychology_unchanged_after_fault": true,
+      "failures": []
+    },
+    {
+      "case": "compute_late",
+      "passed": true,
+      "fault": "compute_timeout",
+      "stop_from_injection_s": 1.0939909539956716,
+      "late_response_resumed": true,
+      "psychology_unchanged_after_fault": true,
+      "failures": []
+    },
+    {
+      "case": "update_failure",
+      "passed": true,
+      "fault": "isaac_update_failed",
+      "stop_from_injection_s": 0.1498253269965062,
+      "late_response_resumed": false,
+      "psychology_unchanged_after_fault": true,
+      "failures": []
+    },
+    {
+      "case": "clock_rewind",
+      "passed": true,
+      "fault": "clock_rewind",
+      "stop_from_injection_s": 0.016451097995741293,
+      "late_response_resumed": false,
+      "psychology_unchanged_after_fault": true,
+      "failures": []
+    }
+  ]
+}

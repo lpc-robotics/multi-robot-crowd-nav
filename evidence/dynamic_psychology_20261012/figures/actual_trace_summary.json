@@ -1,0 +1,135 @@
+{
+  "scope": "committed model diagnostics; actual display geometry is in isaac_six_people_30min.json",
+  "trace": "/home/lpc/workspace/arena5_multi_ws/logs/dynamic_psychology_20261013/verified_endurance/20261013_091001_two_robots_multi_sfm_6_multigoal_psychology_nav2_gpu3/psychology_12954437730687663594.jsonl",
+  "trace_sha256": "c118afc65299feeb97138025151526a4539549d8d2afc5dda4dcb9e66c7e1805",
+  "committed_samples": 38345,
+  "first_stamp_ns": 5525000081,
+  "last_stamp_ns": 964125000081,
+  "maximum_step_increment": 1,
+  "mode_samples": {
+    "1": {
+      "REGULAR": 37065,
+      "CURIOUS": 1280
+    },
+    "2": {
+      "REGULAR": 36434,
+      "CURIOUS": 1889,
+      "SCARED": 22
+    },
+    "3": {
+      "REGULAR": 37030,
+      "CURIOUS": 1293,
+      "SCARED": 22
+    },
+    "4": {
+      "REGULAR": 36422,
+      "CURIOUS": 1923
+    },
+    "5": {
+      "REGULAR": 37220,
+      "CURIOUS": 1125
+    },
+    "6": {
+      "REGULAR": 37723,
+      "CURIOUS": 622
+    }
+  },
+  "task_queue_advances": {
+    "1": 604,
+    "2": 591,
+    "3": 599,
+    "4": 524,
+    "5": 543,
+    "6": 548
+  },
+  "completed_task_returns": {
+    "1": 1,
+    "2": 3,
+    "3": 2,
+    "4": 1,
+    "5": 2,
+    "6": 2
+  },
+  "avoidance_steps": {
+    "1": 350,
+    "2": 457,
+    "3": 395,
+    "4": 124,
+    "5": 18,
+    "6": 75
+  },
+  "infeasible_avoidance_steps": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 0,
+    "6": 0
+  },
+  "observed_directed_edges": [
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      1,
+      4
+    ],
+    [
+      2,
+      1
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      2,
+      4
+    ],
+    [
+      3,
+      1
+    ],
+    [
+      3,
+      2
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      4,
+      1
+    ],
+    [
+      4,
+      2
+    ],
+    [
+      4,
+      3
+    ],
+    [
+      4,
+      5
+    ],
+    [
+      5,
+      4
+    ],
+    [
+      5,
+      6
+    ],
+    [
+      6,
+      5
+    ]
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "scope": "read-only arrival gaps, not a pass/fail acceptance test",
+  "maximum_arrival_gap_s": {
+    "monitor_loop": 0.02078927399998065
+  },
+  "sample_counts": {
+    "monitor_loop": 14870
+  },
+  "events": [],
+  "last_status": {},
+  "duration_wall_s": 302.8901295370015
+}

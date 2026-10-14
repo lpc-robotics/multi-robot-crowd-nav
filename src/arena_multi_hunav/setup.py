@@ -16,5 +16,6 @@ setup(
     description="Limited HuNav multi-robot adapter",
     license="Apache-2.0",
     entry_points={"console_scripts": ["hunav_multi_adapter = arena_multi_hunav.adapter:main",
-                                      "multi_sfm_adapter = arena_multi_hunav.multi_adapter:main"]},
+                                      "multi_sfm_adapter = arena_multi_hunav.multi_adapter:main",
+                                      "psychology_demo = arena_multi_hunav.demo:main"]},
 )

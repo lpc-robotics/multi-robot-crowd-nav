@@ -1,5 +1,33 @@
 # 发布与恢复
 
+## 2026-10-12 动态心理开发回退点
+
+开始时原分支feature/pedestrian-multi-goals、HEAD cd0ab07，并有未提交的多目标升级。
+完整快照位于`/home/lpc/workspace/arena5_multi_backups/20261012T101728Z-before-dynamic-psychology`，
+包含.git、未跟踪/忽略文件和build/install，解包后10,147条目一致，摘要在SHA256SUMS。
+仅回退HEAD不能恢复这些未提交成果。
+
+现有多目标成果已独立保存为本地提交1301b05，标签backup-psychology-20261012；
+心理开发分支feature/dynamic-psychology-v1。旧release和underlay基线未覆盖。
+
+快速关闭心理：Ctrl+C退出当前启动，再运行原多目标场景命令。
+完整恢复前停止使用此工作区的进程，在未加载overlay的新终端先验证归档摘要，
+保留当前整个目录，再解包到原绝对路径：
+
+```bash
+psychology_backup=/home/lpc/workspace/arena5_multi_backups/20261012T101728Z-before-dynamic-psychology
+cd "$psychology_backup"
+sha256sum -c SHA256SUMS
+cp /home/lpc/workspace/arena5_multi_ws/scripts/verify_workspace_snapshot.py /tmp/verify_psychology_snapshot.py
+cd /home/lpc/workspace
+mv arena5_multi_ws "arena5_multi_ws.after-psychology.$(date +%Y%m%dT%H%M%S)"
+tar --acls --xattrs --same-permissions -xpf "$psychology_backup/workspace.tar" -C /home/lpc/workspace
+python3 /tmp/verify_psychology_snapshot.py /home/lpc/workspace/arena5_multi_ws "$psychology_backup/manifest.json"
+```
+
+应恢复原分支cd0ab07及快照记录的未提交多目标工作。若只回退代码到保护标签，
+先保存当前成果，并重新构建；新build/install不能当作旧版本使用。
+
 开发目录是 Git 仓库，稳定工作区只作为 underlay。`baseline/stable_underlay.json` 保存
 11 个嵌套仓库的提交、分支和完整工作树状态，以及原 DWB、DWB 0.8、MPC 入口和关键
 安装文件哈希。任何启动和发布前都运行 `scripts/verify_baseline.py`；失败时停止并重新
@@ -70,3 +98,41 @@ git --no-optional-locks -C /home/lpc/workspace/arena5_multi_ws status --porcelai
 恢复后的 `.git` 来自完整快照，新增标签和开发分支保留在已移走的更新目录中。
 整个恢复过程不修改稳定 underlay 或既有发布包。当前改动的 CPU/ROS 验证记录在
 `evidence/near_fov_20261007/`；旧版 Isaac 验收记录不作为新源码的验收证明。
+
+## 2026-10-10 多目标点升级的完整回退点
+
+升级基线为 `cd0ab0713abd3b11e4a49d0b39ad09388c8f8706`，原分支
+`feature/near-fov-decoupling`；仅有未跟踪的用户文件 `command.txt`。
+代码标签为 `backup-multigoal-20261010`，开发分支为 `feature/pedestrian-multi-goals`。
+
+完整备份：
+
+```text
+/home/lpc/workspace/arena5_multi_backups/20261010T090406Z-before-multigoal
+```
+
+备份包含 `.git`、隐藏文件、未跟踪/忽略文件、build/install、缓存和旧证据。
+归档前后确认源目录清单一致；使用 pax、ACL/xattr 保存元数据，解包后的 9,798 个条目
+通过 `verify_workspace_snapshot.py` 的内容、权限、链接及文件时间检查。
+目录时间、ACL 和扩展属性由 tar 保存，不包含在 JSON 比较项中。
+`git-state.json`、`manifest.json`、`verification.json`、`SHA256SUMS` 保存在备份目录。
+
+完整恢复前关闭使用当前工作空间的仿真和 ROS 进程，在未加载 overlay 的终端执行：
+
+```bash
+multigoal_backup=/home/lpc/workspace/arena5_multi_backups/20261010T090406Z-before-multigoal
+cd "$multigoal_backup"
+sha256sum -c SHA256SUMS
+cp /home/lpc/workspace/arena5_multi_ws/scripts/verify_workspace_snapshot.py /tmp/verify_multigoal_snapshot.py
+cd /home/lpc/workspace
+mv arena5_multi_ws "arena5_multi_ws.after-multigoal.$(date +%Y%m%dT%H%M%S)"
+tar --acls --xattrs --same-permissions -xpf "$multigoal_backup/workspace.tar" -C /home/lpc/workspace
+python3 /tmp/verify_multigoal_snapshot.py /home/lpc/workspace/arena5_multi_ws "$multigoal_backup/manifest.json"
+git --no-optional-locks -C /home/lpc/workspace/arena5_multi_ws rev-parse HEAD
+git --no-optional-locks -C /home/lpc/workspace/arena5_multi_ws status --short
+```
+
+应得到上述 cd0ab07 提交，且工作树仅显示 `?? command.txt`。该文件内容一并恢复。
+备份必须恢复到原绝对路径，因为安装目录内有绝对路径引用；先移动保留更新目录可以
+避免覆盖升级后的代码和新证据。若仅切换代码标签，需先保存当前工作成果并重新构建，
+不能继续将新 build/install 视为旧版本。

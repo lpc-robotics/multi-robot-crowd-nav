@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "passed": true,
+  "scope": "sis_cf_v1 development, no formal release or human-data validation",
+  "source_commit": "e4226039584458544e948ccc3ad44a6553ea3de6",
+  "source_sha256": "2f08aca63f58fbf6ed242dd0dfdd132ee45f4da19613a60dd5f228d45646c478",
+  "reports": {
+    "validation/offline.json": {
+      "sha256": "150c0ef42b77ffcab7b5196af691c6dcf1290e4351a78ed555b766edeb8623a2"
+    },
+    "validation/cpu/cpu.json": {
+      "sha256": "dc9e4d0bd5ab6995ccdbf0d2389ae6b520e38e11e1d378e0e5c12938b78fc196"
+    },
+    "validation/faults/faults.json": {
+      "sha256": "0bd3e821f4d1023c3104cc2b7e491bcbcdcd7682fd5f9a7d9ecd61a00c0fd3bf"
+    },
+    "validation/isaac_two_people.json": {
+      "sha256": "7cd09ebb1860e593674ece626468b6ad3e07a9711481930c492db4674163ed2c"
+    },
+    "validation/isaac_six_people_30min.json": {
+      "sha256": "0f2e57efcd369857fc552e7c9efe8ea3bf413252ee48199a7f0fa44a7d5c7bfd"
+    },
+    "validation/psychology_demo.json": {
+      "sha256": "a941ac887be1be0a2a674449c73deefdd775005e1e6003a41b1d1ab2c38d36e7"
+    }
+  },
+  "failures": []
+}

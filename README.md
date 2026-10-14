@@ -2,7 +2,7 @@
 
 基于 Arena-Rosnav 5、Isaac Sim 5.1 和 ROS 2 Humble 的多机器人行人环境导航平台。
 本仓库从 `arena5_multi_ws` 提取全部已跟踪核心源码，提供独立构建的多机 overlay、
-Nav2 导航、控制守护、同伴机器人代价地图，以及普通行人的多机器人社会力后端。
+Nav2 导航、控制守护、同伴机器人代价地图、多机器人社会力后端及动态行人心理模型。
 
 项目采用一个 Isaac Sim 进程、共享 `/clock` 和 `map`，每台 Jackal 使用独立的
 `robot_N` 命名空间、Nav2 action、odometry、TF 和雷达话题。规划器可选择 NavFn
@@ -18,7 +18,9 @@ Dijkstra 或 A*，局部控制使用 DWB。各机器人独立导航；当前未�
 - `legacy_hunav`：保留原 HuNav 普通行人与六行为模式，以 `robot_1` 为社会参考。
 - `multi_sfm`：使用同一时间快照中的全部机器人影响普通行人，并同步积分。
 - 逐对人机 FOV：默认总视野 200°、每侧 10° 过渡；近距离物理排斥在所有方位有效。
-- 心理模型扩展协议、候选状态回滚和健康心跳；当前注册模型仅为 `noop`。
+- 多目标行人路线：支持循环与往返，心理干预期间暂停任务，结束后返回原路线。
+- `sis_cf_v1` 双通道心理模型：机器人刺激 → 好奇/恐惧激活与局部传播 → 行为变化 → 运动反馈。
+- 心理模型扩展协议、候选状态回滚和健康心跳；保留 `noop` 与原 v1 社会力接口。
 - WebRTC / Foxglove 可视化、轨迹对比、故障注入和运行指标采集工具。
 
 ## 源码结构
@@ -101,6 +103,8 @@ GPU_ID=3 scripts/run_multirobot.sh config/scenarios/two_robots_multi_sfm_6_nav2.
 | `two_robots_hunav_regular.yaml`、`two_robots_hunav_six.yaml` | 原 HuNav 接入 | 0.5 / 1.0 |
 | `two_robots_multi_sfm_1_nav2.yaml` | 双机 + 一名普通行人 | 0.5 / 1.0 |
 | `two_robots_multi_sfm_6_nav2.yaml` | 双机 + 六名普通行人 | 0.26 / 1.0 |
+| `two_robots_multi_sfm_6_multigoal_nav2.yaml` | 双机 + 六人多目标路线 | 0.26 / 1.0 |
+| `two_robots_multi_sfm_6_multigoal_psychology_nav2.yaml` | 双机 + 六人动态心理与多目标路线 | 0.26 / 1.0 |
 | `two_robots_multi_sfm_1_external.yaml`、`two_robots_multi_sfm_6_external.yaml` | 普通行人 + 外部控制 | 0.5 / 1.0 |
 | `eight_robots_capacity.yaml` | 八机容量探测 | 0.5 / 1.0 |
 
@@ -118,6 +122,16 @@ LIVESTREAM=false FOXGLOVE=false scripts/run_multirobot.sh config/scenarios/two_r
 `scripts/run_multirobot.sh`。Windows 连接说明见 [WINDOWS_VISUALIZATION.md](docs/WINDOWS_VISUALIZATION.md)。
 
 ## 任务与控制
+
+动态心理场景使用一条命令启动；追加 `auto_demo:=true` 自动执行三轮双机目标：
+
+```bash
+./scripts/run_multirobot.sh config/scenarios/two_robots_multi_sfm_6_multigoal_psychology_nav2.yaml auto_demo:=true
+```
+
+去掉 `auto_demo:=true` 则只启动场景，目标由人工发送。自动演示只安排机器人目标，
+行人心理、传播和行为均由模型计算。常用入口见 [command.txt](command.txt)，
+模型、参数和适用范围见 [动态心理开发文档](docs/DYNAMIC_PSYCHOLOGY.md)。
 
 在第二个终端进入同一仓库并加载环境：
 
@@ -138,10 +152,18 @@ scripts/cleanup.sh
 
 ## 测试与历史证据
 
-发布前检查包含 55 项 Python 测试、72 项场景/地图/Nav2 合同检查、8 项 HuNav
-配置检查，以及固定版 LightSFM 的 5 个文件哈希。构建后使用
+当前开发版本通过 116 项 Python、29 项 C++ 测试，以及场景/地图/Nav2、HuNav
+配置、环境重复加载、underlay 与固定版 LightSFM 检查。构建后使用
 `scripts/validate_offline.sh` 执行完整离线流程。详细运行测试和指标命令见
 [RUNBOOK.md](docs/RUNBOOK.md)。
+
+2026-10-14 同步开发版本 `b182903`，包含多目标路线和双通道 SIS 型动态心理实现。
+2026-10-13 原开发工作区的双机六人 Isaac 验收完成 1800.050 秒墙钟（957.425 秒仿真），
+最小人机/人际净距为 0.290389/0.386764 米，最大显示误差 0.037520 米，零失败。
+六个 Nav2 目标全部成功；约190.4秒仿真时间之后继续检查心理恢复及路线运行。
+验收使用 GPU3、指定 CPU 亲和性并关闭流媒体/Foxglove；仅适用于所记录的配置和条件。
+本次仓库同步不重新声明 GPU 验收；导入文件对应关系及本仓库复查见
+[SOURCE_IMPORT.md](SOURCE_IMPORT.md)。模型参数为工程假设，尚未用真人数据标定。
 
 2026-10-07 更新将近距离项与 `space_scale` 解耦，新增
 `robot_fov_deg` / `robot_fov_fade_deg` 服务参数，并保留零速行人的步前朝向。
@@ -170,6 +192,10 @@ python evidence/near_fov_20261007/run.py --baseline-ref 5c0bfe86b7d9254f09b9ea92
 
 - [多 SFM 架构与运动/时间合同](docs/MULTI_SFM.md)
 - [接口定义](docs/INTERFACES.md)
+- [动态心理实施计划](docs/DYNAMIC_PSYCHOLOGY_PLAN.md)
+- [动态心理复查与重构记录](docs/DYNAMIC_PSYCHOLOGY_REVIEW_20261013.md)
+- [动态心理验收证据与图表](evidence/dynamic_psychology_20261012/README.md)
+- [多目标路线验收](evidence/multigoal_20261010/README.md)
 - [原平台 GPU 记录](evidence/VALIDATION.md)
 - [多 SFM 历史证据](evidence/multi_sfm/README.md)
 - [八机容量报告](docs/EIGHT_ROBOT_CAPACITY_REPORT.md)

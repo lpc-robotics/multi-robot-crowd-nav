@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "scope": "same v1 input, archived pre-change static core vs current core; 10 seeds x 1/6 people x 1200 steps",
+  "steps_compared": 24000,
+  "comparison": "exact hex-float positions, yaw, velocities, original goal queues and per-robot force/gap",
+  "baseline_library_sha256": "c32c42e40abbd58823d247c77940ce9d85a4fc09640af93d01fd171799da2610",
+  "current_library_sha256": "eaf35a92ca6a8c95ecdb3bbb3f698db99b456bd6621beaef88f4d6ca038934ad",
+  "output_sha256": [
+    "1cc6122001eb29a28595d31f525e1e8f82edb5620016df7515379d6d87375ef3",
+    "1cc6122001eb29a28595d31f525e1e8f82edb5620016df7515379d6d87375ef3"
+  ]
+}

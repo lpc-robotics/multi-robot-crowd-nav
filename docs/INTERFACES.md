@@ -1,5 +1,13 @@
 # 公共接口与坐标约定
 
+动态心理扩展：`/multirobot/hunav/compute_agents_v2`使用
+`arena_multi_hunav_msgs/ComputeMultiAgentsV2`，沿用v1共同快照、epoch/step/dt契约，
+新增恰好覆盖所有行人的BehaviorIntent和响应力分项MotionDiagnostic。
+意图只覆盖目标驱动力；目标ID不授权核心重新查询真值生成心理方向。
+REGULAR/CURIOUS/SCARED枚举为0/1/2，`Agent.behavior.type`继续保持兼容值1。
+心理话题schema_version=2在事务提交后发布，noop仍为版本1。
+详见 [DYNAMIC_PSYCHOLOGY.md](DYNAMIC_PSYCHOLOGY.md)。
+
 平台只有 `/clock` 和 `/map` 是跨机器人共享数据。`/tf`、`/tf_static` 使用共享总线，
 但所有机器人 frame 都带 `robot_i/` 前缀。其余控制、状态和 action 都在机器人命名空间内。
 

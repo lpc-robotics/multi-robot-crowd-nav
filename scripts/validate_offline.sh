@@ -3,6 +3,7 @@ set -Eeuo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/env.sh" >/dev/null
+bash "$SCRIPT_DIR/validate_env.sh"
 "$SCRIPT_DIR/verify_baseline.py"
 "$SCRIPT_DIR/validate_config.py"
 "$SCRIPT_DIR/validate_hunav_config.py"

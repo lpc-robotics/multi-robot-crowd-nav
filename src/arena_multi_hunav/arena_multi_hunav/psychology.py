@@ -21,6 +21,9 @@ class Entity:
     vy: float
     radius: float
     goals: tuple[tuple[float, float], ...] = ()
+    yaw: float = 0.0
+    desired_velocity: float = 1.0
+    goal_radius: float = 0.3
 
 
 @dataclass(frozen=True)
@@ -66,6 +69,8 @@ class MentalState:
 class Proposal:
     states: dict[int, MentalState]
     modifiers: dict[int, Modifiers]
+    intents: dict = field(default_factory=dict)
+    diagnostics: dict = field(default_factory=dict)
 
     def validate(self, agent_ids):
         expected = set(agent_ids)
@@ -80,6 +85,13 @@ class Proposal:
             for value in state.compartments.values():
                 if not math.isfinite(value) or value < 0:
                     raise ValueError("invalid compartment state")
+            if hasattr(state, "validate"):
+                state.validate()
+        if self.intents:
+            if set(self.intents) != expected:
+                raise ValueError("intent identity set changed")
+            for intent in self.intents.values():
+                intent.validate()
 
 
 class Psychology(Protocol):
@@ -141,4 +153,10 @@ def make_context(stamp_ns, dt, people, robots):
 
 # Deliberately explicit registration: future models implement the protocol and
 # register here; scenario files cannot execute arbitrary imports or code.
-MODELS = {"noop": NoOpPsychology}
+def _dual_sis():
+    # Explicit lazy factory avoids circular imports of the common protocol.
+    from .psychology_sis import DualSISPsychology
+    return DualSISPsychology()
+
+
+MODELS = {"noop": NoOpPsychology, "sis_cf_v1": _dual_sis}

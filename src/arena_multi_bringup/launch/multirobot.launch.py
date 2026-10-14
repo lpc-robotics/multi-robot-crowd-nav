@@ -110,9 +110,27 @@ def _launch(context):
     map_path = Path(LaunchConfiguration("map").perform(context)).resolve()
     world_path = Path(LaunchConfiguration("world").perform(context)).resolve()
     scenario = load_scenario(scenario_path)
+    auto_demo = LaunchConfiguration("auto_demo").perform(context).lower()
+    if auto_demo not in ("true", "false"):
+        raise ValueError("auto_demo must be true or false")
+    if auto_demo == "true" and not scenario.demo_tasks:
+        raise ValueError("auto_demo requires demo_tasks in the scenario")
     robot_names = [robot.name for robot in scenario.robots]
+    if scenario.demo_tasks:
+        from arena_multi_hunav.demo import load_tasks
+        if set(load_tasks(scenario.demo_tasks)["robots"]) != set(robot_names):
+            raise ValueError("demo task robot names do not match scenario")
     if not urdf_path.is_file() or not map_path.is_file() or not world_path.is_file():
         raise RuntimeError("URDF, map, or world file is missing")
+    if scenario.pedestrian_backend == "multi_sfm":
+        from arena_multi_hunav.multi_adapter import load_people
+        world = yaml.safe_load(world_path.read_text())
+        # Reject bad routes before returning any Isaac or Nav2 launch actions.
+        load_people(scenario.pedestrian_config,
+                    world_bounds=(world["width"], world["height"]))
+        if scenario.psychology_config:
+            from arena_multi_hunav.psychology_config import load_psychology_config
+            load_psychology_config(scenario.psychology_config)
 
     arena_isaac_share = get_package_share_directory("arena_isaac")
     bringup_share = Path(get_package_share_directory("arena_multi_bringup"))
@@ -189,7 +207,6 @@ def _launch(context):
             actions.extend(_nav2_nodes(robot, params_file))
 
     if scenario.pedestrian_backend == "multi_sfm":
-        world = yaml.safe_load(world_path.read_text())
         actions.extend([
             Node(package="arena_multi_hunav_core", executable="multi_sfm_server", output="screen",
                  parameters=[{"use_sim_time": True, "world_width": float(world["width"]),
@@ -198,7 +215,8 @@ def _launch(context):
                  parameters=[{"use_sim_time": True, "robot_names": robot_names,
                               "agent_config_file": scenario.pedestrian_config,
                               "random_seed": scenario.random_seed,
-                              "psychology_model": scenario.psychology_model}]),
+                              "psychology_model": scenario.psychology_model,
+                              "psychology_config_file": scenario.psychology_config}]),
         ])
     elif scenario.hunav_profile != "none":
         root = Path(os.environ.get("ARENA_MULTI_WS", "/home/lpc/workspace/arena5_multi_ws"))
@@ -236,6 +254,9 @@ def _launch(context):
             ),
         ])
 
+    if auto_demo == "true":
+        actions.append(Node(package="arena_multi_hunav", executable="psychology_demo", output="screen",
+                            parameters=[{"use_sim_time": True, "tasks_file": scenario.demo_tasks}]))
     if LaunchConfiguration("foxglove").perform(context).lower() == "true":
         actions.append(Node(
             package="foxglove_bridge", executable="foxglove_bridge", name="foxglove_bridge", output="screen",
@@ -257,6 +278,7 @@ def generate_launch_description():
         DeclareLaunchArgument("map", default_value=str(root / "config/maps/map.yaml")),
         DeclareLaunchArgument("world", default_value=str(root / "config/world/arena.yaml")),
         DeclareLaunchArgument("headless", default_value="true"),
+        DeclareLaunchArgument("auto_demo", default_value="false"),
         DeclareLaunchArgument("livestream", default_value="true"),
         DeclareLaunchArgument("webrtc_ip", default_value=os.environ.get("ARENA_WEBRTC_IP", "127.0.0.1")),
         DeclareLaunchArgument("webrtc_signal_port", default_value=os.environ.get("ARENA_WEBRTC_SIGNAL_PORT", "49130")),

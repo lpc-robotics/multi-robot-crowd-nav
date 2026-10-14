@@ -7,7 +7,8 @@ find_package(geometry_msgs REQUIRED)
 find_package(std_msgs REQUIRED)
 rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/BehaviorModifiers.msg" "msg/RobotInfluence.msg" "msg/InteractionForces.msg"
-  "srv/ComputeMultiAgents.srv"
+  "msg/BehaviorIntent.msg" "msg/MotionDiagnostic.msg"
+  "srv/ComputeMultiAgents.srv" "srv/ComputeMultiAgentsV2.srv"
   DEPENDENCIES hunav_msgs geometry_msgs std_msgs)
 ament_export_dependencies(rosidl_default_runtime)
 ament_package()

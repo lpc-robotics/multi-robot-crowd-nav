@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "scope": "real ROS action clients, synthetic Nav2 servers; no robot/Isaac motion",
+  "goals_received": 6,
+  "no_goals_before_ready": true,
+  "configured_delay_respected": true,
+  "completed_rounds": 3,
+  "wall_duration_s": 2.945896854005696
+}

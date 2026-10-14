@@ -1,0 +1,20 @@
+{
+  "gpu_id": 3,
+  "ros_domain_id": 85,
+  "ros_localhost_only": true,
+  "livestream": false,
+  "foxglove": false,
+  "cpu_affinity": "28-55,84-111",
+  "affinity_reason": "GPU3 NUMA node 1, as reported by nvidia-smi topo -m",
+  "render_preset": "boring (unchanged project default)",
+  "observation_timeout_s": 0.6,
+  "requested_wall_duration_s": 1800,
+  "scenario": "config/scenarios/two_robots_multi_sfm_6_multigoal_psychology_nav2.yaml",
+  "launch_args": [
+    "auto_demo:=true"
+  ],
+  "log_root": "logs/dynamic_psychology_20261013/verified_endurance",
+  "automatic_cleanup_on_probe_exit": true,
+  "timing_monitor": "timing_monitor.py",
+  "source_sha256": "2f08aca63f58fbf6ed242dd0dfdd132ee45f4da19613a60dd5f228d45646c478"
+}
