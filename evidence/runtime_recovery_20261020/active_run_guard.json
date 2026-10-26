@@ -1,0 +1,5 @@
+{
+  "expected_rejection": true,
+  "exit_code": 1,
+  "stderr": "Existing Arena runtime in this ROS domain; clean it up before restarting.\n  PGID=3398066 processes=[(3398066, 'python'), (3398090, 'python'), (3398092, 'map_server'), (3398094, 'lifecycle_manager'), (3398096, 'python3.11'), (3398098, 'robot_state_publisher'), (3398100, 'python3.11'), (3398102, 'python3.11'), (3398104, 'controller_server'), (3398106, 'planner_server'), (3398108, 'behavior_server'), (3398110, 'bt_navigator'), (3398112, 'waypoint_follower'), (3398114, 'velocity_smoother'), (3398116, 'lifecycle_manager'), (3398118, 'robot_state_publisher'), (3398120, 'python3.11'), (3398122, 'python3.11'), (3398124, 'controller_server'), (3398126, 'planner_server'), (3398128, 'behavior_server'), (3398130, 'bt_navigator'), (3398132, 'waypoint_follower'), (3398134, 'velocity_smoother'), (3398136, 'lifecycle_manager'), (3398138, 'multi_sfm_server'), (3398140, 'python3.11'), (3398142, 'python3.11'), (3398144, 'foxglove_bridge')]\nUse scripts/cleanup.sh with the previous run's ARENA_MULTI_LOG_ROOT.\n"
+}

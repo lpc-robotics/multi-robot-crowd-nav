@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "reference": "backup-psychology-routes-20261022",
+  "checks": {
+    "person_1_spawn_unchanged": true,
+    "person_1_physical_settings_unchanged": true,
+    "person_2_spawn_unchanged": true,
+    "person_2_physical_settings_unchanged": true,
+    "person_3_spawn_unchanged": true,
+    "person_3_physical_settings_unchanged": true,
+    "person_4_spawn_unchanged": true,
+    "person_4_physical_settings_unchanged": true,
+    "person_5_spawn_unchanged": true,
+    "person_5_physical_settings_unchanged": true,
+    "person_6_spawn_unchanged": true,
+    "person_6_physical_settings_unchanged": true,
+    "config/psychology/sis_cf_v1.yaml_unchanged": true,
+    "config/tasks/psychology_crossings.yaml_unchanged": true,
+    "config/hunav/multi_regular_6_psychology.yaml_unchanged": true,
+    "config/scenarios/two_robots_multi_sfm_6_multigoal_nav2.yaml_unchanged": true,
+    "config/scenarios/two_robots_multi_sfm_6_multigoal_psychology_enhanced_nav2.yaml_unchanged": true,
+    "robot_and_psychology_scenario_settings_unchanged": true,
+    "psychology_and_motion_source_unchanged": true
+  }
+}

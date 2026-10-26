@@ -1,0 +1,18 @@
+{
+  "source_commit": "f7a75152f74766666105bf55b83e49e8d692ca0e",
+  "note": "600s acceptance passed; subsequent handoff check found a latched failure. Resource controls alone are not a durable recovery.",
+  "fault": "robot_stale:robot_1",
+  "fault_frame": {
+    "wall_unix_s": 1792499122.0952556,
+    "wall_monotonic_s": 716457.442630423,
+    "frame_wall_s": 0.8731645840452984,
+    "running": true,
+    "phases": {
+      "ros_callbacks_s": 0.004447472048923373,
+      "chassis_s": 0.0006807768950238824,
+      "physics_render_s": 0.8664357690140605,
+      "observations_s": 0.0015873759984970093,
+      "deferred_actions_s": 1.1070980690419674e-05
+    }
+  }
+}

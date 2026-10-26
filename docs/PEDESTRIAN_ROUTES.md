@@ -1,7 +1,10 @@
 # 行人多目标点循环与折返
 
-动态心理场景另用`multi_regular_6_psychology.yaml`，保留三人循环、三人折返，
-采用分开的任务区域进行新增行为验收。CURIOUS/SCARED期间暂停原队列，恢复REGULAR后
+默认动态心理场景自2026-10-22起使用`multi_regular_8_psychology_multigoal.yaml`，
+四人循环、四人四点折返；原六人起点保留，横向路线跨度扩大至4.5米，右侧新增两人。
+原`multi_regular_6_psychology.yaml`保留供历史对照及增强传播场景使用。
+具体布局见[八人多目标心理场景](PSYCHOLOGY_MULTIGOAL_20261022.md)。
+CURIOUS/SCARED期间暂停原队列，恢复REGULAR后
 按实际位置继续，临时机器人目标不会写入队列。旧路线与原普通行人验收保持原样。
 心理验收需同时检查allow_task_progress，不能直接使用原无暂停周期速度门槛。
 

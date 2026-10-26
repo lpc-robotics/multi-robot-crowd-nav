@@ -1,0 +1,35 @@
+{
+  "source_commit": "5d0612877cffb39b985337c831cd3acc1559fab2",
+  "fault": "robot_stale:robot_1",
+  "fault_details": {
+    "clock_receive_age_s": 0.604289980023168,
+    "clock_stamp_ns": 99500001482,
+    "robot_receive_age_s": {
+      "robot_1": 0.6031253089895472,
+      "robot_2": 0.6026604160433635
+    },
+    "robot_stamp_ns": {
+      "robot_1": 99500001482,
+      "robot_2": 99500001482
+    },
+    "timer_gap_s": 0.010025616036728024,
+    "wall_monotonic_s": 715576.158337162
+  },
+  "clock_and_odom_gaps": [
+    {
+      "topic": "/clock",
+      "wall_elapsed_s": 241.37319475307595,
+      "gap_s": 0.6300780239980668
+    },
+    {
+      "topic": "/robot_1/odom",
+      "wall_elapsed_s": 241.3742961040698,
+      "gap_s": 0.6299743140116334
+    },
+    {
+      "topic": "/robot_2/odom",
+      "wall_elapsed_s": 241.3747463360196,
+      "gap_s": 0.6297221649438143
+    }
+  ]
+}

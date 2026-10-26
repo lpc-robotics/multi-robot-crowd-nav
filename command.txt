@@ -19,8 +19,8 @@ export ARENA_FOXGLOVE_PORT=8765
 ./scripts/run_multirobot.sh \
   /home/lpc/workspace/arena5_multi_ws/config/scenarios/two_robots_multi_sfm_6_nav2.yaml
 
-# 动态心理六人多目标场景：仅启动，机器人目标人工发送
-./scripts/run_multirobot.sh config/scenarios/two_robots_multi_sfm_6_multigoal_psychology_nav2.yaml
+# 动态心理八人多目标场景：仅启动，机器人目标人工发送
+./scripts/run_multirobot.sh config/scenarios/two_robots_multi_sfm_8_multigoal_psychology_nav2.yaml
 
-# 动态心理六人多目标场景：自动执行有限轮双机 Nav2 演示任务
-./scripts/run_multirobot.sh config/scenarios/two_robots_multi_sfm_6_multigoal_psychology_nav2.yaml auto_demo:=true
+# 动态心理八人多目标场景：自动执行有限轮双机 Nav2 演示任务
+./scripts/run_multirobot.sh config/scenarios/two_robots_multi_sfm_8_multigoal_psychology_nav2.yaml auto_demo:=true

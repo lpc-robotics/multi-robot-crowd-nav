@@ -1,0 +1,167 @@
+{
+  "schema_version": 1,
+  "scope": "final eight-person run, reports and figures; high-frequency logs retained locally",
+  "run_directory": "evidence/runs/psychology_multigoal_20261022/actual/20261022_161708_two_robots_multi_sfm_6_multigoal_psychology_nav2_gpu1",
+  "artifacts": [
+    {
+      "path": "evidence/psychology_multigoal_20261022/actual.json",
+      "bytes": 44571,
+      "sha256": "68d64275eb94117c4f617e451efd468d3ac6ad6e92ebc015d424f7fcfa14d767"
+    },
+    {
+      "path": "evidence/psychology_multigoal_20261022/actual_closed_loop.png",
+      "bytes": 396727,
+      "sha256": "c3eb107b84a25b29cf7b9fc79d02f0336eb66103fd85105025c7f93d7dcf3861"
+    },
+    {
+      "path": "evidence/psychology_multigoal_20261022/actual_closed_loop.svg",
+      "bytes": 264898,
+      "sha256": "a684b6502dfcaf8cd7aef040d4ca46b81ba619f5806bd3569e9a8807473da78a"
+    },
+    {
+      "path": "evidence/psychology_multigoal_20261022/actual_trace_summary.json",
+      "bytes": 2390,
+      "sha256": "ec43ebe75c49c49237a937177e4b9dc9774a3d0af1557bb1906033fd25ca1689"
+    },
+    {
+      "path": "evidence/psychology_multigoal_20261022/configured_routes.png",
+      "bytes": 163002,
+      "sha256": "171d9a4ff968fc7743cc8b85ce7c81dd2f343e2f0ae6e0d26a0575e5041d490c"
+    },
+    {
+      "path": "evidence/psychology_multigoal_20261022/configured_routes.svg",
+      "bytes": 71475,
+      "sha256": "c924a80e8a36fac0af5740c6973e21b7856bd394474e2756336842613359bcbd"
+    },
+    {
+      "path": "evidence/psychology_multigoal_20261022/first_layout_failure.json",
+      "bytes": 40088,
+      "sha256": "a66536b1a353ab8be38ab4ea1ace5a53c3177685d4878d03db94f5ea85e91727"
+    },
+    {
+      "path": "evidence/psychology_multigoal_20261022/offline.json",
+      "bytes": 33217,
+      "sha256": "42c4a7d2f1bc29f6bdf823665e8a948f8362adb1cd106325561b559ebd37b724"
+    },
+    {
+      "path": "evidence/psychology_multigoal_20261022/preserved_settings.json",
+      "bytes": 1105,
+      "sha256": "03899ac7bca149d60aac3b80df422056e5d0caf53f699c60913eb24d13c52325"
+    },
+    {
+      "path": "evidence/psychology_multigoal_20261022/psychology_demo.json",
+      "bytes": 1285,
+      "sha256": "a575c5129d484d3644df8b4413188d09faaef9f93965a4de66be0aaeb7e3749f"
+    },
+    {
+      "path": "evidence/psychology_multigoal_20261022/regular_routes.json",
+      "bytes": 113662,
+      "sha256": "1f594eecf93c6e66f5adbe6cbce36dabeffed893efa4b966b19423b1a835f0f2"
+    },
+    {
+      "path": "evidence/psychology_multigoal_20261022/robot_replay.json",
+      "bytes": 35355,
+      "sha256": "e91c1f76651632985c265c9d1c6af4e71d4bbea50c49af3dc9b80096addf3761"
+    },
+    {
+      "path": "evidence/psychology_multigoal_20261022/routes_actual.json",
+      "bytes": 150164,
+      "sha256": "c4752a80b251e69951443edb34b19317d06d4da8015ef486923802793b48e9e2"
+    },
+    {
+      "path": "evidence/psychology_multigoal_20261022/second_layout_failure.json",
+      "bytes": 40345,
+      "sha256": "bf34204b862e5f3e216bd9be10405632a81c507df79e1211fdcf95d4100d0867"
+    },
+    {
+      "path": "evidence/psychology_multigoal_20261022/startup_failure.json",
+      "bytes": 34156,
+      "sha256": "2abbb0e8b7a15262b00b71a375eeb3aac6bd265b58ec427f1a7962d5653af0c8"
+    },
+    {
+      "path": "evidence/runs/psychology_multigoal_20261022/actual/20261022_161708_two_robots_multi_sfm_6_multigoal_psychology_nav2_gpu1/config_sha256.txt",
+      "bytes": 5317,
+      "sha256": "2c6cde9ce1dd989e051f3bd87bdd0b12a0e6d79b4dff2f7fe2b43fd11803fc66"
+    },
+    {
+      "path": "evidence/runs/psychology_multigoal_20261022/actual/20261022_161708_two_robots_multi_sfm_6_multigoal_psychology_nav2_gpu1/isaac_kit.log",
+      "bytes": 37172035,
+      "sha256": "23c06b6b2684343e3d1d033b95dfa0ecb9b2ffe84f260c348f5df2154af985db"
+    },
+    {
+      "path": "evidence/runs/psychology_multigoal_20261022/actual/20261022_161708_two_robots_multi_sfm_6_multigoal_psychology_nav2_gpu1/isaac_slow_frames.jsonl",
+      "bytes": 25641,
+      "sha256": "ddaf50c9704de04b151583eeb081ecc098dd772fef21c88af7ae05e6cc015b0c"
+    },
+    {
+      "path": "evidence/runs/psychology_multigoal_20261022/actual/20261022_161708_two_robots_multi_sfm_6_multigoal_psychology_nav2_gpu1/launch.exit_code",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "evidence/runs/psychology_multigoal_20261022/actual/20261022_161708_two_robots_multi_sfm_6_multigoal_psychology_nav2_gpu1/launch.pid",
+      "bytes": 8,
+      "sha256": "d5d1cc77eede0d2dea82ac560c6df31fe2f9ab385e90adbf4077a7320402e2ea"
+    },
+    {
+      "path": "evidence/runs/psychology_multigoal_20261022/actual/20261022_161708_two_robots_multi_sfm_6_multigoal_psychology_nav2_gpu1/map.yaml",
+      "bytes": 122,
+      "sha256": "32a4f9338c9f79837065e12bbb63f8b18043be23f6e8eda739d829480ed94eef"
+    },
+    {
+      "path": "evidence/runs/psychology_multigoal_20261022/actual/20261022_161708_two_robots_multi_sfm_6_multigoal_psychology_nav2_gpu1/nav2_multirobot.yaml",
+      "bytes": 8527,
+      "sha256": "3b906776227fec6315ccbaf7fe394a31d9255994d32ad95236af7775fee0b05b"
+    },
+    {
+      "path": "evidence/runs/psychology_multigoal_20261022/actual/20261022_161708_two_robots_multi_sfm_6_multigoal_psychology_nav2_gpu1/psychology_9964463810704800527.jsonl",
+      "bytes": 390271497,
+      "sha256": "1b5e12766083c28395fe66d44b4bff77834caf7b4ab9c692cbb12e687db49fe9"
+    },
+    {
+      "path": "evidence/runs/psychology_multigoal_20261022/actual/20261022_161708_two_robots_multi_sfm_6_multigoal_psychology_nav2_gpu1/psychology_demo.json",
+      "bytes": 1285,
+      "sha256": "a575c5129d484d3644df8b4413188d09faaef9f93965a4de66be0aaeb7e3749f"
+    },
+    {
+      "path": "evidence/runs/psychology_multigoal_20261022/actual/20261022_161708_two_robots_multi_sfm_6_multigoal_psychology_nav2_gpu1/runtime_manifest.txt",
+      "bytes": 356,
+      "sha256": "f9f80dfc47ed43020c569a8f9401e5be6e295fc6bb785ac8e7d061c75853f269"
+    },
+    {
+      "path": "evidence/runs/psychology_multigoal_20261022/actual/20261022_161708_two_robots_multi_sfm_6_multigoal_psychology_nav2_gpu1/scenario.yaml",
+      "bytes": 550,
+      "sha256": "2b20579b46abf0fe3924b30370fa5f2716fc9a1cc430eab646ec8c30433d3ca2"
+    },
+    {
+      "path": "evidence/runs/psychology_multigoal_20261022/actual/20261022_161708_two_robots_multi_sfm_6_multigoal_psychology_nav2_gpu1/world.yaml",
+      "bytes": 99,
+      "sha256": "ec66148d8a5bf6448c1c0a9e2fdf697b4c77e677ad33471b576e2847b05468bc"
+    },
+    {
+      "path": "evidence/runs/psychology_multigoal_20261022/actual_launch.log",
+      "bytes": 185674,
+      "sha256": "a6cbbb00b99520090a4fa8446c4d99a52968091a24a4eb68fd2b515406e866ff"
+    },
+    {
+      "path": "evidence/runs/psychology_multigoal_20261022/actual_probe.log",
+      "bytes": 2051,
+      "sha256": "3911393fe68374a18615e2b81c0821167155fd0765a9e021f55ed0caf17fb90d"
+    },
+    {
+      "path": "evidence/runs/psychology_multigoal_20261022/cleanup.log",
+      "bytes": 49,
+      "sha256": "f72c72f66a52596dc139e419509f45f4f97cb51856fbac3094d46b469116c954"
+    },
+    {
+      "path": "evidence/runs/psychology_multigoal_20261022/offline.log",
+      "bytes": 5469,
+      "sha256": "df488ff0dd02259d070e78cc7efa205ff728502876881dd459c25f87c0f239b8"
+    },
+    {
+      "path": "evidence/runs/psychology_multigoal_20261022/regular_routes.log",
+      "bytes": 1442,
+      "sha256": "e72323afad7dede30ded11e24621912d1bd93b28a2eebc6f3a8a85cd71dad4aa"
+    }
+  ]
+}

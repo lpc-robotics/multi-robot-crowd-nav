@@ -9,6 +9,10 @@ Nav2 导航、控制守护、同伴机器人代价地图、多机器人社会力
 Dijkstra 或 A*，局部控制使用 DWB。各机器人独立导航；当前未实现集中式多机器人
 路径协调、预约调度或死锁消解。
 
+2026-10-26 同步开发快照 `f170bc7`，包括独立八人动态心理多目标场景和同步仿真停顿恢复。
+模型方程与行为切换见[详细说明](docs/CROWD_PSYCHOLOGY_MODEL_EXPLAINED.md)，
+八人场景与既有实测边界见[场景说明](docs/PSYCHOLOGY_MULTIGOAL_20261022.md)。
+
 ## 核心功能
 
 - 配置驱动的单机、双机和四机启动，以及八机容量探测场景。
@@ -105,6 +109,7 @@ GPU_ID=3 scripts/run_multirobot.sh config/scenarios/two_robots_multi_sfm_6_nav2.
 | `two_robots_multi_sfm_6_nav2.yaml` | 双机 + 六名普通行人 | 0.26 / 1.0 |
 | `two_robots_multi_sfm_6_multigoal_nav2.yaml` | 双机 + 六人多目标路线 | 0.26 / 1.0 |
 | `two_robots_multi_sfm_6_multigoal_psychology_nav2.yaml` | 双机 + 六人动态心理与多目标路线 | 0.26 / 1.0 |
+| `two_robots_multi_sfm_8_multigoal_psychology_nav2.yaml` | 双机 + 八人独立四点路线与动态心理 | 0.26 / 1.0 |
 | `two_robots_multi_sfm_1_external.yaml`、`two_robots_multi_sfm_6_external.yaml` | 普通行人 + 外部控制 | 0.5 / 1.0 |
 | `eight_robots_capacity.yaml` | 八机容量探测 | 0.5 / 1.0 |
 
@@ -127,6 +132,8 @@ LIVESTREAM=false FOXGLOVE=false scripts/run_multirobot.sh config/scenarios/two_r
 
 ```bash
 ./scripts/run_multirobot.sh config/scenarios/two_robots_multi_sfm_6_multigoal_psychology_nav2.yaml auto_demo:=true
+# 八人独立多目标心理场景
+./scripts/run_multirobot.sh config/scenarios/two_robots_multi_sfm_8_multigoal_psychology_nav2.yaml auto_demo:=true
 ```
 
 去掉 `auto_demo:=true` 则只启动场景，目标由人工发送。自动演示只安排机器人目标，
@@ -152,10 +159,17 @@ scripts/cleanup.sh
 
 ## 测试与历史证据
 
-当前开发版本通过 116 项 Python、29 项 C++ 测试，以及场景/地图/Nav2、HuNav
+当前开发版本通过 130 项 Python、29 项 C++ 测试，以及场景/地图/Nav2、HuNav
 配置、环境重复加载、underlay 与固定版 LightSFM 检查。构建后使用
 `scripts/validate_offline.sh` 执行完整离线流程。详细运行测试和指标命令见
 [RUNBOOK.md](docs/RUNBOOK.md)。
+
+2026-10-26 同步新增：开发工作区双机八人运行600.055秒墙钟、385.825秒仿真通过，
+六个Nav2目标成功，最小人机/人际净距0.297153/0.128074米，最大显示误差0.052503米。
+该八人记录使用GPU1并关闭流媒体/Foxglove，不能用作可视化开启的耐久证明。
+六人停顿恢复记录见[修复说明](docs/RUNTIME_RECOVERY_20261020.md)：人工两秒及自然约0.81秒
+同步停顿后恢复，600.387秒墙钟运行及六个目标通过，用户确认可视化运动正常。
+本次发布只重建和离线复查，原GPU证据和历史摘要保持原样。
 
 2026-10-14 同步开发版本 `b182903`，包含多目标路线和双通道 SIS 型动态心理实现。
 2026-10-13 原开发工作区的双机六人 Isaac 验收完成 1800.050 秒墙钟（957.425 秒仿真），

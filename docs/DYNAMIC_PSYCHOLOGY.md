@@ -1,7 +1,9 @@
 # 动态心理人群模型 sis_cf_v1
 
-版本1.0，2026-10-13复查修订，开发分支 `feature/dynamic-psychology-v1`。
+版本1.0，2026-10-13复查修订，2026-10-22更新八人场景，开发分支 `feature/dynamic-psychology-v1`。
 实施规格见 [DYNAMIC_PSYCHOLOGY_PLAN.md](DYNAMIC_PSYCHOLOGY_PLAN.md)。
+按当前源码梳理的心理机制、模式切换条件与社会力关系见
+[动态心理与人群模型详细说明](CROWD_PSYCHOLOGY_MODEL_EXPLAINED.md)（2026-10-22更新）。
 
 ## 数学与状态语义
 
@@ -81,9 +83,14 @@ CURIOUS/SCARED暂停原任务队列。恢复REGULAR按实际位置、速度继�
 场景使用`psychology_model: sis_cf_v1`及`psychology_config`，路径相对场景目录。
 配置schema_version=1、occlusion_model=none_open_space，未知键/非法值明确失败。
 config/psychology提供默认、direct_only、fear_only、enhanced和inhibition五组完整配置。
-新心理场景使用独立六人路线，旧多目标路线与普通动力学保留。
-本轮完整Isaac几何与耐久验收针对默认sis_cf_v1场景。增强配置验证了固定链传播机制，
-不共用默认场景的30分钟几何结论；改参数或路线后应重新验收。
+2026-10-22起，默认心理场景使用`multi_regular_8_psychology_multigoal.yaml`：八人、
+每人四个不同目标点，1/2/3/7号循环，4/5/6/8号多点折返；路径横向跨度4.5米，
+保留原六人起点并在右侧增加两人。八人场景使用独立文件`two_robots_multi_sfm_8_multigoal_psychology_nav2.yaml`。
+原`two_robots_multi_sfm_6_multigoal_psychology_nav2.yaml`恢复引用原六人配置。
+原六人配置、普通多目标场景和增强传播场景仍保留。心理参数、机器人起点及三轮任务不变。
+路线与验证记录见[八人多目标心理场景](PSYCHOLOGY_MULTIGOAL_20261022.md)。
+2026-10-13的30分钟Isaac结论仅对应当时的六人配置，不覆盖本次八人改动；
+增强配置仅验证了固定链传播机制，不能套用默认场景的几何结论。
 
 ```bash
 cd /home/lpc/workspace/arena5_multi_ws
@@ -91,9 +98,9 @@ cd /home/lpc/workspace/arena5_multi_ws
 ./scripts/build.sh
 ./scripts/validate_offline.sh
 # 仅启动，机器人目标人工发送
-./scripts/run_multirobot.sh config/scenarios/two_robots_multi_sfm_6_multigoal_psychology_nav2.yaml
+./scripts/run_multirobot.sh config/scenarios/two_robots_multi_sfm_8_multigoal_psychology_nav2.yaml
 # 自动发送有限轮双机Nav2任务
-./scripts/run_multirobot.sh config/scenarios/two_robots_multi_sfm_6_multigoal_psychology_nav2.yaml auto_demo:=true
+./scripts/run_multirobot.sh config/scenarios/two_robots_multi_sfm_8_multigoal_psychology_nav2.yaml auto_demo:=true
 ```
 
 启动脚本自行加载环境，可视化变量沿用command.txt。自动任务文件为psychology_crossings.yaml，
@@ -111,6 +118,9 @@ v2响应增加力分项及限幅标志，保留原时间、身份与epoch/step�
 服务无状态，机器人不积分。prepare_step产生候选并回滚内部快照；响应、任务、数值和快照
 先校验再共同提交。失败/迟到/超时不发布候选事件；仿真时间驱动心理，墙钟驱动运行保护。
 时钟回退锁存停车，重启场景恢复。
+2026-10-20起，一致的仿真时钟/全体机器人观测停顿通过受限暂停与新鲜观测恢复处理，
+暂停期间不推进心理；单机断流、错误响应和时钟回退仍锁存。见
+[同步停顿恢复记录](RUNTIME_RECOVERY_20261020.md)。
 
 心理话题schema_version=2在提交后发布；noop保留schema_version=1。
 运行目录保存psychology_<epoch>.jsonl：新旧c/f、直接/传播输入、步前瞬时导数分项、
@@ -133,7 +143,7 @@ CPU工具启动私有真实ROS核心，不接触Isaac或底盘。固定链让B/C
 已通过7包重构建、116项Python、29项C++；五类真实ROS故障注入及CPU闭环结果见当前证据。
 完整快照中的旧静态核心库与新v1核心在10组输入、1/6人、每组1200步上进行
 24,000步逐字段精确比较，位置、朝向、速度、原队列和逐机器人作用完全一致。
-修正后一机两人Isaac实际检查120.077秒墙钟通过；双机六人1800.050秒墙钟、
+历史六人版本：修正后一机两人Isaac实际检查120.077秒墙钟通过；双机六人1800.050秒墙钟、
 957.425秒仿真通过。六人场景最小人机净距0.290389米、人际净距0.386764米，
 最大显示误差0.037520米，零失败；三轮六个实际Nav2目标全部成功。
 验收使用GPU3、CPU亲和性28-55,84-111，关闭流媒体/Foxglove，保留0.6秒观测超时。

@@ -1,0 +1,12 @@
+{
+  "source_commit": "f0184c6",
+  "runtime_passed": true,
+  "wall_duration_s": 600.3870122319786,
+  "clock_holds_recovered": 2,
+  "navigation_rounds_passed": 3,
+  "user_confirmed_robots_and_people_moving": true,
+  "stopped_at_user_request": true,
+  "remaining_registered_processes": 0,
+  "visualization_listeners_after_stop": [],
+  "qualification": "600-second automated acceptance; later total process lifetime is not a continuously monitored endurance result"
+}

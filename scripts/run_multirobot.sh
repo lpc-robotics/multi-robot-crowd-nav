@@ -3,6 +3,7 @@ set -Eeuo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/env.sh"
+source "$SCRIPT_DIR/process_group.sh"
 SCENARIO="${1:-$ARENA_MULTI_WS/config/scenarios/two_robots_dijkstra.yaml}"
 if [[ ! -f "$SCENARIO" ]]; then
     echo "Scenario file does not exist: $SCENARIO" >&2
@@ -18,6 +19,16 @@ set +u
 source "$ARENA_MULTI_WS/install/local_setup.bash"
 set -u
 
+python3 "$SCRIPT_DIR/check_active_run.py"
+export ARENA_CPU_THREADS="${ARENA_CPU_THREADS:-8}"
+if ! [[ "$ARENA_CPU_THREADS" =~ ^[1-9][0-9]*$ ]] || (( ARENA_CPU_THREADS > 256 )); then
+    echo "ARENA_CPU_THREADS must be an integer in [1, 256]." >&2
+    exit 2
+fi
+export OMP_NUM_THREADS="${OMP_NUM_THREADS:-$ARENA_CPU_THREADS}"
+export OPENBLAS_NUM_THREADS="${OPENBLAS_NUM_THREADS:-$ARENA_CPU_THREADS}"
+export MKL_NUM_THREADS="${MKL_NUM_THREADS:-$ARENA_CPU_THREADS}"
+
 if ! command -v nvidia-smi >/dev/null || ! nvidia-smi --query-gpu=index,memory.free --format=csv,noheader,nounits >/dev/null 2>&1; then
     echo "NVIDIA runtime is unavailable; Isaac validation cannot start in this environment." >&2
     exit 1
@@ -31,6 +42,8 @@ if (( GPU_FREE_MIB < MIN_FREE_MIB )); then
     echo "GPU $GPU_ID has ${GPU_FREE_MIB} MiB free; ${MIN_FREE_MIB} MiB required." >&2
     exit 1
 fi
+ARENA_RESOLVED_CPU_AFFINITY="$(python3 "$SCRIPT_DIR/gpu_cpu_affinity.py" "$GPU_ID")"
+taskset -pc "$ARENA_RESOLVED_CPU_AFFINITY" "$$" >/dev/null
 for port in "$ARENA_WEBRTC_SIGNAL_PORT" "$ARENA_FOXGLOVE_PORT"; do
     if ss -ltn "sport = :$port" | tail -n +2 | grep -q .; then
         echo "TCP port is already in use: $port" >&2
@@ -71,11 +84,14 @@ fi
     echo "gpu_id=$GPU_ID"
     echo "gpu_free_mib=$GPU_FREE_MIB"
     echo "ros_domain_id=$ROS_DOMAIN_ID"
+    echo "isaac_cpu_threads=$ARENA_CPU_THREADS"
+    echo "cpu_affinity=$(awk '/Cpus_allowed_list/ {print $2}' /proc/self/status)"
     echo "random_seed=$(python3 -c 'import sys,yaml; print(yaml.safe_load(open(sys.argv[1])).get("random_seed", 1))' "$SCENARIO")"
 } > "$ARENA_MULTI_RUN_DIR/runtime_manifest.txt"
 
 echo "Starting Arena5 multi-robot scenario $(basename "$SCENARIO") on GPU $GPU_ID"
 echo "Logs: $ARENA_MULTI_RUN_DIR"
+echo "Isaac CPU worker limit: $ARENA_CPU_THREADS"
 setsid ros2 launch arena_multi_bringup multirobot.launch.py \
     scenario:="$(readlink -f "$SCENARIO")" \
     livestream:="${LIVESTREAM:-true}" \
@@ -83,15 +99,19 @@ setsid ros2 launch arena_multi_bringup multirobot.launch.py \
     "$@" &
 LAUNCH_PID=$!
 echo "$LAUNCH_PID" > "$ARENA_MULTI_RUN_DIR/launch.pid"
-stop_launch() {
-    if kill -0 "$LAUNCH_PID" 2>/dev/null; then
-        kill -INT -- "-$LAUNCH_PID" 2>/dev/null || true
-    fi
+finish_launch() {
+    local status=$?
+    trap - EXIT INT TERM
+    # ros2 launch may exit while children remain; check the entire group.
+    arena_stop_group "$LAUNCH_PID" || status=1
+    wait "$LAUNCH_PID" 2>/dev/null || true
+    echo "$status" > "$ARENA_MULTI_RUN_DIR/launch.exit_code"
 }
-trap stop_launch INT TERM
+trap finish_launch EXIT
+trap 'exit 130' INT
+trap 'exit 143' TERM
 set +e
 wait "$LAUNCH_PID"
 status=$?
 set -e
-echo "$status" > "$ARENA_MULTI_RUN_DIR/launch.exit_code"
 exit "$status"

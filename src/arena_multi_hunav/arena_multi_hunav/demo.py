@@ -85,6 +85,10 @@ class PsychologyDemo(Node):
         wall = time.monotonic(); stamp = self.get_clock().now().nanoseconds
         if self.status.get("fault"):
             raise ValueError("pedestrian_fault:"+self.status["fault"])
+        if self.status.get("paused") and self.status_seen is not None and wall-self.status_seen < 2:
+            # Simulation time has not advanced. Preserve action handles and
+            # issue no new task until fresh clock and robot samples recover.
+            return
         if self.round_start is None:
             ready = (self.status.get("healthy") and self.status.get("updates", 0) >= 10 and
                      self.status_seen is not None and wall-self.status_seen < 2 and

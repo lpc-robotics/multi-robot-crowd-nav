@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "scope": "scenario naming and loading only; existing Isaac evidence is historical",
+  "reference_commit": "e26ad996657fb80e33518b5f426ce44ab5b8d003",
+  "checks": {
+    "six_person_file_matches_protected_baseline": true,
+    "eight_person_settings_unchanged": true,
+    "all_scenario_config_validation": true,
+    "6_people_loaded": true,
+    "8_people_loaded": true
+  },
+  "scenario_files": {
+    "config/scenarios/two_robots_multi_sfm_6_multigoal_psychology_nav2.yaml": "55f9dd566b82dd0e7768270479fa120824d9f126b5b9422ef33a27fb5cdaa6e9",
+    "config/scenarios/two_robots_multi_sfm_8_multigoal_psychology_nav2.yaml": "2529036aae63d26c441adbdfc7b2ed0fe801e5462d6e676c0e122109876bf8f3"
+  }
+}

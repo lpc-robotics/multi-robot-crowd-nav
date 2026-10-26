@@ -111,6 +111,9 @@ class CommandGuard(Node):
         with self._lock:
             self._pedestrian_healthy = message.data
             self._pedestrian_health_seen = time.monotonic()
+            if not message.data:
+                self._command = Twist()
+                self._command_seen = 0.0
 
     def _accept(self, source: str, message: Twist) -> None:
         if source != self.mode:
@@ -118,6 +121,8 @@ class CommandGuard(Node):
         values = (message.linear.x, message.linear.y, message.linear.z,
                   message.angular.x, message.angular.y, message.angular.z)
         with self._lock:
+            if self.require_pedestrian_health and not self._pedestrian_healthy:
+                return  # Recovery requires a command received AFTER health returns.
             self._command_valid = all(math.isfinite(value) for value in values)
             command = Twist()
             if self._command_valid:

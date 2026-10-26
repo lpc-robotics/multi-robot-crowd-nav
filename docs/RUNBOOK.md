@@ -7,10 +7,11 @@
 
 ```bash
 cd /home/lpc/workspace/arena5_multi_ws
-./scripts/run_multirobot.sh config/scenarios/two_robots_multi_sfm_6_multigoal_psychology_nav2.yaml
-./scripts/run_multirobot.sh config/scenarios/two_robots_multi_sfm_6_multigoal_psychology_nav2.yaml auto_demo:=true
+./scripts/run_multirobot.sh config/scenarios/two_robots_multi_sfm_8_multigoal_psychology_nav2.yaml
+./scripts/run_multirobot.sh config/scenarios/two_robots_multi_sfm_8_multigoal_psychology_nav2.yaml auto_demo:=true
 ```
 
+上面是独立八人场景；原六人入口`two_robots_multi_sfm_6_multigoal_psychology_nav2.yaml`仍加载六人。
 第一种由人工发送机器人目标，第二种在就绪后自动运行有限任务；均由模型决定行人心理与行为。
 日志在启动脚本打印的运行目录，心理记录为JSONL。Ctrl+C退出，必要时用相同日志根运行cleanup.sh。
 模型说明、CPU工具和GPU验收范围见[DYNAMIC_PSYCHOLOGY.md](DYNAMIC_PSYCHOLOGY.md)。

@@ -1,0 +1,13 @@
+{
+  "wall_unix_s": 1792501009.838357,
+  "gpu": "index, memory.used [MiB], memory.free [MiB], utilization.gpu [%]\n0, 12049 MiB, 12033 MiB, 46 %\n1, 7196 MiB, 16885 MiB, 36 %\n2, 14222 MiB, 9859 MiB, 87 %\n3, 12662 MiB, 11419 MiB, 95 %\n",
+  "connections": [
+    "tcp   ESTAB      0      0                          127.0.0.1:49100            127.0.0.1:51008 users:((\"python\",pid=3479398,fd=249))        ",
+    "tcp   ESTAB      0      0                          127.0.0.1:37652            127.0.0.1:8765  users:((\"MainThread\",pid=3017273,fd=42))     ",
+    "tcp   ESTAB      0      0                          127.0.0.1:8765             127.0.0.1:37652 users:((\"foxglove_bridge\",pid=3479452,fd=36))",
+    "tcp   ESTAB      0      0                          127.0.0.1:51008            127.0.0.1:49100 users:((\"python\",pid=3479398,fd=250))        ",
+    "tcp   ESTAB      0      0                      10.16.205.165:49100         10.14.148.85:54066 users:((\"python\",pid=3479398,fd=251))        "
+  ],
+  "memory": "MemTotal:       263725308 kB\nMemFree:         8580720 kB\nMemAvailable:   203904372 kB\nBuffers:         3724684 kB\nCached:         194672456 kB\nSwapCached:          292 kB\nActive:         62918464 kB\nInactive:       172879656 kB\nActive(anon):   44842748 kB\nInactive(anon):    20172 kB\nActive(file):   18075716 kB\nInactive(file): 172859484 kB\nUnevictable:        6988 kB\nMlocked:              80 kB\nSwapTotal:       2097148 kB\nSwapFree:        2095612 kB\nZswap:                 0 kB\nZswapped:              0 kB\nDirty:              2684 kB\nWriteback:             0 kB\nAnonPages:      37408584 kB\nMapped:         18667612 kB\nShmem:           7462512 kB\nKReclaimable:    7149760 kB\nSlab:            9560748 kB\nSReclaimable:    7149760 kB\nSUnreclaim:      2410988 kB\nKernelStack:      140576 kB\nPageTables:       486868 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    133959800 kB\nCommitted_AS:   124289344 kB\nVmallocTotal:   13743895347199 kB\nVmallocUsed:      842652 kB\nVmallocChunk:          0 kB\nPercpu:           560000 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:     83968 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:         0 kB\nFilePmdMapped:         0 kB\nUnaccepted:            0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:    41382404 kB\nDirectMap2M:    139659264 kB\nDirectMap1G:    89128960 kB\n",
+  "cpu_affinity": "Cpus_allowed_list:\t0-27,56-83"
+}

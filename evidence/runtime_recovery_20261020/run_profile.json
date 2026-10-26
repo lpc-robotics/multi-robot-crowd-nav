@@ -1,0 +1,18 @@
+{
+  "source_commit": "f7a75152f74766666105bf55b83e49e8d692ca0e",
+  "gpu_id": 3,
+  "isaac_cpu_workers": 8,
+  "cpu_affinity": "28-55,84-111",
+  "ros_domain_id": 71,
+  "livestream": true,
+  "foxglove": true,
+  "webrtc_signal_port": 49100,
+  "webrtc_media_port": 47998,
+  "foxglove_port": 8765,
+  "observation_timeout_s": 0.6,
+  "stdout": "redirected to file",
+  "webrtc_client_connection_observed": false,
+  "windows_client_end_to_end_verified": false,
+  "scope": "actual Isaac simulation with visualization services enabled; Windows reconnection confirmation pending",
+  "run_directory": "/home/lpc/workspace/arena5_ws/.multirobot-multi-sfm/logs/runs/20261020_201410_two_robots_multi_sfm_6_multigoal_psychology_nav2_gpu3"
+}

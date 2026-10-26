@@ -2,8 +2,8 @@
 
 Source workspace: `/home/lpc/workspace/arena5_multi_ws`.
 Current source branch: `feature/dynamic-psychology-v1`.
-Current source commit: `b1829039da31357c5df0e9cd15728b1d383b6852`.
-Last source synchronization: 2026-10-14 (Asia/Shanghai).
+Current source commit: `f170bc72a90aeec44621f816551bb6b656f93cd3`.
+Last source synchronization: 2026-10-26 (Asia/Shanghai).
 Initial snapshot: `f330dfcd29c6a1f711e3f091798e36852fac742d`, 2026-09-30.
 
 This independent repository publishes the tracked core source from that commit:
@@ -93,3 +93,19 @@ the historical acceptance record or rerun its finalizer merely to relabel this
 publication as a new GPU-validated release. Absolute paths and original commit
 IDs inside historical evidence refer to the development host; raw high-frequency
 traces, build products, runtime logs and full backups are not bundled here.
+
+
+## 2026-10-26 update
+
+Imported the current tracked source snapshot at `f170bc72a90aeec44621f816551bb6b656f93cd3` on the existing independent main history.
+It includes coherent-clock-stall recovery with fresh-command gating, reliable process-group cleanup,
+GPU-local CPU placement and diagnostics, detailed psychology model documentation, and independent
+six-person/eight-person multi-goal psychology scenarios. Runtime source, configuration and scripts
+retain their original bytes and executable modes. Repository-specific README, ignore rules, AGENTS.md,
+SOURCE_IMPORT.md and previous publication records are maintained separately. Generated logs, traces,
+notebook checkpoints, build products, caches and credentials are excluded from publication.
+
+The source workspace's six-person visual-runtime recovery and eight-person GPU reports are imported
+unchanged and retain their original source hashes and test conditions. No new Isaac/GPU simulation is
+performed for this publication. Local rebuild/recheck results and the imported-file inventory are
+recorded in `evidence/publication_20261026/publication.json`.

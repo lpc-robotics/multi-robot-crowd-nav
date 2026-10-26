@@ -1,0 +1,2399 @@
+{
+  "date": "2026-10-26",
+  "timezone": "Asia/Shanghai",
+  "source_repository": "/home/lpc/workspace/arena5_multi_ws",
+  "source_commit": "f170bc72a90aeec44621f816551bb6b656f93cd3",
+  "publication_base": "ae1debfa9ba50270ac3d6ff2e5693c6ac877bec9",
+  "imported_files": [
+    {
+      "path": "MULTIROBOT_PLATFORM_DEVELOPMENT_PLAN.md",
+      "sha256": "b41b3218aa27cd3c33ab49fe207dddb0b4e33b714a93c0fd9ec2f9935758b692",
+      "mode": "0o664"
+    },
+    {
+      "path": "baseline/multi_sfm_development.json",
+      "sha256": "0ada0c9aec1b1da135e785dfe684afab1aa80dc909835b94c77ec68e71e3f98e",
+      "mode": "0o664"
+    },
+    {
+      "path": "baseline/stable_underlay.json",
+      "sha256": "836956a2e4a42e379ff7532758be1c7058983461a8bee665c4aff502256c7484",
+      "mode": "0o664"
+    },
+    {
+      "path": "command.txt",
+      "sha256": "4ac2c16fc076a0e17c8f1b4a408ec7b936e60285de132611845e85d832bbee62",
+      "mode": "0o664"
+    },
+    {
+      "path": "config/hunav/multi_regular_1.yaml",
+      "sha256": "891c1a057340829f65b3343cc98b135f857e90a93477ab4a669c5459af1acd1e",
+      "mode": "0o664"
+    },
+    {
+      "path": "config/hunav/multi_regular_2_psychology.yaml",
+      "sha256": "a2cd5322d0993751af04d73e9373160c5692d77e1c3558a2944ad7a786303f94",
+      "mode": "0o664"
+    },
+    {
+      "path": "config/hunav/multi_regular_6.yaml",
+      "sha256": "67ce7a65f71619baef1fdab00d0292c4d2ef91ebfb3e6276536d8e71aac267db",
+      "mode": "0o664"
+    },
+    {
+      "path": "config/hunav/multi_regular_6_multigoal.yaml",
+      "sha256": "124e6df6ade359070f8dd6c17ca82c0b530743809af1731e8e79c2972ccf3f70",
+      "mode": "0o664"
+    },
+    {
+      "path": "config/hunav/multi_regular_6_psychology.yaml",
+      "sha256": "1536df033174af3d7d6b3be6f0ae92d23b07b5c6407818220d1fd89f9ab995eb",
+      "mode": "0o664"
+    },
+    {
+      "path": "config/hunav/multi_regular_8_psychology_multigoal.yaml",
+      "sha256": "c30620bcf2bdc5fa0c953bca3efb9c403550a49e72267ef0cec37619598ac35f",
+      "mode": "0o664"
+    },
+    {
+      "path": "config/hunav/regular.yaml",
+      "sha256": "76e8c4132bddeed7def29100cd4d194e8eac202f7c1973c38e576442d5aac3a1",
+      "mode": "0o664"
+    },
+    {
+      "path": "config/hunav/six_behaviors.yaml",
+      "sha256": "ac77047d69256d71fadca0aa958848cb9b30a0b15e3fcf91275514fc1a748b67",
+      "mode": "0o664"
+    },
+    {
+      "path": "config/maps/map.png",
+      "sha256": "0230e5c9bf17a6110b7bfe5a45ac8c19d723fd51c3e0dfa67a53eceebe8b9882",
+      "mode": "0o775"
+    },
+    {
+      "path": "config/maps/map.yaml",
+      "sha256": "32a4f9338c9f79837065e12bbb63f8b18043be23f6e8eda739d829480ed94eef",
+      "mode": "0o775"
+    },
+    {
+      "path": "config/psychology/sis_cf_direct_only.yaml",
+      "sha256": "a87c939c50ef84ccb110b5ff35ac18ae5455668fcd167f334ae29f9d12d346ed",
+      "mode": "0o664"
+    },
+    {
+      "path": "config/psychology/sis_cf_enhanced.yaml",
+      "sha256": "55919612fa37449fca3f21e6ba1417d1ed0cb28c319ee1bfdb84f15f0d92c688",
+      "mode": "0o664"
+    },
+    {
+      "path": "config/psychology/sis_cf_fear_only.yaml",
+      "sha256": "e670fd5aae1cd3e1033aeaf07f4e8800baae6c953dec9e4f7bc3c72ff06e349d",
+      "mode": "0o664"
+    },
+    {
+      "path": "config/psychology/sis_cf_inhibition.yaml",
+      "sha256": "d2a2b4c4336d46e15504e9ac42d163056212756dc6d614e4403b35db78ab1aa1",
+      "mode": "0o664"
+    },
+    {
+      "path": "config/psychology/sis_cf_v1.yaml",
+      "sha256": "ece20340587ea3124973806b5c2a4a561b75ba68a9f825d23180c1eefa751562",
+      "mode": "0o664"
+    },
+    {
+      "path": "config/scenarios/eight_robots_capacity.yaml",
+      "sha256": "b660c00ed77904dd43461579ec3a95eea6bfb864d807a1665b23517f1ec7e739",
+      "mode": "0o664"
+    },
+    {
+      "path": "config/scenarios/four_robots.yaml",
+      "sha256": "e457704273c06861e0ce94bce4eb552c17f0d69f0798c402f8f719fb398aa7f4",
+      "mode": "0o664"
+    },
+    {
+      "path": "config/scenarios/one_robot.yaml",
+      "sha256": "45f6ada894d0af4b6391956756effa5f07ae8230a770a9accc2a71a7c2e2ca77",
+      "mode": "0o664"
+    },
+    {
+      "path": "config/scenarios/one_robot_multi_sfm_2_psychology_nav2.yaml",
+      "sha256": "2005815ca68920506e971bace7bbb251727ecca424b3a27457f8c62dd9c3d883",
+      "mode": "0o664"
+    },
+    {
+      "path": "config/scenarios/two_robots_astar.yaml",
+      "sha256": "45ea75b58de11c48bc175d0ead9118fd0c563bccb543270d01595c91401e8375",
+      "mode": "0o664"
+    },
+    {
+      "path": "config/scenarios/two_robots_dijkstra.yaml",
+      "sha256": "01e82919ede8febacd2734a07ed548e7fc9c8f560981ce0cb6c49954a0c13dd5",
+      "mode": "0o664"
+    },
+    {
+      "path": "config/scenarios/two_robots_external.yaml",
+      "sha256": "0e052fde4a1b30e0e0c359daa028a6332d4113e3bd96706e573bb3b0ef1063ae",
+      "mode": "0o664"
+    },
+    {
+      "path": "config/scenarios/two_robots_hunav_regular.yaml",
+      "sha256": "5af6ac00f4079e5aa7c06e6ee98cf3a7606cbf69a5e4dc3a57c4aa03ca517bdb",
+      "mode": "0o664"
+    },
+    {
+      "path": "config/scenarios/two_robots_hunav_six.yaml",
+      "sha256": "de2a9983eb63d79cbf7c088d30aee3cbf195837b8af83a70c87dda213b5a1b53",
+      "mode": "0o664"
+    },
+    {
+      "path": "config/scenarios/two_robots_multi_sfm_1_external.yaml",
+      "sha256": "0eb164173d5f69d2d8194fb7c41080c15817ecccf132efc85c9f46316638dfa5",
+      "mode": "0o664"
+    },
+    {
+      "path": "config/scenarios/two_robots_multi_sfm_1_nav2.yaml",
+      "sha256": "f897b708a025df8291468ea32fde9fe9a9fefcbecee112829d1143ad3297c2bb",
+      "mode": "0o664"
+    },
+    {
+      "path": "config/scenarios/two_robots_multi_sfm_6_external.yaml",
+      "sha256": "3c735b14aeff2725e1d898d8d3f29fe7a55b2b5255c1be8ad5e2471d778ab2b9",
+      "mode": "0o664"
+    },
+    {
+      "path": "config/scenarios/two_robots_multi_sfm_6_multigoal_nav2.yaml",
+      "sha256": "ce2cb9df16ba57d223acf13244e3d58dd2c4415da899fce2d824da5923a66b70",
+      "mode": "0o664"
+    },
+    {
+      "path": "config/scenarios/two_robots_multi_sfm_6_multigoal_psychology_enhanced_nav2.yaml",
+      "sha256": "4d92e83281cba1e3730c6a15143ba2138577106a595dde08ac1133b6f5e10d2c",
+      "mode": "0o664"
+    },
+    {
+      "path": "config/scenarios/two_robots_multi_sfm_6_multigoal_psychology_nav2.yaml",
+      "sha256": "55f9dd566b82dd0e7768270479fa120824d9f126b5b9422ef33a27fb5cdaa6e9",
+      "mode": "0o664"
+    },
+    {
+      "path": "config/scenarios/two_robots_multi_sfm_6_nav2.yaml",
+      "sha256": "2a1f53bafcb3295c8de7d8deecb50b06aabdd12ac9ccc595567f38f7ade573e9",
+      "mode": "0o664"
+    },
+    {
+      "path": "config/scenarios/two_robots_multi_sfm_8_multigoal_psychology_nav2.yaml",
+      "sha256": "2529036aae63d26c441adbdfc7b2ed0fe801e5462d6e676c0e122109876bf8f3",
+      "mode": "0o664"
+    },
+    {
+      "path": "config/tasks/four_robot_lanes.yaml",
+      "sha256": "888c16856dddf8cb8dea1395cc1d82919329ce2f24e516f1a40e8af6a2df2405",
+      "mode": "0o664"
+    },
+    {
+      "path": "config/tasks/one_robot_smoke.yaml",
+      "sha256": "e64c7a5b0f276ab47310dbaed012c1bc3070e31fba29f1d0e3c78fde95bef08b",
+      "mode": "0o664"
+    },
+    {
+      "path": "config/tasks/psychology_crossings.yaml",
+      "sha256": "d05ce27f47159139c2bdbd66d6bd7039fdb373276f43e4b8b66e4852a3efebca",
+      "mode": "0o664"
+    },
+    {
+      "path": "config/tasks/two_robot_lanes.yaml",
+      "sha256": "4d5304e41ce435d7530e27382c9a9a6e999ce0b604f19667422a48f3ebfa0e1d",
+      "mode": "0o664"
+    },
+    {
+      "path": "config/urdf/jackal.urdf",
+      "sha256": "04cad2ff6dd166b6e63013c3e925cd7bc1f225c9d52f56f73692397a9cdb7491",
+      "mode": "0o664"
+    },
+    {
+      "path": "config/world/arena.yaml",
+      "sha256": "ec66148d8a5bf6448c1c0a9e2fdf697b4c77e677ad33471b576e2847b05468bc",
+      "mode": "0o664"
+    },
+    {
+      "path": "docs/ARCHIVE_LOCATIONS.md",
+      "sha256": "65a5ee9b5ecc15d7e0e6097f15891ecaaffbea280d37e1e302b3c9f02a2e4d4b",
+      "mode": "0o664"
+    },
+    {
+      "path": "docs/CROWD_PSYCHOLOGY_MODEL_EXPLAINED.md",
+      "sha256": "a7df8086dec3b16d215c38a3f749d5face873f7c733d98634690c1d5517bd67d",
+      "mode": "0o664"
+    },
+    {
+      "path": "docs/DYNAMIC_PSYCHOLOGY.md",
+      "sha256": "246e7fc2452ac968212310ef0d6dc86e18ee55f7a8a30311a0ff2b30632ca976",
+      "mode": "0o664"
+    },
+    {
+      "path": "docs/DYNAMIC_PSYCHOLOGY_PLAN.md",
+      "sha256": "cecadc5c999e3787ee61feb457afe9a8f1e79de4c058f95fdff0f4df5d10f573",
+      "mode": "0o664"
+    },
+    {
+      "path": "docs/DYNAMIC_PSYCHOLOGY_REVIEW_20261013.md",
+      "sha256": "cbe710815057922c490e47b467fcd60ca54f03db58c6e9ec7fc995c13f888e5a",
+      "mode": "0o664"
+    },
+    {
+      "path": "docs/Dynamic_Crowd_Psychology_Plan_\u65b9\u68482.md",
+      "sha256": "98ace83b5ee629fcd6f64d910864a1f76a1663b84fc7451013caa2a1f038ce19",
+      "mode": "0o664"
+    },
+    {
+      "path": "docs/EIGHT_ROBOT_CAPACITY_REPORT.md",
+      "sha256": "42b01c11b4473a5f41d9632353c933d9c6fc3b3c2570e41cdb73a753a14ad5a7",
+      "mode": "0o664"
+    },
+    {
+      "path": "docs/HUNAV_SCOPE.md",
+      "sha256": "e8dce38838cb55984906e2dcc9fdb797afd7f1a0878c9f9b134d004ff96a7b30",
+      "mode": "0o664"
+    },
+    {
+      "path": "docs/INTERFACES.md",
+      "sha256": "59651be510ecd891de6414229800e9285872c6c4cf07c64851bd5bdc46dd3063",
+      "mode": "0o664"
+    },
+    {
+      "path": "docs/MULTI_SFM.md",
+      "sha256": "13152b8e1398024095775a1bf6ea048ac6f6ab4e3bcab2e7e397cc92c391dcc1",
+      "mode": "0o664"
+    },
+    {
+      "path": "docs/PEDESTRIAN_ROUTES.md",
+      "sha256": "0154f5b2da85b90476b788c0419105886e8f6738672ea9194ce24cce603ee45f",
+      "mode": "0o664"
+    },
+    {
+      "path": "docs/PSYCHOLOGY_MULTIGOAL_20261022.md",
+      "sha256": "1a4cb3dd8ded887891900f974bc0d83b9aa4cd32f219db27b20d40a35afbc45a",
+      "mode": "0o664"
+    },
+    {
+      "path": "docs/RECOVERY.md",
+      "sha256": "ce314762fb0713357d80996bea44f3ac68c9cfa0b39dbc33d7f0fce91077462a",
+      "mode": "0o664"
+    },
+    {
+      "path": "docs/RUNBOOK.md",
+      "sha256": "5ce0944d253349ac6a38de93c015eee5131cbf2cce5c6201e944b78af96d27eb",
+      "mode": "0o664"
+    },
+    {
+      "path": "docs/RUNTIME_RECOVERY_20261020.md",
+      "sha256": "c1de5f5bcd7989d4abd692deeeb3af43f4b37cccf9d38c4a26da7f974a195a14",
+      "mode": "0o664"
+    },
+    {
+      "path": "docs/WINDOWS_VISUALIZATION.md",
+      "sha256": "1719c65cd579c2731bea18ba8ce4fdfb418d6016e64c6cd729a01447dadd2f22",
+      "mode": "0o664"
+    },
+    {
+      "path": "docs/\u52a8\u6001\u5fc3\u7406\u4eba\u7fa4\u6a21\u578b_\u65b9\u6848\u5ba1\u67e5\u4e0e\u5b9e\u65bd\u8ba1\u5212_\u65b9\u68481.md",
+      "sha256": "eb75e73ae42d7250a6dcd473294c183e2561418ea5b40f61aa60b7f345b5f476",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/RELEASE_VALIDATION.md",
+      "sha256": "ab7ed79d2f2ea08ded6d9fce29fba735de0a09bdf0d1d50b11f501aae1b44554",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/VALIDATION.md",
+      "sha256": "dd4f6b6c8fdad649252322f75a0409f1de13fdf1e74f55aca79f0b9a4343dbfb",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/algorithm_comparison_20260924.json",
+      "sha256": "7e552cf3f6e90ffa2696dafb9c7b2c201825b1aab62e7963675976f3a787f4f4",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/command_before_speed05_20260930.txt",
+      "sha256": "799fe087b4acce2c1f19a478936b6f3f1261fd4803fc57ecda412e368a338b43",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/README.md",
+      "sha256": "8a3883de75aa8c1eac5f9df3515893415e52ba3ce700a3517a138e7e6d1d1374",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/acceptance.json",
+      "sha256": "7c825e191f608b29c014b8907cdfda60a8901ea1bd39dd4c29ecf20c8e79b498",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/figures/actual_closed_loop.png",
+      "sha256": "6a248811b541d74d6432f2f051dba4e697c8744696e214efe7df42f0b6322d10",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/figures/actual_closed_loop.svg",
+      "sha256": "e7b54647c64f7a47627864114e05b0f31e235f43e9dffd170e183a811cfbf8d8",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/figures/actual_trace_summary.json",
+      "sha256": "48bd9fe58a12badc47465cbeaedcb61ab087a6a8c7e567d25e900a913061314d",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/figures/propagation.png",
+      "sha256": "3bffa59327304278f783ddf52e211faa5817ac0833c55f517093887d8765900d",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/figures/propagation.svg",
+      "sha256": "4511cf226545946378fec7842c0e51df267f5de36c660ac7acae12735a7af588",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/figures/single_motion.png",
+      "sha256": "a140e6070343f8493a112a880c34bbbf5068464dea6994f2cec4f1864d5a6bd1",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/figures/single_motion.svg",
+      "sha256": "12ac37418fdb00ac5e9024ab270acf0825169043172a36f41ab9f155af4564fc",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/figures/six_comparison.png",
+      "sha256": "3f777b9c968548b230efdb9f88cd33127aad385da3bf6af5ee5d98a7f97cfe6b",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/figures/six_comparison.svg",
+      "sha256": "e3a3ab67431200edfc9e843f24133e3327d9f249cbeb4ca7a2e47b5de6aac5f8",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/approach_gate_initial/cpu.json",
+      "sha256": "3aca140187392445ac8efaf84eaf6ea8cf825fedde85fd7a6319aba9e19ee566",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/artifact_manifest.json",
+      "sha256": "e9fdb73615ff9c8e8ad1a2e7885262804e3df75cb97c7e857d6eef16fcbcf84b",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/before_demo_fix/NOTE.md",
+      "sha256": "41a0633c88859fa1d6710c7b72f6b0d37ad4242ee707d4119463414411b0227f",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/before_demo_fix/cpu/cpu.json",
+      "sha256": "6fcfea82fb2c02722bae7dfa91c0415948236a89a019bc79f1f2d579e73f5985",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/before_demo_fix/isaac_six_people_30min.json",
+      "sha256": "8b907d19d70f6fad7e54f0b5c831fc070c69d8312e31e1fa3a607b56915209fa",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/before_demo_fix/isaac_two_people.json",
+      "sha256": "7a296b8dd80a0688789a40b23c9f57368b04521d249db466d5a7cfc3386dab8e",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/before_demo_fix/offline.json",
+      "sha256": "1f9b4c21a401d27a744eac68e7680d76f9fc509bfe7b4f9c3809157e45588af9",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/before_neighbor_fix/cpu/cpu.json",
+      "sha256": "3468e61bb3a0eadee98bf0a4570e81c2aa6b3902ba83ebab1bdfd328b9d389ed",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/before_neighbor_fix/fault_test_readiness_failure.json",
+      "sha256": "825e50988bead2f9faf357e27424450c9e7ab60e8af3575a475a7112b11b3b4c",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/before_neighbor_fix/isaac_six_people_30min.json",
+      "sha256": "975e28904eaaf806894eca5707adcbc7bc2c301c061021c76b79f0d517c8c7b6",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/before_neighbor_fix/isaac_two_people.json",
+      "sha256": "d054d7f0e73ed8c28fdc8f11acba9bc5eb6807f358c68bca01366e963ed46680",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/before_neighbor_fix/psychology_demo.json",
+      "sha256": "fa70d4cf700eb383ee3a4a866586c0d3d94d133278d10b2e0a2063205755e1c2",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/before_neighbor_fix/reconstructed_overlap.json",
+      "sha256": "50d5b5316d5e4a4eebe1305d92458e7be8d79efe944a96de4061698ddb6e7852",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/calibration_gap_1_5/cpu.json",
+      "sha256": "74996831196b9799390dfb22b22383414c0b4f9e82b7df93d1706a69a7530b4a",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/calibration_gap_2_1/cpu.json",
+      "sha256": "1bf33c17daad051b5418c309ba47d9705731425891c30446abd0bbb82eb6f782",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/concurrent_shutdown_stall/NOTE.md",
+      "sha256": "46f37ddc7002ff2d97e489e510e5eacc9d86e6d26b572f048328290b3240f915",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/concurrent_shutdown_stall/isaac_six_people.json",
+      "sha256": "ca0e7b76202ec3a56265ac28f8f03b1bb3548567fbb8f8b555b2e47034d1e554",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/concurrent_shutdown_stall/psychology_demo.json",
+      "sha256": "62749082d58775c272007bd71ec8a4ffeb664ba945c137ee475a91bd3da4ff22",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/cpu/cpu.json",
+      "sha256": "dc9e4d0bd5ab6995ccdbf0d2389ae6b520e38e11e1d378e0e5c12938b78fc196",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/cpu_initial/cpu.json",
+      "sha256": "6f7f3908caec0e4dd8227e53f82ce8c55a6d236b5ea86ba7dbb99a286ef6b705",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/demo_mock_logs/psychology_demo.json",
+      "sha256": "a72a04c5c4de5a38093509c00be72cd408bcf9481f7146ae465691d6b7a3bea8",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/demo_ros.json",
+      "sha256": "90bee057e45e470bb2eca78eaa9cd476e5fe0f853c966d9380beb335e251c093",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/endurance_observation_stall/isaac_six_people.json",
+      "sha256": "d3b9392feec8665db0dbd2783ce1e1abe41df68512dff4183ca4ff6fcb7b0c05",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/endurance_observation_stall/psychology_demo.json",
+      "sha256": "d796c8690b0da86ba56b5fc0852b784bded747f68673cca55ce0d4a39f9f3b8a",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/environment_reentry_failure/before_env_fix_cpu.json",
+      "sha256": "d87fe0ae505e5bbf684eb6af1a3aa109366b84827c65ef00a7aa6e99a2dc7036",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/environment_reentry_failure/before_env_fix_isaac_two_people.json",
+      "sha256": "07bd5404b19703ae535da7f99ac882c44e9c426eef3df98beed60c638b87086d",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/environment_reentry_failure/before_env_fix_offline.json",
+      "sha256": "cfceab11a95bf534e49b80164889c63867f9fdc50718421d42bcc51f5b30bca5",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/environment_reentry_failure/isaac_six_people_30min.json",
+      "sha256": "3387275a6b6be2f7fda8b2dd2e9ea60d9e3dac1cc29f28de68dadebf660394f6",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/environment_reentry_failure/timing.json",
+      "sha256": "0cea840b867e8967f8b4fbd2bcc22013ba12880b2957016313ea31d251866d5d",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/faults/faults.json",
+      "sha256": "0bd3e821f4d1023c3104cc2b7e491bcbcdcd7682fd5f9a7d9ecd61a00c0fd3bf",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/isaac_six_people_30min.json",
+      "sha256": "0f2e57efcd369857fc552e7c9efe8ea3bf413252ee48199a7f0fa44a7d5c7bfd",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/isaac_two_people.json",
+      "sha256": "7cd09ebb1860e593674ece626468b6ad3e07a9711481930c492db4674163ed2c",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/offline.json",
+      "sha256": "150c0ef42b77ffcab7b5196af691c6dcf1290e4351a78ed555b766edeb8623a2",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/plot_actual_trace.py",
+      "sha256": "42319f6455ea23cd79f9d6900102a7609ce56f36a6a7da1e20778c1cfeec58b8",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/psychology_demo.json",
+      "sha256": "a941ac887be1be0a2a674449c73deefdd775005e1e6003a41b1d1ab2c38d36e7",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/regular_baseline.json",
+      "sha256": "4215129ba024256bfe7976305ec11844def3cb334aa77441504579e646fab491",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/regular_baseline_compare.cpp",
+      "sha256": "0c36d2c25af8ad5de24e3e2d723df7f431f717950f5b0b877e53b7d326dc6b65",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/run_endurance.sh",
+      "sha256": "4cbf52ab73acd8b08278b7f498ec2b74e18d2fa7e827728664e341d3ded97980",
+      "mode": "0o775"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/run_profile.json",
+      "sha256": "d4f933b5cf893198c34f58daf03c80df56bc4081012d9e9574a13b501a1298d7",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/runtime_manifest.txt",
+      "sha256": "ffddd9c8568459de190490b405d2347e99f0e1708bff98bb1b3e7f481c625b5e",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/timing.json",
+      "sha256": "8f7309d997da8e25d407a3de33f5c18e37d5d4788e5c615e33fa401fb4ebb70f",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/timing_monitor.py",
+      "sha256": "552ed1e355c02b26576d9a9d67471136c12f7f3379800c3ba00431221a86e361",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/dynamic_psychology_20261012/validation/underlay.json",
+      "sha256": "3994190592a506208a8627d2f0a1c25eddf800cefffee32416f14ba2bfbb70ba",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/multi_sfm/README.md",
+      "sha256": "f1dc10337efb1fe12e8950cee9d7952b1422ae1350df7ccab5cd5e22e98eaa62",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/multi_sfm/acceptance.json",
+      "sha256": "8a7d05417a08e2a73bed8eead9bf013cf3b69ab6685be35d85cd280ab5a72e5e",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/multi_sfm/cpu_interactions.json",
+      "sha256": "010eb4bf182a6c1a28b0c9df9f2f7d95980f5eadc4864c2221a4c5baa71885f3",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/multi_sfm/diagnostics/one_interaction_failed_callback_backlog.json",
+      "sha256": "189f5842cd275d2fbe52e2bf0866b04843ceb351783432109dbb40add8e53158",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/multi_sfm/diagnostics/one_interaction_failed_clock.json",
+      "sha256": "b6e4a71526751ba6a4889c7b9ba3473a6201c4663584a1d9f4be29fd362978f5",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/multi_sfm/diagnostics/six_runtime_30min_failed_stamp.json",
+      "sha256": "16f2e449687c14fd4cf0646242f60e5df9491b0fecc1bf4622786fd7615b5d48",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/multi_sfm/faults.json",
+      "sha256": "cffb047265cc4fa427de65a9a804c5902c712bd0811a7938d7a1db2a73904fe0",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/multi_sfm/legacy_runtime_selection.txt",
+      "sha256": "6f3e0850035dca7100f84055efb8f039a849ef79e97e78156454244ef2b3beba",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/multi_sfm/legacy_six.json",
+      "sha256": "99373aeb9802bcbb257785e4f5245e170572506e48a7b7e56194cdfd3eb94d88",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/multi_sfm/legacy_six.txt",
+      "sha256": "8519918c720423be3a85326846ed27e6a9c1927308180afbda0041ff2b305fca",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/multi_sfm/offline.json",
+      "sha256": "7ad277fd1e3f8b14437d806a0e803aca2181c8386bc2179d6eda3c034e356656",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/multi_sfm/offline.txt",
+      "sha256": "e0606377f8fc462c07d81af6806e535bb1d4408a144a4686932d0e9a069e4078",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/multi_sfm/one_interaction.json",
+      "sha256": "98189a781a93bf387fe028fc26064127a05000008b728c92e41730bcfb34ac59",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/multi_sfm/release_validation/baseline.json",
+      "sha256": "3994190592a506208a8627d2f0a1c25eddf800cefffee32416f14ba2bfbb70ba",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/multi_sfm/release_validation/cold_start_failure.json",
+      "sha256": "3e70389069a04bf996111729a50b1c20bbfe0f0316197c2ec2d36dac9f62f666",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/multi_sfm/release_validation/launch_manifest.txt",
+      "sha256": "1cb271349fe32a85e78097233dcccb7bd1a88c31d796f979c5a3654c2b485149",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/multi_sfm/release_validation/navigation.json",
+      "sha256": "e5d478b46e8694688d5d966fb598ad99fa245fbc0c1697c9a0c1d91955a1665b",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/multi_sfm/release_validation/platform.json",
+      "sha256": "0b203b66a88e8c638f645c9ef6f840427c78c4dff3906bffda670d067b5517ff",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/multi_sfm/release_validation/prefixes.json",
+      "sha256": "6e0d441c62c409513853fa5fc5f303e2fa0eb30efd7cd4dec35ce3c994550305",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/multi_sfm/release_validation/runtime.json",
+      "sha256": "e12ec5a7dc44644e00edb50c2180416555723e3b1dc192a0c2ff0c68870e9bf6",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/multi_sfm/release_validation/summary.json",
+      "sha256": "8b06842920528c6d4a8f1791d2bb2360bd6e09b13ad3fcc81dd90144cbb7b90d",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/multi_sfm/six_clearing.json",
+      "sha256": "e7d534c503d09cdd250a7c57b5cb5755aa0965aaeda5b4cd1515fb07e8ecc240",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/multi_sfm/six_interaction.json",
+      "sha256": "078beefb1147d72c6996c6d9468da85c5e0df5bf605214c332f9a03a71d940ce",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/multi_sfm/six_navigation.json",
+      "sha256": "b099fe4345e95241d775ca379221824a62714af3d9bfd7e9366d37044ce14cee",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/multi_sfm/six_platform_runtime.json",
+      "sha256": "4f1767ff53da0570916b5cbe713d0d7f569392087a841d845cfaa87412457a81",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/multi_sfm/six_resources.json",
+      "sha256": "21d072f70d6e50753791a67f60ae3f2351f57dcd5630395b80823b0b42ee8cb9",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/multi_sfm/six_runtime_30min.json",
+      "sha256": "bf28d8ba3a7be504ad2753db63fe755dad5017e640d71af0f4adfa3dd154389c",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/multigoal_20261010/README.md",
+      "sha256": "d0bad5ffd701ee3daddc2c5dae0c325af9542b06e3a23044ade5d28c9998522b",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/multigoal_20261010/SHA256SUMS",
+      "sha256": "3dddda700c26dfc0fc712c0d034c2a0dbbdf8e999a69cd4a46ad8ba476f5555a",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/multigoal_20261010/acceptance.json",
+      "sha256": "24844bce9652237a922c9f9bce4d402c2f7b87aa13ba1f2eb295f011b975b37c",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/multigoal_20261010/finalize.py",
+      "sha256": "453901bddcc44a4c3e204c8cdca6e35286ac08db96d3e7a86bde8139a3122ada",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/multigoal_20261010/plot_routes.py",
+      "sha256": "88a17732593197ea2fab26276c3c96d661fcc2c0b1be3333c9559e0c23c2d281",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/multigoal_20261010/routes.png",
+      "sha256": "bad1947fba0e031cb0a6b09d26fba39399adde66e3c503f3dabf0ee95e491a41",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/multigoal_20261010/routes.svg",
+      "sha256": "243ce70e15382332376ddbc6b8523604ced6b9f1ba04400c94d0b19331d2e0d2",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/multigoal_20261010/validation/before_wire_fix_cpu_routes.json",
+      "sha256": "21a40a302ec420fe197628cd28fe5d3f6ac8b9dd7799072a8f948314bc309c49",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/multigoal_20261010/validation/cpu_routes.json",
+      "sha256": "6382ae7c59c3fbc8f996e7a80db14804bc53bc7c9ba14f02a5b55b7af776de5c",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/multigoal_20261010/validation/cpu_routes_initial.json",
+      "sha256": "3d503d2ef0aa434cbe12c1bae7589d0787f00fe33058811c6f3582d7ca2d18b1",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/multigoal_20261010/validation/installed_source_check.json",
+      "sha256": "3f9a9dd85c1eb9ed4025e9d8976a44365504870594fe37bf322b58c35d48eb47",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/multigoal_20261010/validation/isaac_routes_30min.json",
+      "sha256": "dde8857af82c6faeb85c267b48234db9ebbc75927edf04cda4d4919d63301a8f",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/multigoal_20261010/validation/navigation.json",
+      "sha256": "69154298316e32d4c20dfb8a65a0875ac257719b266baff24a9a099ffadc3249",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/multigoal_20261010/validation/navigation_initial.json",
+      "sha256": "464722b5803f38e1475848b0a2eada8a80dc834e1537fbc415963ea1ec07d2c6",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/multigoal_20261010/validation/offline.json",
+      "sha256": "799c94a5a4b1eb55704d32a310283f5106d15d5801539a7f93538046f6c511fb",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/multigoal_20261010/validation/preservation.json",
+      "sha256": "6e5454e1b0b13abd3a4a2deb1e8fb54162fddecbd30aba2deb1712b936d6c850",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/multigoal_20261010/validation/restore_check.json",
+      "sha256": "91fd3b51e4cc8ee413917ff4f48efcc279b6e92402510cb473b89cdc48ee6c62",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/multigoal_20261010/validation/source_changed_isaac_routes_30min.json",
+      "sha256": "4098c525ccac4c272db7679bdbd16b63ad485f4cb6ca0b0fade51cbcf7003582",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/near_fov_20261007/README.md",
+      "sha256": "d47602557422584d57e9a551346889923992b05e772a46f80a056c703aa06d40",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/near_fov_20261007/assess.cpp",
+      "sha256": "999e4d8c801ed032701015d16e980729219fa20f71706d21da021d34f52c6fb2",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/near_fov_20261007/baseline.csv",
+      "sha256": "193a2e3e6a570e23587b13708b433c1fcb0c1c4fc4a667acf85c1ff0fa55f34b",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/near_fov_20261007/check_ros.py",
+      "sha256": "8bd338267ad95e2df3f8c539b440ec559cfe200457d07f63e080ff8e30bb8001",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/near_fov_20261007/force_scan.pdf",
+      "sha256": "1529ca1e96bfcf5bda880994c54af54ebeac431201703c94c5c64bc4cf9109ea",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/near_fov_20261007/force_scan.png",
+      "sha256": "4e5653088716643beef3cc45863ccc41f76e835aeba63b1e4c3d4d9be324cfe7",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/near_fov_20261007/full_circle.csv",
+      "sha256": "193a2e3e6a570e23587b13708b433c1fcb0c1c4fc4a667acf85c1ff0fa55f34b",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/near_fov_20261007/manifest.json",
+      "sha256": "70f8ee1ab63bbe6d4ee180ceb26d00bbb1538ef2941a92f1d8be86ef0cf7452d",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/near_fov_20261007/plot.py",
+      "sha256": "18a0987a2367804ba9e69c27a7e20e98358995333a2f29181456cb883c14ca57",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/near_fov_20261007/run.py",
+      "sha256": "a7d6ab8adbb55680e252213527a46dd6cf6d7c633931140d3794387cb848e37f",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/near_fov_20261007/scan.csv",
+      "sha256": "5f9b5cbbfac5a5bb0fd95e108d833136480943d2d9fb01bcdb5b9c1c394f0124",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/near_fov_20261007/summary.json",
+      "sha256": "0eb6e7a12dc542f4d5a3ff17f6c1c8737a3c0569f360170e173ddb13ca6485b3",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/near_fov_20261007/validation/cpu_benchmark.json",
+      "sha256": "97109dcd9786f9332d8bc900f6cff5dfec99262561153fdccf5e80f837c60b29",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/near_fov_20261007/validation/delivery_audit.json",
+      "sha256": "d032c8a6c92aaba2a54c45c1229ffa885b879d75274a207ff258f06238773fd3",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/near_fov_20261007/validation/restore_check.json",
+      "sha256": "22f1832271d22663d6423ed9645be1fcdf627a10b6ac70ee6fc5ab0e838e7ea1",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/near_fov_20261007/validation/ros_parameters.json",
+      "sha256": "6fd082fc83ba7846cf96a2ceba2e49fa070c69ed62f3435672e13f44f9496ffd",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/pedestrian_costmap_heightfix_20260928.json",
+      "sha256": "576f324d434cca68fadf6375ef7c26701abe7778c560cc741c5f418f72642a3c",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/psychology_multigoal_20261022/README.md",
+      "sha256": "9e90a5539874120397e6901395ef8da0f2a27a625b88238ed6856517dcad4bad",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/psychology_multigoal_20261022/acceptance.json",
+      "sha256": "ed07fa3d0c12923078558bea8cf9d721eefb534396665b9e740ba18a91a72ad1",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/psychology_multigoal_20261022/actual.json",
+      "sha256": "68d64275eb94117c4f617e451efd468d3ac6ad6e92ebc015d424f7fcfa14d767",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/psychology_multigoal_20261022/actual_closed_loop.png",
+      "sha256": "c3eb107b84a25b29cf7b9fc79d02f0336eb66103fd85105025c7f93d7dcf3861",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/psychology_multigoal_20261022/actual_closed_loop.svg",
+      "sha256": "a684b6502dfcaf8cd7aef040d4ca46b81ba619f5806bd3569e9a8807473da78a",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/psychology_multigoal_20261022/actual_trace_summary.json",
+      "sha256": "ec43ebe75c49c49237a937177e4b9dc9774a3d0af1557bb1906033fd25ca1689",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/psychology_multigoal_20261022/analyze_routes.py",
+      "sha256": "0572fe59e09ebbcc5002474b297a4b3f518433fc8d4694f712fcd0cde3575971",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/psychology_multigoal_20261022/artifact_manifest.json",
+      "sha256": "26da5a163f4be799ca6cadc0337c57ee1d3a2b6a46df31d1ff200db2b7926b2b",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/psychology_multigoal_20261022/configured_routes.png",
+      "sha256": "171d9a4ff968fc7743cc8b85ce7c81dd2f343e2f0ae6e0d26a0575e5041d490c",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/psychology_multigoal_20261022/configured_routes.svg",
+      "sha256": "c924a80e8a36fac0af5740c6973e21b7856bd394474e2756336842613359bcbd",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/psychology_multigoal_20261022/first_layout_failure.json",
+      "sha256": "a66536b1a353ab8be38ab4ea1ace5a53c3177685d4878d03db94f5ea85e91727",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/psychology_multigoal_20261022/first_layout_pedestrians.yaml",
+      "sha256": "8a35ace16e0f5ba904f9c50fda886cb7abd6df0aa0de8a8d46cdd11dd2b9048a",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/psychology_multigoal_20261022/offline.json",
+      "sha256": "42c4a7d2f1bc29f6bdf823665e8a948f8362adb1cd106325561b559ebd37b724",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/psychology_multigoal_20261022/plot_actual_trace.py",
+      "sha256": "e955ce122f2056670b38cbaeac843560eac6034e72eddf1271a69af491969a1a",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/psychology_multigoal_20261022/plot_routes.py",
+      "sha256": "bb7fd5423e47774bdd1339581341db4d90d46415c412d550c68aa63b33129dd0",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/psychology_multigoal_20261022/preserved_settings.json",
+      "sha256": "03899ac7bca149d60aac3b80df422056e5d0caf53f699c60913eb24d13c52325",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/psychology_multigoal_20261022/psychology_demo.json",
+      "sha256": "a575c5129d484d3644df8b4413188d09faaef9f93965a4de66be0aaeb7e3749f",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/psychology_multigoal_20261022/regular_routes.json",
+      "sha256": "1f594eecf93c6e66f5adbe6cbce36dabeffed893efa4b966b19423b1a835f0f2",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/psychology_multigoal_20261022/replay_robot_inputs.py",
+      "sha256": "36b64e5864b919eb838348cb9e90a039485b4331daad7685e11a9aaae747d368",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/psychology_multigoal_20261022/robot_replay.json",
+      "sha256": "e91c1f76651632985c265c9d1c6af4e71d4bbea50c49af3dc9b80096addf3761",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/psychology_multigoal_20261022/routes_actual.json",
+      "sha256": "c4752a80b251e69951443edb34b19317d06d4da8015ef486923802793b48e9e2",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/psychology_multigoal_20261022/run_actual.sh",
+      "sha256": "19b4e40e1a8989daeb70255cf8f6acdda726c0617688f5e5723ae6d188056044",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/psychology_multigoal_20261022/runtime_manifest.txt",
+      "sha256": "f9f80dfc47ed43020c569a8f9401e5be6e295fc6bb785ac8e7d061c75853f269",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/psychology_multigoal_20261022/scenario_names.json",
+      "sha256": "55622bcfd5cdeb99a9a0eac8fffa4852e31f17867313cd438b26343ac75e7e08",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/psychology_multigoal_20261022/second_layout_failure.json",
+      "sha256": "bf34204b862e5f3e216bd9be10405632a81c507df79e1211fdcf95d4100d0867",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/psychology_multigoal_20261022/second_layout_pedestrians.yaml",
+      "sha256": "0cd012c3ff69a911ccb3a5a71f7dd775e217096b84d4f28866c656ef0cf5c08f",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/psychology_multigoal_20261022/startup_failure.json",
+      "sha256": "2abbb0e8b7a15262b00b71a375eeb3aac6bd265b58ec427f1a7962d5653af0c8",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/release_runtime_validation_20260924.json",
+      "sha256": "5a0030aa1d608111006d9eb75bd41899e25cb21c6f563c6cc4f55281ade849df",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/robot_response_comparison/README.md",
+      "sha256": "0de49b12c76e74f036629ed3918877937c51547179c6161dda23968162504631",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/robot_response_comparison/compare.cpp",
+      "sha256": "822660a043dd0438c90433f525fdad8357d5dcdf656eb56ec02a24f6a159280c",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/robot_response_comparison/existing_tests.txt",
+      "sha256": "fecd51dfcbb931e29a61292ba8d03c48afbd7fd817100603f7d20baffa25a782",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/robot_response_comparison/manifest.json",
+      "sha256": "85232253d397329147709846175c40c15b995b04846f0d9758a0600add1b9c3c",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/robot_response_comparison/plot.py",
+      "sha256": "e11d1f5ba90d270c5fa118363ad3017381de9a256f423e2c3cd10eff425b4b26",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/robot_response_comparison/plot_output.json",
+      "sha256": "46e45428c5a48587f9747725a6ce8b77d1a4f004a973f773faf2a38eb99291a7",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/robot_response_comparison/run.py",
+      "sha256": "6c1ccd7338e976dd8bce82c0b640ef5ef4f8505e91a14f7c040658144315b79d",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/robot_response_comparison/staggered/comparison.pdf",
+      "sha256": "ba90761352bd48ad78e4b7be72f64d2918a952f726bf9ff7155495593e369f45",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/robot_response_comparison/staggered/comparison.png",
+      "sha256": "1052a9d21328097483f9ec0dc6dd3d723d7ba612e201ea1e752764cf7772059a",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/robot_response_comparison/staggered/trajectories.csv",
+      "sha256": "5e742269fdf8e2fbbc121946b0efd0db98030700eff28dbef7a50b52cc6ce97b",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/robot_response_comparison/summary.json",
+      "sha256": "46e45428c5a48587f9747725a6ce8b77d1a4f004a973f773faf2a38eb99291a7",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/robot_response_comparison/symmetric/comparison.pdf",
+      "sha256": "a476bf2b8a10455d7e80ab168fdbfbae9185ee80ae58398c66e0b3bc59b95353",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/robot_response_comparison/symmetric/comparison.png",
+      "sha256": "73c9e16e43351555124300a3170e6730309a121a497eacec72743133f69f90dd",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/robot_response_comparison/symmetric/trajectories.csv",
+      "sha256": "a546052f1010b06898e2d1528fe20e6e1f58ac6daf38ee9c8e10bdb9f8b77281",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/robot_response_comparison/wide/comparison.pdf",
+      "sha256": "a96f47b108df281295c4fc05f3b4a66e0d1a18ac86983780109395a211b68372",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/robot_response_comparison/wide/comparison.png",
+      "sha256": "9cde2a32b8fdc2565162ee1acaeef1cd716f3bed5a236025087f9351cef3da8e",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/robot_response_comparison/wide/trajectories.csv",
+      "sha256": "a0c28aa681c47eeedb3ab6304743038ed413cdf205c88eddb8a6289879cf9b82",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/runtime_recovery_20261020/acceptance.json",
+      "sha256": "dfbdb69e4e888f2b46ac6b5ba16470f220d9f96ceae72c2f88599ba547c9001e",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/runtime_recovery_20261020/active_run_guard.json",
+      "sha256": "f307fccf945b5c0598f30afee30e25cac3581f5bbf11fbf8fd01e2213427da39",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/runtime_recovery_20261020/actual_runtime.json",
+      "sha256": "a9678bf2f7046cfdb2ce202ea0eb74b7040dfdec18d0ec2205b5e5c9f1df44f3",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/runtime_recovery_20261020/clock_recovery_first_attempt.json",
+      "sha256": "91e126c62eafd298e65485578e827e9547876989478a8cc4b49be9e7577a40be",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/runtime_recovery_20261020/extended_run_failure.json",
+      "sha256": "f630ac1cac97b6aa3b127f8ae8508d9286b169a5d77720be415965c5172900de",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/runtime_recovery_20261020/final_clock_recovery/faults.json",
+      "sha256": "77ffa03f8a1dc066cd4daf2849a546a0419092e622718b160984eb86fc17819f",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/runtime_recovery_20261020/final_clock_recovery/injected_pause.json",
+      "sha256": "a8f0fc2ab474c38ef21614896eeb8d44f2d60ffb8638e23653610c3d7c0ccd5d",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/runtime_recovery_20261020/final_clock_recovery/installed_modules.json",
+      "sha256": "5d529a5bb58793c0f0ee18404a16cb1259d6c3b1af6054bcb666f6e0c5d9f2f8",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/runtime_recovery_20261020/final_clock_recovery/psychology_demo.json",
+      "sha256": "8e142a675a2180e9cc9b4fb95b37b14441bef8a53b34f8a856132a136b6319d2",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/runtime_recovery_20261020/final_clock_recovery/resources.json",
+      "sha256": "838707350d94314869fddbcaeef975f8c9562809254281237a79dc4f00832870",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/runtime_recovery_20261020/final_clock_recovery/runtime.json",
+      "sha256": "7a834d004a886e2135e8cbc4f840e3064d8c0ecfff08d77242fff2804061a1c1",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/runtime_recovery_20261020/final_clock_recovery/summary.json",
+      "sha256": "7c15c6943acd0943e3039ca0b2a34d829765f8a95e728596f5253fc158120ceb",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/runtime_recovery_20261020/first_failure.json",
+      "sha256": "e372dc849701c798c52ff55f936826018c0f936ab11646f98d91ae18969d1c05",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/runtime_recovery_20261020/psychology_demo.json",
+      "sha256": "d0f21f3331e9add39e089f60f5ab42f52890f1973c93369fb3d07f1f68c7714e",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/runtime_recovery_20261020/run_profile.json",
+      "sha256": "9f11d76b52264a0a196f7b4cb001898e4aa74a6d3910d7815efe008225265b7d",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/speed05_20260930.json",
+      "sha256": "ecaf81f5027bdbe03943495fc7e5b54307a9b2027babe3cc4670ef495150e858",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/speedlimits_20260928/REPORT.md",
+      "sha256": "5c61983f2389828adc5291ac7dcbd9736b919a6fdc052bb3f95d9086daddaeb3",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/speedlimits_20260928/command.before.txt",
+      "sha256": "5079db105384ea61c49d9e643f9f5790baf11f220404c8bd6a7c686935539e35",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/visualization_20260928/REPORT.md",
+      "sha256": "c0d7eb5b3e73431868b3c0916661c839d450396fbe82c8dc52639a6bf2fca98d",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/visualization_20260928/handshake.txt",
+      "sha256": "af99cd62c74a3dab8000a7a96e254d347a9b23a81d55b30a11698b74a955faab",
+      "mode": "0o664"
+    },
+    {
+      "path": "evidence/visualization_20260928/run_multirobot.before.sh",
+      "sha256": "1d65a11817871ddff6cf98a330fa4ace4848bb664dfc1bb4978f7f43f11895aa",
+      "mode": "0o775"
+    },
+    {
+      "path": "scripts/audit_pedestrian_costmap.py",
+      "sha256": "099aa0c128b86c3e03aef81c9ff8d397e7d1ac80cd5249cd551b429e4bb9dfe8",
+      "mode": "0o664"
+    },
+    {
+      "path": "scripts/benchmark_navigation.py",
+      "sha256": "045bdd3f2eceecca9b1aa57dc87f3b039e56ca77ddad8fc4f25e372e7a046925",
+      "mode": "0o775"
+    },
+    {
+      "path": "scripts/build.sh",
+      "sha256": "08fe81b0f5d418bbb9cc88222a8ca69c7023162783c382029edab71afc6720f0",
+      "mode": "0o775"
+    },
+    {
+      "path": "scripts/capture_baseline.py",
+      "sha256": "209d9762ab0d7806ea6169a52fe2e2215732208c8af6b79f2e63baa5a718b351",
+      "mode": "0o775"
+    },
+    {
+      "path": "scripts/capture_graph.sh",
+      "sha256": "74785e35b709bce1df33d2a19dff352232374c56e54e1db53d4726d77159551b",
+      "mode": "0o775"
+    },
+    {
+      "path": "scripts/capture_resources.py",
+      "sha256": "05b7bd14848207f44468c35501a83ae9bcc512726f3d2dfc39eddb313691b5c7",
+      "mode": "0o775"
+    },
+    {
+      "path": "scripts/check_active_run.py",
+      "sha256": "8847e67ee9306a51c57effe8fb2f77f076fbf16c1e84ca07a3938e526208176f",
+      "mode": "0o664"
+    },
+    {
+      "path": "scripts/cleanup.sh",
+      "sha256": "e8220077b6526b164274b9378ce87d579cccb0c67f2bef9def754ee096890fa2",
+      "mode": "0o775"
+    },
+    {
+      "path": "scripts/compare_algorithms.py",
+      "sha256": "12096488d83b73c6fb9cbe2034013fa4b2a8705136f87d158ea3fa1691f343dd",
+      "mode": "0o775"
+    },
+    {
+      "path": "scripts/create_release.sh",
+      "sha256": "edcfc7e1247b75e640143b7fcc4ba4b77c1c331e9686d62f5eade9843d5c6b33",
+      "mode": "0o775"
+    },
+    {
+      "path": "scripts/delivery/connect_multirobot.ps1",
+      "sha256": "00e6566423347b22a0041848dc996f883103cd0c7d7e2dcde9dffcb666de1822",
+      "mode": "0o664"
+    },
+    {
+      "path": "scripts/delivery/run_multirobot.sh",
+      "sha256": "cac5c309fe9301413df5e00bd2311b41cdede7bbf78da1daa59d29c61fe2155e",
+      "mode": "0o755"
+    },
+    {
+      "path": "scripts/env.sh",
+      "sha256": "bea0e8bb7cf88ac9333eba54075333b6fe5d92e77c626240b1fc5923f8c0f240",
+      "mode": "0o775"
+    },
+    {
+      "path": "scripts/finalize_psychology_evidence.py",
+      "sha256": "fce78688156640a8795e48d84ab79d07dd2db39487b1228478cfef8a09220a67",
+      "mode": "0o664"
+    },
+    {
+      "path": "scripts/generate_map.py",
+      "sha256": "79fb5e1ab666b015d10a6ed6273a59246b0170f3937c3354b4ad142f34c2e819",
+      "mode": "0o775"
+    },
+    {
+      "path": "scripts/gpu_cpu_affinity.py",
+      "sha256": "68c6e2e18e1ee295d53dffbc890cb135023c976a8558230951450ec33dcdde84",
+      "mode": "0o664"
+    },
+    {
+      "path": "scripts/inject_isaac_clock_stall.py",
+      "sha256": "ea566a704a29286eea18ce2ce64a36df41bd5f68631e1b546a9630d7ab1d78b5",
+      "mode": "0o664"
+    },
+    {
+      "path": "scripts/monitor_runtime_timing.py",
+      "sha256": "9d55e2c51992ddc8fae7bbce7476f78c7b98cf5f7a071ddd7950076720252c5f",
+      "mode": "0o664"
+    },
+    {
+      "path": "scripts/multigoal_evidence.py",
+      "sha256": "7d8b2d8a57fad943dcb3031ec4b0533f23312e1d8e62691ce692a61677d63eb6",
+      "mode": "0o664"
+    },
+    {
+      "path": "scripts/plot_psychology.py",
+      "sha256": "56910025a1f5f26c5a68164812f8d44c094b76927cfa536a6db4fc714620b633",
+      "mode": "0o664"
+    },
+    {
+      "path": "scripts/process_group.sh",
+      "sha256": "3cbd676b02a6a7d08b3928f7e4aeed288baf0ad3f20039ab5f40a459f2afeb21",
+      "mode": "0o664"
+    },
+    {
+      "path": "scripts/run_multirobot.sh",
+      "sha256": "92a76a9d3b333f698c7ca3a5627ecce41d1dd059aaab2ae37b73049a19011eb3",
+      "mode": "0o775"
+    },
+    {
+      "path": "scripts/test_runtime_processes.py",
+      "sha256": "20d9708f1ed295932739385f6a67895fa7d148127964a0ac1a446dc536ba859c",
+      "mode": "0o664"
+    },
+    {
+      "path": "scripts/validate_angular_sign.py",
+      "sha256": "e564289a3824611b5d6aa339ac5d522f7cc62cb8e53775547cd51e577a684428",
+      "mode": "0o775"
+    },
+    {
+      "path": "scripts/validate_cancel_isolation.py",
+      "sha256": "519d7bfea8b6f36c90f20414b9ece002780394df9649a322c3f825fde8f4b48b",
+      "mode": "0o775"
+    },
+    {
+      "path": "scripts/validate_clock_recovery_runtime.py",
+      "sha256": "9cb7aa4a4f6b1df952c6478db2b152c50263ee9644a1dfcfdadb6d1cb023a0ee",
+      "mode": "0o664"
+    },
+    {
+      "path": "scripts/validate_clock_stall_ros.py",
+      "sha256": "896cce091dff7badf57273b8c68b131fcfe7da0b4175702b09c58c371a88fa2a",
+      "mode": "0o664"
+    },
+    {
+      "path": "scripts/validate_config.py",
+      "sha256": "569367313579f10eb034a5ce8c455d71ed7e74037c6290ab70590d3c5043efdd",
+      "mode": "0o775"
+    },
+    {
+      "path": "scripts/validate_control.py",
+      "sha256": "dcd7ceaad864e7c3c83ec7f1f44790dc20a1c157e620f053e37f3894f35eb728",
+      "mode": "0o775"
+    },
+    {
+      "path": "scripts/validate_env.sh",
+      "sha256": "097b286b3ce2b37752d7f568983a8da9f817cbcf0806df7c7fdacc49f7536963",
+      "mode": "0o664"
+    },
+    {
+      "path": "scripts/validate_hunav_config.py",
+      "sha256": "37240a7e770606fd0f68bea7700822f8ca107f66faea6f216ce99032cdcce421",
+      "mode": "0o775"
+    },
+    {
+      "path": "scripts/validate_hunav_runtime.py",
+      "sha256": "a7cae3b35c2128f6cf389f0348f3c8465599087bc13813b22eb7c18d9e125db0",
+      "mode": "0o775"
+    },
+    {
+      "path": "scripts/validate_multi_sfm_clearing.py",
+      "sha256": "a84c921fd892a349b02a9e5c20ba49d3cc055fb0d7fab461988236185f39bca0",
+      "mode": "0o664"
+    },
+    {
+      "path": "scripts/validate_multi_sfm_faults.py",
+      "sha256": "ac8515fb570d178ed01a060482ab68ed9c5d509cf0b341d5e7037b1ad7aff7a5",
+      "mode": "0o664"
+    },
+    {
+      "path": "scripts/validate_multi_sfm_interaction.py",
+      "sha256": "8770692958e478e9fe2a84a9c5a83f30d8f3bb6707f490b28b3be3c348a55f02",
+      "mode": "0o664"
+    },
+    {
+      "path": "scripts/validate_multi_sfm_routes.py",
+      "sha256": "2e88539299e647d620b419989861aacbc178a5f83ffd83e8ca0d4470b85648ae",
+      "mode": "0o664"
+    },
+    {
+      "path": "scripts/validate_multi_sfm_routes_cpu.py",
+      "sha256": "b1f39e65f59816ed904fa5740050bcea898bc188e115dc6ccba61dad24a34b42",
+      "mode": "0o664"
+    },
+    {
+      "path": "scripts/validate_multi_sfm_runtime.py",
+      "sha256": "f7773764dfe6a1220d49910a5f3da4cb5a20c432f0b1450e3c8a8f977d0dbba1",
+      "mode": "0o664"
+    },
+    {
+      "path": "scripts/validate_offline.sh",
+      "sha256": "7b14ad94ee370ab1c44be26c86d9ae4cdb15bcaa04e7786558eec367b3f8524f",
+      "mode": "0o775"
+    },
+    {
+      "path": "scripts/validate_peer_obstacle.py",
+      "sha256": "f3b954031fec9c91f19fad70faa141b27f209107a76a0ca2c8bb3b06849734b6",
+      "mode": "0o775"
+    },
+    {
+      "path": "scripts/validate_psychology_cpu.py",
+      "sha256": "4a90a2696e814285cc2e8d6eb3537f7f0c50aa0ea11569fc79f428165607fb2f",
+      "mode": "0o664"
+    },
+    {
+      "path": "scripts/validate_psychology_demo_ros.py",
+      "sha256": "b31d2c63bfe059f13b299ec41850ac1775548da66e6639f3b6f458d7833cad7d",
+      "mode": "0o664"
+    },
+    {
+      "path": "scripts/validate_psychology_runtime.py",
+      "sha256": "6077707170659a148dc96170ff4509f779d6a2fba64beb98ad4d5a5701c197dc",
+      "mode": "0o664"
+    },
+    {
+      "path": "scripts/validate_runtime.py",
+      "sha256": "fad50c9a76dd9a82816d456aeb5fb82e1d80f873bea2d669a74bd02a6442300f",
+      "mode": "0o775"
+    },
+    {
+      "path": "scripts/verify_baseline.py",
+      "sha256": "357b89d6f57b7cc7d30f999d8fc2449306e424f4624acb0f2d19d9121932f5c0",
+      "mode": "0o775"
+    },
+    {
+      "path": "scripts/verify_multi_sfm_release.py",
+      "sha256": "b969fdda9c71758a99b60d9550e70910f092445f8cf0f729ef9a1b8f511823b6",
+      "mode": "0o664"
+    },
+    {
+      "path": "scripts/verify_multi_sfm_vendor.py",
+      "sha256": "34225931d160a357601b7a73665057a62f2ef2456892233920ae3a69743ce4ed",
+      "mode": "0o664"
+    },
+    {
+      "path": "scripts/verify_workspace_snapshot.py",
+      "sha256": "969f02c23d643a820cf4069bfad397f47544d1b7883aa26b934b985e99c6a25b",
+      "mode": "0o664"
+    },
+    {
+      "path": "scripts/wait_multi_sfm_ready.py",
+      "sha256": "dc01deb030fb5f3e9da128045379a9f81f56f594aa092b8ce68565c0c4561610",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/arena_isaac/__init__.py",
+      "sha256": "c35049d25560ef5fdaaaee87326cdd6c2e15a42b083d1febd66304186cb94912",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/arena_isaac/run_isaacsim.py",
+      "sha256": "2248b3a57aaba54bbef0d0d41b76e3cbc19cdc39cd33e972a69e210b353ea3f9",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/arena_isaac/services/DeletePedestrians.py",
+      "sha256": "610ec83d57bcac613e51ac0f3dcd9dc42a3f6633fbd9f83f45230b5221799fb2",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/arena_isaac/services/DeletePrims.py",
+      "sha256": "9fb133a328e01fca979df7396c5b1f2954bc5249ad732de5b80c0953676b0e5b",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/arena_isaac/services/EditPrims.py",
+      "sha256": "3325b1885842e573220c344b9f7feab880744a943a40adb1bdb9277816f948ad",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/arena_isaac/services/GetPrims.py",
+      "sha256": "eda52fb25c42582a178c8b3b8c4fe4201bc485601d64f763f66e08f554581cde",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/arena_isaac/services/MovePedestrians.py",
+      "sha256": "6d276361141f4239ff5fc1c95144d36e88942af2d4cef99f25995f499686f22d",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/arena_isaac/services/ResetWorld.py",
+      "sha256": "250e9c9df795be7f713d581db1d3f20cd00a6e22c1dfdc8efc8b94e2ba86c64c",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/arena_isaac/services/SpawnCeilings.py",
+      "sha256": "49e2fe5e8ef3a60c37681e430a525c0e38ff8225ee9b3c3d74e4c84c3c98aa1b",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/arena_isaac/services/SpawnFloors.py",
+      "sha256": "ae53c1ecbe79de18271bd7ffe038cb4555905fb5f7c3e2dd1268cebd9cb45f5e",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/arena_isaac/services/SpawnPedestrians.py",
+      "sha256": "4c43db5c7a110664101d93a86354774eb5444edeeee4c47d1dddaf28e5e42bf0",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/arena_isaac/services/SpawnPrims.py",
+      "sha256": "ed05805215a6aa7572bf18c65f1ea3e8d0a93315885b031d75765a12f97cafdf",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/arena_isaac/services/SpawnUrdf.py",
+      "sha256": "0a97d5c718781ef1e6570bf69b89c2f57ba681d679267cbe5c738beae59a71e1",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/arena_isaac/services/SpawnUsd.py",
+      "sha256": "22875cc6367b9d4f156de860a9cd2098b1dd371e2910cb5031d28ab8c63ebdeb",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/arena_isaac/services/SpawnWalls.py",
+      "sha256": "f6375f2acc6b9c819e48b209c15440efc24cdd4e5f85e17a1f7d5c52ebe4a315",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/arena_isaac/services/UpdatePedestrians.py",
+      "sha256": "adf6b616a22aa540c9eee4a7eb999c492903e66f6f973c5e42a3a781ab43a0a6",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/arena_isaac/services/__init__.py",
+      "sha256": "93cc53aaec7c8f2689e473bd2de1331adf6f3ac7d42fbfd953e52218078b839a",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/arena_isaac/services/utils.py",
+      "sha256": "509024f61983d9c420d309610893e83d7aa6baeecee1fedcacd49b16a4e86e55",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/isaac_utils/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/isaac_utils/config/__init__.py",
+      "sha256": "0d34cc0756ada5166444b90292c43d9caa642d4a7e536ca7f6194f6773f33f09",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/isaac_utils/config/photoreal.py",
+      "sha256": "2c4d4c8c2a877ee0cf4a3cf399c4519c88071971e87e0a40e73739fdf8f1b3a4",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/isaac_utils/graphs/__init__.py",
+      "sha256": "e4d4c677d6789c24b8b7b8c3d1e8cae09cec24f1627cd5ab43b212d8a665060d",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/isaac_utils/graphs/control/__init__.py",
+      "sha256": "d3ef5ee08f767d3ec7f20c49d6c982f648166ffaa8b074f21df41a7f16b3919b",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/isaac_utils/graphs/control/topic_bridge.py",
+      "sha256": "9e2668c3c2ea50544b6c25a7b6df2e15294469add38367a0e5b86f7abc3dc406",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/isaac_utils/graphs/joint_states.py",
+      "sha256": "a0ceb23b9dbbda5b015a21a7425537ed2453b153bd7dd3698ee80a253c978ac0",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/isaac_utils/graphs/odom.py",
+      "sha256": "03a86439bcd9c47bcf2b81553ee8b73b49963aeb09716dd6d74b0c8231881aec",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/isaac_utils/graphs/sensors/__init__.py",
+      "sha256": "4dede729e6dd5a39cd869d8701e90206801532650ed017b9ca119e48659027bd",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/isaac_utils/graphs/sensors/camera.py",
+      "sha256": "e6962c1fcf765ed1ccb3f68e7a6f7dcb86c8349983a3f4498edf25496918e3fd",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/isaac_utils/graphs/sensors/contact.py",
+      "sha256": "ff3e0e2c288ff94f4ffd2a4d74af79a61019eb461f7ac7a6d50bbaabd557b5ad",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/isaac_utils/graphs/sensors/imu.py",
+      "sha256": "61731e97dab8e0b2b6c84afa9b2511109107cbffac05570caca13509341d27b9",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/isaac_utils/graphs/sensors/lidar.py",
+      "sha256": "fee17697688842c24e513c2bbe84caba102b065e5eaf1af0fa90a5396a853595",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/isaac_utils/graphs/sensors/normalized_scan.py",
+      "sha256": "35a36ab48ae68adb6131d792a737ebab50258bd1fdddfac14eceec20a701e9d5",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/isaac_utils/graphs/sensors/sensors.py",
+      "sha256": "73289536402752235224908df06400c6d0e1d801fdcb3fa99d4c61f877d7dacf",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/isaac_utils/graphs/tf.py",
+      "sha256": "e3fc9ad15290881a2b09dad81574dbca44fcb5f483022a23316ad41bd692d713",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/isaac_utils/graphs/time.py",
+      "sha256": "392157441e3347368e2242fef3b5d9447801be64b076015c91de8598850824c8",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/isaac_utils/managers/__init__.py",
+      "sha256": "e3a27f703dea6373bb5ea03ab63fed450269aabb644ac1c850e640eba1e42122",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/isaac_utils/managers/entity_lifecycle.py",
+      "sha256": "d8fe40f48d9cf2b4981317341cccd416187922154ace3da7a1646c63bb371435",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/isaac_utils/scan_geometry.py",
+      "sha256": "263c943b4e5312c3ff20357c3793611c031e97e4204f1651ce998510799d16ef",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/isaac_utils/simulation_time.py",
+      "sha256": "c9dfbd2f50498074e5fdd4d2fe33ac30e2d89da98ca908fabd5d2b7330528af0",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/isaac_utils/utils/__init__.py",
+      "sha256": "941709d1ce3bea95ecb4039a294e09612d73f6e08cdc6c364e515cac3ceb8ab7",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/isaac_utils/utils/assets.py",
+      "sha256": "81dcb24189758e2ba61801f532bcf13329f81e0f493fb22bbe4356231df539ac",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/isaac_utils/utils/geom.py",
+      "sha256": "a798dfa6b5fefaa8a595052296a84a30ed452506297f9a6538663db14e1a09eb",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/isaac_utils/utils/material.py",
+      "sha256": "198820e8e2ff23022f61e7290f9c0d79bdca77e49d9457712c07b308d36404ab",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/isaac_utils/utils/mesh.py",
+      "sha256": "9298369fa6e75f8aabdace99d9bb138dca70e7ed2089ebe9ec35a75990666507",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/isaac_utils/utils/path.py",
+      "sha256": "f0c452f7be04c1713bc4897a928c8e97e9bce7c8e1fdb689cbf33dc78faa961f",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/isaac_utils/utils/prim.py",
+      "sha256": "8a859b0904355f9423ee6272ae82a1bb66784d107328d85bcb09b9554397fea6",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/launch/run_isaacsim.launch.py",
+      "sha256": "b5cf0de35b9e430b19cfc8f35e8d264015d68169d73726b5153a8a64cfd16fd0",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/package.xml",
+      "sha256": "589b9fba395c3729d215cbe1fb4204294733b935b49ad5a6aca907f97b85de27",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/pedestrian/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/pedestrian/simulator/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/pedestrian/simulator/logic/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/pedestrian/simulator/logic/interface/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/pedestrian/simulator/logic/interface/pedestrian_interface.py",
+      "sha256": "ee27577bc908507ff184b351acb119e0cd3f49425f039cffc1781e1d70843f2e",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/pedestrian/simulator/logic/people/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/pedestrian/simulator/logic/people/character_frames.py",
+      "sha256": "2e018db9ad9c34c8e4cedb057637628d08f6c7dd4be0fe74fe5ac5cf47d01eaa",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/pedestrian/simulator/logic/people/person.py",
+      "sha256": "3a91a7bb1096df6e5eab1514f31306edd3bc8be80eccecf9fe11049287dbd1ca",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/pedestrian/simulator/logic/people/person_controller.py",
+      "sha256": "cd7f7c20c413048dd26629350408d753ef65720700fd9bf55cdd0d865410ebc1",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/pedestrian/simulator/logic/people_manager.py",
+      "sha256": "9c6348cd90d0251c3dd67c45d4c372b1202fb9f9cd24c3519ea74730788016d9",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/pedestrian/simulator/logic/state.py",
+      "sha256": "a095f24dae508fdd2a43ca409dc123bc17dfc8a578cab7e6939b19c2429b911d",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/pedestrian/simulator/params.py",
+      "sha256": "0264c6e8361ead7b948ee9ab049df27eeeda0423a00d40e3f9010f5cc07fe643",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/resource/arena_isaac",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/scripts/isaac_python.sh",
+      "sha256": "10c5a337954d2b4d0cfe5101d3127dc7c101fee6c1d998b6a6ea289c78601737",
+      "mode": "0o775"
+    },
+    {
+      "path": "src/arena_isaac/setup.cfg",
+      "sha256": "1093d6b1809d7bbe3a362754100ac602864951227d052fa085fb301acf46f60b",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/setup.py",
+      "sha256": "491878ac50198f4b50a3c1d69d24f5120ba30d6ef686d43ba5af73dfa53a6f1e",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/test/test_character_frames.py",
+      "sha256": "53d577dcd224ed2b5295ed001dc2e8f208c926ace2436158c03771701a315233",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/test/test_copyright.py",
+      "sha256": "ea71bbbc6247b5c14d176ed09f39ee274d563cc9b2ec355828ea451ceff31757",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/test/test_flake8.py",
+      "sha256": "37a813a0507f0ce51a2d0b57312d2cc078a0307a3ca85580ea801b0d2f9755d2",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_isaac/test/test_pep257.py",
+      "sha256": "e8b88d49ee296987b1b40069f81019b5fa09b1aa1bfee9a1faae45bb5cf53eda",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_bringup/arena_multi_bringup/__init__.py",
+      "sha256": "5a40472d7389f20cf65a36893704b02d5c2e6575dee2324fce72549d1f40d1e6",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_bringup/arena_multi_bringup/scenario_manager.py",
+      "sha256": "d49dfefaa9f68ccc1d649d61e72f03ec6e24cc28a6e9b6847486ea98e4afc11b",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_bringup/behavior_trees/navigate_w_recovery_and_replanning_only_if_path_becomes_invalid.xml",
+      "sha256": "5dbc8ddc0eb476d6ee610b533da59721c10c131210dc51b6f9a3e193abc39906",
+      "mode": "0o644"
+    },
+    {
+      "path": "src/arena_multi_bringup/config/nav2_multirobot.yaml",
+      "sha256": "3b906776227fec6315ccbaf7fe394a31d9255994d32ad95236af7775fee0b05b",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_bringup/launch/multirobot.launch.py",
+      "sha256": "0890b38f99d09043581b46a4e8fee71799bfd87a98a94023a00670edd71f9b5e",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_bringup/package.xml",
+      "sha256": "2090ff9e0a7dc2394f1c4db498b8b0b8f05a98d60a59d9f90382f5fdf2c65591",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_bringup/resource/arena_multi_bringup",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_bringup/setup.cfg",
+      "sha256": "29e21c95e72194ecc89d7e77568b7873c84b7e80cb72077d95d294643cb0814d",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_bringup/setup.py",
+      "sha256": "cc06dda729b3a5d351958ce2acf033ebadd9858970751c61f9a1f1ae7b1c58cb",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_control/arena_multi_control/__init__.py",
+      "sha256": "588f91508151958d8340251c47bfd7e324cc4fed8e5a9be161d5623aace220a1",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_control/arena_multi_control/command_guard.py",
+      "sha256": "bb74056f6488924da7bb8a2be0583dfdb802c1e0090aa8e9ffca2de768a1abd3",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_control/arena_multi_control/scenario.py",
+      "sha256": "ab40d719ec9ac7ae6e0f7fc3202536fcdb5f5af7c2b12134331fd528071caec0",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_control/arena_multi_control/task_cli.py",
+      "sha256": "a472c7f7ea004cf04ebf8be47c64ee0e8e1dcca0b6b5d5831f59c46b569b4e70",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_control/arena_multi_control/wheel_visualizer.py",
+      "sha256": "dfdd736a8c50b3a3ca3fb84e91e1c2d10bf093f1925573dea56a958582cc193a",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_control/package.xml",
+      "sha256": "57942c9d17bd97f27f5c04dc3fea18b0a0282420498d5c669b88e8ceaeac8bad",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_control/resource/arena_multi_control",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_control/setup.cfg",
+      "sha256": "5306ae68525c70b12dcea5e88a22e55fd5cf212a8c3dd8ed2763339d28910c0c",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_control/setup.py",
+      "sha256": "78e8eef7279e40668eac636c3f0fc49560462a2e6817660ad4cf065fe1e3271a",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_control/test/test_scenario.py",
+      "sha256": "124e60847fb1f13d781eed8b600ae3e570bbe45cba7df3f8c9896fdb4d1e2307",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_hunav/arena_multi_hunav/__init__.py",
+      "sha256": "70f65119ddc647a62b73de4686aa3f472a1cbb8290b1fc4ccb16551e1d23e5df",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_hunav/arena_multi_hunav/adapter.py",
+      "sha256": "7cd42d8a2dbbfcb01f7597c42a14f8b914b2ffee332dfbd5691bb942a8ffafed",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_hunav/arena_multi_hunav/behavior.py",
+      "sha256": "328b6dd136563c002d53fa4d096388e06fe80bba4e396efc46d018627e198401",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_hunav/arena_multi_hunav/clock_gate.py",
+      "sha256": "a90ed2a961f4929cc64ae2d1c97aac70fbb89d084b6b0236a27648abb70c3bf0",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_hunav/arena_multi_hunav/demo.py",
+      "sha256": "28707a8118458a2b29aba5883ffe86891b048723c3d2cac67f869465ba5c63d3",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_hunav/arena_multi_hunav/multi_adapter.py",
+      "sha256": "4f48b53469c372cb955be296b7c369b707cc567ba337232cbde2bfb946552e48",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_hunav/arena_multi_hunav/perception.py",
+      "sha256": "5398ece0fd733fd45d9d79d405d4c38b66e328bf9d71e5b241313c04fec6699d",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_hunav/arena_multi_hunav/psychology.py",
+      "sha256": "84970c75543f0051087b94f6a1faf16846ef37ad72595470e24e7736bc016b71",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_hunav/arena_multi_hunav/psychology_config.py",
+      "sha256": "a4911c1cb940ec67c01a49088abb45aa43a0b8893cd297fa273f24f86677dec9",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_hunav/arena_multi_hunav/psychology_sis.py",
+      "sha256": "12c9a8fa619eccedc2dbe1fd0415df9a0e67c9b5006bd7d6e058b2646c0088a6",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_hunav/arena_multi_hunav/route_tracking.py",
+      "sha256": "983e2d9f26a5c2393970a92542683d40947125c4621073b3fd20e56867f03727",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_hunav/arena_multi_hunav/routes.py",
+      "sha256": "f3211867eb2d3e8d0a1dca7955262a90e245e247b03dd608a63e7fc1ecb6faa2",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_hunav/arena_multi_hunav/timeline.py",
+      "sha256": "4394b32a9b4e06ca4efb3c0cec518923a3961f460feeafc7bcca69809cd32ea3",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_hunav/package.xml",
+      "sha256": "99dadb887985df33f0ea7978668b9e0d622a586ab33990714bf590d02a592e80",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_hunav/resource/arena_multi_hunav",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_hunav/setup.cfg",
+      "sha256": "c973c06a0c645d88f4ffcb8f7b0cc17ffd5874b1303d476a5619859b14090628",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_hunav/setup.py",
+      "sha256": "9b9c8ac22ca88a3213618a9f10432c3c611a12b61cc4d4ad9e45a0e598596dad",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_hunav/test/fixtures/observed_nav2_crossing.json",
+      "sha256": "7339c9699f88f0c9fe9b3b858cd4a802b50ff03924197adbdceb18586046b01f",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_hunav/test/test_clock_gate.py",
+      "sha256": "0974e39c65807102453f7f7ac73fd79339c41a1c8d5cc53b38562b6c86436b4b",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_hunav/test/test_dual_sis.py",
+      "sha256": "c4ae0c1ccda87db66b26e13b01a7c99ac9364ccb4c1909b40bd6af434b41ddee",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_hunav/test/test_integration_contracts.py",
+      "sha256": "3ea058abadc9170e18c88e347c025061c97870b258302d9720230d1e2cf5748b",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_hunav/test/test_psychology.py",
+      "sha256": "cc50e8cd6abfc295e1a4a923fa087e3612f54a12a1f9e8dca740f39a229923cb",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_hunav/test/test_psychology_demo.py",
+      "sha256": "916b138508e542051bba3dd83f1039a05fc96f4fc80ec7e8dc53f49da972f4bf",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_hunav/test/test_psychology_transaction.py",
+      "sha256": "47fe9f35852f9409c0cbd839363d35c0722a4804e4483ebb45b728e37f755a5a",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_hunav/test/test_release_gate.py",
+      "sha256": "979df7927294cba06b292060254507bc94327a5c19a88d2afcdb8609f8739567",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_hunav/test/test_routes.py",
+      "sha256": "47a353fd4ab73f37145ae137ffcd364b4abb1fad2e62ea22aecac65fef0ed4aa",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_hunav/test/test_simulation_time.py",
+      "sha256": "ecbfd9eed2cf996ddd1d3b1d634d85cea4c96f6e212c36694b4b42bf51a26c2f",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_hunav/test/test_timeline.py",
+      "sha256": "fad9213d9c2a9dc0186c984bc3d59ac308a3921ed0841542a20932a0ba5b1dd5",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_hunav_core/CMakeLists.txt",
+      "sha256": "c4919014bfca329feed3a622fd60378df664eb7994280dba33b9a3f198cbb423",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_hunav_core/include/arena_multi_hunav_core/core.hpp",
+      "sha256": "aa2567a83672895165a991b27936816dcda6a91d63fee0dfed07b83cbfca5626",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_hunav_core/package.xml",
+      "sha256": "ce5b0aaa7c1404c701b950449f2521e70e44da478e198a5c55830d0135d3644b",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_hunav_core/src/benchmark.cpp",
+      "sha256": "00ac227c27b82d62a3972ce45097c9b536c8eaf44125bc0266bd8a7ce8dc4f25",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_hunav_core/src/core.cpp",
+      "sha256": "89703294cc9aa8ae7e91a490834c9f5378803532c9370dbb64f0a1c075dcb6a2",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_hunav_core/src/server.cpp",
+      "sha256": "141b31c3484ac6b2c9a8b94126cffdf73da181f8cfdb26654648ae670d3a9020",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_hunav_core/test/test_core.cpp",
+      "sha256": "5850597583c17237d7501f31d173137ecf491547d1b90a660144e491a4376407",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_hunav_core/vendor/lightsfm/LICENSE",
+      "sha256": "d47fefe85fa2d856c769520b0dacbde1f7acd01b66a0518990bca9e9705ec9c0",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_hunav_core/vendor/lightsfm/SOURCE.json",
+      "sha256": "5a71819448c87de3ef52c27dc63692467e7087fbf6fdc3d0eb7072023e937925",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_hunav_core/vendor/lightsfm/include/angle.hpp",
+      "sha256": "697117842b99acfca8120b05c01e13cb7e83df342fab630f127ed4d3261633e8",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_hunav_core/vendor/lightsfm/include/map.hpp",
+      "sha256": "601a58e43671791c228ac8b3c02211561c63b00ba2057720ffb8623e11b60ee1",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_hunav_core/vendor/lightsfm/include/sfm.hpp",
+      "sha256": "ec99ee797e5f9b675121a2d7bf92a7fbdbe6b095b65f20fc9a71ce9d46d47f2f",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_hunav_core/vendor/lightsfm/include/vector2d.hpp",
+      "sha256": "9d6ec78fcf9af4ca9bdae40510d5a87e4348c7b8938407ffa9d37b4c2bb47c38",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_hunav_msgs/CMakeLists.txt",
+      "sha256": "a4d5e8a6ecc06841b916c9ef2b2aac4a575f268e41ad4a40b509407e08db526e",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_hunav_msgs/msg/BehaviorIntent.msg",
+      "sha256": "5416f91b4061686b32630e934689370ef8b4298a9ffbcb34b8eb389c2aad66f9",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_hunav_msgs/msg/BehaviorModifiers.msg",
+      "sha256": "1b9cf7ef0e4579cd664f6142d6876ab38006f654a94228e894376e9a935a41ca",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_hunav_msgs/msg/InteractionForces.msg",
+      "sha256": "25d712d73c11cfb63f019e540adc5c47625deacc93604f7681ac7885e14bfe11",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_hunav_msgs/msg/MotionDiagnostic.msg",
+      "sha256": "85c41ee1e2d9f841ffa004cce99df74826cda242b75646788aeed01f498cd3de",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_hunav_msgs/msg/RobotInfluence.msg",
+      "sha256": "2c8a99a86383d878adf6360cb857878d3e342b5c93499a55748573c615ceed5b",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_hunav_msgs/package.xml",
+      "sha256": "d492ec7a0d91ff21adfcd9612926d74845769048fec75d83fefb7494904b4eed",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_hunav_msgs/srv/ComputeMultiAgents.srv",
+      "sha256": "9a416c717ef5443f6bf82378fdc577718defb4d03c52faa4dc7656a6560c16d5",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_multi_hunav_msgs/srv/ComputeMultiAgentsV2.srv",
+      "sha256": "029e785c9ba79f4e2598c0f319db48cbdb3834be5e3a65778747fd3a0c910f6e",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_peer_costmap/CMakeLists.txt",
+      "sha256": "4cadc809b997e9c565efef40508f0f6aa6a3b10720a022fcbf1f2f732fe267de",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_peer_costmap/include/arena_peer_costmap/peer_obstacle_layer.hpp",
+      "sha256": "75c943e0788e3968f57f963d18d8e897417bc7457a21082baad023e83588df00",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_peer_costmap/package.xml",
+      "sha256": "c10dabec69fbb006a2a2a2417f171a4f33d3becd4c40f5c1c04366f72342004f",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_peer_costmap/peer_costmap_plugins.xml",
+      "sha256": "602a67e99bc9745e10004ff02f4922b0b6cda62340b2543aec8907e9b22b8e08",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_peer_costmap/src/peer_obstacle_layer.cpp",
+      "sha256": "ba854f33da6fb41f9a2fdbfc5cf2e18ec395ce788840bd8e93cb9fc395809fd0",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_peer_costmap/test/test_peer_geometry.cpp",
+      "sha256": "79c246adb2a956d58f9c12eb066ef43e8a09644db213038e98750bea58a610e0",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_people_msgs/CMakeLists.txt",
+      "sha256": "3bea8f8022aa23600d9b85b07661a4c4b49dbc2cb78849e166ec16790bf707c2",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_people_msgs/msg/Pedestrian.msg",
+      "sha256": "534100fa1d428c52ce2c44b5533588a77a6a195e64dd021762f215fbb2c59f82",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_people_msgs/msg/Pedestrians.msg",
+      "sha256": "fde04bfa8f2528b74be95a94204928fcb3c1a044bcc804d453aaaa8b656ff5ba",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_people_msgs/msg/SpawnPedestrian.msg",
+      "sha256": "407c60c9d13fc7055a11b01c9936a4025cc535fa2b4e14b3be0768c511969d85",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_people_msgs/package.xml",
+      "sha256": "c943b60ebcbadb6c4fb25fc16b8e94b622137801c14b08e3cbcc5ba9751294a3",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_people_msgs/srv/DeletePedestrians.srv",
+      "sha256": "2e836df44661049a81dd8e46777c19a0796bd25233ea021fe50c56e2eace8f20",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_people_msgs/srv/MovePedestrians.srv",
+      "sha256": "484a135611db2b99db59fab97e03dd8eb8f047d8716746575fe0a449491346ec",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_people_msgs/srv/SpawnPedestrians.srv",
+      "sha256": "7f389c9a1ffcfd7736bf672d54318f81e70232ef9517fc2b63b03e6a28666af3",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/arena_people_msgs/srv/UpdatePedestrians.srv",
+      "sha256": "c32bfd9ad345907210466492932bc1a394916efc6d895bd8e9441d5fb02918c0",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/isaacsim_msgs/CMakeLists.txt",
+      "sha256": "d60e7f2ebc6cc70d87bbf5f3e44b7e1db0976aeafd9b3d461d523aa205e24e07",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/isaacsim_msgs/msg/Ceiling.msg",
+      "sha256": "aa7d9f37d3da4a8a60005a0d7b5bf969425846e1a38b41fbdb1e4f9897a7072a",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/isaacsim_msgs/msg/ContactSensor.msg",
+      "sha256": "a38625d4dab40bfc79d79c844d0dbddbfb990de8268a9c8cef2466b7de34f42d",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/isaacsim_msgs/msg/Door.msg",
+      "sha256": "1ccabfccf5f25890fffeb08bf6440b6b475e72b4d0667dfd59a65cdf80f4a865",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/isaacsim_msgs/msg/Elevator.msg",
+      "sha256": "fca56563826e62b081c169f3c232669bdbd3abeee32ed73410a089d2ecf62c56",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/isaacsim_msgs/msg/Floor.msg",
+      "sha256": "be2f4e97553899fd587760b05677d52337ec9f5d290a754a2fd328a13114d039",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/isaacsim_msgs/msg/Material.msg",
+      "sha256": "e7b71e0664b1585ee3c7dec6ad5b1af95a9371a2723c87f2d2a6863a5e373f19",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/isaacsim_msgs/msg/PhysicsParams.msg",
+      "sha256": "ec778b770ac65c74bb34567089d83090eb56d3275b05ea9eb147ff285592be47",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/isaacsim_msgs/msg/Prim.msg",
+      "sha256": "01ed93b9211dcb339c517add098e3036918c74259128e4c8c411f83ecb7a199a",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/isaacsim_msgs/msg/Scale.msg",
+      "sha256": "0afaf79dc49c743e5f652397daa01eb3277c5f44f5039631569874ab61e8ee3a",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/isaacsim_msgs/msg/Wall.msg",
+      "sha256": "8fc5edb019b69fb31ac70de0aac80edbdab55b476a41c597d06f13f531ba488b",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/isaacsim_msgs/package.xml",
+      "sha256": "0e1f84fb2dc7324f03ce432901c40414abde653b6d47e2bb3460a51d59b355e3",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/isaacsim_msgs/srv/DeletePrims.srv",
+      "sha256": "26caf26c2e6279c55c7c71bd9c66295028c44dda9223bfb283423c9d53ac8e3c",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/isaacsim_msgs/srv/EditPrims.srv",
+      "sha256": "41a9e1cb52f6adef4418ecb26ef1e0caaf2ba99dc6472ab0f6fb4d9349bc1cad",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/isaacsim_msgs/srv/GetPrims.srv",
+      "sha256": "63dc3aa42704ba270d4711b35a391e4c9c03a768cc6ed32e1d4ec52760914f04",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/isaacsim_msgs/srv/ResetWorld.srv",
+      "sha256": "e1872179a3d1618291adbd9757a28f54d464746c35cde52662e30f4cf91d3eef",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/isaacsim_msgs/srv/SpawnCeilings.srv",
+      "sha256": "5ccfd13a4108eca12b0d5de1ecad9f524c6b8b9283db2c76fd0c5758f126c9de",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/isaacsim_msgs/srv/SpawnFloors.srv",
+      "sha256": "ade9b7cdd0d299a082a24bdc8bd3838bd784b360ec1921962b8c30b9f3c81bf5",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/isaacsim_msgs/srv/SpawnPrims.srv",
+      "sha256": "e06a555b9f3450e35387b1c7a4e482c587f12560685396918fe33fbd96ce6d46",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/isaacsim_msgs/srv/SpawnUrdf.srv",
+      "sha256": "bad91fd238451c4ef762b4d6b5a2e00aeeaacdea6b27ebbf7aff5e34a5887509",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/isaacsim_msgs/srv/SpawnUsd.srv",
+      "sha256": "31fe24f5d9f65b4e1240cfa6f0c3ab9ddddf71207c4243024a2c120d7af49375",
+      "mode": "0o664"
+    },
+    {
+      "path": "src/isaacsim_msgs/srv/SpawnWalls.srv",
+      "sha256": "291d22dc108c39b64c8bd9f53aaf19903dae38a472a15b525acd3f8ba3e9f36b",
+      "mode": "0o664"
+    }
+  ],
+  "publication_exclusions": [
+    ".gitignore",
+    "README.md",
+    "evidence/multigoal_20261010/validation/backup_sha256.log",
+    "evidence/multigoal_20261010/validation/before_wire_fix_cpu_routes.log",
+    "evidence/multigoal_20261010/validation/before_wire_fix_cpu_routes.server.log",
+    "evidence/multigoal_20261010/validation/build.log",
+    "evidence/multigoal_20261010/validation/cpu_routes.log",
+    "evidence/multigoal_20261010/validation/cpu_routes.server.log",
+    "evidence/multigoal_20261010/validation/cpu_routes_initial.log",
+    "evidence/multigoal_20261010/validation/finalize.log",
+    "evidence/multigoal_20261010/validation/isaac_launch.log",
+    "evidence/multigoal_20261010/validation/isaac_launch_initial.log",
+    "evidence/multigoal_20261010/validation/isaac_routes_30min.log",
+    "evidence/multigoal_20261010/validation/isaac_routes_initial.log",
+    "evidence/multigoal_20261010/validation/navigation.log",
+    "evidence/multigoal_20261010/validation/navigation_initial.log",
+    "evidence/multigoal_20261010/validation/offline.log",
+    "evidence/multigoal_20261010/validation/source_changed_isaac_launch.log",
+    "evidence/multigoal_20261010/validation/source_changed_isaac_routes_30min.log",
+    "evidence/near_fov_20261007/validation/build.log",
+    "evidence/near_fov_20261007/validation/default_rear.log",
+    "evidence/near_fov_20261007/validation/full_rear.log",
+    "evidence/near_fov_20261007/validation/invalid_fov.log",
+    "evidence/near_fov_20261007/validation/narrow_side.log",
+    "evidence/near_fov_20261007/validation/offline.log",
+    "evidence/near_fov_20261007/validation/physical_rear.log",
+    "evidence/near_fov_20261007/validation/ros_parameters.log",
+    "src/isaacsim_msgs/msg/.ipynb_checkpoints/Env-checkpoint.msg",
+    "src/isaacsim_msgs/msg/.ipynb_checkpoints/Euler-checkpoint.msg",
+    "src/isaacsim_msgs/msg/.ipynb_checkpoints/PrimPath-checkpoint.msg",
+    "src/isaacsim_msgs/msg/.ipynb_checkpoints/Quat-checkpoint.msg",
+    "src/isaacsim_msgs/srv/.ipynb_checkpoints/ImportUrdf-checkpoint.srv",
+    "src/isaacsim_msgs/srv/.ipynb_checkpoints/ImportUsd-checkpoint.srv",
+    "src/isaacsim_msgs/srv/.ipynb_checkpoints/UrdfToUsd-checkpoint.srv"
+  ],
+  "scope": "Core-source publication preserving independent remote history and original GPU provenance; full workspace backup is separate.",
+  "passed": true,
+  "checks": {
+    "overlay_packages_rebuilt": 7,
+    "python_tests": 130,
+    "cpp_tests": 29,
+    "source_file_content_and_modes_matched": 468,
+    "offline_validation": true,
+    "new_gpu_run": false
+  },
+  "local_validation_logs": {
+    "arena5_publish_build_20261026.log": "585e9a1881a50caeb96ba7741bf723836cbb52c80651e8406d115882c6ce091a",
+    "arena5_publish_clone_validation_20261026.log": "e35315d2653d0c78c10fa8c7a7adf9f6f8addcf4df03d8d166fdee636589ff1e"
+  }
+}

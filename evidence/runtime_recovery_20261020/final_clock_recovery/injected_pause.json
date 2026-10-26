@@ -1,0 +1,33 @@
+{
+  "scope": "actual registered Isaac process suspension; no new goals or commands",
+  "isaac_pid": 3479398,
+  "pause_wall_s": 2.0070560229942203,
+  "paused_status_observed": true,
+  "first_zero_wall_s": 0.5221651489846408,
+  "all_commands_zero_during_hold": true,
+  "movement_resumed": true,
+  "final_status": {
+    "backend": "multi_sfm",
+    "clock_stall_recoveries": 1,
+    "compute": 50,
+    "display_lag_s": 0.125000019,
+    "epoch": 12978386516719115653,
+    "fault": "",
+    "fault_details": {},
+    "healthy": true,
+    "integration_lag_s": 0.050000019,
+    "interaction_scope": "all_robots",
+    "last_clock_stall_wall_s": 2.132008519023657,
+    "max_compute_wall_s": 0.04004477406851947,
+    "max_dt": 0.025,
+    "paused": false,
+    "psychology_model": "sis_cf_v1",
+    "robots": [
+      "robot_1",
+      "robot_2"
+    ],
+    "step": 50,
+    "updates": 21
+  },
+  "passed": true
+}

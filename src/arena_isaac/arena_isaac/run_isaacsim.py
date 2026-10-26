@@ -58,6 +58,7 @@ CONFIG = {
     "physics_gpu": INTERNAL_GPU,
     "multi_gpu": False,
     "max_gpu_count": 1,
+    "limit_cpu_threads": int(os.environ.get("ARENA_CPU_THREADS", "8")),
     "extra_args": EXTRA_ARGS,
 }
 #import parent directory
@@ -69,6 +70,7 @@ sys.path.insert(0,str(parent_dir))
 
 # stdlib
 import queue
+import json
 import random
 import time
 import traceback
@@ -618,17 +620,28 @@ def main(args=None):
     # rendered frames. One callback per frame backlogs otherwise healthy input.
     # Bound the drain so physics still advances; keep the legacy loop unchanged.
     callback_budget = 8 if os.environ.get("ARENA_MULTI_CLOCK_ALIGNMENT", "false") == "true" else 1
+    timing_stream = None
+    if run_dir := os.environ.get("ARENA_MULTI_RUN_DIR"):
+        timing_stream = open(os.path.join(run_dir, "isaac_slow_frames.jsonl"), "a", buffering=1)
     try:
         while simulation_app.is_running():
+            frame_started = time.monotonic()
+            frame_phases = {}
             stepped_this_iteration: bool = False
             for _ in range(callback_budget):
                 rclpy.spin_once(controller, timeout_sec=0)
+            callbacks_finished = time.monotonic()
+            frame_phases["ros_callbacks_s"] = callbacks_finished-frame_started
             if controller.running:
                 if not was_playing:
                     world.play()
                     was_playing = True
                 controller.apply_ideal_chassis(PHYSICS_DT)
+                chassis_finished = time.monotonic()
+                frame_phases["chassis_s"] = chassis_finished-callbacks_finished
                 world.step(render=True)
+                render_finished = time.monotonic()
+                frame_phases["physics_render_s"] = render_finished-chassis_finished
                 from isaac_utils.simulation_time import observation_time
                 stamp = observation_time(world.current_time)
                 controller.publish_pedestrian_truth(stamp)
@@ -638,6 +651,7 @@ def main(args=None):
                 if os.environ.get("ARENA_NORMALIZED_SCAN", "false").lower() == "true":
                     from isaac_utils.graphs.sensors.normalized_scan import NormalizedScan
                     NormalizedScan.update_all(stamp)
+                frame_phases["observations_s"] = time.monotonic()-render_finished
                 stepped_this_iteration = True
             else:
                 if was_playing:
@@ -646,6 +660,7 @@ def main(args=None):
                 simulation_app.update()
 
             if stepped_this_iteration:
+                deferred_started = time.monotonic()
                 if (
                     screenshot_path
                     and not screenshot_requested
@@ -669,6 +684,15 @@ def main(args=None):
                         deferred_action()
                     except Exception as e:
                         carb.log_error(f"Deferred action failed: {e}\n{traceback.format_exc()}")
+                frame_phases["deferred_actions_s"] = time.monotonic()-deferred_started
+
+            elapsed = time.monotonic()-frame_started
+            if timing_stream is not None and elapsed >= 0.35:
+                timing_stream.write(json.dumps({
+                    "wall_unix_s": time.time(), "wall_monotonic_s": time.monotonic(),
+                    "frame_wall_s": elapsed, "running": controller.running,
+                    "phases": frame_phases,
+                })+"\n")
 
     except KeyboardInterrupt:
         controller.get_logger().info('Received KeyboardInterrupt, shutting down.')
@@ -677,6 +701,8 @@ def main(args=None):
         controller.get_logger().error(traceback.format_exc())
         traceback.print_exc(file=sys.stdout)
     finally:
+        if timing_stream is not None:
+            timing_stream.close()
         controller.get_logger().info('Shutting down ROS 2 node and simulation.')
         controller.destroy_node()
         rclpy.shutdown()

@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "scope": "actual Isaac simulation with visualization services enabled; Windows reconnection confirmation pending",
+  "source_commit": "f7a75152f74766666105bf55b83e49e8d692ca0e",
+  "actual_runtime_wall_s": 600.0864819620037,
+  "actual_runtime_sim_s": 328.4,
+  "succeeded_robot_goals": 6,
+  "minimum_robot_gap_m": 0.2675495887198034,
+  "minimum_human_gap_m": 0.38962001220873965,
+  "maximum_display_error_m": 0.039377817644014726,
+  "baseline_checks_passed": 30,
+  "process_tests_passed": 3,
+  "psychology_regression_tests_passed": 20,
+  "artifacts": {
+    "active_run_guard.json": "f307fccf945b5c0598f30afee30e25cac3581f5bbf11fbf8fd01e2213427da39",
+    "actual_runtime.json": "a9678bf2f7046cfdb2ce202ea0eb74b7040dfdec18d0ec2205b5e5c9f1df44f3",
+    "run_profile.json": "9f11d76b52264a0a196f7b4cb001898e4aa74a6d3910d7815efe008225265b7d",
+    "first_failure.json": "e372dc849701c798c52ff55f936826018c0f936ab11646f98d91ae18969d1c05",
+    "psychology_demo.json": "d0f21f3331e9add39e089f60f5ab42f52890f1973c93369fb3d07f1f68c7714e"
+  }
+}

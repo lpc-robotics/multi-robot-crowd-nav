@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "passed": true,
+  "scope": "eight-person scenario regression, 600 seconds wall time; no new 30-minute endurance or human-data validation",
+  "source_commit": "ce9cb063b8b893a69d9bc4aeb0d000d24f151c81",
+  "source_sha256": "7528f0bd55cc48cf362d4b5149b915ac4dffef65f697607a22ac3bd7e613d1c4",
+  "reference_tag": "backup-psychology-routes-20261022",
+  "reports": {
+    "offline.json": {
+      "sha256": "42c4a7d2f1bc29f6bdf823665e8a948f8362adb1cd106325561b559ebd37b724"
+    },
+    "regular_routes.json": {
+      "sha256": "1f594eecf93c6e66f5adbe6cbce36dabeffed893efa4b966b19423b1a835f0f2"
+    },
+    "robot_replay.json": {
+      "sha256": "e91c1f76651632985c265c9d1c6af4e71d4bbea50c49af3dc9b80096addf3761"
+    },
+    "actual.json": {
+      "sha256": "68d64275eb94117c4f617e451efd468d3ac6ad6e92ebc015d424f7fcfa14d767"
+    },
+    "routes_actual.json": {
+      "sha256": "c4752a80b251e69951443edb34b19317d06d4da8015ef486923802793b48e9e2"
+    },
+    "preserved_settings.json": {
+      "sha256": "03899ac7bca149d60aac3b80df422056e5d0caf53f699c60913eb24d13c52325"
+    },
+    "psychology_demo.json": {
+      "sha256": "a575c5129d484d3644df8b4413188d09faaef9f93965a4de66be0aaeb7e3749f"
+    }
+  },
+  "artifact_manifest_sha256": "26da5a163f4be799ca6cadc0337c57ee1d3a2b6a46df31d1ff200db2b7926b2b",
+  "failures": []
+}

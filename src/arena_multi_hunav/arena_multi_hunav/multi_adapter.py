@@ -31,6 +31,7 @@ from .timeline import Timeline, Sample
 from .routes import compile_route
 from .psychology_config import load_psychology_config
 from .behavior import MODES
+from .clock_gate import ClockStallGate
 
 
 def load_people(path, *, world_bounds=None):
@@ -154,6 +155,7 @@ class MultiSfmAdapter(Node):
                             "random_seed": 1, "psychology_model": "noop",
                             "psychology_config_file": "",
                             "observation_timeout": 0.6, "simulation_stamp_timeout": 1.0,
+                            "clock_stall_timeout": 30.0,
                             "service_timeout": 1.0}.items():
             self.declare_parameter(name, value)
         self.names = sorted(self.get_parameter("robot_names").value)
@@ -167,6 +169,14 @@ class MultiSfmAdapter(Node):
         self.epoch = uuid.uuid4().int & ((1 << 64) - 1); self.step = 0
         self.stamp_ns = None; self.clock_ns = None; self.scene_ready = False; self.spawned = False
         self.fault = ""; self.pending = None; self.update_pending = None
+        self.fault_details = {}
+        self.last_clock_wall = None
+        self.last_tick_wall = None
+        self.tick_gap_s = 0.0
+        stall_timeout = float(self.get_parameter("clock_stall_timeout").value)
+        if not math.isfinite(stall_timeout) or stall_timeout <= float(self.get_parameter("observation_timeout").value):
+            raise ValueError("clock_stall_timeout must exceed observation_timeout")
+        self.clock_gate = ClockStallGate(maximum_wall_s=stall_timeout)
         self.display_stamp = None; self.last_display_wall = 0.0
         self.compute_count = 0; self.update_count = 0; self.max_compute_wall = 0.0
         self.model = MODELS[str(self.get_parameter("psychology_model").value)]()
@@ -206,6 +216,17 @@ class MultiSfmAdapter(Node):
 
     def _fail(self, reason):
         if not self.fault:
+            now = time.monotonic()
+            self.fault_details = {
+                "wall_monotonic_s": now,
+                "clock_stamp_ns": self.clock_ns,
+                "clock_receive_age_s": None if self.last_clock_wall is None else now-self.last_clock_wall,
+                "timer_gap_s": self.tick_gap_s,
+                "robot_receive_age_s": {name: None if h.wall_seen is None else now-h.wall_seen
+                                        for name, h in self.history.items()},
+                "robot_stamp_ns": {name: h.samples[-1].stamp_ns if h.samples else None
+                                   for name, h in self.history.items()},
+            }
             self.fault = reason; self.epoch = (self.epoch + 1) % (1 << 64)
             self.get_logger().error(reason)
             self.health_pub.publish(Bool(data=False))
@@ -219,6 +240,7 @@ class MultiSfmAdapter(Node):
             self.scene_ready = True
 
     def _on_clock(self, msg):
+        self.last_clock_wall = time.monotonic()
         stamp = msg.clock.sec * 1_000_000_000 + msg.clock.nanosec
         if self.clock_ns is not None and stamp < self.clock_ns and self.spawned:
             self._fail("clock_rewind")
@@ -281,6 +303,10 @@ class MultiSfmAdapter(Node):
         self.last_display_wall = time.monotonic()
 
     def _tick(self):
+        now = time.monotonic()
+        if self.last_tick_wall is not None:
+            self.tick_gap_s = now-self.last_tick_wall
+        self.last_tick_wall = now
         try:
             self._tick_impl()
         except Exception as error:
@@ -288,6 +314,32 @@ class MultiSfmAdapter(Node):
 
     def _tick_impl(self):
         now = time.monotonic(); timeout = float(self.get_parameter("service_timeout").value)
+        if not self.fault and self.stamp_ns is not None:
+            was_held = self.clock_gate.active
+            hold, held_seconds = self.clock_gate.update(
+                now, self.clock_ns, self.last_clock_wall,
+                {name: (h.samples[-1].stamp_ns, h.wall_seen) for name, h in self.history.items()},
+                float(self.get_parameter("observation_timeout").value))
+            if hold:
+                if not was_held:
+                    self.health_pub.publish(Bool(data=False))
+                    self.get_logger().warn("SIMULATION_CLOCK_STALLED: holding motion and psychology")
+                    self.last_report = now-1.0
+                    self._report()
+                return
+            if held_seconds:
+                # No commit, new request or display write was performed during
+                # the coherent simulation stall. Retain serialized transactions.
+                if self.pending:
+                    future, started, *rest = self.pending
+                    self.pending = (future, self.clock_gate.request_started_after_resume(started, now), *rest)
+                if self.update_pending:
+                    future, started, *rest = self.update_pending
+                    self.update_pending = (future, self.clock_gate.request_started_after_resume(started, now), *rest)
+                self.get_logger().info(
+                    f"SIMULATION_CLOCK_RESUMED: gap={self.clock_gate.last_gap_s:.3f}s")
+                self.last_report = now-1.0
+                self._report()
         if self.update_pending:
             future, started, stamp, stopped = self.update_pending
             if future.done():
@@ -301,6 +353,10 @@ class MultiSfmAdapter(Node):
                     self.warm_display_ready = True
                     self.warm_since = None
             elif now - started > (30.0 if self.stamp_ns is None else timeout):
+                self.get_logger().error(
+                    f"DISPLAY_REQUEST_TIMEOUT: effective_wait={now-started:.6f}s "
+                    f"request_stamp_ns={stamp} clock_ns={self.clock_ns} "
+                    f"recoveries={self.clock_gate.recoveries}")
                 self._fail("isaac_update_timeout")
         if self.fault:
             if self.spawned and self.update_pending is None and self.update.service_is_ready() and now-self.last_display_wall >= 0.2:
@@ -402,13 +458,17 @@ class MultiSfmAdapter(Node):
 
     def _report(self):
         now = time.monotonic()
-        healthy = self.spawned and not self.fault and self.update_count > 0
+        healthy = self.spawned and not self.fault and not self.clock_gate.active and self.update_count > 0
         self.health_pub.publish(Bool(data=healthy))
         if now-self.last_report < 1.0:
             return
         self.last_report = now
         payload = {"backend": "multi_sfm", "interaction_scope": "all_robots", "robots": self.names,
                    "healthy": healthy, "fault": self.fault, "epoch": self.epoch, "step": self.step,
+                   "fault_details": self.fault_details,
+                   "paused": self.clock_gate.active,
+                   "clock_stall_recoveries": self.clock_gate.recoveries,
+                   "last_clock_stall_wall_s": self.clock_gate.last_gap_s,
                    "compute": self.compute_count, "updates": self.update_count, "max_dt": 0.025,
                    "psychology_model": self.model.name,
                    "max_compute_wall_s": self.max_compute_wall,
