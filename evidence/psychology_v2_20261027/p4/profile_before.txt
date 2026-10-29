@@ -1,0 +1,26 @@
+1000 profiled transactions: 43.124169s\n         125771948 function calls (112776690 primitive calls) in 42.974 seconds
+
+   Ordered by: cumulative time
+   List reduced from 132 to 18 due to restriction <18>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+     1000    0.025    0.000   36.612    0.037 /home/lpc/workspace/arena5_multi_ws/src/arena_multi_hunav/arena_multi_hunav/psychology.py:107(prepare_step)
+   154000    0.167    0.000   25.492    0.000 /home/lpc/workspace/arena5_ws/.conda/arena_ros/lib/python3.11/dataclasses.py:1265(asdict)
+5487934/154000   10.815    0.000   25.257    0.000 /home/lpc/workspace/arena5_ws/.conda/arena_ros/lib/python3.11/dataclasses.py:1289(_asdict_inner)
+     4000    0.012    0.000   23.711    0.006 /home/lpc/workspace/arena5_multi_ws/src/arena_multi_hunav/arena_multi_hunav/psychology_v2.py:31(snapshot)
+     4000    0.058    0.000   20.714    0.005 /home/lpc/workspace/arena5_multi_ws/src/arena_multi_hunav/arena_multi_hunav/psychology_v2.py:33(<dictcomp>)
+12593327/5291967   11.593    0.000   19.029    0.000 /home/lpc/workspace/arena5_ws/.conda/arena_ros/lib/python3.11/copy.py:128(deepcopy)
+     2000    0.038    0.000   11.880    0.006 /home/lpc/workspace/arena5_multi_ws/src/arena_multi_hunav/arena_multi_hunav/psychology_v2.py:37(restore)
+330982/17000    2.124    0.000   11.727    0.001 /home/lpc/workspace/arena5_ws/.conda/arena_ros/lib/python3.11/copy.py:227(_deepcopy_dict)
+     1000    0.406    0.000    9.030    0.009 /home/lpc/workspace/arena5_multi_ws/src/arena_multi_hunav/arena_multi_hunav/psychology_v2.py:41(step)
+73982/28000    0.241    0.000    5.165    0.000 /home/lpc/workspace/arena5_ws/.conda/arena_ros/lib/python3.11/copy.py:259(_reconstruct)
+  5670891    1.541    0.000    3.120    0.000 /home/lpc/workspace/arena5_ws/.conda/arena_ros/lib/python3.11/dataclasses.py:1253(_is_dataclass_instance)
+     4000    0.017    0.000    2.985    0.001 /home/lpc/workspace/arena5_multi_ws/src/arena_multi_hunav/arena_multi_hunav/psychology_v2_config.py:127(digest)
+     4000    0.009    0.000    2.665    0.001 /home/lpc/workspace/arena5_multi_ws/src/arena_multi_hunav/arena_multi_hunav/psychology_v2_config.py:123(document)
+     1000    0.007    0.000    2.315    0.002 /home/lpc/workspace/arena5_multi_ws/src/arena_multi_hunav/arena_multi_hunav/psychology_v2.py:59(<listcomp>)
+    10000    1.119    0.000    2.308    0.000 /home/lpc/workspace/arena5_multi_ws/src/arena_multi_hunav/arena_multi_hunav/perception.py:39(propagation_graph)
+ 25267636    2.251    0.000    2.251    0.000 {method 'get' of 'dict' objects}
+ 16154799    1.670    0.000    1.670    0.000 {built-in method builtins.isinstance}
+  5761844    1.595    0.000    1.595    0.000 {built-in method builtins.hasattr}
+
+

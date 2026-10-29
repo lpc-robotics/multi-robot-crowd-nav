@@ -1,0 +1,17 @@
+random_seed: 11
+planner_algorithm: dijkstra
+hunav_profile: none
+pedestrian_backend: multi_sfm
+pedestrian_config: ../hunav/multi_playful_1_v2_validation.yaml
+psychology_model: sis_cf_v2
+max_linear: 0.15
+max_angular: 1.0
+robots:
+- name: robot_1
+  x: 9.0
+  y: 10.0
+  yaw: 0.0
+  control_mode: nav2
+physics_dt: 0.05
+psychology_config: ../psychology/sis_cf_v2_playful_validation.yaml
+demo_tasks: ../tasks/psychology_v2_single.yaml

@@ -7,6 +7,67 @@ using namespace arena_multi_hunav_core;
 using Agent = hunav_msgs::msg::Agent;
 Compute::Request fixture();
 
+ComputeV3::Request v3_fixture() {
+  const auto q = fixture();
+  ComputeV3::Request v;
+  v.epoch=q.epoch; v.step=q.step; v.dt=q.dt; v.current_agents=q.current_agents;
+  v.robots=q.robots; v.modifiers=q.modifiers;
+  arena_multi_hunav_msgs::msg::BehaviorIntentV3 i; i.agent_id=1; i.allow_task_progress=true;
+  v.intents.push_back(i); return v;
+}
+
+TEST(CoreV3, NeutralIntentMatchesV1Exactly) {
+  auto v=v3_fixture(); auto q=fixture();
+  for (int step=0; step<1200; ++step) {
+    q.robots.header.stamp=q.current_agents.header.stamp;
+    v.robots.header.stamp=v.current_agents.header.stamp;
+    auto a=integrate(q,{}); auto b=integrate(v,{});
+    ASSERT_TRUE(a.success)<<a.error; ASSERT_TRUE(b.success)<<b.error;
+    EXPECT_EQ(a.updated_agents,b.updated_agents); EXPECT_EQ(a.influences,b.influences);
+    q.current_agents=a.updated_agents; v.current_agents=b.updated_agents;
+  }
+}
+
+TEST(CoreV3, StaticCircleIgnoresVelocityAndFovButDynamicDoesNot) {
+  auto v=v3_fixture(); v.robots.agents.resize(1);
+  v.intents[0].robot_response=1;
+  auto a=integrate(v,{}); ASSERT_TRUE(a.success)<<a.error;
+  v.robots.agents[0].velocity.linear.x=.5;
+  Config narrow; narrow.robot_fov_deg=1; narrow.robot_fov_fade_deg=0;
+  auto b=integrate(v,narrow); ASSERT_TRUE(b.success)<<b.error;
+  EXPECT_EQ(a.updated_agents,b.updated_agents); EXPECT_EQ(a.influences,b.influences);
+  EXPECT_EQ(a.motion[0].robot_static_force,b.motion[0].robot_static_force);
+  EXPECT_EQ(a.motion[0].robot_social_force,geometry_msgs::msg::Vector3());
+  EXPECT_GT(std::hypot(a.motion[0].robot_static_force.x,a.motion[0].robot_static_force.y),.01);
+  v.intents[0].robot_response=0;
+  auto c=integrate(v,{}); ASSERT_TRUE(c.success);
+  v.robots.agents[0].velocity.linear.x=0;
+  auto d=integrate(v,{}); ASSERT_TRUE(d.success);
+  EXPECT_NE(c.motion[0].robot_social_force,d.motion[0].robot_social_force);
+  EXPECT_EQ(a.motion[0].robot_near_force,d.motion[0].robot_near_force);
+  const auto & f=a.motion[0];
+  EXPECT_NEAR(f.total_before_limit.x,f.desired_force.x+f.obstacle_force.x+f.human_social_force.x+
+    f.robot_social_force.x+f.robot_static_force.x+f.robot_near_force.x,1e-12);
+}
+
+TEST(CoreV3, YawControlIsStoppedRateLimitedAndTaskPausing) {
+  auto v=v3_fixture(); auto & i=v.intents[0];
+  i.mode=i.SURPRISED; i.has_target_robot=true; i.target_robot_id=-1;
+  i.override_desired_velocity=true; i.allow_task_progress=false; i.override_yaw=true;
+  i.desired_yaw=1.; i.max_yaw_rate=.7;
+  v.robots.agents[0].position.position.x=20; v.robots.agents[1].position.position.x=20;
+  auto a=integrate(v,{}); ASSERT_TRUE(a.success)<<a.error;
+  EXPECT_TRUE(a.motion[0].yaw_applied);
+  EXPECT_NEAR(a.updated_agents.agents[0].yaw,.7*.025,1e-6);
+  EXPECT_EQ(a.updated_agents.agents[0].goals,v.current_agents.agents[0].goals);
+  v.current_agents.agents[0].velocity.linear.x=.5;
+  auto b=integrate(v,{}); ASSERT_TRUE(b.success)<<b.error;
+  EXPECT_FALSE(b.motion[0].yaw_applied);
+  i.yaw_stop_speed=.1;
+  auto c=integrate(v,{}); EXPECT_FALSE(c.success);
+  EXPECT_EQ(c.updated_agents,v.current_agents); EXPECT_TRUE(c.motion.empty());
+}
+
 ComputeV2::Request v2_fixture() {
   const auto q = fixture();
   ComputeV2::Request v;

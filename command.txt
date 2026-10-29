@@ -24,3 +24,9 @@ export ARENA_FOXGLOVE_PORT=8765
 
 # 动态心理八人多目标场景：自动执行有限轮双机 Nav2 演示任务
 ./scripts/run_multirobot.sh config/scenarios/two_robots_multi_sfm_8_multigoal_psychology_nav2.yaml auto_demo:=true
+
+# 动态心理 V2 十四人多目标场景：普通、免疫、静态障碍响应与两名错峰玩闹者
+./scripts/run_multirobot.sh config/scenarios/two_robots_multi_sfm_14_multigoal_psychology_v2_nav2.yaml auto_demo:=true
+
+# V2 人工发送机器人目标：去掉 auto_demo:=true
+./scripts/run_multirobot.sh config/scenarios/two_robots_multi_sfm_14_multigoal_psychology_v2_nav2.yaml

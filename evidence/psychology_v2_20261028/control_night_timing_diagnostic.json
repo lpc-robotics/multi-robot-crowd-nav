@@ -1,0 +1,68 @@
+{
+  "wall_duration_s": 1800.0439917768817,
+  "samples": {
+    "/clock": {
+      "count": 12130,
+      "max_wall_gap_s": 0.38898173114284873,
+      "first_sim_s": 47.200000703,
+      "last_sim_s": 653.65000974
+    },
+    "/robot_1/odom": {
+      "count": 12130,
+      "max_wall_gap_s": 0.3891601038631052,
+      "first_position": [
+        6.804945945739746,
+        3.0280346870422363
+      ],
+      "last_position": [
+        3.1943390369415283,
+        3.014117956161499
+      ]
+    },
+    "/robot_2/odom": {
+      "count": 12130,
+      "max_wall_gap_s": 0.38915856392122805,
+      "first_position": [
+        6.900941371917725,
+        11.334571838378906
+      ],
+      "last_position": [
+        3.1929869651794434,
+        7.034895896911621
+      ]
+    },
+    "/multirobot/hunav/health": {
+      "count": 11087,
+      "max_wall_gap_s": 0.1407298380509019,
+      "last_health": true
+    },
+    "/multirobot/hunav/status": {
+      "count": 1050,
+      "max_wall_gap_s": 1.1269231408368796
+    }
+  },
+  "gaps_over_0_4s": [],
+  "status": {
+    "backend": "multi_sfm",
+    "clock_stall_recoveries": 0,
+    "compute": 26010,
+    "display_lag_s": 0.125009691,
+    "epoch": 11638137372812992949,
+    "fault": "",
+    "fault_details": {},
+    "healthy": true,
+    "integration_lag_s": 0.050009691,
+    "interaction_scope": "all_robots",
+    "last_clock_stall_wall_s": 0.0,
+    "max_compute_wall_s": 0.058486889814957976,
+    "max_dt": 0.025,
+    "paused": false,
+    "psychology_model": "sis_cf_v2",
+    "robots": [
+      "robot_1",
+      "robot_2"
+    ],
+    "step": 26011,
+    "updates": 10816
+  }
+}

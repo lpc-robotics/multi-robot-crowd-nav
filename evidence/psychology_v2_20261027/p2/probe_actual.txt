@@ -1,0 +1,37 @@
+{"wall_time": 1793087879.112077, "reason": "missing actual stopped aligned observation: 1"}
+{
+  "passed": false,
+  "scope": "actual Character Graph and committed V3 transactions",
+  "requested_wall_s": 45.0,
+  "wall_s": 45.052898151101544,
+  "sim_s": 53.25,
+  "actual_samples": 1039,
+  "matched_samples": 1038,
+  "minimum_robot_gap_m": 0.9617276273931644,
+  "minimum_human_gap_m": null,
+  "max_display_error_m": 0.055217876218949066,
+  "max_actual_speed_mps": 1.63940316645325,
+  "modes": {
+    "1": [
+      "CURIOUS",
+      "REGULAR",
+      "SURPRISED"
+    ]
+  },
+  "actual_aligned_observation_s": {
+    "1": 0.9500000140000003
+  },
+  "actual_front_occupancy_s": {},
+  "events": {
+    "1:surprise_started": 1,
+    "1:surprise_completed": 1
+  },
+  "phases": {
+    "1:none": 2131
+  },
+  "cycles": {},
+  "pause_checks": 1994,
+  "failures": [
+    "missing actual stopped aligned observation: 1"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "runtime_reference_commit": "7cffd0eddc4c55aa414338d609b5648c71d3d70d",
+  "scope": "runtime model, adapter, C++ core, scene/task configuration unchanged; only offline data/analysis/validation/test files differ",
+  "changed_analysis_files": {
+    "scripts/compare_psychology_v2_runs.py": "c6b6b18fe7a71c82ce0ce171e53e71c3f3d926614fbecece41579d0949755a57",
+    "src/arena_multi_hunav/arena_multi_hunav/data_v2.py": "2afdb65c47823b9bd70f055dd59be86d79a23fb00d698339ca11f1aa0fe41e32",
+    "scripts/validate_psychology_v2_control.py": "e7c6bf17115b2470e15d960164ddaa1bf94fbe52a9617336e595c3164b9b1973",
+    "src/arena_multi_hunav/arena_multi_hunav/control_validation_v2.py": "24ac9cede6400761257bed32c00b75ca585b7bfbe0548fa2f20edfd9a212c075",
+    "src/arena_multi_hunav/test/test_control_validation_v2.py": "21b009dd819b48d08af9cb3b44f0dabb61f163f50c4c7ee4510945544872b267",
+    "src/arena_multi_hunav/test/test_psychology_v2_export_metadata.py": "9aacff7c85551e98ed6b07426739b540e5aaa66ce22c3926413e5d5c3b2e5e26"
+  }
+}

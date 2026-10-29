@@ -1,9 +1,9 @@
 # Source import
 
 Source workspace: `/home/lpc/workspace/arena5_multi_ws`.
-Current source branch: `feature/dynamic-psychology-v1`.
-Current source commit: `f170bc72a90aeec44621f816551bb6b656f93cd3`.
-Last source synchronization: 2026-10-26 (Asia/Shanghai).
+Current source branch: `feature/dynamic-psychology-v2`.
+Current source commit: `b5d931cc01af2ae6e7ba9c33685a2afaef2a80d3`.
+Last source synchronization: 2026-10-29 (Asia/Shanghai).
 Initial snapshot: `f330dfcd29c6a1f711e3f091798e36852fac742d`, 2026-09-30.
 
 This independent repository publishes the tracked core source from that commit:
@@ -109,3 +109,25 @@ The source workspace's six-person visual-runtime recovery and eight-person GPU r
 unchanged and retain their original source hashes and test conditions. No new Isaac/GPU simulation is
 performed for this publication. Local rebuild/recheck results and the imported-file inventory are
 recorded in `evidence/publication_20261026/publication.json`.
+
+
+## 2026-10-29 V2 update
+
+Source snapshot: `b5d931cc01af2ae6e7ba9c33685a2afaef2a80d3`, branch `feature/dynamic-psychology-v2`,
+local source acceptance tag `validated-dynamic-psychology-v2-20261029`.
+The independent publication ancestry and prior evidence are preserved.
+
+V2 adds the fourteen-person scene, psychology immunity and static-obstacle response,
+transactional surprised observation, bounded moving-front playful occupancy and task return,
+a 137-entry parameter registry, and auditable observations/events/latent data exchange.
+The six/eight-person V1 scenarios remain available. Runtime files keep their original bytes and modes.
+Repository README, ignore rules and publication metadata are maintained separately.
+
+Generated launch logs, notebook checkpoints and high-frequency traces are excluded; their paths and
+hashes are listed in this publication inventory. The full raw experiment data remains in the original
+workspace, as documented in the V2 evidence index. Failure reports, three-seed acceptance records and
+the independently scoped disabled-playful control remain unchanged. Original runtime validation used
+source `7cffd0e`; the final source snapshot also contains data-export and analysis fixes. The existing
+equivalence report states that distinction. No new GPU acceptance is claimed for this publication.
+Rebuild, offline-check, parameter-registry and imported-file verification results are recorded in
+`evidence/publication_20261029/publication.json`.

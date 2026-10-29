@@ -1,0 +1,18 @@
+robots:
+- robot_1
+startup_timeout_wall_s: 300.0
+goal_timeout_wall_s: 600.0
+hold_after_round_sim_s: 15.0
+rounds:
+- goals:
+    robot_1:
+    - 16.0
+    - 10.0
+    - 0.0
+  delays:
+    robot_1: 8.0
+- goals:
+    robot_1:
+    - 3.0
+    - 3.0
+    - 3.141592653589793

@@ -1,0 +1,14 @@
+{
+  "evidence/runs/psychology_v2_20261028/seed11/launch.log": {
+    "bytes": 397120,
+    "sha256": "66455557f172c13a83913b2f77805270e31ab5e18d385818ad5f2dafc127b4ec"
+  },
+  "evidence/runs/psychology_v2_20261028/seed11/acceptance.actual.jsonl": {
+    "bytes": 1132766,
+    "sha256": "0a4c6f8e733084b57ee6dddd965265f0a1ee5b65190212f7f9a08e6ad1c4582c"
+  },
+  "evidence/runs/psychology_v2_20261028/seed11/runs/20261028_125312_two_robots_multi_sfm_14_multigoal_psychology_v2_nav2_gpu3/psychology_12753718530580863538.jsonl": {
+    "bytes": 36974026,
+    "sha256": "9b60881980496a6dff97cf4e98a4d1d45f87599e376b11f9390e36c1ab166475"
+  }
+}

@@ -1,0 +1,308 @@
+{
+  "passed": true,
+  "scope": "matched simulation ablation, no empirical prevalence or statistical significance claim",
+  "active": {
+    "interactions": [
+      {
+        "participant_id": "13",
+        "target_robot": "robot_1",
+        "stamp_ns": 135400000049,
+        "goal_keys": [
+          "round_3:robot_1"
+        ]
+      },
+      {
+        "participant_id": "14",
+        "target_robot": "robot_2",
+        "stamp_ns": 549800000049,
+        "goal_keys": [
+          "round_6:robot_2"
+        ]
+      }
+    ],
+    "goal_intervals_ns": {
+      "round_1:robot_1": {
+        "sent_ns": 4450000066,
+        "completed_ns": 21850000325
+      },
+      "round_1:robot_2": {
+        "sent_ns": 4450000066,
+        "completed_ns": 33050000492
+      },
+      "round_2:robot_1": {
+        "sent_ns": 48100000716,
+        "completed_ns": 72450001079
+      },
+      "round_2:robot_2": {
+        "sent_ns": 58100000865,
+        "completed_ns": 99150001477
+      },
+      "round_3:robot_1": {
+        "sent_ns": 114150001700,
+        "completed_ns": 144400002151
+      },
+      "round_3:robot_2": {
+        "sent_ns": 114150001700,
+        "completed_ns": 296500004418
+      },
+      "round_4:robot_1": {
+        "sent_ns": 311500004641,
+        "completed_ns": 350950005229
+      },
+      "round_4:robot_2": {
+        "sent_ns": 311500004641,
+        "completed_ns": 311950004648
+      },
+      "round_5:robot_1": {
+        "sent_ns": 365950005453,
+        "completed_ns": 470000007003
+      },
+      "round_5:robot_2": {
+        "sent_ns": 365950005453,
+        "completed_ns": 366400005459
+      },
+      "round_6:robot_1": {
+        "sent_ns": 485000007227,
+        "completed_ns": 485400007233
+      },
+      "round_6:robot_2": {
+        "sent_ns": 485000007227,
+        "completed_ns": 561050008360
+      },
+      "round_7:robot_1": {
+        "sent_ns": 576050008583,
+        "completed_ns": 576450008589
+      },
+      "round_7:robot_2": {
+        "sent_ns": 576050008583,
+        "completed_ns": 617700009204
+      },
+      "round_8:robot_1": {
+        "sent_ns": 632700009427,
+        "completed_ns": 633100009433
+      },
+      "round_8:robot_2": {
+        "sent_ns": 632700009427,
+        "completed_ns": 742350011061
+      }
+    },
+    "corridor": {
+      "robot_1": {
+        "duration_s": 93.5,
+        "path_m": 18.085654292159813,
+        "stopped_s": 16.19999999999999,
+        "maximum_lateral_deviation_m": 1.774360330410004,
+        "mean_speed_mps": 0.19343000449373915
+      },
+      "robot_2": {
+        "duration_s": 96.45000000000005,
+        "path_m": 18.400747301464143,
+        "stopped_s": 16.925000000000068,
+        "maximum_lateral_deviation_m": 3.999049363233201,
+        "mean_speed_mps": 0.19078021309256468
+      }
+    },
+    "goal_duration_sim_s": {
+      "round_1:robot_1": 17.400000259,
+      "round_1:robot_2": 28.600000426,
+      "round_2:robot_1": 24.350000363,
+      "round_2:robot_2": 41.050000612,
+      "round_3:robot_1": 30.250000451,
+      "round_3:robot_2": 182.350002718,
+      "round_4:robot_1": 39.450000588,
+      "round_4:robot_2": 0.450000007,
+      "round_5:robot_1": 104.05000155,
+      "round_5:robot_2": 0.450000006,
+      "round_6:robot_1": 0.400000006,
+      "round_6:robot_2": 76.050001133,
+      "round_7:robot_1": 0.400000006,
+      "round_7:robot_2": 41.650000621,
+      "round_8:robot_1": 0.400000006,
+      "round_8:robot_2": 109.650001634
+    },
+    "total_goal_duration_sim_s": 696.950010386,
+    "demo_duration_sim_s": 752.900011219,
+    "demo_wall_s": 1348.5639117881656
+  },
+  "control": {
+    "interactions": [],
+    "goal_intervals_ns": {
+      "round_1:robot_1": {
+        "sent_ns": 3900000058,
+        "completed_ns": 21350000318
+      },
+      "round_1:robot_2": {
+        "sent_ns": 3900000058,
+        "completed_ns": 32600000485
+      },
+      "round_2:robot_1": {
+        "sent_ns": 47600000709,
+        "completed_ns": 72200001075
+      },
+      "round_2:robot_2": {
+        "sent_ns": 57650000859,
+        "completed_ns": 98850001472
+      },
+      "round_3:robot_1": {
+        "sent_ns": 113850001696,
+        "completed_ns": 143700002141
+      },
+      "round_3:robot_2": {
+        "sent_ns": 113850001696,
+        "completed_ns": 175650002617
+      },
+      "round_4:robot_1": {
+        "sent_ns": 190650002840,
+        "completed_ns": 230250003430
+      },
+      "round_4:robot_2": {
+        "sent_ns": 190650002840,
+        "completed_ns": 191050002846
+      },
+      "round_5:robot_1": {
+        "sent_ns": 245250003654,
+        "completed_ns": 349350005205
+      },
+      "round_5:robot_2": {
+        "sent_ns": 245250003654,
+        "completed_ns": 245600003659
+      },
+      "round_6:robot_1": {
+        "sent_ns": 364350005429,
+        "completed_ns": 364800005435
+      },
+      "round_6:robot_2": {
+        "sent_ns": 364350005429,
+        "completed_ns": 441250006575
+      },
+      "round_7:robot_1": {
+        "sent_ns": 456250006798,
+        "completed_ns": 456700006805
+      },
+      "round_7:robot_2": {
+        "sent_ns": 456250006798,
+        "completed_ns": 496300007395
+      },
+      "round_8:robot_1": {
+        "sent_ns": 511300007618,
+        "completed_ns": 511650007624
+      },
+      "round_8:robot_2": {
+        "sent_ns": 511300007618,
+        "completed_ns": 638200009509
+      }
+    },
+    "corridor": {
+      "robot_1": {
+        "duration_s": 93.47500000000002,
+        "path_m": 18.08023611909082,
+        "stopped_s": 16.150000000000006,
+        "maximum_lateral_deviation_m": 1.7535913181017015,
+        "mean_speed_mps": 0.19342403080519585
+      },
+      "robot_2": {
+        "duration_s": 112.72499999999997,
+        "path_m": 18.509608101249363,
+        "stopped_s": 33.30000000000007,
+        "maximum_lateral_deviation_m": 3.9994490808690397,
+        "mean_speed_mps": 0.16419550724861318
+      }
+    },
+    "goal_duration_sim_s": {
+      "round_1:robot_1": 17.45000026,
+      "round_1:robot_2": 28.700000427,
+      "round_2:robot_1": 24.600000366,
+      "round_2:robot_2": 41.200000613,
+      "round_3:robot_1": 29.850000445,
+      "round_3:robot_2": 61.800000921,
+      "round_4:robot_1": 39.60000059,
+      "round_4:robot_2": 0.400000006,
+      "round_5:robot_1": 104.100001551,
+      "round_5:robot_2": 0.350000005,
+      "round_6:robot_1": 0.450000006,
+      "round_6:robot_2": 76.900001146,
+      "round_7:robot_1": 0.450000007,
+      "round_7:robot_2": 40.050000597,
+      "round_8:robot_1": 0.350000006,
+      "round_8:robot_2": 126.900001891
+    },
+    "total_goal_duration_sim_s": 593.150008837,
+    "demo_duration_sim_s": 649.350009676,
+    "demo_wall_s": 1258.899858577177
+  },
+  "delta_corridor": {
+    "robot_1": {
+      "duration_s": 0.024999999999977263,
+      "path_m": 0.0054181730689926155,
+      "stopped_s": 0.04999999999998295,
+      "maximum_lateral_deviation_m": 0.020769012308302415,
+      "mean_speed_mps": 5.973688543298161e-06
+    },
+    "robot_2": {
+      "duration_s": -16.27499999999992,
+      "path_m": -0.10886079978521934,
+      "stopped_s": -16.375,
+      "maximum_lateral_deviation_m": -0.0003997176358385701,
+      "mean_speed_mps": 0.026584705843951506
+    }
+  },
+  "interpretation": "descriptive paired simulation; same seed/configuration does not make asynchronous Nav2/Isaac a bitwise replay; pre-interaction differences prevent attributing the whole-demo delta solely to blocking",
+  "pre_interaction_goal_deltas_sim_s": {
+    "round_1:robot_1": -0.05000000100000079,
+    "round_1:robot_2": -0.10000000099999795,
+    "round_2:robot_1": -0.25000000300000025,
+    "round_2:robot_2": -0.15000000100000221
+  },
+  "delta_goal_duration_sim_s": {
+    "round_1:robot_1": -0.05000000100000079,
+    "round_1:robot_2": -0.10000000099999795,
+    "round_2:robot_1": -0.25000000300000025,
+    "round_2:robot_2": -0.15000000100000221,
+    "round_3:robot_1": 0.4000000059999991,
+    "round_3:robot_2": 120.55000179700002,
+    "round_4:robot_1": -0.15000000199999874,
+    "round_4:robot_2": 0.05000000099999996,
+    "round_5:robot_1": -0.05000000100000079,
+    "round_5:robot_2": 0.100000001,
+    "round_6:robot_1": -0.04999999999999999,
+    "round_6:robot_2": -0.8500000129999989,
+    "round_7:robot_1": -0.05000000099999996,
+    "round_7:robot_2": 1.6000000239999963,
+    "round_8:robot_1": 0.050000000000000044,
+    "round_8:robot_2": -17.250000256999996
+  },
+  "interaction_navigation_legs": [
+    {
+      "participant_id": "13",
+      "target_robot": "robot_1",
+      "stamp_ns": 135400000049,
+      "goal_keys": [
+        "round_3:robot_1"
+      ],
+      "active_duration_sim_s": {
+        "round_3:robot_1": 30.250000451
+      },
+      "control_duration_sim_s": {
+        "round_3:robot_1": 29.850000445
+      }
+    },
+    {
+      "participant_id": "14",
+      "target_robot": "robot_2",
+      "stamp_ns": 549800000049,
+      "goal_keys": [
+        "round_6:robot_2"
+      ],
+      "active_duration_sim_s": {
+        "round_6:robot_2": 76.050001133
+      },
+      "control_duration_sim_s": {
+        "round_6:robot_2": 76.900001146
+      }
+    }
+  ],
+  "delta_total_goal_duration_sim_s": 103.80000154900006,
+  "delta_demo_duration_sim_s": 103.55000154300001,
+  "analysis_script_sha256": "c6b6b18fe7a71c82ce0ce171e53e71c3f3d926614fbecece41579d0949755a57",
+  "source_sha256": "cae5e15f965e80b200ef0589c260a98da9b83d4f6857febe1376a2e1304379e3"
+}

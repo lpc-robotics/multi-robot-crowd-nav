@@ -1,0 +1,38 @@
+{
+  "actual_playful.actual.jsonl": {
+    "sha256": "20a58ec1a87b5a817ab47ff43b940c2a63d44704cc07a8fb67ccb8332d6a2768",
+    "bytes": 704097
+  },
+  "cpu_first/closed_loop.jsonl": {
+    "sha256": "558bc75471ca414d7e311f58302ba6356e9158c77f7f8ac09902c54cbc76923e",
+    "bytes": 3616650
+  },
+  "cpu_final/closed_loop.jsonl": {
+    "sha256": "85ed4c9079277b99646e84a1944ccca248e845bf16e70b99d9d6e18dd1d9f2b7",
+    "bytes": 3739918
+  },
+  "cpu_observe_first/closed_loop.jsonl": {
+    "sha256": "e4cb21c20c497fe61ef312af52b7651856a84a50869e639b30ded865cfe98ec0",
+    "bytes": 3754080
+  },
+  "cpu_nearer/closed_loop.jsonl": {
+    "sha256": "531e3c0f0aa2e90db3d3886449af5264e749da20b22af024fbc2e63981a0f5e2",
+    "bytes": 3613656
+  },
+  "cpu_playful_memory/closed_loop.jsonl": {
+    "sha256": "85ed4c9079277b99646e84a1944ccca248e845bf16e70b99d9d6e18dd1d9f2b7",
+    "bytes": 3739918
+  },
+  "cpu_bounded_memory/closed_loop.jsonl": {
+    "sha256": "28c854d900f85e567d71df2854baf20bbfd909bf2edf8dd4e71a266fad23b5d9",
+    "bytes": 3710698
+  },
+  "cpu_facing/closed_loop.jsonl": {
+    "sha256": "7018d37cce77904123ef18c01903470311c3198d5adc6b2516bf5fe04509e403",
+    "bytes": 3683571
+  },
+  "cpu_disabled/closed_loop.jsonl": {
+    "sha256": "72dba766fafe2dbc5b3e415b11eadff6bf5eaaa8c0a7b05b2c3278b9642f2a62",
+    "bytes": 3703296
+  }
+}

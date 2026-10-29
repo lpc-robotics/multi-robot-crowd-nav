@@ -67,6 +67,9 @@ class World(Node):
 
 
 def run_case(case,outdir,psychology_config=""):
+    import yaml
+    model = yaml.safe_load(Path(psychology_config).read_text())['model'] if psychology_config else 'noop'
+    schema = 3 if model == 'sis_cf_v2' else 2
     children=[]; logs=[]; node=None
     try:
         for name,command in [
@@ -74,14 +77,14 @@ def run_case(case,outdir,psychology_config=""):
             ('adapter',['ros2','run','arena_multi_hunav','multi_sfm_adapter','--ros-args','-p','use_sim_time:=true','-p',f'agent_config_file:={ROOT}/config/hunav/multi_regular_1.yaml']),
             ('guard',['ros2','run','arena_multi_control','command_guard','--ros-args','-p','robot_name:=robot_1','-p','control_mode:=external','-p','peer_names:=[robot_2]','-p','require_pedestrian_health:=true'])]:
             if name=='adapter' and psychology_config:
-                command.extend(['-p','psychology_model:=sis_cf_v1','-p',f'psychology_config_file:={psychology_config}'])
+                command.extend(['-p',f'psychology_model:={model}','-p',f'psychology_config_file:={psychology_config}'])
             log=open(outdir/f'{case}_{name}.log','w'); logs.append(log)
             children.append(subprocess.Popen(command,stdout=log,stderr=subprocess.STDOUT,start_new_session=True))
         node=World(); sim=10.0; started=time.monotonic(); injected=None; frozen=None; resumed=False; before_compute=0
         zero_time=None; detected=None; latched_psychology=None
         while time.monotonic()-started<20:
             now=time.monotonic(); sim+=.005
-            psychology_ready = not psychology_config or (node.psychology.get('schema_version') == 2 and
+            psychology_ready = not psychology_config or (node.psychology.get('schema_version') == schema and
                 node.psychology.get('step', 0) >= 2)
             if injected is None and node.health and psychology_ready and any(abs(v)>.05 for t,v in node.commands):
                 injected=now; before_compute=node.status.get('compute',0); frozen=sim-.005
@@ -112,7 +115,7 @@ def run_case(case,outdir,psychology_config=""):
         if injected is None or not any(t>injected for t in node.stop_updates): errors.append('no pedestrian zero update')
         if detected and any(abs(v)>1e-8 for t,v in node.commands if t>detected+.6): errors.append('motion resumed after latch')
         if psychology_config:
-            if node.psychology.get('schema_version')!=2:errors.append('missing v2 psychology state')
+            if node.psychology.get('schema_version')!=schema:errors.append('missing versioned psychology state')
             if latched_psychology!=node.psychology:errors.append('psychology advanced after latched fault')
         return {'case':case,'passed':not errors,'fault':fault,'stop_from_injection_s':None if zero_time is None else zero_time-injected,
                 'late_response_resumed':resumed,'psychology_unchanged_after_fault':latched_psychology==node.psychology,'failures':errors}

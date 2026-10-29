@@ -1,0 +1,43 @@
+{"wall_time": 1793090206.661677, "reason": "post_spawn_odometry_timeout"}
+{"wall_time": 1793090206.6620202, "reason": "readiness timeout"}
+{"wall_time": 1793090206.6620746, "reason": "insufficient actual geometry"}
+{"wall_time": 1793090206.6621335, "reason": "missing actual stopped aligned observation: 13"}
+{"wall_time": 1793090206.6621654, "reason": "missing actual stopped aligned observation: 14"}
+{"wall_time": 1793090206.6622045, "reason": "missing actual forward occupancy and completed yield: 13"}
+{"wall_time": 1793090206.6622324, "reason": "missing actual forward occupancy and completed yield: 14"}
+{"wall_time": 1793090206.6626244, "reason": "finite Nav2 demonstration incomplete"}
+{
+  "passed": false,
+  "scope": "actual Character Graph and committed V3 transactions",
+  "requested_wall_s": 1800.0,
+  "wall_s": 0,
+  "sim_s": 0,
+  "actual_samples": 0,
+  "matched_samples": 0,
+  "minimum_robot_gap_m": null,
+  "minimum_human_gap_m": 2.2,
+  "max_display_error_m": 0.0,
+  "max_actual_speed_mps": 0.0,
+  "core_max_speed_mps": 0.0,
+  "core_max_acceleration_mps2": 0.0,
+  "modes": {},
+  "actual_aligned_observation_s": {},
+  "actual_front_occupancy_s": {},
+  "events": {},
+  "actual_occupy_at_target_s": {},
+  "robot_during_interaction": {},
+  "demo": null,
+  "phases": {},
+  "cycles": {},
+  "pause_checks": 0,
+  "failures": [
+    "finite Nav2 demonstration incomplete",
+    "insufficient actual geometry",
+    "missing actual forward occupancy and completed yield: 13",
+    "missing actual forward occupancy and completed yield: 14",
+    "missing actual stopped aligned observation: 13",
+    "missing actual stopped aligned observation: 14",
+    "post_spawn_odometry_timeout",
+    "readiness timeout"
+  ]
+}

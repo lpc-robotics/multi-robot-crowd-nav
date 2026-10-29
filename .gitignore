@@ -26,3 +26,8 @@ runtime/psychology/
 evidence/dynamic_psychology_20261012/**/*.jsonl
 evidence/dynamic_psychology_20261012/**/*.log
 evidence/multigoal_20261010/**/*.log
+
+# V2 raw traces and generated launch logs stay on the original experiment host.
+evidence/psychology_v2_20261027/**/*.jsonl
+evidence/psychology_v2_20261027/**/launch*.txt
+evidence/psychology_v2_20261027/**/*launch*.txt

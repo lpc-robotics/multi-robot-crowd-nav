@@ -1,0 +1,3670 @@
+schema_version: 1
+registry_version: 2.0.1
+model: sis_cf_v2
+status: engineering_inventory_unfitted
+parameters:
+- id: psychology.alpha_C
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_config.py:PsychologyConfig.alpha_C
+  meaning: 直接机器人刺激导致的好奇激活率
+  unit: s^-1
+  current_value: 0.6
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: null
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: psychological_behavior
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.alpha_F
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_config.py:PsychologyConfig.alpha_F
+  meaning: 直接机器人刺激导致的恐惧激活率
+  unit: s^-1
+  current_value: 1.0
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: null
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: psychological_behavior
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.beta_C
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_config.py:PsychologyConfig.beta_C
+  meaning: 邻人外显好奇线索的传播系数
+  unit: s^-1
+  current_value: 0.06
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: null
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: psychological_behavior
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters:
+  - psychology.beta_C
+  - psychology.expressivity_C
+  identifiability: Only product beta_C * expressivity_C is observed through transmission;
+    fix expressivity in first fit.
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.beta_F
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_config.py:PsychologyConfig.beta_F
+  meaning: 邻人外显恐惧线索的传播系数
+  unit: s^-1
+  current_value: 0.12
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: null
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: psychological_behavior
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters:
+  - psychology.beta_F
+  - psychology.expressivity_F
+  identifiability: Only product beta_F * expressivity_F is observed through transmission;
+    fix expressivity in first fit.
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.mu_C
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_config.py:PsychologyConfig.mu_C
+  meaning: 好奇恢复率
+  unit: s^-1
+  current_value: 0.12
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: false
+    maximum: null
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: psychological_behavior
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.mu_F
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_config.py:PsychologyConfig.mu_F
+  meaning: 恐惧恢复率
+  unit: s^-1
+  current_value: 0.25
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: false
+    maximum: null
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: psychological_behavior
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.kappa
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_config.py:PsychologyConfig.kappa
+  meaning: 恐惧对好奇恢复的附加抑制系数
+  unit: s^-1
+  current_value: 0.0
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: null
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: psychological_behavior
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.novelty_decay
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_config.py:PsychologyConfig.novelty_decay
+  meaning: novelty decay
+  unit: s^-1
+  current_value: 0.05
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: null
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: perception_memory
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.expressivity_C
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_config.py:PsychologyConfig.expressivity_C
+  meaning: expressivity C
+  unit: '1'
+  current_value: 0.8
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: 1
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: psychological_behavior
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters:
+  - psychology.beta_C
+  - psychology.expressivity_C
+  identifiability: Only product beta_C * expressivity_C is observed through transmission;
+    fix expressivity in first fit.
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.expressivity_F
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_config.py:PsychologyConfig.expressivity_F
+  meaning: expressivity F
+  unit: '1'
+  current_value: 0.8
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: 1
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: psychological_behavior
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters:
+  - psychology.beta_F
+  - psychology.expressivity_F
+  identifiability: Only product beta_F * expressivity_F is observed through transmission;
+    fix expressivity in first fit.
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.robot_visual_range
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_config.py:PsychologyConfig.robot_visual_range
+  meaning: robot visual range
+  unit: m (center distance)
+  current_value: 8.0
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: false
+    maximum: null
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: perception_memory
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.spread_range
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_config.py:PsychologyConfig.spread_range
+  meaning: spread range
+  unit: m (center distance)
+  current_value: 3.0
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: false
+    maximum: null
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: perception_memory
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.robot_fov_deg
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_config.py:PsychologyConfig.robot_fov_deg
+  meaning: robot fov deg
+  unit: deg
+  current_value: 200.0
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: 360
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: perception_memory
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.human_fov_deg
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_config.py:PsychologyConfig.human_fov_deg
+  meaning: human fov deg
+  unit: deg
+  current_value: 200.0
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: 360
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: perception_memory
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.robot_fov_fade_deg
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_config.py:PsychologyConfig.robot_fov_fade_deg
+  meaning: robot fov fade deg
+  unit: deg
+  current_value: 10.0
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: null
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: perception_memory
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.human_fov_fade_deg
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_config.py:PsychologyConfig.human_fov_fade_deg
+  meaning: human fov fade deg
+  unit: deg
+  current_value: 10.0
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: null
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: perception_memory
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.prediction_horizon
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_config.py:PsychologyConfig.prediction_horizon
+  meaning: prediction horizon
+  unit: s (simulation)
+  current_value: 2.0
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: false
+    maximum: null
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: behavior_distance_time
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.gap_warn
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_config.py:PsychologyConfig.gap_warn
+  meaning: gap warn
+  unit: m (surface gap)
+  current_value: 0.8
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: null
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: behavior_distance_time
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.gap_critical
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_config.py:PsychologyConfig.gap_critical
+  meaning: gap critical
+  unit: m (surface gap)
+  current_value: 0.15
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: null
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: behavior_distance_time
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.predicted_gap_warn
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_config.py:PsychologyConfig.predicted_gap_warn
+  meaning: predicted gap warn
+  unit: m (surface gap)
+  current_value: 0.8
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: null
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: behavior_distance_time
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.closing_speed_ref
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_config.py:PsychologyConfig.closing_speed_ref
+  meaning: closing speed ref
+  unit: m/s
+  current_value: 0.5
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: false
+    maximum: null
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: behavior_distance_time
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.curiosity_on
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_config.py:PsychologyConfig.curiosity_on
+  meaning: curiosity on
+  unit: '1'
+  current_value: 0.6
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: 1
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: psychological_behavior
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.curiosity_off
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_config.py:PsychologyConfig.curiosity_off
+  meaning: curiosity off
+  unit: '1'
+  current_value: 0.35
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: 1
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: psychological_behavior
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.fear_on
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_config.py:PsychologyConfig.fear_on
+  meaning: fear on
+  unit: '1'
+  current_value: 0.65
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: 1
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: psychological_behavior
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.fear_off
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_config.py:PsychologyConfig.fear_off
+  meaning: fear off
+  unit: '1'
+  current_value: 0.35
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: 1
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: psychological_behavior
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.vigilance_on
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_config.py:PsychologyConfig.vigilance_on
+  meaning: vigilance on
+  unit: '1'
+  current_value: 0.08
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: 1
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: psychological_behavior
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.vigilance_off
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_config.py:PsychologyConfig.vigilance_off
+  meaning: vigilance off
+  unit: '1'
+  current_value: 0.04
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: 1
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: psychological_behavior
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.curiosity_max_fear
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_config.py:PsychologyConfig.curiosity_max_fear
+  meaning: curiosity max fear
+  unit: '1'
+  current_value: 0.25
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: 1
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: psychological_behavior
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.curiosity_max_risk
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_config.py:PsychologyConfig.curiosity_max_risk
+  meaning: curiosity max risk
+  unit: '1'
+  current_value: 0.25
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: 1
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: psychological_behavior
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.emergency_risk
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_config.py:PsychologyConfig.emergency_risk
+  meaning: emergency risk
+  unit: '1'
+  current_value: 0.85
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: 1
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: psychological_behavior
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.min_mode_hold
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_config.py:PsychologyConfig.min_mode_hold
+  meaning: min mode hold
+  unit: s (simulation)
+  current_value: 0.5
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: null
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: behavior_distance_time
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.target_switch_margin
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_config.py:PsychologyConfig.target_switch_margin
+  meaning: target switch margin
+  unit: '1'
+  current_value: 0.15
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: 1
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: psychological_behavior
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.target_min_hold
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_config.py:PsychologyConfig.target_min_hold
+  meaning: target min hold
+  unit: s (simulation)
+  current_value: 1.0
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: null
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: behavior_distance_time
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.memory_ttl
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_config.py:PsychologyConfig.memory_ttl
+  meaning: memory ttl
+  unit: s (simulation)
+  current_value: 2.0
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: null
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: perception_memory
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides:
+    13: 4.0
+    14: 4.0
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.memory_tau
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_config.py:PsychologyConfig.memory_tau
+  meaning: memory tau
+  unit: s (simulation)
+  current_value: 0.8
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: false
+    maximum: null
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: perception_memory
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides:
+    13: 2.0
+    14: 2.0
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.memory_prediction_horizon
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_config.py:PsychologyConfig.memory_prediction_horizon
+  meaning: memory prediction horizon
+  unit: s (simulation)
+  current_value: 0.75
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: null
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: perception_memory
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.minimum_memory_confidence
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_config.py:PsychologyConfig.minimum_memory_confidence
+  meaning: minimum memory confidence
+  unit: '1'
+  current_value: 0.2
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: 1
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: perception_memory
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.curiosity_standoff_gap
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_config.py:PsychologyConfig.curiosity_standoff_gap
+  meaning: curiosity standoff gap
+  unit: m (surface gap)
+  current_value: 0.9
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: null
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: behavior_distance_time
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.curiosity_stop_band
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_config.py:PsychologyConfig.curiosity_stop_band
+  meaning: 仅验收使用的好奇停留净距容差；不参与运动死区计算
+  unit: m (surface gap)
+  current_value: 0.15
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: null
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: engineering_experiment
+  fit_candidate: false
+  calibration_status: not_a_fit_parameter
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: false
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.curiosity_speed
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_config.py:PsychologyConfig.curiosity_speed
+  meaning: curiosity speed
+  unit: m/s
+  current_value: 0.35
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: 1
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: behavior_distance_time
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.curiosity_gap_gain
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_config.py:PsychologyConfig.curiosity_gap_gain
+  meaning: curiosity gap gain
+  unit: s^-1
+  current_value: 0.7
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: null
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: psychological_behavior
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.curiosity_retreat_cap
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_config.py:PsychologyConfig.curiosity_retreat_cap
+  meaning: curiosity retreat cap
+  unit: m/s
+  current_value: 0.2
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: 1
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: behavior_distance_time
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.scared_target_gap
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_config.py:PsychologyConfig.scared_target_gap
+  meaning: scared target gap
+  unit: m (surface gap)
+  current_value: 1.5
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: null
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: behavior_distance_time
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.scared_speed
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_config.py:PsychologyConfig.scared_speed
+  meaning: scared speed
+  unit: m/s
+  current_value: 0.8
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: 1
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: behavior_distance_time
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.scared_gap_gain
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_config.py:PsychologyConfig.scared_gap_gain
+  meaning: scared gap gain
+  unit: s^-1
+  current_value: 0.8
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: null
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: psychological_behavior
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.vigilant_speed_gain
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_config.py:PsychologyConfig.vigilant_speed_gain
+  meaning: vigilant speed gain
+  unit: '1'
+  current_value: 0.4
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: 1
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: psychological_behavior
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.human_visual_range
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_config.py:PsychologyConfig.human_visual_range
+  meaning: human visual range
+  unit: m (center distance)
+  current_value: 5.0
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: false
+    maximum: null
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: perception_memory
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.approach_clearance
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_config.py:PsychologyConfig.approach_clearance
+  meaning: approach clearance
+  unit: m (surface gap)
+  current_value: 0.35
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: null
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: behavior_distance_time
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.approach_retry_delay
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_config.py:PsychologyConfig.approach_retry_delay
+  meaning: approach retry delay
+  unit: s (simulation)
+  current_value: 2.0
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: null
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: behavior_distance_time
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.surprise_visible_s
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_v2_config.py:ParametersV2.surprise_visible_s
+  meaning: 首次惊讶事件所需连续有效可见仿真时长
+  unit: s (simulation)
+  current_value: 0.3
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: false
+    maximum: null
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: behavior_distance_time
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.surprise_novelty
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_v2_config.py:ParametersV2.surprise_novelty
+  meaning: 惊讶事件所需的新奇度下界
+  unit: '1'
+  current_value: 0.6
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: 1
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: perception_memory
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.surprise_max_risk
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_v2_config.py:ParametersV2.surprise_max_risk
+  meaning: surprise max risk
+  unit: '1'
+  current_value: 0.25
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: 1
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: psychological_behavior
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.surprise_tau
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_v2_config.py:ParametersV2.surprise_tau
+  meaning: 非传播惊讶激活指数衰减时间常数
+  unit: s (simulation)
+  current_value: 1.5
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: false
+    maximum: null
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: behavior_distance_time
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.surprise_off
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_v2_config.py:ParametersV2.surprise_off
+  meaning: 惊讶正常退出激活上界
+  unit: '1'
+  current_value: 0.25
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: 1
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: psychological_behavior
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.observation_stop_speed
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_v2_config.py:ParametersV2.observation_stop_speed
+  meaning: 允许停步观察的实际速度阈值
+  unit: m/s
+  current_value: 0.05
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: 0.05
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: engineering_experiment
+  fit_candidate: false
+  calibration_status: not_a_fit_parameter
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.observation_yaw_rate
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_v2_config.py:ParametersV2.observation_yaw_rate
+  meaning: 停步身体朝向命令的角速度上限
+  unit: rad/s
+  current_value: 1.0
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: false
+    maximum: 1
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: engineering_experiment
+  fit_candidate: false
+  calibration_status: not_a_fit_parameter
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.observation_angle_deg
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_v2_config.py:ParametersV2.observation_angle_deg
+  meaning: observation angle deg
+  unit: deg
+  current_value: 15.0
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: 180
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: behavior_distance_time
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.observation_hold_s
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_v2_config.py:ParametersV2.observation_hold_s
+  meaning: observation hold s
+  unit: s (simulation)
+  current_value: 1.0
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: false
+    maximum: null
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: behavior_distance_time
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.observation_display_margin_s
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_v2_config.py:ParametersV2.observation_display_margin_s
+  meaning: 显示写入及采样边界的工程等待余量
+  unit: s (simulation)
+  current_value: 0.15
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: null
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: engineering_experiment
+  fit_candidate: false
+  calibration_status: not_a_fit_parameter
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.surprise_timeout_s
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_v2_config.py:ParametersV2.surprise_timeout_s
+  meaning: surprise timeout s
+  unit: s (simulation)
+  current_value: 4.0
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: false
+    maximum: null
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: behavior_distance_time
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.playful_curiosity
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_v2_config.py:ParametersV2.playful_curiosity
+  meaning: playful curiosity
+  unit: '1'
+  current_value: 0.7
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: 1
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: psychological_behavior
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.playful_max_fear
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_v2_config.py:ParametersV2.playful_max_fear
+  meaning: playful max fear
+  unit: '1'
+  current_value: 0.2
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: 1
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: psychological_behavior
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.playful_max_risk
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_v2_config.py:ParametersV2.playful_max_risk
+  meaning: playful max risk
+  unit: '1'
+  current_value: 0.25
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: 1
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: psychological_behavior
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.playful_curious_s
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_v2_config.py:ParametersV2.playful_curious_s
+  meaning: 同目标连续CURIOUS互动时长下界
+  unit: s (simulation)
+  current_value: 4.0
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: null
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: behavior_distance_time
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.playful_front_gap
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_v2_config.py:ParametersV2.playful_front_gap
+  meaning: 前向占位点到机器人包络的设计净距
+  unit: m (surface gap)
+  current_value: 1.0
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: null
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: behavior_distance_time
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.playful_lookahead_s
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_v2_config.py:ParametersV2.playful_lookahead_s
+  meaning: 占位点沿观测机器人速度的前向附加时间
+  unit: s (simulation)
+  current_value: 1.0
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: null
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: behavior_distance_time
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.playful_intercept_s
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_v2_config.py:ParametersV2.playful_intercept_s
+  meaning: playful intercept s
+  unit: s (simulation)
+  current_value: 4.0
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: false
+    maximum: null
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: behavior_distance_time
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.playful_occupy_s
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_v2_config.py:ParametersV2.playful_occupy_s
+  meaning: playful occupy s
+  unit: s (simulation)
+  current_value: 2.0
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: false
+    maximum: null
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: behavior_distance_time
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.playful_yield_s
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_v2_config.py:ParametersV2.playful_yield_s
+  meaning: playful yield s
+  unit: s (simulation)
+  current_value: 3.0
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: false
+    maximum: null
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: behavior_distance_time
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.playful_cooldown_s
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_v2_config.py:ParametersV2.playful_cooldown_s
+  meaning: playful cooldown s
+  unit: s (simulation)
+  current_value: 30.0
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: null
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: behavior_distance_time
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: repeated opportunities per participant; max-one-episode demo
+    cannot identify cooldown
+- id: psychology.playful_max_episodes
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_v2_config.py:ParametersV2.playful_max_episodes
+  meaning: 每个行人对每个机器人在本epoch的次数预算
+  unit: count
+  current_value: 1.0
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: null
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: engineering_experiment
+  fit_candidate: false
+  calibration_status: not_a_fit_parameter
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.playful_min_robot_speed
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_v2_config.py:ParametersV2.playful_min_robot_speed
+  meaning: playful min robot speed
+  unit: m/s
+  current_value: 0.05
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: false
+    maximum: null
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: behavior_distance_time
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.playful_turn_limit_deg
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_v2_config.py:ParametersV2.playful_turn_limit_deg
+  meaning: playful turn limit deg
+  unit: deg
+  current_value: 45.0
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: 180
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: behavior_distance_time
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.playful_speed
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_v2_config.py:ParametersV2.playful_speed
+  meaning: playful speed
+  unit: m/s
+  current_value: 0.6
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: 1
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: behavior_distance_time
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.playful_arrival_radius
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_v2_config.py:ParametersV2.playful_arrival_radius
+  meaning: 占位/让开目标的中心位置到达容差
+  unit: m (center distance)
+  current_value: 0.25
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: false
+    maximum: null
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: behavior_distance_time
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.playful_yield_distance
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_v2_config.py:ParametersV2.playful_yield_distance
+  meaning: playful yield distance
+  unit: m (center displacement)
+  current_value: 1.2
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: false
+    maximum: null
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: behavior_distance_time
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.playful_enabled
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_v2_config.py:ParametersV2.playful_enabled
+  meaning: 挡路意图对照实验开关
+  unit: '1'
+  current_value: 1.0
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: true
+    maximum: 1
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: engineering_experiment
+  fit_candidate: false
+  calibration_status: not_a_fit_parameter
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.world_width
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_v2_config.py:ParametersV2.world_width
+  meaning: world width
+  unit: m (center distance)
+  current_value: 30.0
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: false
+    maximum: null
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: measured_geometry
+  fit_candidate: false
+  calibration_status: measurement_required
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: psychology.world_height
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_v2_config.py:ParametersV2.world_height
+  meaning: world height
+  unit: m (center distance)
+  current_value: 23.0
+  scope: global with explicit per-agent overrides; geometry is global only
+  legal_range:
+    minimum: 0
+    minimum_inclusive: false
+    maximum: null
+    constraints: PsychologyConfig.validate + ParametersV2.validate; includes coupled
+      hysteresis/FOV/memory/risk constraints
+  category: measured_geometry
+  fit_candidate: false
+  calibration_status: measurement_required
+  observations:
+  - time-synchronised trajectories
+  - independent behavior annotation
+  - robot exposure and non-trigger trials
+  coupled_parameters: []
+  identifiability: latent activation not identifiable from trajectories alone; staged
+    dedicated excitation required
+  fit_bounds: null
+  source: engineering initial value; V2 implementation 2026-10-27
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+  required_experiment: dedicated excitation; not identified by this scripted demonstration
+- id: core.robot_clearance
+  current_value: 0.1
+  unit: m (surface gap)
+  meaning: 近距排斥参考净距；非硬接触保证
+  location: src/arena_multi_hunav_core/include/arena_multi_hunav_core/core.hpp:Config.robot_clearance
+  category: engineering_experiment
+  scope: global
+  per_agent_overrides: {}
+  legal_range:
+    constraints: positive
+  fit_candidate: false
+  calibration_status: not_a_fit_parameter
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: core.near_gain
+  current_value: 10.0
+  unit: m/s^2
+  meaning: 独立机器人近距排斥强度
+  location: src/arena_multi_hunav_core/include/arena_multi_hunav_core/core.hpp:Config.near_gain
+  category: engineering_experiment
+  scope: global
+  per_agent_overrides: {}
+  legal_range:
+    constraints: positive
+  fit_candidate: false
+  calibration_status: not_a_fit_parameter
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: core.near_sigma
+  current_value: 0.2
+  unit: m
+  meaning: 近距排斥作用尺度
+  location: src/arena_multi_hunav_core/include/arena_multi_hunav_core/core.hpp:Config.near_sigma
+  category: engineering_experiment
+  scope: global
+  per_agent_overrides: {}
+  legal_range:
+    constraints: positive
+  fit_candidate: false
+  calibration_status: not_a_fit_parameter
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: core.max_speed
+  current_value: 1.0
+  unit: m/s
+  meaning: 核心硬速度上限；不是基础期望速度
+  location: src/arena_multi_hunav_core/include/arena_multi_hunav_core/core.hpp:Config.max_speed
+  category: engineering_experiment
+  scope: global
+  per_agent_overrides: {}
+  legal_range:
+    constraints: positive
+  fit_candidate: false
+  calibration_status: not_a_fit_parameter
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: core.max_acceleration
+  current_value: 3.0
+  unit: m/s^2
+  meaning: 核心加速度硬上限
+  location: src/arena_multi_hunav_core/include/arena_multi_hunav_core/core.hpp:Config.max_acceleration
+  category: engineering_experiment
+  scope: global
+  per_agent_overrides: {}
+  legal_range:
+    constraints: positive
+  fit_candidate: false
+  calibration_status: not_a_fit_parameter
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: core.robot_fov_deg
+  current_value: 200.0
+  unit: deg
+  meaning: 物理机器人社会力FOV；不是心理FOV
+  location: src/arena_multi_hunav_core/include/arena_multi_hunav_core/core.hpp:Config.robot_fov_deg
+  category: motion_candidate
+  scope: global
+  per_agent_overrides: {}
+  legal_range:
+    constraints: positive
+  fit_candidate: true
+  calibration_status: unfitted
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: core.robot_fov_fade_deg
+  current_value: 10.0
+  unit: deg
+  meaning: 物理社会力FOV单侧衰减宽度
+  location: src/arena_multi_hunav_core/include/arena_multi_hunav_core/core.hpp:Config.robot_fov_fade_deg
+  category: motion_candidate
+  scope: global
+  per_agent_overrides: {}
+  legal_range:
+    constraints: positive
+  fit_candidate: true
+  calibration_status: unfitted
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: sfm.forceSigmaObstacle
+  current_value: 0.2
+  unit: m
+  meaning: Pinned LightSFM forceSigmaObstacle
+  location: src/arena_multi_hunav_core/vendor/lightsfm/include/sfm.hpp:Parameters.forceSigmaObstacle
+  category: motion_candidate
+  scope: global
+  per_agent_overrides: {}
+  legal_range:
+    constraints: strictly positive; kernel parameterisation must be held fixed
+  fit_candidate: true
+  calibration_status: unfitted
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: sfm.lambda
+  current_value: 2.0
+  unit: s/m (numerical velocity weight)
+  meaning: Pinned LightSFM lambda
+  location: src/arena_multi_hunav_core/vendor/lightsfm/include/sfm.hpp:Parameters.lambda
+  category: motion_candidate
+  scope: global
+  per_agent_overrides: {}
+  legal_range:
+    constraints: strictly positive; kernel parameterisation must be held fixed
+  fit_candidate: true
+  calibration_status: unfitted
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: sfm.gamma
+  current_value: 0.35
+  unit: m (interaction-vector scale)
+  meaning: Pinned LightSFM gamma
+  location: src/arena_multi_hunav_core/vendor/lightsfm/include/sfm.hpp:Parameters.gamma
+  category: motion_candidate
+  scope: global
+  per_agent_overrides: {}
+  legal_range:
+    constraints: strictly positive; kernel parameterisation must be held fixed
+  fit_candidate: true
+  calibration_status: unfitted
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: sfm.n
+  current_value: 2.0
+  unit: m^-1 (radian treated dimensionless)
+  meaning: Pinned LightSFM n
+  location: src/arena_multi_hunav_core/vendor/lightsfm/include/sfm.hpp:Parameters.n
+  category: motion_candidate
+  scope: global
+  per_agent_overrides: {}
+  legal_range:
+    constraints: strictly positive; kernel parameterisation must be held fixed
+  fit_candidate: true
+  calibration_status: unfitted
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: sfm.nPrime
+  current_value: 3.0
+  unit: m^-1 (radian treated dimensionless)
+  meaning: Pinned LightSFM nPrime
+  location: src/arena_multi_hunav_core/vendor/lightsfm/include/sfm.hpp:Parameters.nPrime
+  category: motion_candidate
+  scope: global
+  per_agent_overrides: {}
+  legal_range:
+    constraints: strictly positive; kernel parameterisation must be held fixed
+  fit_candidate: true
+  calibration_status: unfitted
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: sfm.relaxationTime
+  current_value: 0.5
+  unit: s
+  meaning: Pinned LightSFM relaxationTime
+  location: src/arena_multi_hunav_core/vendor/lightsfm/include/sfm.hpp:Parameters.relaxationTime
+  category: motion_candidate
+  scope: global
+  per_agent_overrides: {}
+  legal_range:
+    constraints: strictly positive; kernel parameterisation must be held fixed
+  fit_candidate: true
+  calibration_status: unfitted
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: person.max_vel
+  current_value: 1.0
+  unit: m/s
+  meaning: 基础期望速度；与core.max_speed分开辨识
+  location: config/hunav/multi_14_psychology_v2_multigoal.yaml:hunav_loader.ros__parameters.person_*.
+    max_vel
+  category: motion_candidate
+  scope: per-agent physical configuration
+  per_agent_overrides: {}
+  legal_range:
+    constraints: positive
+  fit_candidate: true
+  calibration_status: unfitted
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: person.radius
+  current_value: 0.4
+  unit: m
+  meaning: 行人圆形身体包络半径，不得为改善拟合而缩小
+  location: config/hunav/multi_14_psychology_v2_multigoal.yaml:hunav_loader.ros__parameters.person_*.
+    radius
+  category: measured_geometry
+  scope: per-agent physical configuration
+  per_agent_overrides: {}
+  legal_range:
+    constraints: positive
+  fit_candidate: false
+  calibration_status: measurement_required
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: person.goal_radius
+  current_value: 0.3
+  unit: m (center distance)
+  meaning: 任务目标到达容差
+  location: config/hunav/multi_14_psychology_v2_multigoal.yaml:hunav_loader.ros__parameters.person_*.
+    goal_radius
+  category: engineering_experiment
+  scope: per-agent physical configuration
+  per_agent_overrides: {}
+  legal_range:
+    constraints: positive
+  fit_candidate: false
+  calibration_status: not_a_fit_parameter
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: person.behavior.goal_force_factor
+  current_value: 2.0
+  unit: '1'
+  meaning: 期望速度恢复强度；与relaxationTime耦合
+  location: config/hunav/multi_14_psychology_v2_multigoal.yaml:hunav_loader.ros__parameters.person_*.
+    behavior.goal_force_factor
+  category: motion_candidate
+  scope: per-agent physical configuration
+  per_agent_overrides: {}
+  legal_range:
+    constraints: positive
+  fit_candidate: true
+  calibration_status: unfitted
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: person.behavior.obstacle_force_factor
+  current_value: 10.0
+  unit: m/s^2
+  meaning: 墙体/静态圆形机器人障碍排斥强度
+  location: config/hunav/multi_14_psychology_v2_multigoal.yaml:hunav_loader.ros__parameters.person_*.
+    behavior.obstacle_force_factor
+  category: motion_candidate
+  scope: per-agent physical configuration
+  per_agent_overrides: {}
+  legal_range:
+    constraints: positive
+  fit_candidate: true
+  calibration_status: unfitted
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: person.behavior.social_force_factor
+  current_value: 5.0
+  unit: m/s^2
+  meaning: 行人/动态机器人社会力强度
+  location: config/hunav/multi_14_psychology_v2_multigoal.yaml:hunav_loader.ros__parameters.person_*.
+    behavior.social_force_factor
+  category: motion_candidate
+  scope: per-agent physical configuration
+  per_agent_overrides: {}
+  legal_range:
+    constraints: positive
+  fit_candidate: true
+  calibration_status: unfitted
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: robot.radius
+  current_value: 0.35
+  unit: m
+  meaning: 机器人圆形包络半径，需要实测核验
+  location: src/arena_multi_hunav/arena_multi_hunav/multi_adapter.py:_robots
+  category: measured_geometry
+  scope: global
+  per_agent_overrides: {}
+  legal_range:
+    constraints: positive
+  fit_candidate: false
+  calibration_status: measurement_required
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: frames.character_to_ros_yaw
+  current_value: -90.0
+  unit: deg
+  meaning: 资产局部-Y前向转换到ROS +X；在稳定underlay实现
+  location: /home/lpc/workspace/arena5_ws/src/arena-isaac/arena_isaac/pedestrian/simulator/logic/people/character_frames.py:character_to_ros_quaternion
+  category: measured_geometry
+  scope: global
+  per_agent_overrides: {}
+  legal_range:
+    constraints: fixed asset frame convention; verify per asset
+  fit_candidate: false
+  calibration_status: measurement_required
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: engineering.dt
+  current_value: 0.025
+  unit: s (simulation)
+  meaning: dt
+  location: src/arena_multi_hunav/arena_multi_hunav/multi_adapter.py:_advance
+  category: engineering_experiment
+  scope: global
+  per_agent_overrides: {}
+  legal_range:
+    constraints: fixed engineering/structural choice; version separately if changed
+  fit_candidate: false
+  calibration_status: not_a_fit_parameter
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: engineering.observation_timeout
+  current_value: 0.6
+  unit: s (wall)
+  meaning: observation timeout
+  location: src/arena_multi_hunav/arena_multi_hunav/multi_adapter.py:parameters
+  category: engineering_experiment
+  scope: global
+  per_agent_overrides: {}
+  legal_range:
+    constraints: fixed engineering/structural choice; version separately if changed
+  fit_candidate: false
+  calibration_status: not_a_fit_parameter
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: engineering.simulation_stamp_timeout
+  current_value: 1.0
+  unit: s (simulation)
+  meaning: simulation stamp timeout
+  location: src/arena_multi_hunav/arena_multi_hunav/multi_adapter.py:parameters
+  category: engineering_experiment
+  scope: global
+  per_agent_overrides: {}
+  legal_range:
+    constraints: fixed engineering/structural choice; version separately if changed
+  fit_candidate: false
+  calibration_status: not_a_fit_parameter
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: engineering.service_timeout
+  current_value: 1.0
+  unit: s (wall)
+  meaning: service timeout
+  location: src/arena_multi_hunav/arena_multi_hunav/multi_adapter.py:parameters
+  category: engineering_experiment
+  scope: global
+  per_agent_overrides: {}
+  legal_range:
+    constraints: fixed engineering/structural choice; version separately if changed
+  fit_candidate: false
+  calibration_status: not_a_fit_parameter
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: engineering.clock_stall_timeout
+  current_value: 30.0
+  unit: s (wall)
+  meaning: clock stall timeout
+  location: src/arena_multi_hunav/arena_multi_hunav/multi_adapter.py:parameters
+  category: engineering_experiment
+  scope: global
+  per_agent_overrides: {}
+  legal_range:
+    constraints: fixed engineering/structural choice; version separately if changed
+  fit_candidate: false
+  calibration_status: not_a_fit_parameter
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: engineering.integration_lag
+  current_value: 1.0
+  unit: s (simulation)
+  meaning: integration lag
+  location: src/arena_multi_hunav/arena_multi_hunav/multi_adapter.py:_advance
+  category: engineering_experiment
+  scope: global
+  per_agent_overrides: {}
+  legal_range:
+    constraints: fixed engineering/structural choice; version separately if changed
+  fit_candidate: false
+  calibration_status: not_a_fit_parameter
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: engineering.display_period
+  current_value: 0.1
+  unit: s (wall)
+  meaning: display period
+  location: src/arena_multi_hunav/arena_multi_hunav/multi_adapter.py:_advance
+  category: engineering_experiment
+  scope: global
+  per_agent_overrides: {}
+  legal_range:
+    constraints: fixed engineering/structural choice; version separately if changed
+  fit_candidate: false
+  calibration_status: not_a_fit_parameter
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: engineering.tick_period
+  current_value: 0.01
+  unit: s (wall)
+  meaning: tick period
+  location: src/arena_multi_hunav/arena_multi_hunav/multi_adapter.py:__init__
+  category: engineering_experiment
+  scope: global
+  per_agent_overrides: {}
+  legal_range:
+    constraints: fixed engineering/structural choice; version separately if changed
+  fit_candidate: false
+  calibration_status: not_a_fit_parameter
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: engineering.report_period
+  current_value: 1.0
+  unit: s (wall)
+  meaning: report period
+  location: src/arena_multi_hunav/arena_multi_hunav/multi_adapter.py:_report
+  category: engineering_experiment
+  scope: global
+  per_agent_overrides: {}
+  legal_range:
+    constraints: fixed engineering/structural choice; version separately if changed
+  fit_candidate: false
+  calibration_status: not_a_fit_parameter
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: engineering.warmup
+  current_value: 2.0
+  unit: s (wall)
+  meaning: warmup
+  location: src/arena_multi_hunav/arena_multi_hunav/multi_adapter.py:_advance
+  category: engineering_experiment
+  scope: global
+  per_agent_overrides: {}
+  legal_range:
+    constraints: fixed engineering/structural choice; version separately if changed
+  fit_candidate: false
+  calibration_status: not_a_fit_parameter
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: engineering.timeline_history
+  current_value: 5.0
+  unit: s (simulation)
+  meaning: timeline history
+  location: src/arena_multi_hunav/arena_multi_hunav/timeline.py:Timeline.append
+  category: engineering_experiment
+  scope: global
+  per_agent_overrides: {}
+  legal_range:
+    constraints: fixed engineering/structural choice; version separately if changed
+  fit_candidate: false
+  calibration_status: not_a_fit_parameter
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: engineering.playful_goal_gain
+  current_value: 1.0
+  unit: s^-1
+  meaning: playful goal gain
+  location: src/arena_multi_hunav/arena_multi_hunav/interaction_v2.py:go_to
+  category: engineering_experiment
+  scope: global
+  per_agent_overrides: {}
+  legal_range:
+    constraints: fixed engineering/structural choice; version separately if changed
+  fit_candidate: false
+  calibration_status: not_a_fit_parameter
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: engineering.novelty_initial
+  current_value: 1.0
+  unit: '1'
+  meaning: novelty initial
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_v2.py:step
+  category: engineering_experiment
+  scope: global
+  per_agent_overrides: {}
+  legal_range:
+    constraints: fixed engineering/structural choice; version separately if changed
+  fit_candidate: false
+  calibration_status: not_a_fit_parameter
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: engineering.surprise_event_amplitude
+  current_value: 1.0
+  unit: '1'
+  meaning: surprise event amplitude
+  location: src/arena_multi_hunav/arena_multi_hunav/interaction_v2.py:surprise_step
+  category: engineering_experiment
+  scope: global
+  per_agent_overrides: {}
+  legal_range:
+    constraints: fixed engineering/structural choice; version separately if changed
+  fit_candidate: false
+  calibration_status: not_a_fit_parameter
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: engineering.graph_normalization_floor
+  current_value: 1.0
+  unit: '1'
+  meaning: graph normalization floor
+  location: src/arena_multi_hunav/arena_multi_hunav/perception.py:propagation_graph
+  category: engineering_experiment
+  scope: global
+  per_agent_overrides: {}
+  legal_range:
+    constraints: fixed engineering/structural choice; version separately if changed
+  fit_candidate: false
+  calibration_status: not_a_fit_parameter
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: engineering.graph_distance_exponent
+  current_value: 2.0
+  unit: '1'
+  meaning: graph distance exponent
+  location: src/arena_multi_hunav/arena_multi_hunav/perception.py:propagation_graph
+  category: engineering_experiment
+  scope: global
+  per_agent_overrides: {}
+  legal_range:
+    constraints: fixed engineering/structural choice; version separately if changed
+  fit_candidate: false
+  calibration_status: not_a_fit_parameter
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: experiment.people_count
+  current_value: 14
+  unit: count
+  meaning: people count
+  location: config/scenarios/two_robots_multi_sfm_14_multigoal_psychology_v2_nav2.yaml;
+    config/tasks/psychology_v2_crossings.yaml
+  category: engineering_experiment
+  scope: global
+  per_agent_overrides: {}
+  legal_range:
+    constraints: scene design, not population prevalence or estimated psychology
+  fit_candidate: false
+  calibration_status: not_a_fit_parameter
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: experiment.playful_count
+  current_value: 2
+  unit: count
+  meaning: playful count
+  location: config/scenarios/two_robots_multi_sfm_14_multigoal_psychology_v2_nav2.yaml;
+    config/tasks/psychology_v2_crossings.yaml
+  category: engineering_experiment
+  scope: global
+  per_agent_overrides: {}
+  legal_range:
+    constraints: scene design, not population prevalence or estimated psychology
+  fit_candidate: false
+  calibration_status: not_a_fit_parameter
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: experiment.seed
+  current_value: 11
+  unit: integer
+  meaning: seed
+  location: config/scenarios/two_robots_multi_sfm_14_multigoal_psychology_v2_nav2.yaml;
+    config/tasks/psychology_v2_crossings.yaml
+  category: engineering_experiment
+  scope: global
+  per_agent_overrides: {}
+  legal_range:
+    constraints: scene design, not population prevalence or estimated psychology
+  fit_candidate: false
+  calibration_status: not_a_fit_parameter
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: experiment.max_linear
+  current_value: 0.26
+  unit: m/s
+  meaning: max linear
+  location: config/scenarios/two_robots_multi_sfm_14_multigoal_psychology_v2_nav2.yaml;
+    config/tasks/psychology_v2_crossings.yaml
+  category: engineering_experiment
+  scope: global
+  per_agent_overrides: {}
+  legal_range:
+    constraints: scene design, not population prevalence or estimated psychology
+  fit_candidate: false
+  calibration_status: not_a_fit_parameter
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: experiment.max_angular
+  current_value: 1.0
+  unit: rad/s
+  meaning: max angular
+  location: config/scenarios/two_robots_multi_sfm_14_multigoal_psychology_v2_nav2.yaml;
+    config/tasks/psychology_v2_crossings.yaml
+  category: engineering_experiment
+  scope: global
+  per_agent_overrides: {}
+  legal_range:
+    constraints: scene design, not population prevalence or estimated psychology
+  fit_candidate: false
+  calibration_status: not_a_fit_parameter
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: experiment.physics_dt
+  current_value: 0.05
+  unit: s (simulation)
+  meaning: physics dt
+  location: config/scenarios/two_robots_multi_sfm_14_multigoal_psychology_v2_nav2.yaml;
+    config/tasks/psychology_v2_crossings.yaml
+  category: engineering_experiment
+  scope: global
+  per_agent_overrides: {}
+  legal_range:
+    constraints: scene design, not population prevalence or estimated psychology
+  fit_candidate: false
+  calibration_status: not_a_fit_parameter
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: experiment.hold_after_round_sim_s
+  current_value: 15.0
+  unit: s (simulation)
+  meaning: hold after round sim s
+  location: config/scenarios/two_robots_multi_sfm_14_multigoal_psychology_v2_nav2.yaml;
+    config/tasks/psychology_v2_crossings.yaml
+  category: engineering_experiment
+  scope: global
+  per_agent_overrides: {}
+  legal_range:
+    constraints: scene design, not population prevalence or estimated psychology
+  fit_candidate: false
+  calibration_status: not_a_fit_parameter
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: experiment.startup_timeout_wall_s
+  current_value: 300.0
+  unit: s (wall)
+  meaning: startup timeout wall s
+  location: config/scenarios/two_robots_multi_sfm_14_multigoal_psychology_v2_nav2.yaml;
+    config/tasks/psychology_v2_crossings.yaml
+  category: engineering_experiment
+  scope: global
+  per_agent_overrides: {}
+  legal_range:
+    constraints: scene design, not population prevalence or estimated psychology
+  fit_candidate: false
+  calibration_status: not_a_fit_parameter
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: experiment.goal_timeout_wall_s
+  current_value: 600.0
+  unit: s (wall)
+  meaning: goal timeout wall s
+  location: config/scenarios/two_robots_multi_sfm_14_multigoal_psychology_v2_nav2.yaml;
+    config/tasks/psychology_v2_crossings.yaml
+  category: engineering_experiment
+  scope: global
+  per_agent_overrides: {}
+  legal_range:
+    constraints: scene design, not population prevalence or estimated psychology
+  fit_candidate: false
+  calibration_status: not_a_fit_parameter
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: acceptance.robot_gap
+  current_value: 0.1
+  unit: m (surface gap)
+  meaning: 冻结的验收要求 robot_gap
+  location: docs/DYNAMIC_PSYCHOLOGY_V2.md; scripts/validate_psychology_v2_runtime.py
+  category: engineering_experiment
+  scope: global
+  per_agent_overrides: {}
+  legal_range:
+    constraints: frozen acceptance requirement; not a fit target
+  fit_candidate: false
+  calibration_status: not_a_fit_parameter
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: acceptance.human_gap
+  current_value: 0.0
+  unit: m (surface gap)
+  meaning: 冻结的验收要求 human_gap
+  location: docs/DYNAMIC_PSYCHOLOGY_V2.md; scripts/validate_psychology_v2_runtime.py
+  category: engineering_experiment
+  scope: global
+  per_agent_overrides: {}
+  legal_range:
+    constraints: frozen acceptance requirement; not a fit target
+  fit_candidate: false
+  calibration_status: not_a_fit_parameter
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: acceptance.display_error
+  current_value: 0.25
+  unit: m (center distance)
+  meaning: 冻结的验收要求 display_error
+  location: docs/DYNAMIC_PSYCHOLOGY_V2.md; scripts/validate_psychology_v2_runtime.py
+  category: engineering_experiment
+  scope: global
+  per_agent_overrides: {}
+  legal_range:
+    constraints: frozen acceptance requirement; not a fit target
+  fit_candidate: false
+  calibration_status: not_a_fit_parameter
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: acceptance.wall_seed11
+  current_value: 1800.0
+  unit: s (wall)
+  meaning: 冻结的验收要求 wall_seed11
+  location: docs/DYNAMIC_PSYCHOLOGY_V2.md; scripts/validate_psychology_v2_runtime.py
+  category: engineering_experiment
+  scope: global
+  per_agent_overrides: {}
+  legal_range:
+    constraints: frozen acceptance requirement; not a fit target
+  fit_candidate: false
+  calibration_status: not_a_fit_parameter
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: acceptance.wall_seed12_13_minimum
+  current_value: 600.0
+  unit: s (wall)
+  meaning: 冻结的验收要求 wall_seed12_13_minimum
+  location: docs/DYNAMIC_PSYCHOLOGY_V2.md; scripts/validate_psychology_v2_runtime.py
+  category: engineering_experiment
+  scope: global
+  per_agent_overrides: {}
+  legal_range:
+    constraints: frozen acceptance requirement; not a fit target
+  fit_candidate: false
+  calibration_status: not_a_fit_parameter
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: engineering.post_spawn_odometry_timeout
+  current_value: 30.0
+  unit: s (wall)
+  meaning: 生成角色后必须恢复连续新观测的截止时间
+  location: src/arena_multi_hunav/arena_multi_hunav/multi_adapter.py:_tick_impl
+  category: engineering_experiment
+  scope: global
+  per_agent_overrides: {}
+  legal_range:
+    constraints: fixed engineering/structural choice; version separately if changed
+  fit_candidate: false
+  calibration_status: not_a_fit_parameter
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: engineering.spawn_timeout
+  current_value: 300.0
+  unit: s (wall)
+  meaning: 角色生成服务截止时间
+  location: src/arena_multi_hunav/arena_multi_hunav/multi_adapter.py:_tick_impl
+  category: engineering_experiment
+  scope: global
+  per_agent_overrides: {}
+  legal_range:
+    constraints: fixed engineering/structural choice; version separately if changed
+  fit_candidate: false
+  calibration_status: not_a_fit_parameter
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: engineering.startup_display_timeout
+  current_value: 30.0
+  unit: s (wall)
+  meaning: 首次静止显示同步服务截止时间
+  location: src/arena_multi_hunav/arena_multi_hunav/multi_adapter.py:_tick_impl
+  category: engineering_experiment
+  scope: global
+  per_agent_overrides: {}
+  legal_range:
+    constraints: fixed engineering/structural choice; version separately if changed
+  fit_candidate: false
+  calibration_status: not_a_fit_parameter
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: engineering.odom_future_tolerance
+  current_value: 0.050001
+  unit: s (simulation)
+  meaning: 机器人观测允许领先当前时钟的上界
+  location: src/arena_multi_hunav/arena_multi_hunav/multi_adapter.py:_fresh
+  category: engineering_experiment
+  scope: global
+  per_agent_overrides: {}
+  legal_range:
+    constraints: fixed engineering/structural choice; version separately if changed
+  fit_candidate: false
+  calibration_status: not_a_fit_parameter
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: engineering.stop_dispatch_period
+  current_value: 0.2
+  unit: s (wall)
+  meaning: 故障后静止显示命令重发间隔
+  location: src/arena_multi_hunav/arena_multi_hunav/multi_adapter.py:_tick_impl
+  category: engineering_experiment
+  scope: global
+  per_agent_overrides: {}
+  legal_range:
+    constraints: fixed engineering/structural choice; version separately if changed
+  fit_candidate: false
+  calibration_status: not_a_fit_parameter
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: core.yaw_rate_cap
+  current_value: 1.0
+  unit: rad/s
+  meaning: 身体观察转向命令的核心硬上限
+  location: src/arena_multi_hunav_core/src/core.cpp:integrate_impl
+  category: engineering_experiment
+  scope: global
+  per_agent_overrides: {}
+  legal_range:
+    constraints: fixed engineering/structural choice; version separately if changed
+  fit_candidate: false
+  calibration_status: not_a_fit_parameter
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+- id: core.yaw_stop_speed_cap
+  current_value: 0.05
+  unit: m/s
+  meaning: 身体朝向控制停稳阈值的核心上限
+  location: src/arena_multi_hunav_core/src/core.cpp:integrate_impl
+  category: engineering_experiment
+  scope: global
+  per_agent_overrides: {}
+  legal_range:
+    constraints: fixed engineering/structural choice; version separately if changed
+  fit_candidate: false
+  calibration_status: not_a_fit_parameter
+  runtime_effective: true
+  observations:
+  - synchronised positions and velocities; physical geometry where relevant
+  coupled_parameters: []
+  identifiability: motion parameters require separate fit and geometric revalidation;
+    engineering limits never relaxed for fit
+  required_experiment: dedicated measurements or controlled motion trial
+  fit_bounds: null
+  source: current code/config engineering value; not empirical calibration
+  dataset: null
+  fit_result: null
+notes:
+- Legal bounds are not statistical priors or confidence intervals.
+- c/f/s are latent simulator states, never required as measured human inputs.
+- Fix expressivity scale before initial beta identification.
+- Fit direct activation, recovery, spread, thresholds and motion in separate stages.
+- Inactive legacy behavior duration/once/vel/dist/other_force_factor and LightSFM
+  group forces/epsilon are excluded from effective V2 motion; Agent.behavior.type
+  remains 1.
+- 'Seeds do not create random playful assignments: the two demonstration actors are
+  fixed.'
+- World coordinates/routes are experimental inputs captured in the run manifest, not
+  emotional parameters.

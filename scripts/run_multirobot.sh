@@ -88,6 +88,7 @@ fi
     echo "cpu_affinity=$(awk '/Cpus_allowed_list/ {print $2}' /proc/self/status)"
     echo "random_seed=$(python3 -c 'import sys,yaml; print(yaml.safe_load(open(sys.argv[1])).get("random_seed", 1))' "$SCENARIO")"
 } > "$ARENA_MULTI_RUN_DIR/runtime_manifest.txt"
+python3 "$SCRIPT_DIR/capture_psychology_v2_manifest.py" "$SCENARIO" "$ARENA_MULTI_RUN_DIR"
 
 echo "Starting Arena5 multi-robot scenario $(basename "$SCENARIO") on GPU $GPU_ID"
 echo "Logs: $ARENA_MULTI_RUN_DIR"

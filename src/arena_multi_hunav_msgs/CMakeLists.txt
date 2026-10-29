@@ -9,6 +9,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/BehaviorModifiers.msg" "msg/RobotInfluence.msg" "msg/InteractionForces.msg"
   "msg/BehaviorIntent.msg" "msg/MotionDiagnostic.msg"
   "srv/ComputeMultiAgents.srv" "srv/ComputeMultiAgentsV2.srv"
+  "msg/BehaviorIntentV3.msg" "msg/MotionDiagnosticV3.msg" "srv/ComputeMultiAgentsV3.srv"
   DEPENDENCIES hunav_msgs geometry_msgs std_msgs)
 ament_export_dependencies(rosidl_default_runtime)
 ament_package()

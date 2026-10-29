@@ -1,0 +1,45 @@
+{
+  "passed": false,
+  "scope": "C++ ROS closed loop; prescribed robot motion, no Isaac/Nav2 response",
+  "checks": {
+    "geometry": true,
+    "acceleration": true,
+    "surprise": true,
+    "playful": false
+  },
+  "events": {
+    "surprise_started": 1,
+    "surprise_completed": 1,
+    "playful_started": 1,
+    "playful_occupied": 1,
+    "playful_aborted": 1,
+    "playful_task_resumed": 1
+  },
+  "modes": {
+    "REGULAR": 974,
+    "SURPRISED": 84,
+    "CURIOUS": 1267,
+    "THREATENING": 75
+  },
+  "phases": {
+    "none": 2325,
+    "intercept": 47,
+    "occupy": 28
+  },
+  "blockers": {
+    "not_curious": 427,
+    "observation_incomplete": 427,
+    "curious_duration": 747,
+    "activation": 1486,
+    "not_visible": 343,
+    "preference": 343,
+    "robot_stationary": 65,
+    "risk": 46,
+    "fear": 166,
+    "cooldown": 237,
+    "budget": 1042
+  },
+  "min_gap_m": 0.24926683280913509,
+  "max_acceleration_mps2": 3.0000000000000018,
+  "front_s": 1.8749999999999973
+}

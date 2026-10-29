@@ -1,0 +1,24 @@
+Arena multi workspace: /home/lpc/workspace/arena5_multi_ws
+Stable underlay: /home/lpc/workspace/arena5_ws
+ROS domain: 71
+........................................................................ [ 47%]
+........................................................................ [ 94%]
+........                                                                 [100%]
+=============================== warnings summary ===============================
+../arena5_ws/.conda/arena_ros/lib/python3.11/site-packages/lark/utils.py:163
+  /home/lpc/workspace/arena5_ws/.conda/arena_ros/lib/python3.11/site-packages/lark/utils.py:163: DeprecationWarning: module 'sre_parse' is deprecated
+    import sre_parse
+
+../arena5_ws/.conda/arena_ros/lib/python3.11/site-packages/lark/utils.py:164
+  /home/lpc/workspace/arena5_ws/.conda/arena_ros/lib/python3.11/site-packages/lark/utils.py:164: DeprecationWarning: module 'sre_constants' is deprecated
+    import sre_constants
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+152 passed, 2 warnings in 2.87s
+{
+  "passed": true,
+  "parameters": 137,
+  "psychology_parameters": 79,
+  "fit_candidates": 83,
+  "calibration": "no fitted parameters"
+}

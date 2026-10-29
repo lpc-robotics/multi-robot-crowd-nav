@@ -1,0 +1,14 @@
+int32 agent_id
+geometry_msgs/Vector3 desired_force
+geometry_msgs/Vector3 obstacle_force
+geometry_msgs/Vector3 human_social_force
+geometry_msgs/Vector3 robot_social_force
+geometry_msgs/Vector3 robot_static_force
+geometry_msgs/Vector3 robot_near_force
+geometry_msgs/Vector3 total_before_limit
+geometry_msgs/Vector3 acceleration
+bool acceleration_limited
+bool speed_limited
+bool yaw_applied
+float64 applied_yaw
+float64 applied_yaw_rate

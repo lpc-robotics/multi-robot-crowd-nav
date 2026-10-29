@@ -1,0 +1,171 @@
+{
+  "scope": "all exported SURPRISED episodes, actual pose/velocity/yaw with prior robot timeline sample; 25ms core input offset",
+  "episodes": {
+    "person_2": [
+      {
+        "start_ns": 3475000046,
+        "end_ns": 6025000046,
+        "target": "robot_1",
+        "exit_reason": "surprise_completed",
+        "max_aligned_s": 1.0500000150000002,
+        "normally_completed": true,
+        "meets_one_second": true
+      },
+      {
+        "start_ns": 6050000046,
+        "end_ns": 8150000046,
+        "target": "robot_2",
+        "exit_reason": "surprise_completed",
+        "max_aligned_s": 1.4000000209999999,
+        "normally_completed": true,
+        "meets_one_second": true
+      }
+    ],
+    "person_1": [
+      {
+        "start_ns": 3450000046,
+        "end_ns": 6575000046,
+        "target": "robot_1",
+        "exit_reason": "surprise_completed",
+        "max_aligned_s": 1.0500000160000003,
+        "normally_completed": true,
+        "meets_one_second": true
+      },
+      {
+        "start_ns": 6600000046,
+        "end_ns": 8700000046,
+        "target": "robot_2",
+        "exit_reason": "surprise_completed",
+        "max_aligned_s": 1.5000000219999996,
+        "normally_completed": true,
+        "meets_one_second": true
+      }
+    ],
+    "person_3": [
+      {
+        "start_ns": 10800000046,
+        "end_ns": 12900000046,
+        "target": "robot_2",
+        "exit_reason": "surprise_completed",
+        "max_aligned_s": 1.3500000199999997,
+        "normally_completed": true,
+        "meets_one_second": true
+      },
+      {
+        "start_ns": 15100000046,
+        "end_ns": 17200000046,
+        "target": "robot_1",
+        "exit_reason": "surprise_completed",
+        "max_aligned_s": 1.5500000239999994,
+        "normally_completed": true,
+        "meets_one_second": true
+      }
+    ],
+    "person_4": [
+      {
+        "start_ns": 11550000046,
+        "end_ns": 14175000046,
+        "target": "robot_2",
+        "exit_reason": "surprise_completed",
+        "max_aligned_s": 1.0500000160000003,
+        "normally_completed": true,
+        "meets_one_second": true
+      },
+      {
+        "start_ns": 24400000046,
+        "end_ns": 28400000046,
+        "target": "robot_1",
+        "exit_reason": "surprise_timeout",
+        "max_aligned_s": 0.0,
+        "normally_completed": false,
+        "meets_one_second": false
+      }
+    ],
+    "person_5": [
+      {
+        "start_ns": 14375000046,
+        "end_ns": 16475000046,
+        "target": "robot_2",
+        "exit_reason": "surprise_completed",
+        "max_aligned_s": 1.35000002,
+        "normally_completed": true,
+        "meets_one_second": true
+      }
+    ],
+    "person_6": [
+      {
+        "start_ns": 26125000046,
+        "end_ns": 28400000046,
+        "target": "robot_2",
+        "exit_reason": "surprise_completed",
+        "max_aligned_s": 1.0500000150000004,
+        "normally_completed": true,
+        "meets_one_second": true
+      }
+    ],
+    "person_7": [
+      {
+        "start_ns": 57375000046,
+        "end_ns": 59475000046,
+        "target": "robot_1",
+        "exit_reason": "surprise_completed",
+        "max_aligned_s": 1.4000000209999999,
+        "normally_completed": true,
+        "meets_one_second": true
+      },
+      {
+        "start_ns": 66975000046,
+        "end_ns": 69075000046,
+        "target": "robot_2",
+        "exit_reason": "surprise_completed",
+        "max_aligned_s": 1.6000000239999996,
+        "normally_completed": true,
+        "meets_one_second": true
+      }
+    ],
+    "person_8": [
+      {
+        "start_ns": 61450000046,
+        "end_ns": 63750000046,
+        "target": "robot_2",
+        "exit_reason": "surprise_completed",
+        "max_aligned_s": 1.0500000150000002,
+        "normally_completed": true,
+        "meets_one_second": true
+      },
+      {
+        "start_ns": 64000000046,
+        "end_ns": 66100000046,
+        "target": "robot_1",
+        "exit_reason": "surprise_completed",
+        "max_aligned_s": 1.0500000150000002,
+        "normally_completed": true,
+        "meets_one_second": true
+      }
+    ],
+    "person_13": [
+      {
+        "start_ns": 128300000046,
+        "end_ns": 130200000046,
+        "target": "robot_1",
+        "exit_reason": "surprise_target_lost",
+        "max_aligned_s": 1.1000000160000003,
+        "normally_completed": false,
+        "meets_one_second": true
+      }
+    ],
+    "person_14": [
+      {
+        "start_ns": 424900000046,
+        "end_ns": 427025000046,
+        "target": "robot_2",
+        "exit_reason": "surprise_completed",
+        "max_aligned_s": 1.0000000150000004,
+        "normally_completed": true,
+        "meets_one_second": true
+      }
+    ]
+  },
+  "completed_episode_count": 14,
+  "passed": true
+}

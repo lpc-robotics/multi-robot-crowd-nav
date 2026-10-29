@@ -113,4 +113,8 @@ class PsychologyConfig:
 
 
 def load_psychology_config(path):
-    return PsychologyConfig.parse(yaml.safe_load(Path(path).read_text(encoding="utf-8")))
+    document = yaml.safe_load(Path(path).read_text(encoding="utf-8"))
+    if isinstance(document, dict) and document.get("model") == "sis_cf_v2":
+        from .psychology_v2_config import PsychologyConfigV2
+        return PsychologyConfigV2.parse(document)
+    return PsychologyConfig.parse(document)

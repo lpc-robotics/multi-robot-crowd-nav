@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "scope": "ablation control: unchanged physical/transaction gates, complete navigation, no blocking; natural surprise exits allowed",
+  "original_acceptance_passed": false,
+  "nonrequired_active_demonstration_checks": [
+    "missing actual stopped aligned observation: 13"
+  ],
+  "natural_surprise_exits": {
+    "4:surprise_timeout": 1,
+    "13:surprise_target_lost": 1
+  },
+  "metrics": {
+    "minimum_robot_gap_m": 0.24263566729233954,
+    "minimum_human_gap_m": 0.4699076757284484,
+    "max_display_error_m": 0.039380401893394874,
+    "core_max_speed_mps": 1.0000000000000002,
+    "core_max_acceleration_mps2": 3.000000000000001,
+    "matched_samples": 12980,
+    "wall_s": 1191.7332164580002,
+    "sim_s": 650.025
+  },
+  "runtime_source_commit": "7cffd0eddc4c55aa414338d609b5648c71d3d70d",
+  "failures": [],
+  "inputs": {
+    "/home/lpc/workspace/arena5_multi_ws/evidence/psychology_v2_20261028/control_completed/acceptance.json": "ae707892e0da10cf032c04f96aee9b0fe4a8fb399b208fe379eedbc78c77737a",
+    "/home/lpc/workspace/arena5_multi_ws/evidence/psychology_v2_20261028/control_completed/source_manifest.json": "4085a5cd545b70cfdfa1d0b9b3a5c5d1fd9d38fd5594a12fefdde3b308f70480"
+  },
+  "processor_sha256": {
+    "validate_psychology_v2_control.py": "e7c6bf17115b2470e15d960164ddaa1bf94fbe52a9617336e595c3164b9b1973",
+    "control_validation_v2.py": "24ac9cede6400761257bed32c00b75ca585b7bfbe0548fa2f20edfd9a212c075"
+  }
+}

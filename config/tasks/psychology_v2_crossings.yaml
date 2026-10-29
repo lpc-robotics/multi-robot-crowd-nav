@@ -1,0 +1,83 @@
+# Only robot navigation goals; no pedestrian mode/state scripting.
+robots:
+- robot_1
+- robot_2
+startup_timeout_wall_s: 300.0
+goal_timeout_wall_s: 600.0
+hold_after_round_sim_s: 15.0
+rounds:
+- goals:
+    robot_1:
+    - 7.0
+    - 3.0
+    - 0.0
+    robot_2:
+    - 7.0
+    - 11.5
+    - 0.0
+- goals:
+    robot_1:
+    - 11.5
+    - 6.0
+    - 0.0
+    robot_2:
+    - 16.0
+    - 8.0
+    - 0.0
+  delays:
+    robot_1: 0.0
+    robot_2: 10.0
+- goals:
+    robot_1:
+    - 18.0
+    - 7.0
+    - 0.0
+    robot_2:
+    - 3.0
+    - 7.0
+    - 3.141592653589793
+- goals:
+    robot_1:
+    - 27.0
+    - 7.0
+    - 0.0
+    robot_2:
+    - 3.0
+    - 7.0
+    - 3.141592653589793
+- goals:
+    robot_1:
+    - 3.0
+    - 3.0
+    - 3.141592653589793
+    robot_2:
+    - 3.0
+    - 7.0
+    - 3.141592653589793
+- goals:
+    robot_1:
+    - 3.0
+    - 3.0
+    - 3.141592653589793
+    robot_2:
+    - 18.0
+    - 17.0
+    - 0.0
+- goals:
+    robot_1:
+    - 3.0
+    - 3.0
+    - 3.141592653589793
+    robot_2:
+    - 27.0
+    - 17.0
+    - 0.0
+- goals:
+    robot_1:
+    - 3.0
+    - 3.0
+    - 3.141592653589793
+    robot_2:
+    - 3.0
+    - 7.0
+    - 3.141592653589793

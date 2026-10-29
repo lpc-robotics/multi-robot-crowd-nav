@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "scenario": "/home/lpc/workspace/arena5_multi_ws/config/scenarios/one_robot_multi_sfm_1_playful_v2_validation.yaml",
+  "requested_min_wall_s": 60.0,
+  "run_dir": "/home/lpc/workspace/arena5_multi_ws/evidence/runs/psychology_v2_20261028/single_moving_front/runs/20261028_124239_one_robot_multi_sfm_1_playful_v2_validation_gpu3",
+  "probe_exit": 0,
+  "driver_wall_s": 196.6386859328486
+}

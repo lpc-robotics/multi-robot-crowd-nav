@@ -1,0 +1,96 @@
+{
+  "person_13": [
+    {
+      "event": "surprise_started",
+      "sim_s": 128.600000049,
+      "robot_id": "-1",
+      "reason": ""
+    },
+    {
+      "event": "surprise_completed",
+      "sim_s": 130.700000049,
+      "robot_id": "-1",
+      "reason": "surprise_completed"
+    },
+    {
+      "event": "playful_started",
+      "sim_s": 135.400000049,
+      "robot_id": "-1",
+      "reason": "",
+      "navigation_leg": [
+        "round_3:robot_1"
+      ]
+    },
+    {
+      "event": "playful_occupied",
+      "sim_s": 138.225000049,
+      "robot_id": "-1",
+      "reason": ""
+    },
+    {
+      "event": "playful_yield_started",
+      "sim_s": 140.225000049,
+      "robot_id": "-1",
+      "reason": "occupancy_complete"
+    },
+    {
+      "event": "playful_completed",
+      "sim_s": 142.150000049,
+      "robot_id": "-1",
+      "reason": "yield_reached"
+    },
+    {
+      "event": "playful_task_resumed",
+      "sim_s": 144.375000049,
+      "robot_id": "-1",
+      "reason": ""
+    }
+  ],
+  "person_14": [
+    {
+      "event": "surprise_started",
+      "sim_s": 542.550000049,
+      "robot_id": "-2",
+      "reason": ""
+    },
+    {
+      "event": "surprise_completed",
+      "sim_s": 545.300000049,
+      "robot_id": "-2",
+      "reason": "surprise_completed"
+    },
+    {
+      "event": "playful_started",
+      "sim_s": 549.800000049,
+      "robot_id": "-2",
+      "reason": "",
+      "navigation_leg": [
+        "round_6:robot_2"
+      ]
+    },
+    {
+      "event": "playful_occupied",
+      "sim_s": 552.600000049,
+      "robot_id": "-2",
+      "reason": ""
+    },
+    {
+      "event": "playful_yield_started",
+      "sim_s": 554.600000049,
+      "robot_id": "-2",
+      "reason": "occupancy_complete"
+    },
+    {
+      "event": "playful_completed",
+      "sim_s": 556.500000049,
+      "robot_id": "-2",
+      "reason": "yield_reached"
+    },
+    {
+      "event": "playful_task_resumed",
+      "sim_s": 560.100000049,
+      "robot_id": "-2",
+      "reason": ""
+    }
+  ]
+}

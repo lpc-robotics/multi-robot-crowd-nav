@@ -1,0 +1,99 @@
+{
+  "wall_duration_s": 1800.0431964460295,
+  "samples": {
+    "/multirobot/hunav/health": {
+      "count": 3711,
+      "max_wall_gap_s": 0.8180744259152561,
+      "last_health": true
+    },
+    "/robot_2/odom": {
+      "count": 4336,
+      "max_wall_gap_s": 0.6649886830709875,
+      "first_position": [
+        11.515141487121582,
+        8.03268814086914
+      ],
+      "last_position": [
+        3.1860158443450928,
+        7.054133892059326
+      ]
+    },
+    "/clock": {
+      "count": 4336,
+      "max_wall_gap_s": 0.6646024549845606,
+      "first_sim_s": 134.300002001,
+      "last_sim_s": 351.050005231
+    },
+    "/robot_1/odom": {
+      "count": 4336,
+      "max_wall_gap_s": 0.6637034439481795,
+      "first_position": [
+        16.294830322265625,
+        6.754374980926514
+      ],
+      "last_position": [
+        3.1943376064300537,
+        3.013474941253662
+      ]
+    },
+    "/multirobot/hunav/status": {
+      "count": 350,
+      "max_wall_gap_s": 1.5673143139574677
+    }
+  },
+  "gaps_over_0_4s": [
+    {
+      "topic": "monitor_scheduling",
+      "wall_elapsed_s": 371.5466667590663,
+      "gap_s": 0.47720198589377105
+    },
+    {
+      "topic": "/multirobot/hunav/health",
+      "wall_elapsed_s": 371.57324149203487,
+      "gap_s": 0.8180744259152561
+    },
+    {
+      "topic": "/clock",
+      "wall_elapsed_s": 371.5807977421209,
+      "gap_s": 0.6646024549845606
+    },
+    {
+      "topic": "/robot_1/odom",
+      "wall_elapsed_s": 371.5817398261279,
+      "gap_s": 0.6637034439481795
+    },
+    {
+      "topic": "/robot_2/odom",
+      "wall_elapsed_s": 371.5821777060628,
+      "gap_s": 0.6649886830709875
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 371.6051976841409,
+      "gap_s": 1.5673143139574677
+    }
+  ],
+  "status": {
+    "backend": "multi_sfm",
+    "clock_stall_recoveries": 1,
+    "compute": 13917,
+    "display_lag_s": 0.150005186,
+    "epoch": 10811145542783576597,
+    "fault": "",
+    "fault_details": {},
+    "healthy": true,
+    "integration_lag_s": 0.075005186,
+    "interaction_scope": "all_robots",
+    "last_clock_stall_wall_s": 0.824677960947156,
+    "max_compute_wall_s": 0.1676912431139499,
+    "max_dt": 0.025,
+    "paused": false,
+    "psychology_model": "sis_cf_v2",
+    "robots": [
+      "robot_1",
+      "robot_2"
+    ],
+    "step": 13918,
+    "updates": 5470
+  }
+}

@@ -96,13 +96,13 @@ def load_scenario(path: str | Path) -> Scenario:
         raise ValueError("unsupported pedestrian_backend")
     config = str(document.get("pedestrian_config", ""))
     psychology = str(document.get("psychology_model", "noop"))
-    if psychology not in ("noop", "sis_cf_v1"):
+    if psychology not in ("noop", "sis_cf_v1", "sis_cf_v2"):
         raise ValueError("unsupported psychology model")
     psychology_config = str(document.get("psychology_config", ""))
     demo_tasks = str(document.get("demo_tasks", ""))
-    if psychology == "sis_cf_v1":
+    if psychology in ("sis_cf_v1", "sis_cf_v2"):
         if backend != "multi_sfm" or not psychology_config:
-            raise ValueError("sis_cf_v1 requires multi_sfm and psychology_config")
+            raise ValueError("SIS psychology requires multi_sfm and psychology_config")
         psychology_config = str((Path(path).resolve().parent / psychology_config).resolve())
         if not Path(psychology_config).is_file():
             raise ValueError("psychology_config does not exist")

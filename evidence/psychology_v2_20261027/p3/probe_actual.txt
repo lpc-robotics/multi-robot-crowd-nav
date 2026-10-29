@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "scope": "actual Character Graph and committed V3 transactions",
+  "requested_wall_s": 120.0,
+  "wall_s": 120.06752322404645,
+  "sim_s": 123.825,
+  "actual_samples": 2450,
+  "matched_samples": 2449,
+  "minimum_robot_gap_m": 0.2571896751876124,
+  "minimum_human_gap_m": null,
+  "max_display_error_m": 0.06750102498179415,
+  "max_actual_speed_mps": 1.664138806154063,
+  "modes": {
+    "1": [
+      "CURIOUS",
+      "REGULAR",
+      "SCARED",
+      "SURPRISED",
+      "THREATENING"
+    ]
+  },
+  "actual_aligned_observation_s": {
+    "1": 1.4500000219999996
+  },
+  "actual_front_occupancy_s": {
+    "1": 4.900000072999992
+  },
+  "events": {
+    "1:surprise_started": 1,
+    "1:surprise_completed": 1,
+    "1:playful_started": 1,
+    "1:playful_occupied": 1,
+    "1:playful_yield_started": 1,
+    "1:playful_completed": 1,
+    "1:playful_task_resumed": 1
+  },
+  "phases": {
+    "1:none": 4751,
+    "1:intercept": 45,
+    "1:occupy": 80,
+    "1:yield": 78
+  },
+  "cycles": {
+    "1": 18
+  },
+  "pause_checks": 614,
+  "failures": []
+}

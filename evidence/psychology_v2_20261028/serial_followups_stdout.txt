@@ -1,0 +1,4 @@
+starting seed12_serial
+{'seed': 12, 'exit_code': 1, 'driver': '/home/lpc/workspace/arena5_multi_ws/evidence/runs/psychology_v2_20261028/seed12_serial/driver.json'}
+starting seed13_serial
+{'seed': 13, 'exit_code': 0, 'driver': '/home/lpc/workspace/arena5_multi_ws/evidence/runs/psychology_v2_20261028/seed13_serial/driver.json'}

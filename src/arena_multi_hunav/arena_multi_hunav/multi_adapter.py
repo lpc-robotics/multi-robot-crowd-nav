@@ -22,8 +22,8 @@ from geometry_msgs.msg import Pose, Twist
 from hunav_msgs.msg import Agent, Agents
 from arena_people_msgs.msg import Pedestrian, SpawnPedestrian
 from arena_people_msgs.srv import SpawnPedestrians, UpdatePedestrians
-from arena_multi_hunav_msgs.msg import BehaviorModifiers, BehaviorIntent, InteractionForces
-from arena_multi_hunav_msgs.srv import ComputeMultiAgents, ComputeMultiAgentsV2
+from arena_multi_hunav_msgs.msg import BehaviorModifiers, BehaviorIntent, BehaviorIntentV3, InteractionForces
+from arena_multi_hunav_msgs.srv import ComputeMultiAgents, ComputeMultiAgentsV2, ComputeMultiAgentsV3
 import yaml
 
 from .psychology import Entity, MentalState, MODELS, make_context, prepare_step
@@ -31,6 +31,7 @@ from .timeline import Timeline, Sample
 from .routes import compile_route
 from .psychology_config import load_psychology_config
 from .behavior import MODES
+from .behavior_v2 import MODES_V2
 from .clock_gate import ClockStallGate
 
 
@@ -126,6 +127,17 @@ def validate_response(request, response):
                 v = getattr(d, field)
                 if not all(math.isfinite(x) for x in (v.x, v.y, v.z)):
                     raise ValueError("nonfinite_motion_diagnostics")
+            if hasattr(d, "robot_static_force"):
+                if not all(math.isfinite(v) for v in (d.robot_static_force.x, d.robot_static_force.y,
+                        d.robot_static_force.z, d.applied_yaw, d.applied_yaw_rate)):
+                    raise ValueError("nonfinite_v3_motion_diagnostics")
+                a = next(p for p in response.updated_agents.agents if p.id == d.agent_id)
+                if abs(math.remainder(a.yaw-d.applied_yaw, 2*math.pi)) > 1e-6:
+                    raise ValueError("inconsistent_applied_yaw")
+                if d.yaw_applied:
+                    i = next(i for i in request.intents if i.agent_id == d.agent_id)
+                    if not i.override_yaw or abs(d.applied_yaw_rate) > i.max_yaw_rate+1e-9:
+                        raise ValueError("invalid_applied_yaw_rate")
     return expected
 
 
@@ -143,9 +155,13 @@ def commit_candidate(model, snapshot, proposal, request, response):
 
 
 def motion_json(d):
-    return {"agent_id": d.agent_id, "acceleration_limited": d.acceleration_limited,
+    result = {"agent_id": d.agent_id, "acceleration_limited": d.acceleration_limited,
             "speed_limited": d.speed_limited, **{name: [getattr(d, name).x, getattr(d, name).y]
             for name in ("desired_force", "obstacle_force", "human_social_force", "robot_social_force", "robot_near_force", "total_before_limit", "acceleration")}}
+    if hasattr(d, "robot_static_force"):
+        result.update(robot_static_force=[d.robot_static_force.x, d.robot_static_force.y],
+                      yaw_applied=d.yaw_applied, applied_yaw=d.applied_yaw, applied_yaw_rate=d.applied_yaw_rate)
+    return result
 
 
 class MultiSfmAdapter(Node):
@@ -181,11 +197,15 @@ class MultiSfmAdapter(Node):
         self.compute_count = 0; self.update_count = 0; self.max_compute_wall = 0.0
         self.model = MODELS[str(self.get_parameter("psychology_model").value)]()
         self.use_v2 = self.model.name != "noop"
+        self.use_v3 = self.model.name == "sis_cf_v2"
         config_path = str(self.get_parameter("psychology_config_file").value)
         config = load_psychology_config(config_path).document() if self.use_v2 else {}
         if not self.use_v2 and config_path:
             raise ValueError("noop accepts no psychology_config_file")
         self.model.initialize(config, tuple(a.id for a in self.agents.agents), int(self.get_parameter("random_seed").value))
+        if self.use_v3 and any(p.preferred_robot_id and p.preferred_robot_id not in self.robot_ids.values()
+                              for p, _ in self.model.resolved.values()):
+            raise ValueError("preferred robot is absent from scenario")
         self.mental = self.model.initial_states() if self.use_v2 else {a.id: MentalState() for a in self.agents.agents}
         self.last_psychology = {}
         self.evidence_stream = None
@@ -203,8 +223,9 @@ class MultiSfmAdapter(Node):
         self.create_subscription(ClockMsg, "/clock", self._on_clock, qos_profile_sensor_data)
         for name in self.names:
             self.create_subscription(Odometry, f"/{name}/odom", lambda m, n=name: self._odom(n, m), qos_profile_sensor_data)
-        self.compute_type = ComputeMultiAgentsV2 if self.use_v2 else ComputeMultiAgents
-        self.compute = self.create_client(self.compute_type, "/multirobot/hunav/compute_agents_v2" if self.use_v2 else "/multirobot/hunav/compute_agents")
+        self.compute_type = ComputeMultiAgentsV3 if self.use_v3 else (ComputeMultiAgentsV2 if self.use_v2 else ComputeMultiAgents)
+        service_suffix = "_v3" if self.use_v3 else ("_v2" if self.use_v2 else "")
+        self.compute = self.create_client(self.compute_type, "/multirobot/hunav/compute_agents" + service_suffix)
         self.spawn = self.create_client(SpawnPedestrians, "/isaac/SpawnPedestrians")
         self.update = self.create_client(UpdatePedestrians, "/isaac/UpdatePedestrians")
         self.wall_clock = Clock(clock_type=ClockType.STEADY_TIME)
@@ -352,7 +373,7 @@ class MultiSfmAdapter(Node):
                 elif self.stamp_ns is None:
                     self.warm_display_ready = True
                     self.warm_since = None
-            elif now - started > (30.0 if self.stamp_ns is None else timeout):
+            elif not self.fault and now - started > (30.0 if self.stamp_ns is None else timeout):
                 self.get_logger().error(
                     f"DISPLAY_REQUEST_TIMEOUT: effective_wait={now-started:.6f}s "
                     f"request_stamp_ns={stamp} clock_ns={self.clock_ns} "
@@ -420,15 +441,18 @@ class MultiSfmAdapter(Node):
                 self.agents, self.stamp_ns, self.mental = commit_candidate(self.model, plugin_snapshot, proposal, req, res)
                 self.compute_count += 1; self.max_compute_wall = max(self.max_compute_wall, now-started)
                 if self.use_v2:
-                    self.last_psychology = {"schema_version": 2, "stamp_ns": self.stamp_ns,
+                    self.last_psychology = {"schema_version": 3 if self.use_v3 else 2, "stamp_ns": self.stamp_ns,
                         "epoch": self.epoch, "step": req.step, "plugin": self.model.snapshot(),
                         "states": {str(i): asdict(s) for i, s in self.mental.items()},
                         **proposal.diagnostics, "motion": [motion_json(d) for d in res.motion],
                         "people": {str(a.id): asdict(entity(a)) for a in self.agents.agents},
                         "robots": {str(a.id): asdict(entity(a)) for a in req.robots.agents},
                         "task_goals": {str(a.id): [(g.position.x, g.position.y) for g in a.goals] for a in self.agents.agents}}
-                    self.evidence_stream.write(json.dumps(self.last_psychology, sort_keys=True, allow_nan=False)+"\n")
-                    self.psych_pub.publish(String(data=json.dumps(self.last_psychology, sort_keys=True, allow_nan=False)))
+                    if self.use_v3:
+                        self.last_psychology.update(input_stamp_ns=self.stamp_ns-round(req.dt*1e9), dt=req.dt)
+                    encoded = json.dumps(self.last_psychology, sort_keys=True, allow_nan=False)
+                    self.evidence_stream.write(encoded+"\n")
+                    self.psych_pub.publish(String(data=encoded))
                 self.agent_pub.publish(self.agents)
                 self.force_pub.publish(InteractionForces(header=self.agents.header, epoch=self.epoch, step=self.step, influences=res.influences))
             elif now-started > timeout:
@@ -451,8 +475,8 @@ class MultiSfmAdapter(Node):
         for agent_id, modifier in sorted(proposal.modifiers.items()):
             req.modifiers.append(BehaviorModifiers(agent_id=agent_id, **asdict(modifier)))
         for agent_id, intent in sorted(proposal.intents.items()):
-            fields = asdict(intent); fields["mode"] = MODES[intent.mode]
-            req.intents.append(BehaviorIntent(agent_id=agent_id, **fields))
+            fields = asdict(intent); fields["mode"] = (MODES_V2 if self.use_v3 else MODES)[intent.mode]
+            req.intents.append((BehaviorIntentV3 if self.use_v3 else BehaviorIntent)(agent_id=agent_id, **fields))
         self.robot_pub.publish(robots)
         self.pending = (self.compute.call_async(req), now, req, proposal, proposed_plugin)
 

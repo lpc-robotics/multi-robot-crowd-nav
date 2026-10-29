@@ -1,0 +1,16 @@
+# Atomic snapshot/time contract, per-receiver physical response and body yaw.
+uint64 epoch
+uint64 step
+float64 dt
+hunav_msgs/Agents current_agents
+hunav_msgs/Agents robots
+BehaviorModifiers[] modifiers
+BehaviorIntentV3[] intents
+---
+uint64 epoch
+uint64 step
+bool success
+string error
+hunav_msgs/Agents updated_agents
+RobotInfluence[] influences
+MotionDiagnosticV3[] motion

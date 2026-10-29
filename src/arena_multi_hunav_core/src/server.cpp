@@ -22,5 +22,9 @@ int main(int argc, char ** argv) {
     [cfg](const std::shared_ptr<ComputeV2::Request> req, std::shared_ptr<ComputeV2::Response> res) {
       *res = integrate(*req, cfg);
     });
+  auto service_v3 = node->create_service<ComputeV3>("/multirobot/hunav/compute_agents_v3",
+    [cfg](const std::shared_ptr<ComputeV3::Request> req, std::shared_ptr<ComputeV3::Response> res) {
+      *res = integrate(*req, cfg);
+    });
   rclcpp::spin(node); rclcpp::shutdown(); return 0;
 }

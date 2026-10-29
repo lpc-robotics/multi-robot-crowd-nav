@@ -1,0 +1,25 @@
+Arena multi workspace: /home/lpc/workspace/arena5_multi_ws
+Stable underlay: /home/lpc/workspace/arena5_ws
+ROS domain: 71
+{
+  "passed": true,
+  "checks": 30,
+  "failures": []
+}
+Starting >>> arena_multi_hunav_msgs
+Starting >>> arena_isaac
+Starting >>> arena_multi_control
+Starting >>> arena_peer_costmap
+Finished <<< arena_multi_hunav_msgs [0.87s]
+Starting >>> arena_multi_hunav
+Starting >>> arena_multi_hunav_core
+Finished <<< arena_peer_costmap [1.27s]
+Finished <<< arena_multi_hunav_core [0.66s]
+Finished <<< arena_multi_control [1.79s]
+Finished <<< arena_isaac [1.83s]
+Finished <<< arena_multi_hunav [1.51s]
+Starting >>> arena_multi_bringup
+Finished <<< arena_multi_bringup [31.1s]
+
+Summary: 7 packages finished [33.7s]
+MULTIROBOT_BUILD_OK overlay=/home/lpc/workspace/arena5_multi_ws/install

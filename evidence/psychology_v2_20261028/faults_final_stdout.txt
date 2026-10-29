@@ -1,0 +1,87 @@
+{
+  "passed": false,
+  "scope": "real ROS nodes, synthetic world",
+  "psychology_config": "config/psychology/sis_cf_v2.yaml",
+  "cases": [
+    {
+      "case": "odom_loss",
+      "passed": false,
+      "fault": "",
+      "stop_from_injection_s": null,
+      "late_response_resumed": false,
+      "psychology_unchanged_after_fault": false,
+      "failures": [
+        "did not reach moving healthy state",
+        "unexpected or missing latched fault",
+        "guard stop missing or late",
+        "no pedestrian zero update",
+        "missing versioned psychology state",
+        "psychology advanced after latched fault"
+      ]
+    },
+    {
+      "case": "duplicate_odom",
+      "passed": false,
+      "fault": "",
+      "stop_from_injection_s": null,
+      "late_response_resumed": false,
+      "psychology_unchanged_after_fault": false,
+      "failures": [
+        "did not reach moving healthy state",
+        "unexpected or missing latched fault",
+        "guard stop missing or late",
+        "no pedestrian zero update",
+        "missing versioned psychology state",
+        "psychology advanced after latched fault"
+      ]
+    },
+    {
+      "case": "compute_late",
+      "passed": false,
+      "fault": "",
+      "stop_from_injection_s": null,
+      "late_response_resumed": false,
+      "psychology_unchanged_after_fault": false,
+      "failures": [
+        "did not reach moving healthy state",
+        "unexpected or missing latched fault",
+        "guard stop missing or late",
+        "no pedestrian zero update",
+        "missing versioned psychology state",
+        "psychology advanced after latched fault"
+      ]
+    },
+    {
+      "case": "update_failure",
+      "passed": false,
+      "fault": "",
+      "stop_from_injection_s": null,
+      "late_response_resumed": false,
+      "psychology_unchanged_after_fault": false,
+      "failures": [
+        "did not reach moving healthy state",
+        "unexpected or missing latched fault",
+        "guard stop missing or late",
+        "no pedestrian zero update",
+        "missing versioned psychology state",
+        "psychology advanced after latched fault"
+      ]
+    },
+    {
+      "case": "clock_rewind",
+      "passed": false,
+      "fault": "",
+      "stop_from_injection_s": null,
+      "late_response_resumed": false,
+      "psychology_unchanged_after_fault": false,
+      "failures": [
+        "did not reach moving healthy state",
+        "unexpected or missing latched fault",
+        "guard stop missing or late",
+        "no pedestrian zero update",
+        "missing versioned psychology state",
+        "psychology advanced after latched fault"
+      ]
+    }
+  ]
+}

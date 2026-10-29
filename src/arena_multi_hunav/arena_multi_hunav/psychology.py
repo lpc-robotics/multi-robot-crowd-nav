@@ -159,4 +159,9 @@ def _dual_sis():
     return DualSISPsychology()
 
 
-MODELS = {"noop": NoOpPsychology, "sis_cf_v1": _dual_sis}
+def _social_v2():
+    from .psychology_v2 import SocialPsychologyV2
+    return SocialPsychologyV2()
+
+
+MODELS = {"noop": NoOpPsychology, "sis_cf_v1": _dual_sis, "sis_cf_v2": _social_v2}

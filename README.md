@@ -9,6 +9,11 @@ Nav2 导航、控制守护、同伴机器人代价地图、多机器人社会力
 Dijkstra 或 A*，局部控制使用 DWB。各机器人独立导航；当前未实现集中式多机器人
 路径协调、预约调度或死锁消解。
 
+当前 V2：2026-10-29 同步开发快照 `b5d931c`。十四人场景包含心理免疫、静态障碍响应、
+惊讶停步观察、少量玩闹式前向占位，以及受保护的原任务恢复。
+[V2设计与使用](docs/DYNAMIC_PSYCHOLOGY_V2.md)、[三个种子实际验收与对照边界](docs/DYNAMIC_PSYCHOLOGY_V2_VALIDATION_20261028.md)、
+[参数台账与数据接口](docs/PSYCHOLOGY_V2_DATA.md)。
+
 2026-10-26 同步开发快照 `f170bc7`，包括独立八人动态心理多目标场景和同步仿真停顿恢复。
 模型方程与行为切换见[详细说明](docs/CROWD_PSYCHOLOGY_MODEL_EXPLAINED.md)，
 八人场景与既有实测边界见[场景说明](docs/PSYCHOLOGY_MULTIGOAL_20261022.md)。
@@ -110,6 +115,8 @@ GPU_ID=3 scripts/run_multirobot.sh config/scenarios/two_robots_multi_sfm_6_nav2.
 | `two_robots_multi_sfm_6_multigoal_nav2.yaml` | 双机 + 六人多目标路线 | 0.26 / 1.0 |
 | `two_robots_multi_sfm_6_multigoal_psychology_nav2.yaml` | 双机 + 六人动态心理与多目标路线 | 0.26 / 1.0 |
 | `two_robots_multi_sfm_8_multigoal_psychology_nav2.yaml` | 双机 + 八人独立四点路线与动态心理 | 0.26 / 1.0 |
+| `two_robots_multi_sfm_14_multigoal_psychology_v2_nav2.yaml` | 双机 + 十四人 V2 动态心理场景 | 0.26 / 1.0 |
+| `two_robots_multi_sfm_14_multigoal_psychology_v2_control_nav2.yaml` | V2 禁用玩闹挡路的匹配对照 | 0.26 / 1.0 |
 | `two_robots_multi_sfm_1_external.yaml`、`two_robots_multi_sfm_6_external.yaml` | 普通行人 + 外部控制 | 0.5 / 1.0 |
 | `eight_robots_capacity.yaml` | 八机容量探测 | 0.5 / 1.0 |
 
@@ -140,6 +147,22 @@ LIVESTREAM=false FOXGLOVE=false scripts/run_multirobot.sh config/scenarios/two_r
 行人心理、传播和行为均由模型计算。常用入口见 [command.txt](command.txt)，
 模型、参数和适用范围见 [动态心理开发文档](docs/DYNAMIC_PSYCHOLOGY.md)。
 
+V2 十四人场景使用自己的任务序列。Windows 保持 Server `10.16.205.165`、Signal `49100`、
+Stream `47998`；Linux 可用以下命令显式固定人工连接端口：
+
+```bash
+ARENA_WEBRTC_IP=10.16.205.165 \
+ARENA_WEBRTC_SIGNAL_PORT=49100 \
+ARENA_WEBRTC_MEDIA_PORT=47998 \
+ARENA_FOXGLOVE_PORT=8765 \
+LIVESTREAM=true \
+./scripts/run_multirobot.sh config/scenarios/two_robots_multi_sfm_14_multigoal_psychology_v2_nav2.yaml auto_demo:=true
+```
+
+去掉 `auto_demo:=true` 后人工发送机器人目标。潜变量与参数为未拟合的工程模型；
+参数台账137项，83项列为未来拟合候选。数据导出保留核心、机器人观测和实际显示来源，
+记录未触发、提前退出、失败及缺失；潜变量不能充当真人心理测量。
+
 在第二个终端进入同一仓库并加载环境：
 
 ```bash
@@ -159,10 +182,16 @@ scripts/cleanup.sh
 
 ## 测试与历史证据
 
-当前开发版本通过 130 项 Python、29 项 C++ 测试，以及场景/地图/Nav2、HuNav
+当前开发版本通过 161 项 Python、32 项 C++ 测试，以及场景/地图/Nav2、HuNav
 配置、环境重复加载、underlay 与固定版 LightSFM 检查。构建后使用
 `scripts/validate_offline.sh` 执行完整离线流程。详细运行测试和指标命令见
 [RUNBOOK.md](docs/RUNBOOK.md)。
+
+2026-10-29 V2 同步包含原开发工作区的种子11/12/13完整演示与独立对照记录。
+种子11通过1800.045秒墙钟、1067.975秒仿真；种子12/13分别通过1386.915/1405.847秒墙钟。
+两个玩闹者在三种子中均自然完成惊讶→好奇→前向占位→任务恢复链。
+禁用挡路对照采用独立范围验收，原通用探针的失败报告仍保留；单次异步配对仿真不作统计因果结论。
+详细净距、显示误差、失败迭代和解释边界见[V2实际验收](docs/DYNAMIC_PSYCHOLOGY_V2_VALIDATION_20261028.md)。
 
 2026-10-26 同步新增：开发工作区双机八人运行600.055秒墙钟、385.825秒仿真通过，
 六个Nav2目标成功，最小人机/人际净距0.297153/0.128074米，最大显示误差0.052503米。

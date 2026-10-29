@@ -1,0 +1,14 @@
+{
+  "evidence/runs/psychology_v2_20261028/control_night/launch.log": {
+    "bytes": 189758,
+    "sha256": "a7ddd806dcc85f4c0ee49dce5f08956d1ece41c329b69d8f8c84b2e1cc2055f3"
+  },
+  "evidence/runs/psychology_v2_20261028/control_night/acceptance.actual.jsonl": {
+    "bytes": 36929261,
+    "sha256": "54825a49b7f116fcfc1f4cc4f3d1051cd71bb7afd77633740d2416102da8c2c6"
+  },
+  "/home/lpc/workspace/arena5_multi_ws/evidence/runs/psychology_v2_20261028/control_night/runs/20261028_231551_two_robots_multi_sfm_14_multigoal_psychology_v2_control_nav2_gpu2/psychology_11638137372812992949.jsonl": {
+    "bytes": 1363608858,
+    "sha256": "10d62e6b85a4f91aae9367c4cfdfde9c95360dd4f1effd4ec8a675938d1735e8"
+  }
+}

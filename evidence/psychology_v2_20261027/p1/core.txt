@@ -1,0 +1,99 @@
+Arena multi workspace: /home/lpc/workspace/arena5_multi_ws
+Stable underlay: /home/lpc/workspace/arena5_ws
+ROS domain: 71
+[ 16%] Built target gtest
+[ 33%] Built target gtest_main
+[ 50%] Built target multi_sfm
+[ 58%] Building CXX object CMakeFiles/test_core.dir/test/test_core.cpp.o
+[ 75%] Built target multi_sfm_benchmark
+[ 91%] Built target multi_sfm_server
+[100%] Linking CXX executable test_core
+[100%] Built target test_core
+Running main() from /home/lpc/workspace/arena5_ws/.conda/arena_ros/src/gtest_vendor/src/gtest_main.cc
+[==========] Running 32 tests from 3 test suites.
+[----------] Global test environment set-up.
+[----------] 3 tests from CoreV3
+[ RUN      ] CoreV3.NeutralIntentMatchesV1Exactly
+[       OK ] CoreV3.NeutralIntentMatchesV1Exactly (6 ms)
+[ RUN      ] CoreV3.StaticCircleIgnoresVelocityAndFovButDynamicDoesNot
+/home/lpc/workspace/arena5_multi_ws/src/arena_multi_hunav_core/test/test_core.cpp:37: Failure
+Value of: b.success
+  Actual: false
+Expected: true
+robot_fov_fade_deg outside [0,robot_fov_deg/2]
+[  FAILED  ] CoreV3.StaticCircleIgnoresVelocityAndFovButDynamicDoesNot (0 ms)
+[ RUN      ] CoreV3.YawControlIsStoppedRateLimitedAndTaskPausing
+[       OK ] CoreV3.YawControlIsStoppedRateLimitedAndTaskPausing (0 ms)
+[----------] 3 tests from CoreV3 (6 ms total)
+
+[----------] 5 tests from CoreV2
+[ RUN      ] CoreV2.NeutralIntentMatchesV1OverMultipleSteps
+[       OK ] CoreV2.NeutralIntentMatchesV1OverMultipleSteps (6 ms)
+[ RUN      ] CoreV2.TemporaryIntentPausesQueueAndRegularRestoresIt
+[       OK ] CoreV2.TemporaryIntentPausesQueueAndRegularRestoresIt (0 ms)
+[ RUN      ] CoreV2.ZeroDesiredVelocityDeceleratesAndNearStillMovesPeople
+[       OK ] CoreV2.ZeroDesiredVelocityDeceleratesAndNearStillMovesPeople (0 ms)
+[ RUN      ] CoreV2.NearIsIndependentOfModeAndDiagnosticSumIsExact
+[       OK ] CoreV2.NearIsIndependentOfModeAndDiagnosticSumIsExact (0 ms)
+[ RUN      ] CoreV2.InvalidIntentsFailAtomically
+[       OK ] CoreV2.InvalidIntentsFailAtomically (0 ms)
+[----------] 5 tests from CoreV2 (6 ms total)
+
+[----------] 24 tests from Core
+[ RUN      ] Core.AllRobotsHaveIndependentContributions
+[       OK ] Core.AllRobotsHaveIndependentContributions (0 ms)
+[ RUN      ] Core.RobotOrderAndNamesDoNotChangeMotion
+[       OK ] Core.RobotOrderAndNamesDoNotChangeMotion (0 ms)
+[ RUN      ] Core.EmptyRobotsAndModifiers
+[       OK ] Core.EmptyRobotsAndModifiers (0 ms)
+[ RUN      ] Core.GeometryAndInputFailuresAreAtomic
+[       OK ] Core.GeometryAndInputFailuresAreAtomic (0 ms)
+[ RUN      ] Core.CoincidentEntitiesRemainFinite
+[       OK ] Core.CoincidentEntitiesRemainFinite (0 ms)
+[ RUN      ] Core.PsychologyAppliesWithoutMutatingBaseSpeed
+[       OK ] Core.PsychologyAppliesWithoutMutatingBaseSpeed (0 ms)
+[ RUN      ] Core.GoalsAdvanceAndRobotsNeverIntegrated
+[       OK ] Core.GoalsAdvanceAndRobotsNeverIntegrated (0 ms)
+[ RUN      ] Core.MultiGoalCyclesAndFoldsAdvanceExactlyOneTargetPerStep
+[       OK ] Core.MultiGoalCyclesAndFoldsAdvanceExactlyOneTargetPerStep (1 ms)
+[ RUN      ] Core.CyclicGoalAdvancesAtInclusiveRadiusOnly
+[       OK ] Core.CyclicGoalAdvancesAtInclusiveRadiusOnly (0 ms)
+[ RUN      ] Core.FailureAfterCandidateAdvanceRestoresEveryGoalQueue
+[       OK ] Core.FailureAfterCandidateAdvanceRestoresEveryGoalQueue (0 ms)
+[ RUN      ] Core.ExactHeadOnStaticRobotDoesNotCausePermanentStop
+[       OK ] Core.ExactHeadOnStaticRobotDoesNotCausePermanentStop (0 ms)
+[ RUN      ] Core.AblatingEitherRobotChangesTrajectoryByTenCentimeters
+[       OK ] Core.AblatingEitherRobotChangesTrajectoryByTenCentimeters (2 ms)
+[ RUN      ] Core.ReservedSpaceScaleDoesNotChangeMotionOrNearRepulsion
+[       OK ] Core.ReservedSpaceScaleDoesNotChangeMotionOrNearRepulsion (0 ms)
+[ RUN      ] Core.NearRepulsionUsesPhysicalConfigAndIgnoresPsychology
+[       OK ] Core.NearRepulsionUsesPhysicalConfigAndIgnoresPsychology (0 ms)
+[ RUN      ] Core.RobotSocialVisibilityHasFullFadeAndBlindRegions
+[       OK ] Core.RobotSocialVisibilityHasFullFadeAndBlindRegions (0 ms)
+[ RUN      ] Core.RobotFovCanBeNarrowHardOrOmnidirectional
+[       OK ] Core.RobotFovCanBeNarrowHardOrOmnidirectional (1 ms)
+[ RUN      ] Core.FovUsesWrappedPreStepYawEvenWhenVelocityDisagrees
+[       OK ] Core.FovUsesWrappedPreStepYawEvenWhenVelocityDisagrees (0 ms)
+[ RUN      ] Core.StoppedPedestrianRetainsYawAcrossComputeSteps
+[       OK ] Core.StoppedPedestrianRetainsYawAcrossComputeSteps (0 ms)
+[ RUN      ] Core.RobotBehindStillHasNearRepulsionWhenSocialScaleIsZero
+[       OK ] Core.RobotBehindStillHasNearRepulsionWhenSocialScaleIsZero (0 ms)
+[ RUN      ] Core.RobotScaleChangesOnlyVisibleSocialContribution
+[       OK ] Core.RobotScaleChangesOnlyVisibleSocialContribution (0 ms)
+[ RUN      ] Core.VisibilityIsIndependentForEveryRobotPair
+[       OK ] Core.VisibilityIsIndependentForEveryRobotPair (0 ms)
+[ RUN      ] Core.FovDoesNotChangeHumanHumanInteractionsOrEmptyRobotMotion
+[       OK ] Core.FovDoesNotChangeHumanHumanInteractionsOrEmptyRobotMotion (0 ms)
+[ RUN      ] Core.CoincidentRobotRemainsFiniteAndVisible
+[       OK ] Core.CoincidentRobotRemainsFiniteAndVisible (0 ms)
+[ RUN      ] Core.InvalidFovConfigurationFailsAtomically
+[       OK ] Core.InvalidFovConfigurationFailsAtomically (0 ms)
+[----------] 24 tests from Core (4 ms total)
+
+[----------] Global test environment tear-down
+[==========] 32 tests from 3 test suites ran. (16 ms total)
+[  PASSED  ] 31 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] CoreV3.StaticCircleIgnoresVelocityAndFovButDynamicDoesNot
+
+ 1 FAILED TEST

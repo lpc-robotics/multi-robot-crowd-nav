@@ -1,5 +1,39 @@
 # 发布与恢复
 
+## V2 首选恢复入口：2026-10-26 完整快照
+
+V2 开发基线 `f170bc72a90aeec44621f816551bb6b656f93cd3`，原分支
+`feature/dynamic-psychology-v1`；保护标签 `backup-dynamic-psychology-v2-20261027`。
+用户提供的完整快照有12,856条目，verification.json记录内容、元数据及ACL/xattr一致。
+V2开始前已核对记录与当前HEAD；计划评审时全部SHA-256验证通过。
+备份、既有发布包与稳定underlay不得覆盖。
+
+完整恢复前停止使用本工作区的进程，从未加载overlay的新终端执行：
+
+```bash
+v2_backup=/home/lpc/workspace/arena5_multi_backups/20261026T115559Z-dynamic-psychology-latest
+cd "$v2_backup"
+sha256sum -c SHA256SUMS
+cp /home/lpc/workspace/arena5_multi_ws/scripts/verify_workspace_snapshot.py /tmp/verify_psychology_v2_snapshot.py
+cd /home/lpc/workspace
+mv arena5_multi_ws "arena5_multi_ws.after-v2.$(date +%Y%m%dT%H%M%S)"
+tar --acls --xattrs --same-permissions -xpf "$v2_backup/workspace.tar" -C /home/lpc/workspace
+python3 /tmp/verify_psychology_v2_snapshot.py /home/lpc/workspace/arena5_multi_ws "$v2_backup/manifest.json"
+git -C /home/lpc/workspace/arena5_multi_ws rev-parse HEAD
+```
+
+结果应为上述f170bc7，原目录的改动与新证据仍留在移走的目录。
+只恢复源码时先保存当前成果，再切换保护标签并运行 `./scripts/build.sh`；
+不能混用新旧ROS消息安装产物。Conda、GPU驱动和外部链接目标仍需单独核验。
+
+## V2 验证版本
+
+`feature/dynamic-psychology-v2` 保存本版实现与各阶段记录；最终验证标签为
+`validated-dynamic-psychology-v2-20261029`。运行行为源码为7cffd0e，最终提交补充
+数据导出/分析/验收工具和证据。切换该标签或恢复基线后均需重新构建overlay；
+不要把最终安装产物与f170bc7源码混用。忽略目录中的高频轨迹由证据清单记录哈希，
+源码标签不能替代完整工作区备份；2026-10-26完整快照仍是原工作区恢复入口。
+
 ## 2026-10-12 动态心理开发回退点
 
 开始时原分支feature/pedestrian-multi-goals、HEAD cd0ab07，并有未提交的多目标升级。

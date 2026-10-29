@@ -1,0 +1,27 @@
+{"steps": 1000, "profiled_wall_s": 11.403880157973617, "snapshot_bytes": 218}
+         27316948 function calls (23971690 primitive calls) in 11.260 seconds
+
+   Ordered by: cumulative time
+   List reduced from 119 to 18 due to restriction <18>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+     1000    0.020    0.000   10.824    0.011 /home/lpc/workspace/arena5_multi_ws/src/arena_multi_hunav/arena_multi_hunav/psychology.py:107(prepare_step)
+     1000    0.445    0.000    7.347    0.007 /home/lpc/workspace/arena5_multi_ws/src/arena_multi_hunav/arena_multi_hunav/psychology_v2.py:42(step)
+3057327/407967    3.294    0.000    6.346    0.000 /home/lpc/workspace/arena5_ws/.conda/arena_ros/lib/python3.11/copy.py:128(deepcopy)
+272982/17000    0.936    0.000    5.482    0.000 /home/lpc/workspace/arena5_ws/.conda/arena_ros/lib/python3.11/copy.py:227(_deepcopy_dict)
+73982/28000    0.246    0.000    5.413    0.000 /home/lpc/workspace/arena5_ws/.conda/arena_ros/lib/python3.11/copy.py:259(_reconstruct)
+    38000    0.040    0.000    2.357    0.000 /home/lpc/workspace/arena5_ws/.conda/arena_ros/lib/python3.11/dataclasses.py:1265(asdict)
+431934/38000    0.987    0.000    2.296    0.000 /home/lpc/workspace/arena5_ws/.conda/arena_ros/lib/python3.11/dataclasses.py:1289(_asdict_inner)
+    28000    0.257    0.000    0.848    0.000 /home/lpc/workspace/arena5_multi_ws/src/arena_multi_hunav/arena_multi_hunav/psychology_v2_state.py:31(validate)
+  6195636    0.618    0.000    0.618    0.000 {method 'get' of 'dict' objects}
+     1000    0.043    0.000    0.591    0.001 /home/lpc/workspace/arena5_multi_ws/src/arena_multi_hunav/arena_multi_hunav/psychology.py:75(validate)
+    10000    0.019    0.000    0.577    0.000 /home/lpc/workspace/arena5_multi_ws/src/arena_multi_hunav/arena_multi_hunav/behavior_v2.py:17(from_legacy)
+     1000    0.029    0.000    0.547    0.001 /home/lpc/workspace/arena5_multi_ws/src/arena_multi_hunav/arena_multi_hunav/psychology.py:144(make_context)
+   211000    0.233    0.000    0.511    0.000 /home/lpc/workspace/arena5_multi_ws/src/arena_multi_hunav/arena_multi_hunav/psychology.py:145(<genexpr>)
+  3946183    0.330    0.000    0.330    0.000 {built-in method builtins.id}
+   432964    0.244    0.000    0.328    0.000 /home/lpc/workspace/arena5_ws/.conda/arena_ros/lib/python3.11/copy.py:243(_keep_alive)
+   125922    0.117    0.000    0.314    0.000 {built-in method builtins.all}
+   498891    0.162    0.000    0.311    0.000 /home/lpc/workspace/arena5_ws/.conda/arena_ros/lib/python3.11/dataclasses.py:1253(_is_dataclass_instance)
+   240000    0.181    0.000    0.261    0.000 /home/lpc/workspace/arena5_multi_ws/src/arena_multi_hunav/arena_multi_hunav/perception.py:9(visibility)
+
+

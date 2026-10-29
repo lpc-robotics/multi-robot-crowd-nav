@@ -16,6 +16,17 @@ cd /home/lpc/workspace/arena5_multi_ws
 日志在启动脚本打印的运行目录，心理记录为JSONL。Ctrl+C退出，必要时用相同日志根运行cleanup.sh。
 模型说明、CPU工具和GPU验收范围见[DYNAMIC_PSYCHOLOGY.md](DYNAMIC_PSYCHOLOGY.md)。
 
+## V2 十四人心理场景
+
+```bash
+./scripts/run_multirobot.sh config/scenarios/two_robots_multi_sfm_14_multigoal_psychology_v2_nav2.yaml auto_demo:=true
+```
+
+去掉 `auto_demo:=true` 可人工发送目标。原六人、八人入口保留。
+13、14 号分别对 robot_1、robot_2 展示有条件的惊讶、好奇、前方占位和任务恢复；
+9～12 号不接受或转发机器人相关心理激活。自动脚本只发送机器人导航目标。
+具体参数、实际验收边界及恢复入口见 [DYNAMIC_PSYCHOLOGY_V2.md](DYNAMIC_PSYCHOLOGY_V2.md)。
+
 ## 开发工作区
 
 ```bash

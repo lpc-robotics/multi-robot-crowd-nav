@@ -1,0 +1,52 @@
+--- src/arena_multi_hunav/arena_multi_hunav/data_v2.py
++++ src/arena_multi_hunav/arena_multi_hunav/data_v2.py
+@@ -36,10 +36,10 @@
+     def event(who, start, end, label, target='', kind='mode', reason=''):
+         ew.writerow(dict(experiment_id=experiment_id,participant_id=who,start_ns=start,end_ns=end,label=label,
+             target_robot_id=target,annotation_source='simulator_model',confidence='',kind=kind,reason=reason))
+-    def observe(who, kind, t, p, source, velocity_source):
++    def observe(who, kind, t, p, source, velocity_source, interpolated="false"):
+         ow.writerow(dict(experiment_id=experiment_id,participant_id=who,entity_type=kind,stamp_ns=t,
+             frame_id='map',x=p['x'],y=p['y'],vx=p['vx'],vy=p['vy'],body_yaw=p['yaw'],source=source,
+-            quality='simulated',velocity_source=velocity_source,interpolated='false',missing_fields=''))
++            quality='simulated',velocity_source=velocity_source,interpolated=interpolated,missing_fields=''))
+         sources.add(source); counts[source]=counts.get(source,0)+1
+     epochs=set()
+     try:
+@@ -73,7 +73,12 @@
+                     if blockers != previous.get(gate_key):
+                         if blockers: event(name,t,t,'not_triggered',target,'gate',';'.join(blockers))
+                         previous[gate_key]=blockers
+-                for p in row['robots'].values(): observe(p['name'],'robot',input_t,p,'robot_observation','odometry_world_transformed')
++                # Timeline.at() resamples robot odometry before this log is written.
++                # Old schema-3 traces do not retain brackets/exact-knot provenance.
++                # Never label these rows as unmodified raw measurements.
++                for p in row['robots'].values():
++                    observe(p['name'],'robot',input_t,p,'robot_observation',
++                            'odometry_timeline_resampled_world_frame',interpolated='unknown')
+         for name in first:
+             mode,target,start=previous[name]; event(name,start,last[name],mode,target,reason='recording_end_right_censored')
+             for mode in ('SURPRISED','THREATENING'):
+@@ -90,10 +95,11 @@
+         input_traces={str(p.resolve()):sha256(p) for p in traces},
+         actual_input=None if not actual_path else {'path':str(Path(actual_path).resolve()),'sha256':sha256(actual_path)},
+         output_sha256={name:sha256(out/name) for name in ('observations.csv','events.csv','latents.csv')},
+-        sources=sorted(sources),rows_by_source=counts,clock_alignment='same simulation clock; original timestamps retained, no interpolation',
++        sources=sorted(sources),rows_by_source=counts,clock_alignment='same simulation clock; logged source timestamps retained; exporter performs no additional interpolation',
++        robot_resampling='adapter timeline already resampled odometry; original bracketing stamps and exact-knot flags unavailable in these traces; interpolation flag is unknown',
+         split_policy='group by participant AND entire experiment; never split neighboring frames',
+         latent_semantics='optional simulator output; not observations of real human emotions',
+-        processing=dict(exporter_version='1',exporter_sha256=sha256(__file__)),
++        processing=dict(exporter_version='1.1',exporter_sha256=sha256(__file__)),
+         labeling='simulator-derived labels, not human annotations or emotion ground truth')
+     (out/'manifest.json').write_text(json.dumps(manifest,indent=2,allow_nan=False)+'\n')
+     return validate_data(out)
+@@ -116,7 +122,7 @@
+                 raise ValueError('observation identity/frame missing')
+             if row['source'] not in ('core_committed','isaac_actual','robot_observation','measured') or row['entity_type'] not in ('person','robot'):
+                 raise ValueError('unknown data source/entity')
+-            if not row['quality'] or not row['velocity_source'] or row['interpolated'] not in ('true','false'):
++            if not row['quality'] or not row['velocity_source'] or row['interpolated'] not in ('true','false','unknown'):
+                 raise ValueError('missing observation quality/derivation')
+             missing=set(filter(None,row['missing_fields'].split(';')))
+             if missing-set(('x','y','vx','vy','body_yaw')):raise ValueError('unknown missing field')

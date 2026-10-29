@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "observations": 761630,
+  "events": 209,
+  "sources": [
+    "core_committed",
+    "isaac_actual",
+    "robot_observation"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "scenario": "/home/lpc/workspace/arena5_multi_ws/evidence/runs/psychology_v2_20261028/seed12_night/scenario_override.yaml",
+  "requested_min_wall_s": 600.0,
+  "run_dir": "/home/lpc/workspace/arena5_multi_ws/evidence/runs/psychology_v2_20261028/seed12_night/runs/20261028_225127_scenario_override_gpu2",
+  "probe_exit": 0,
+  "driver_wall_s": 1461.8129430441186
+}

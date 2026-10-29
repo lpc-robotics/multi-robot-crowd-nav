@@ -1,6 +1,7 @@
 #pragma once
 #include "arena_multi_hunav_msgs/srv/compute_multi_agents.hpp"
 #include "arena_multi_hunav_msgs/srv/compute_multi_agents_v2.hpp"
+#include "arena_multi_hunav_msgs/srv/compute_multi_agents_v3.hpp"
 namespace arena_multi_hunav_core {
 struct Config {
   double width = 30.0, height = 23.0;
@@ -15,4 +16,6 @@ using Compute = arena_multi_hunav_msgs::srv::ComputeMultiAgents;
 Compute::Response integrate(const Compute::Request & request, const Config & config);
 using ComputeV2 = arena_multi_hunav_msgs::srv::ComputeMultiAgentsV2;
 ComputeV2::Response integrate(const ComputeV2::Request & request, const Config & config);
+using ComputeV3 = arena_multi_hunav_msgs::srv::ComputeMultiAgentsV3;
+ComputeV3::Response integrate(const ComputeV3::Request & request, const Config & config);
 }

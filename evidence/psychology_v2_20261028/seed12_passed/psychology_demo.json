@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "passed": true,
+  "error": "",
+  "tasks": "/home/lpc/workspace/arena5_multi_ws/config/tasks/psychology_v2_crossings.yaml",
+  "rounds_requested": 8,
+  "rounds": [
+    {
+      "round": 1,
+      "robots": {
+        "robot_1": {
+          "sent_ns": 3100000046,
+          "status": 4,
+          "completed_ns": 20500000305
+        },
+        "robot_2": {
+          "sent_ns": 3100000046,
+          "status": 4,
+          "completed_ns": 31250000465
+        }
+      }
+    },
+    {
+      "round": 2,
+      "robots": {
+        "robot_1": {
+          "sent_ns": 46250000689,
+          "status": 4,
+          "completed_ns": 70800001055
+        },
+        "robot_2": {
+          "sent_ns": 56250000838,
+          "status": 4,
+          "completed_ns": 97250001449
+        }
+      }
+    },
+    {
+      "round": 3,
+      "robots": {
+        "robot_1": {
+          "sent_ns": 112250001672,
+          "status": 4,
+          "completed_ns": 142350002121
+        },
+        "robot_2": {
+          "sent_ns": 112250001672,
+          "status": 4,
+          "completed_ns": 295300004400
+        }
+      }
+    },
+    {
+      "round": 4,
+      "robots": {
+        "robot_1": {
+          "sent_ns": 310300004623,
+          "status": 4,
+          "completed_ns": 349650005210
+        },
+        "robot_2": {
+          "sent_ns": 310300004623,
+          "status": 4,
+          "completed_ns": 310650004629
+        }
+      }
+    },
+    {
+      "round": 5,
+      "robots": {
+        "robot_1": {
+          "sent_ns": 364650005433,
+          "status": 4,
+          "completed_ns": 468700006984
+        },
+        "robot_2": {
+          "sent_ns": 364650005433,
+          "status": 4,
+          "completed_ns": 365050005439
+        }
+      }
+    },
+    {
+      "round": 6,
+      "robots": {
+        "robot_1": {
+          "sent_ns": 483700007207,
+          "status": 4,
+          "completed_ns": 484050007212
+        },
+        "robot_2": {
+          "sent_ns": 483700007207,
+          "status": 4,
+          "completed_ns": 559550008337
+        }
+      }
+    },
+    {
+      "round": 7,
+      "robots": {
+        "robot_1": {
+          "sent_ns": 574550008561,
+          "status": 4,
+          "completed_ns": 575000008568
+        },
+        "robot_2": {
+          "sent_ns": 574550008561,
+          "status": 4,
+          "completed_ns": 615100009165
+        }
+      }
+    },
+    {
+      "round": 8,
+      "robots": {
+        "robot_1": {
+          "sent_ns": 630100009389,
+          "status": 4,
+          "completed_ns": 630450009394
+        },
+        "robot_2": {
+          "sent_ns": 630100009389,
+          "status": 4,
+          "completed_ns": 750250011179
+        }
+      }
+    }
+  ],
+  "wall_duration_s": 1454.738845903892,
+  "sim_stamp_ns": 765250011403,
+  "scope": "robot_action_execution; psychological mechanisms require separate evidence"
+}

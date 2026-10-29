@@ -1,0 +1,359 @@
+{
+  "scope": "Core trace only; actual probe was not started because approval review was unavailable",
+  "steps": 31010,
+  "last_stamp_s": 779.150000058,
+  "modes": {
+    "1": {
+      "REGULAR": 28962,
+      "SURPRISED": 209,
+      "CURIOUS": 1839
+    },
+    "10": {
+      "REGULAR": 31010
+    },
+    "11": {
+      "REGULAR": 31010
+    },
+    "12": {
+      "REGULAR": 31010
+    },
+    "13": {
+      "REGULAR": 29067,
+      "SURPRISED": 84,
+      "CURIOUS": 1630,
+      "THREATENING": 229
+    },
+    "14": {
+      "REGULAR": 30024,
+      "SURPRISED": 84,
+      "CURIOUS": 676,
+      "THREATENING": 226
+    },
+    "2": {
+      "REGULAR": 27345,
+      "SURPRISED": 186,
+      "CURIOUS": 3453,
+      "SCARED": 26
+    },
+    "3": {
+      "REGULAR": 28617,
+      "SURPRISED": 168,
+      "CURIOUS": 2180,
+      "SCARED": 45
+    },
+    "4": {
+      "REGULAR": 28929,
+      "SURPRISED": 192,
+      "CURIOUS": 1889
+    },
+    "5": {
+      "REGULAR": 29810,
+      "SURPRISED": 84,
+      "CURIOUS": 1116
+    },
+    "6": {
+      "REGULAR": 29184,
+      "SURPRISED": 176,
+      "CURIOUS": 1650
+    },
+    "7": {
+      "REGULAR": 28816,
+      "SURPRISED": 168,
+      "CURIOUS": 2026
+    },
+    "8": {
+      "REGULAR": 29319,
+      "SURPRISED": 176,
+      "CURIOUS": 1469,
+      "SCARED": 46
+    },
+    "9": {
+      "REGULAR": 31010
+    }
+  },
+  "playful_blockers": {
+    "13": {
+      "not_curious": 29051,
+      "observation_incomplete": 29051,
+      "curious_duration": 29371,
+      "activation": 30083,
+      "not_visible": 29188,
+      "preference": 28967,
+      "front_point_unreachable": 24,
+      "cooldown": 814,
+      "budget": 1446
+    },
+    "14": {
+      "not_curious": 30001,
+      "observation_incomplete": 30001,
+      "curious_duration": 30321,
+      "activation": 30513,
+      "not_visible": 30045,
+      "preference": 29917,
+      "front_point_unreachable": 21,
+      "cooldown": 495,
+      "budget": 495
+    }
+  },
+  "events": [
+    [
+      4.200000058,
+      "1",
+      "surprise_started",
+      ""
+    ],
+    [
+      4.225000058,
+      "2",
+      "surprise_started",
+      ""
+    ],
+    [
+      6.775000058,
+      "2",
+      "surprise_completed",
+      "surprise_completed"
+    ],
+    [
+      6.800000058,
+      "2",
+      "surprise_started",
+      ""
+    ],
+    [
+      7.325000058,
+      "1",
+      "surprise_completed",
+      "surprise_completed"
+    ],
+    [
+      7.350000058,
+      "1",
+      "surprise_started",
+      ""
+    ],
+    [
+      8.900000058,
+      "2",
+      "surprise_completed",
+      "surprise_completed"
+    ],
+    [
+      9.450000058,
+      "1",
+      "surprise_completed",
+      "surprise_completed"
+    ],
+    [
+      11.600000058,
+      "3",
+      "surprise_started",
+      ""
+    ],
+    [
+      12.425000058,
+      "4",
+      "surprise_started",
+      ""
+    ],
+    [
+      13.700000058,
+      "3",
+      "surprise_completed",
+      "surprise_completed"
+    ],
+    [
+      15.125000058,
+      "4",
+      "surprise_completed",
+      "surprise_completed"
+    ],
+    [
+      15.225000058,
+      "5",
+      "surprise_started",
+      ""
+    ],
+    [
+      16.000000058,
+      "3",
+      "surprise_started",
+      ""
+    ],
+    [
+      17.325000058,
+      "5",
+      "surprise_completed",
+      "surprise_completed"
+    ],
+    [
+      18.100000058,
+      "3",
+      "surprise_completed",
+      "surprise_completed"
+    ],
+    [
+      26.900000058,
+      "6",
+      "surprise_started",
+      ""
+    ],
+    [
+      29.200000058,
+      "6",
+      "surprise_completed",
+      "surprise_completed"
+    ],
+    [
+      55.700000058,
+      "4",
+      "surprise_started",
+      ""
+    ],
+    [
+      57.800000058,
+      "4",
+      "surprise_completed",
+      "surprise_completed"
+    ],
+    [
+      58.100000058,
+      "7",
+      "surprise_started",
+      ""
+    ],
+    [
+      60.200000058,
+      "7",
+      "surprise_completed",
+      "surprise_completed"
+    ],
+    [
+      62.225000058,
+      "8",
+      "surprise_started",
+      ""
+    ],
+    [
+      63.625000058,
+      "6",
+      "surprise_started",
+      ""
+    ],
+    [
+      64.525000058,
+      "8",
+      "surprise_completed",
+      "surprise_completed"
+    ],
+    [
+      64.750000058,
+      "8",
+      "surprise_started",
+      ""
+    ],
+    [
+      65.725000058,
+      "6",
+      "surprise_completed",
+      "surprise_completed"
+    ],
+    [
+      66.850000058,
+      "8",
+      "surprise_completed",
+      "surprise_completed"
+    ],
+    [
+      70.725000058,
+      "7",
+      "surprise_started",
+      ""
+    ],
+    [
+      72.825000058,
+      "7",
+      "surprise_completed",
+      "surprise_completed"
+    ],
+    [
+      128.925000058,
+      "13",
+      "surprise_started",
+      ""
+    ],
+    [
+      131.025000058,
+      "13",
+      "surprise_completed",
+      "surprise_completed"
+    ],
+    [
+      135.625000058,
+      "13",
+      "playful_started",
+      ""
+    ],
+    [
+      139.400000058,
+      "13",
+      "playful_yield_started",
+      "intercept_unreachable"
+    ],
+    [
+      141.350000058,
+      "13",
+      "playful_completed",
+      "yield_reached"
+    ],
+    [
+      143.850000058,
+      "13",
+      "playful_task_resumed",
+      ""
+    ],
+    [
+      560.200000058,
+      "14",
+      "surprise_started",
+      ""
+    ],
+    [
+      562.300000058,
+      "14",
+      "surprise_completed",
+      "surprise_completed"
+    ],
+    [
+      566.825000058,
+      "14",
+      "playful_started",
+      ""
+    ],
+    [
+      570.500000058,
+      "14",
+      "playful_yield_started",
+      "intercept_unreachable"
+    ],
+    [
+      572.475000058,
+      "14",
+      "playful_completed",
+      "yield_reached"
+    ],
+    [
+      575.150000058,
+      "14",
+      "playful_task_resumed",
+      ""
+    ]
+  ],
+  "minimum_core_human_gap": 0.16350537209106042,
+  "minimum_core_human_sample": [
+    73.975000058,
+    3,
+    6
+  ],
+  "minimum_core_robot_gap": 0.24129642450069289
+}

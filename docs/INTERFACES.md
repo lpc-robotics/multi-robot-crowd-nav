@@ -44,3 +44,14 @@ Isaac 发布 `map -> robot_i/odom` 恒等变换和 `robot_i/odom -> robot_i/base
 odometry，按 `0.48 × 0.44 m` 旋转矩形标记占据，排除自身，每轮清除旧位置。同伴状态
 过期时保留最后占据并把 costmap 标为非 current；命令守护同时停车。该接口明确属于
 理想感知，不提供优先级、轨迹预测或协调决策。
+# 动态心理 V2 接口增量
+
+V2模型使用 `/multirobot/hunav/compute_agents_v3`（ComputeMultiAgentsV3）。
+BehaviorIntentV3保留0/1/2，新增SURPRISED=3、THREATENING=4；Agent.behavior.type仍为1。
+每个行人选择DYNAMIC_SOCIAL=0或STATIC_OBSTACLE=1，附带可选desired_yaw、max_yaw_rate、
+yaw_stop_speed。核心只在积分前后均停稳时执行限速身体转向，不直接改写位置或目标队列。
+MotionDiagnosticV3分开记录robot_social_force、robot_static_force、robot_near_force和实际yaw。
+旧v1/v2服务与消息保持不变。schema3心理日志增加profile、surprise、phase、事件与预算状态，
+以及input_stamp_ns/dt，避免把输入机器人观测与积分后人位置的时间混为一谈。
+参数/数据约定见 [PSYCHOLOGY_V2_DATA.md](PSYCHOLOGY_V2_DATA.md)。
+

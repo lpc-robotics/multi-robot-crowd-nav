@@ -1,0 +1,58 @@
+{
+  "scope": "P4 review findings before final acceptance",
+  "runtime_source_commit": "7cffd0eddc4c55aa414338d609b5648c71d3d70d",
+  "findings": [
+    {
+      "item": "moving front interception",
+      "status": "fixed_and_single_and_seed11_actual_validated",
+      "detail": "Front target follows personally observed moving robot while intercepting, then freezes for occupancy; no episode timer reset."
+    },
+    {
+      "item": "export interpolation metadata",
+      "status": "merged_built_and_validated",
+      "detail": "Robot timeline snapshots are resampled. Original schema3 does not retain per-row interpolation brackets. Export unknown instead of false, record derivation; never infer original timestamps."
+    },
+    {
+      "item": "navigation delay interpretation",
+      "status": "matched_comparison_completed_with_limits",
+      "detail": "Natural episodes occur on approach navigation legs round_3:robot_1 and round_6:robot_2. Report those goal durations in addition to the configured corridor and whole-demo metrics."
+    },
+    {
+      "item": "parallel actual runs",
+      "status": "failed_trials_preserved_serial_main_seed_validation_complete",
+      "detail": "Separate GPU/domain did not isolate startup/teardown and asset resources. No timing or geometric protection threshold changed."
+    },
+    {
+      "item": "fault regression fixture",
+      "status": "corrected_invocation_all_five_passed",
+      "detail": "Fourteen individual IDs cannot initialize the one-person synthetic fixture. Initial mismatch was rejected; existing single-playful configuration used for five actual ROS fault tests."
+    }
+  ],
+  "remaining": [],
+  "main_seed_acceptance": {
+    "11": true,
+    "12": true,
+    "13": true
+  },
+  "analysis_candidates": {
+    "arena_v2_data_candidate.py": "2afdb65c47823b9bd70f055dd59be86d79a23fb00d698339ca11f1aa0fe41e32",
+    "arena_v2_compare_candidate.py": "acd76532742396ad1ea00a86d6346fdd4b7f30bc790abf7146e33b370afd5dfe",
+    "test_arena_v2_export_candidate.py": "2436fd18207615c7f0fb7c4cc647f64747f06e18d6f73b8f47021dac6c8c6416"
+  },
+  "completed_on": "2026-10-29",
+  "validation": {
+    "python_tests": 161,
+    "cpp_tests": 32,
+    "registry_parameters": 137,
+    "model_parameters": 79,
+    "fit_candidates": 83,
+    "fitted_parameters": 0,
+    "main_seed_passes": [
+      11,
+      12,
+      13
+    ],
+    "control_scope_report": "control_completed/ablation_acceptance.json",
+    "original_control_report_retained_as_failed": true
+  }
+}

@@ -1,0 +1,9 @@
+source_commit=7cffd0eddc4c55aa414338d609b5648c71d3d70d
+scenario=/home/lpc/workspace/arena5_multi_ws/evidence/runs/psychology_v2_20261028/seed13_serial/scenario_override.yaml
+scenario_sha256=6d1d4e03c2036e0d4e0aa76a77acebe008d3f5eb5977020cca4f64734e47771c
+gpu_id=2
+gpu_free_mib=15387
+ros_domain_id=85
+isaac_cpu_threads=8
+cpu_affinity=28-55,84-111
+random_seed=13
