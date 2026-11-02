@@ -1,0 +1,8 @@
+{
+  "scope": "SceneView updates, histogram upper bound 0.1ms bins",
+  "samples": 1600,
+  "mean_ms": 0.2688061307708267,
+  "max_ms": 1.517163123935461,
+  "p95_upper_bound_ms": 0.4,
+  "passed": true
+}

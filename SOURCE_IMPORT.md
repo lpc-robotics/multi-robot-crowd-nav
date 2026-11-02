@@ -1,13 +1,13 @@
 # Source import
 
 Source workspace: `/home/lpc/workspace/arena5_multi_ws`.
-Current source branch: `feature/dynamic-psychology-v2`.
-Current source commit: `b5d931cc01af2ae6e7ba9c33685a2afaef2a80d3`.
-Last source synchronization: 2026-10-29 (Asia/Shanghai).
+Current source branch: `feature/crowd-visualization`.
+Current source commit: `86db90a34835d519c24a24044412ffe0dee66a0a`.
+Last source synchronization: 2026-11-02 (Asia/Shanghai).
 Initial snapshot: `f330dfcd29c6a1f711e3f091798e36852fac742d`, 2026-09-30.
 
 This independent repository publishes the tracked core source from that commit:
-all nine ROS packages, configuration, tests, build/run/validation scripts,
+all eleven ROS packages, configuration, tests, build/run/validation scripts,
 baseline manifests, documentation, and compact historical evidence.
 
 The README is rewritten for this repository. Repository contribution rules and
@@ -131,3 +131,29 @@ source `7cffd0e`; the final source snapshot also contains data-export and analys
 equivalence report states that distinction. No new GPU acceptance is claimed for this publication.
 Rebuild, offline-check, parameter-registry and imported-file verification results are recorded in
 `evidence/publication_20261029/publication.json`.
+
+
+## 2026-11-02 psychology visualization update
+
+Source snapshot: `86db90a34835d519c24a24044412ffe0dee66a0a`, branch `feature/crowd-visualization`.
+Functional/documentation tip `39cc239` is followed by a local owner-authored commit preserving the
+user's two launch-command edits enabling both visualization switches. The published runtime code
+remains byte-identical to the current source workspace. Prior independent main history and evidence
+are retained; the development ancestry is not merged into this repository.
+
+The update adds arena_crowd_visualization and arena_crowd_visualization_msgs, optional Isaac SceneView
+labels/arrows, Foxglove layout, simulation-stamped actual/core/psychology/stimulus outputs, recording
+and playback guidance, and compatibility/performance/failure records. Display is opt-in and read-only;
+model latent states are not measured human emotion. Actual/core/stimulus samples keep their own stamps.
+
+Historical 10-minute stationary-robot checks and recovery/compatibility tests retain their scope.
+The final visualization source's 30-minute moving-robot gate did not pass and the no-display baseline
+was not ready; no RTF degradation claim is established. The full performance matrix is not marked
+passed. These limits and original failure records are retained unchanged. No new GPU simulation is
+performed for this publication. Repository rebuild/offline checks and imported hashes/modes are
+recorded in `evidence/publication_20261102/publication.json`.
+
+Generated logs, raw high-frequency traces, bags, build/install trees, caches, notebook checkpoints,
+external environments and credentials remain excluded. Original raw artifacts stay on the development
+host and their inventories/hashes remain in evidence. Repository README, ignore rules, AGENTS.md and
+publication metadata are maintained separately from imported source files.

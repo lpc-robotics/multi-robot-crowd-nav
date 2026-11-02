@@ -1,0 +1,10 @@
+{
+  "domain": 90,
+  "counts": {
+    "actual": 137,
+    "psychology": 62
+  },
+  "passed": true,
+  "clock_messages": 602,
+  "clock_matches_header_domain": true
+}

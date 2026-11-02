@@ -1,0 +1,4256 @@
+{
+  "duration_wall_s": 600.2363779491279,
+  "requested_duration_wall_s": 600.0,
+  "interrupted": false,
+  "sample_count": 529,
+  "cpu_percent": {
+    "mean": 368.2871455576559,
+    "max": 1088.1999999999998
+  },
+  "rss_mib": {
+    "mean": 6931.496839555765,
+    "max": 7738.84765625
+  },
+  "threads": {
+    "mean": 856.2665406427221,
+    "max": 957.0
+  },
+  "gpu_memory_mib": {
+    "mean": 3567.7202268431,
+    "max": 3974.0
+  },
+  "samples": [
+    {
+      "wall_time": 1793279526.9198265,
+      "processes": 31,
+      "cpu_percent": 486.50000000000006,
+      "rss_mib": 7724.9765625,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279528.055664,
+      "processes": 31,
+      "cpu_percent": 425.5,
+      "rss_mib": 7725.03515625,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279529.195014,
+      "processes": 31,
+      "cpu_percent": 423.1999999999999,
+      "rss_mib": 7725.11328125,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279530.334377,
+      "processes": 31,
+      "cpu_percent": 423.09999999999997,
+      "rss_mib": 7725.12890625,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279531.4755557,
+      "processes": 31,
+      "cpu_percent": 414.1999999999999,
+      "rss_mib": 7725.14453125,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279532.626762,
+      "processes": 31,
+      "cpu_percent": 449.29999999999984,
+      "rss_mib": 7725.15625,
+      "threads": 957,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279533.7654996,
+      "processes": 31,
+      "cpu_percent": 414.3,
+      "rss_mib": 7725.15625,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279534.9041433,
+      "processes": 31,
+      "cpu_percent": 437.59999999999997,
+      "rss_mib": 7725.171875,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279536.0376716,
+      "processes": 31,
+      "cpu_percent": 420.9000000000001,
+      "rss_mib": 7725.1796875,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279537.179331,
+      "processes": 31,
+      "cpu_percent": 413.99999999999994,
+      "rss_mib": 7725.24609375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279538.3144522,
+      "processes": 31,
+      "cpu_percent": 427.40000000000003,
+      "rss_mib": 7725.26953125,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279539.4539673,
+      "processes": 31,
+      "cpu_percent": 414.70000000000005,
+      "rss_mib": 7725.42578125,
+      "threads": 956,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279540.591351,
+      "processes": 31,
+      "cpu_percent": 392.49999999999994,
+      "rss_mib": 7725.58984375,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279541.7289634,
+      "processes": 31,
+      "cpu_percent": 396.0,
+      "rss_mib": 7725.58984375,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279542.8685277,
+      "processes": 31,
+      "cpu_percent": 396.79999999999984,
+      "rss_mib": 7725.58984375,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279544.0050173,
+      "processes": 31,
+      "cpu_percent": 402.50000000000006,
+      "rss_mib": 7725.9375,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279545.1380186,
+      "processes": 31,
+      "cpu_percent": 401.5999999999999,
+      "rss_mib": 7725.87109375,
+      "threads": 955,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279546.2700515,
+      "processes": 31,
+      "cpu_percent": 393.4999999999998,
+      "rss_mib": 7725.87109375,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279547.40814,
+      "processes": 31,
+      "cpu_percent": 417.2,
+      "rss_mib": 7725.875,
+      "threads": 955,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279548.5414379,
+      "processes": 31,
+      "cpu_percent": 396.8,
+      "rss_mib": 7725.87890625,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279549.679608,
+      "processes": 31,
+      "cpu_percent": 425.79999999999995,
+      "rss_mib": 7725.87890625,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279550.8126838,
+      "processes": 31,
+      "cpu_percent": 413.79999999999995,
+      "rss_mib": 7725.88671875,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279551.944863,
+      "processes": 31,
+      "cpu_percent": 423.1999999999998,
+      "rss_mib": 7725.8984375,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279553.075622,
+      "processes": 31,
+      "cpu_percent": 438.4999999999998,
+      "rss_mib": 7725.90625,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279554.2142391,
+      "processes": 31,
+      "cpu_percent": 429.89999999999986,
+      "rss_mib": 7725.91796875,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279555.353686,
+      "processes": 31,
+      "cpu_percent": 429.09999999999997,
+      "rss_mib": 7725.92578125,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279556.4885132,
+      "processes": 31,
+      "cpu_percent": 438.89999999999975,
+      "rss_mib": 7725.96484375,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279557.6251028,
+      "processes": 31,
+      "cpu_percent": 429.9,
+      "rss_mib": 7725.97265625,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279558.7676551,
+      "processes": 31,
+      "cpu_percent": 427.3999999999998,
+      "rss_mib": 7725.97265625,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279559.9054651,
+      "processes": 31,
+      "cpu_percent": 430.8999999999999,
+      "rss_mib": 7725.9921875,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279561.0408156,
+      "processes": 31,
+      "cpu_percent": 394.0,
+      "rss_mib": 7726.0,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279562.183274,
+      "processes": 31,
+      "cpu_percent": 404.3,
+      "rss_mib": 7726.23046875,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279563.3170443,
+      "processes": 31,
+      "cpu_percent": 384.7999999999999,
+      "rss_mib": 7726.23828125,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279564.4556952,
+      "processes": 31,
+      "cpu_percent": 378.49999999999994,
+      "rss_mib": 7726.2421875,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279565.597007,
+      "processes": 31,
+      "cpu_percent": 379.30000000000007,
+      "rss_mib": 7726.24609375,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279566.73006,
+      "processes": 31,
+      "cpu_percent": 365.99999999999994,
+      "rss_mib": 7726.26171875,
+      "threads": 953,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279567.8665712,
+      "processes": 31,
+      "cpu_percent": 372.4,
+      "rss_mib": 7726.26171875,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279569.0018978,
+      "processes": 31,
+      "cpu_percent": 379.79999999999995,
+      "rss_mib": 7726.27734375,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279570.140155,
+      "processes": 31,
+      "cpu_percent": 372.09999999999997,
+      "rss_mib": 7726.28515625,
+      "threads": 953,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279571.275278,
+      "processes": 31,
+      "cpu_percent": 398.20000000000005,
+      "rss_mib": 7729.1796875,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279572.4119217,
+      "processes": 31,
+      "cpu_percent": 373.19999999999993,
+      "rss_mib": 7729.67578125,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279573.5542977,
+      "processes": 31,
+      "cpu_percent": 373.4,
+      "rss_mib": 7730.03515625,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279574.6886418,
+      "processes": 31,
+      "cpu_percent": 377.0000000000001,
+      "rss_mib": 7730.22265625,
+      "threads": 953,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279575.8235812,
+      "processes": 31,
+      "cpu_percent": 375.99999999999983,
+      "rss_mib": 7730.328125,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279576.9544342,
+      "processes": 31,
+      "cpu_percent": 379.00000000000006,
+      "rss_mib": 7730.48046875,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279578.0936277,
+      "processes": 31,
+      "cpu_percent": 377.5,
+      "rss_mib": 7730.6171875,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279579.2301733,
+      "processes": 31,
+      "cpu_percent": 381.1,
+      "rss_mib": 7730.68359375,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279580.3691087,
+      "processes": 31,
+      "cpu_percent": 386.1,
+      "rss_mib": 7730.765625,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279581.5042431,
+      "processes": 31,
+      "cpu_percent": 386.99999999999994,
+      "rss_mib": 7730.85546875,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279582.639746,
+      "processes": 31,
+      "cpu_percent": 386.3999999999999,
+      "rss_mib": 7730.953125,
+      "threads": 953,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279583.7758307,
+      "processes": 31,
+      "cpu_percent": 390.6,
+      "rss_mib": 7730.91015625,
+      "threads": 953,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279584.9146044,
+      "processes": 31,
+      "cpu_percent": 378.5999999999999,
+      "rss_mib": 7730.91015625,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279586.0488982,
+      "processes": 31,
+      "cpu_percent": 383.69999999999993,
+      "rss_mib": 7730.91796875,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279587.182563,
+      "processes": 31,
+      "cpu_percent": 371.8,
+      "rss_mib": 7730.9296875,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279588.3234005,
+      "processes": 31,
+      "cpu_percent": 383.1,
+      "rss_mib": 7730.9375,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279589.4560018,
+      "processes": 31,
+      "cpu_percent": 392.9999999999999,
+      "rss_mib": 7730.9453125,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279590.5969346,
+      "processes": 31,
+      "cpu_percent": 1088.1999999999998,
+      "rss_mib": 7736.75390625,
+      "threads": 953,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279591.727056,
+      "processes": 31,
+      "cpu_percent": 634.0,
+      "rss_mib": 7737.45703125,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279592.852568,
+      "processes": 31,
+      "cpu_percent": 400.0999999999999,
+      "rss_mib": 7737.55859375,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279593.990549,
+      "processes": 31,
+      "cpu_percent": 390.6,
+      "rss_mib": 7737.5625,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279595.1218622,
+      "processes": 31,
+      "cpu_percent": 383.8999999999999,
+      "rss_mib": 7737.671875,
+      "threads": 954,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279596.252285,
+      "processes": 31,
+      "cpu_percent": 392.29999999999995,
+      "rss_mib": 7737.8828125,
+      "threads": 955,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279597.3942173,
+      "processes": 31,
+      "cpu_percent": 406.00000000000006,
+      "rss_mib": 7737.9609375,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279598.5273778,
+      "processes": 31,
+      "cpu_percent": 403.40000000000003,
+      "rss_mib": 7737.9765625,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279599.6599622,
+      "processes": 31,
+      "cpu_percent": 397.49999999999994,
+      "rss_mib": 7738.0,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279600.7999415,
+      "processes": 31,
+      "cpu_percent": 410.3,
+      "rss_mib": 7738.00390625,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279601.9379392,
+      "processes": 31,
+      "cpu_percent": 403.3999999999999,
+      "rss_mib": 7738.0078125,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279603.072933,
+      "processes": 31,
+      "cpu_percent": 410.1,
+      "rss_mib": 7738.0078125,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279604.2223077,
+      "processes": 31,
+      "cpu_percent": 417.59999999999985,
+      "rss_mib": 7738.02734375,
+      "threads": 955,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279605.351733,
+      "processes": 31,
+      "cpu_percent": 404.4,
+      "rss_mib": 7735.32421875,
+      "threads": 955,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279606.4854972,
+      "processes": 31,
+      "cpu_percent": 401.6999999999998,
+      "rss_mib": 7734.69921875,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279607.6136668,
+      "processes": 31,
+      "cpu_percent": 418.5999999999998,
+      "rss_mib": 7734.65234375,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279608.7480123,
+      "processes": 31,
+      "cpu_percent": 406.70000000000005,
+      "rss_mib": 7734.65234375,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279609.8873823,
+      "processes": 31,
+      "cpu_percent": 399.9,
+      "rss_mib": 7734.65234375,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279611.025157,
+      "processes": 31,
+      "cpu_percent": 398.3999999999999,
+      "rss_mib": 7734.65234375,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279612.1600914,
+      "processes": 31,
+      "cpu_percent": 399.1,
+      "rss_mib": 7734.66015625,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279613.293345,
+      "processes": 31,
+      "cpu_percent": 396.7,
+      "rss_mib": 7734.671875,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279614.4282942,
+      "processes": 31,
+      "cpu_percent": 396.1,
+      "rss_mib": 7734.7265625,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279615.5558054,
+      "processes": 31,
+      "cpu_percent": 395.59999999999985,
+      "rss_mib": 7734.7265625,
+      "threads": 955,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279616.689728,
+      "processes": 31,
+      "cpu_percent": 406.2999999999999,
+      "rss_mib": 7734.73046875,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279617.8293662,
+      "processes": 31,
+      "cpu_percent": 415.69999999999993,
+      "rss_mib": 7734.95703125,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279618.965115,
+      "processes": 31,
+      "cpu_percent": 454.70000000000005,
+      "rss_mib": 7735.03515625,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279620.1024733,
+      "processes": 31,
+      "cpu_percent": 449.70000000000005,
+      "rss_mib": 7735.06640625,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279621.2425666,
+      "processes": 31,
+      "cpu_percent": 420.1999999999998,
+      "rss_mib": 7735.15234375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279622.3757548,
+      "processes": 31,
+      "cpu_percent": 436.6000000000001,
+      "rss_mib": 7735.15625,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279623.5135405,
+      "processes": 31,
+      "cpu_percent": 417.99999999999983,
+      "rss_mib": 7735.15625,
+      "threads": 957,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279624.646774,
+      "processes": 31,
+      "cpu_percent": 403.4,
+      "rss_mib": 7735.16796875,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279625.77735,
+      "processes": 31,
+      "cpu_percent": 422.49999999999994,
+      "rss_mib": 7735.1953125,
+      "threads": 957,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279626.9134512,
+      "processes": 31,
+      "cpu_percent": 428.0999999999999,
+      "rss_mib": 7735.1953125,
+      "threads": 957,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279628.049299,
+      "processes": 31,
+      "cpu_percent": 420.6000000000001,
+      "rss_mib": 7735.203125,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279629.1914463,
+      "processes": 31,
+      "cpu_percent": 437.40000000000003,
+      "rss_mib": 7735.20703125,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279630.3360991,
+      "processes": 31,
+      "cpu_percent": 435.89999999999986,
+      "rss_mib": 7735.20703125,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279631.4766347,
+      "processes": 31,
+      "cpu_percent": 438.3000000000001,
+      "rss_mib": 7735.20703125,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279632.6107433,
+      "processes": 31,
+      "cpu_percent": 424.1,
+      "rss_mib": 7735.20703125,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279633.7401154,
+      "processes": 31,
+      "cpu_percent": 417.6,
+      "rss_mib": 7735.27734375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279634.8785198,
+      "processes": 31,
+      "cpu_percent": 423.50000000000006,
+      "rss_mib": 7735.27734375,
+      "threads": 957,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279636.0191882,
+      "processes": 31,
+      "cpu_percent": 428.90000000000003,
+      "rss_mib": 7735.29296875,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279637.1533449,
+      "processes": 31,
+      "cpu_percent": 431.9999999999999,
+      "rss_mib": 7735.29296875,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279638.2894604,
+      "processes": 31,
+      "cpu_percent": 421.09999999999997,
+      "rss_mib": 7735.29296875,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279639.4229052,
+      "processes": 31,
+      "cpu_percent": 429.69999999999993,
+      "rss_mib": 7735.3046875,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279640.5580266,
+      "processes": 31,
+      "cpu_percent": 428.20000000000005,
+      "rss_mib": 7735.3359375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279641.6949344,
+      "processes": 31,
+      "cpu_percent": 429.5,
+      "rss_mib": 7735.34375,
+      "threads": 957,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279642.8286898,
+      "processes": 31,
+      "cpu_percent": 423.50000000000006,
+      "rss_mib": 7735.34375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279643.9655585,
+      "processes": 31,
+      "cpu_percent": 425.8,
+      "rss_mib": 7735.34375,
+      "threads": 957,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279645.1018221,
+      "processes": 31,
+      "cpu_percent": 427.1,
+      "rss_mib": 7735.3984375,
+      "threads": 957,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279646.2377253,
+      "processes": 31,
+      "cpu_percent": 419.9000000000001,
+      "rss_mib": 7735.3984375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279647.3755457,
+      "processes": 31,
+      "cpu_percent": 429.20000000000005,
+      "rss_mib": 7735.390625,
+      "threads": 956,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279648.5148,
+      "processes": 31,
+      "cpu_percent": 402.5,
+      "rss_mib": 7735.375,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279649.648989,
+      "processes": 31,
+      "cpu_percent": 420.49999999999994,
+      "rss_mib": 7735.42578125,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279650.7849903,
+      "processes": 31,
+      "cpu_percent": 398.8999999999999,
+      "rss_mib": 7735.42578125,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279651.9235094,
+      "processes": 31,
+      "cpu_percent": 421.29999999999995,
+      "rss_mib": 7735.42578125,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279653.061974,
+      "processes": 31,
+      "cpu_percent": 414.4999999999999,
+      "rss_mib": 7735.4296875,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279654.2055335,
+      "processes": 31,
+      "cpu_percent": 398.59999999999974,
+      "rss_mib": 7735.4296875,
+      "threads": 955,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279655.335995,
+      "processes": 31,
+      "cpu_percent": 407.8999999999998,
+      "rss_mib": 7735.4296875,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279656.4731236,
+      "processes": 31,
+      "cpu_percent": 400.4,
+      "rss_mib": 7735.4296875,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279657.6149504,
+      "processes": 31,
+      "cpu_percent": 409.2999999999999,
+      "rss_mib": 7735.43359375,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279658.7465003,
+      "processes": 31,
+      "cpu_percent": 442.20000000000005,
+      "rss_mib": 7735.4375,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279659.8894362,
+      "processes": 31,
+      "cpu_percent": 445.8999999999999,
+      "rss_mib": 7735.4375,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279661.031301,
+      "processes": 31,
+      "cpu_percent": 458.7,
+      "rss_mib": 7735.44140625,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279662.1600895,
+      "processes": 31,
+      "cpu_percent": 436.9999999999998,
+      "rss_mib": 7735.4453125,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279663.305708,
+      "processes": 31,
+      "cpu_percent": 441.89999999999975,
+      "rss_mib": 7735.4453125,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279664.4455202,
+      "processes": 31,
+      "cpu_percent": 446.0,
+      "rss_mib": 7735.44921875,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279665.5829077,
+      "processes": 31,
+      "cpu_percent": 435.69999999999993,
+      "rss_mib": 7735.44921875,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279666.7172518,
+      "processes": 31,
+      "cpu_percent": 405.20000000000005,
+      "rss_mib": 7735.44921875,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279667.8545132,
+      "processes": 31,
+      "cpu_percent": 406.0999999999999,
+      "rss_mib": 7735.453125,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279668.9913855,
+      "processes": 31,
+      "cpu_percent": 412.40000000000003,
+      "rss_mib": 7735.453125,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279670.1289108,
+      "processes": 31,
+      "cpu_percent": 404.2,
+      "rss_mib": 7735.453125,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279671.2707908,
+      "processes": 31,
+      "cpu_percent": 399.2,
+      "rss_mib": 7735.453125,
+      "threads": 955,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279672.40116,
+      "processes": 31,
+      "cpu_percent": 400.1999999999999,
+      "rss_mib": 7735.45703125,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279673.556804,
+      "processes": 31,
+      "cpu_percent": 411.79999999999995,
+      "rss_mib": 7735.45703125,
+      "threads": 955,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279674.697756,
+      "processes": 31,
+      "cpu_percent": 405.29999999999995,
+      "rss_mib": 7735.45703125,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279675.8370094,
+      "processes": 31,
+      "cpu_percent": 405.29999999999995,
+      "rss_mib": 7735.45703125,
+      "threads": 955,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279676.9701455,
+      "processes": 31,
+      "cpu_percent": 434.1999999999999,
+      "rss_mib": 7735.46484375,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279678.103022,
+      "processes": 31,
+      "cpu_percent": 425.4999999999999,
+      "rss_mib": 7735.46875,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279679.2359216,
+      "processes": 31,
+      "cpu_percent": 405.1,
+      "rss_mib": 7735.46875,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279680.3739228,
+      "processes": 31,
+      "cpu_percent": 396.1999999999999,
+      "rss_mib": 7735.47265625,
+      "threads": 955,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279681.5095003,
+      "processes": 31,
+      "cpu_percent": 410.89999999999986,
+      "rss_mib": 7735.484375,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279682.648065,
+      "processes": 31,
+      "cpu_percent": 410.60000000000014,
+      "rss_mib": 7735.484375,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279683.781698,
+      "processes": 31,
+      "cpu_percent": 398.0999999999999,
+      "rss_mib": 7735.484375,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279684.9197965,
+      "processes": 31,
+      "cpu_percent": 409.1,
+      "rss_mib": 7735.48828125,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279686.057696,
+      "processes": 31,
+      "cpu_percent": 397.59999999999997,
+      "rss_mib": 7735.48828125,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279687.191975,
+      "processes": 31,
+      "cpu_percent": 399.4999999999999,
+      "rss_mib": 7735.48828125,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279688.3255355,
+      "processes": 31,
+      "cpu_percent": 410.0,
+      "rss_mib": 7735.51953125,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279689.461886,
+      "processes": 31,
+      "cpu_percent": 386.40000000000015,
+      "rss_mib": 7735.625,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279690.611672,
+      "processes": 31,
+      "cpu_percent": 410.7,
+      "rss_mib": 7735.62890625,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279691.7626207,
+      "processes": 31,
+      "cpu_percent": 414.79999999999995,
+      "rss_mib": 7735.66796875,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279692.8962214,
+      "processes": 31,
+      "cpu_percent": 405.69999999999993,
+      "rss_mib": 7735.703125,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279694.0318463,
+      "processes": 31,
+      "cpu_percent": 403.9,
+      "rss_mib": 7735.73046875,
+      "threads": 955,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279695.171659,
+      "processes": 31,
+      "cpu_percent": 384.0000000000001,
+      "rss_mib": 7735.73046875,
+      "threads": 955,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279696.2962787,
+      "processes": 31,
+      "cpu_percent": 411.4999999999999,
+      "rss_mib": 7735.734375,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279697.4286196,
+      "processes": 31,
+      "cpu_percent": 402.0,
+      "rss_mib": 7735.734375,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279698.5710769,
+      "processes": 31,
+      "cpu_percent": 401.20000000000005,
+      "rss_mib": 7735.734375,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279699.70667,
+      "processes": 31,
+      "cpu_percent": 393.1000000000001,
+      "rss_mib": 7735.734375,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279700.8487046,
+      "processes": 31,
+      "cpu_percent": 394.4,
+      "rss_mib": 7735.734375,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279701.9931078,
+      "processes": 31,
+      "cpu_percent": 407.8999999999999,
+      "rss_mib": 7735.74609375,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279703.1332116,
+      "processes": 31,
+      "cpu_percent": 414.49999999999994,
+      "rss_mib": 7735.74609375,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279704.266255,
+      "processes": 31,
+      "cpu_percent": 389.1,
+      "rss_mib": 7735.73828125,
+      "threads": 954,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279705.4019904,
+      "processes": 31,
+      "cpu_percent": 377.2,
+      "rss_mib": 7735.7265625,
+      "threads": 953,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279706.5338936,
+      "processes": 31,
+      "cpu_percent": 382.69999999999993,
+      "rss_mib": 7735.73046875,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279707.6912014,
+      "processes": 31,
+      "cpu_percent": 377.09999999999997,
+      "rss_mib": 7735.73046875,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279708.833631,
+      "processes": 31,
+      "cpu_percent": 374.4999999999998,
+      "rss_mib": 7735.73046875,
+      "threads": 953,
+      "gpu_memory_mib": 3973.0
+    },
+    {
+      "wall_time": 1793279709.9655735,
+      "processes": 31,
+      "cpu_percent": 379.19999999999993,
+      "rss_mib": 7735.73046875,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279711.100002,
+      "processes": 31,
+      "cpu_percent": 375.59999999999997,
+      "rss_mib": 7735.734375,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279712.2396724,
+      "processes": 31,
+      "cpu_percent": 401.40000000000003,
+      "rss_mib": 7735.734375,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279713.3772326,
+      "processes": 31,
+      "cpu_percent": 386.3,
+      "rss_mib": 7735.734375,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279714.5112014,
+      "processes": 31,
+      "cpu_percent": 384.09999999999985,
+      "rss_mib": 7735.734375,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279715.6479437,
+      "processes": 31,
+      "cpu_percent": 391.30000000000007,
+      "rss_mib": 7735.734375,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279716.787215,
+      "processes": 31,
+      "cpu_percent": 365.69999999999993,
+      "rss_mib": 7735.734375,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279717.9250736,
+      "processes": 31,
+      "cpu_percent": 392.0999999999999,
+      "rss_mib": 7735.734375,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279719.0612469,
+      "processes": 31,
+      "cpu_percent": 375.89999999999986,
+      "rss_mib": 7735.734375,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279720.2050655,
+      "processes": 31,
+      "cpu_percent": 368.0999999999999,
+      "rss_mib": 7735.75,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279721.3513887,
+      "processes": 31,
+      "cpu_percent": 368.4999999999999,
+      "rss_mib": 7735.75390625,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279722.4886549,
+      "processes": 31,
+      "cpu_percent": 388.5,
+      "rss_mib": 7735.75390625,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279723.632853,
+      "processes": 31,
+      "cpu_percent": 372.89999999999986,
+      "rss_mib": 7735.75390625,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279724.778475,
+      "processes": 31,
+      "cpu_percent": 385.49999999999983,
+      "rss_mib": 7735.75390625,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279725.9170113,
+      "processes": 31,
+      "cpu_percent": 367.50000000000017,
+      "rss_mib": 7735.75390625,
+      "threads": 953,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279727.0544813,
+      "processes": 31,
+      "cpu_percent": 380.19999999999993,
+      "rss_mib": 7735.75390625,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279728.2004747,
+      "processes": 31,
+      "cpu_percent": 371.79999999999995,
+      "rss_mib": 7735.75390625,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279729.350213,
+      "processes": 31,
+      "cpu_percent": 363.20000000000005,
+      "rss_mib": 7735.75390625,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279730.4892697,
+      "processes": 31,
+      "cpu_percent": 371.7,
+      "rss_mib": 7735.78125,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279731.6239884,
+      "processes": 31,
+      "cpu_percent": 368.70000000000005,
+      "rss_mib": 7735.78125,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279732.7690282,
+      "processes": 31,
+      "cpu_percent": 386.1999999999999,
+      "rss_mib": 7735.78125,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279733.9121666,
+      "processes": 31,
+      "cpu_percent": 388.2999999999998,
+      "rss_mib": 7735.7890625,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279735.049372,
+      "processes": 31,
+      "cpu_percent": 387.6,
+      "rss_mib": 7735.7890625,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279736.1841178,
+      "processes": 31,
+      "cpu_percent": 371.59999999999997,
+      "rss_mib": 7735.7890625,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279737.3185754,
+      "processes": 31,
+      "cpu_percent": 376.59999999999997,
+      "rss_mib": 7735.7890625,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279738.453876,
+      "processes": 31,
+      "cpu_percent": 385.9,
+      "rss_mib": 7735.7890625,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279739.5930936,
+      "processes": 31,
+      "cpu_percent": 417.29999999999995,
+      "rss_mib": 7736.3125,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279740.7340894,
+      "processes": 31,
+      "cpu_percent": 406.20000000000005,
+      "rss_mib": 7736.5,
+      "threads": 957,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279741.8651915,
+      "processes": 31,
+      "cpu_percent": 411.8999999999998,
+      "rss_mib": 7736.5,
+      "threads": 957,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279743.0065224,
+      "processes": 31,
+      "cpu_percent": 425.9,
+      "rss_mib": 7736.5,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279744.142477,
+      "processes": 31,
+      "cpu_percent": 410.2999999999999,
+      "rss_mib": 7736.5,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279745.2802134,
+      "processes": 31,
+      "cpu_percent": 430.9,
+      "rss_mib": 7736.5,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279746.412012,
+      "processes": 31,
+      "cpu_percent": 418.50000000000006,
+      "rss_mib": 7736.5,
+      "threads": 957,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279747.5429506,
+      "processes": 31,
+      "cpu_percent": 414.89999999999986,
+      "rss_mib": 7736.5,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279748.6798666,
+      "processes": 31,
+      "cpu_percent": 423.99999999999994,
+      "rss_mib": 7736.50390625,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279749.8179114,
+      "processes": 31,
+      "cpu_percent": 417.40000000000003,
+      "rss_mib": 7736.50390625,
+      "threads": 957,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279750.9589899,
+      "processes": 31,
+      "cpu_percent": 437.7999999999999,
+      "rss_mib": 7736.50390625,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279752.0984392,
+      "processes": 31,
+      "cpu_percent": 433.7,
+      "rss_mib": 7736.50390625,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279753.227347,
+      "processes": 31,
+      "cpu_percent": 415.69999999999976,
+      "rss_mib": 7736.50390625,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279754.3840642,
+      "processes": 31,
+      "cpu_percent": 423.99999999999983,
+      "rss_mib": 7736.50390625,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279755.5217571,
+      "processes": 31,
+      "cpu_percent": 429.2,
+      "rss_mib": 7736.50390625,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279756.6602504,
+      "processes": 31,
+      "cpu_percent": 425.09999999999997,
+      "rss_mib": 7736.515625,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279757.7957795,
+      "processes": 31,
+      "cpu_percent": 431.6,
+      "rss_mib": 7736.515625,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279758.9322233,
+      "processes": 31,
+      "cpu_percent": 425.8999999999999,
+      "rss_mib": 7736.515625,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279760.0646172,
+      "processes": 31,
+      "cpu_percent": 429.8000000000001,
+      "rss_mib": 7736.51953125,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279761.1865695,
+      "processes": 31,
+      "cpu_percent": 414.59999999999997,
+      "rss_mib": 7736.51953125,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279762.329104,
+      "processes": 31,
+      "cpu_percent": 423.1000000000001,
+      "rss_mib": 7736.51953125,
+      "threads": 957,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279763.4641466,
+      "processes": 31,
+      "cpu_percent": 430.09999999999997,
+      "rss_mib": 7736.51953125,
+      "threads": 957,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279764.6010416,
+      "processes": 31,
+      "cpu_percent": 412.8999999999999,
+      "rss_mib": 7736.51953125,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279765.7361894,
+      "processes": 31,
+      "cpu_percent": 421.4,
+      "rss_mib": 7736.51953125,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279766.8745062,
+      "processes": 31,
+      "cpu_percent": 421.3,
+      "rss_mib": 7736.51953125,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279768.0082233,
+      "processes": 31,
+      "cpu_percent": 425.1999999999999,
+      "rss_mib": 7736.51953125,
+      "threads": 957,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279769.1335242,
+      "processes": 31,
+      "cpu_percent": 431.2999999999999,
+      "rss_mib": 7736.51953125,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279770.2644477,
+      "processes": 31,
+      "cpu_percent": 429.1999999999999,
+      "rss_mib": 7736.5234375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279771.400168,
+      "processes": 31,
+      "cpu_percent": 429.2,
+      "rss_mib": 7736.5234375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279772.5326266,
+      "processes": 31,
+      "cpu_percent": 454.79999999999995,
+      "rss_mib": 7736.5234375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279773.6668513,
+      "processes": 31,
+      "cpu_percent": 470.20000000000005,
+      "rss_mib": 7736.5234375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279774.8042479,
+      "processes": 31,
+      "cpu_percent": 464.4,
+      "rss_mib": 7736.5234375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279775.9382367,
+      "processes": 31,
+      "cpu_percent": 444.3999999999998,
+      "rss_mib": 7736.5234375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279777.072404,
+      "processes": 31,
+      "cpu_percent": 430.40000000000003,
+      "rss_mib": 7736.5234375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279778.2097766,
+      "processes": 31,
+      "cpu_percent": 430.9000000000001,
+      "rss_mib": 7736.5234375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279779.3452172,
+      "processes": 31,
+      "cpu_percent": 419.59999999999997,
+      "rss_mib": 7736.52734375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279780.477637,
+      "processes": 31,
+      "cpu_percent": 426.20000000000005,
+      "rss_mib": 7736.52734375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279781.6131632,
+      "processes": 31,
+      "cpu_percent": 420.2,
+      "rss_mib": 7736.52734375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279782.7493813,
+      "processes": 31,
+      "cpu_percent": 427.29999999999984,
+      "rss_mib": 7736.52734375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279783.912416,
+      "processes": 31,
+      "cpu_percent": 428.49999999999983,
+      "rss_mib": 7736.53125,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279785.0477974,
+      "processes": 31,
+      "cpu_percent": 421.1000000000001,
+      "rss_mib": 7736.53125,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279786.1827786,
+      "processes": 31,
+      "cpu_percent": 439.4,
+      "rss_mib": 7736.53125,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279787.319413,
+      "processes": 31,
+      "cpu_percent": 432.8,
+      "rss_mib": 7736.53125,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279788.46013,
+      "processes": 31,
+      "cpu_percent": 427.20000000000005,
+      "rss_mib": 7736.53125,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279789.5931818,
+      "processes": 31,
+      "cpu_percent": 434.3000000000001,
+      "rss_mib": 7736.53125,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279790.72548,
+      "processes": 31,
+      "cpu_percent": 425.59999999999997,
+      "rss_mib": 7736.53125,
+      "threads": 957,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279791.8668318,
+      "processes": 31,
+      "cpu_percent": 422.9999999999999,
+      "rss_mib": 7736.53125,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279793.0048187,
+      "processes": 31,
+      "cpu_percent": 440.2,
+      "rss_mib": 7736.53515625,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279794.1386847,
+      "processes": 31,
+      "cpu_percent": 419.19999999999993,
+      "rss_mib": 7736.53515625,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279795.2692611,
+      "processes": 31,
+      "cpu_percent": 423.0999999999999,
+      "rss_mib": 7736.53515625,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279796.4068158,
+      "processes": 31,
+      "cpu_percent": 437.10000000000014,
+      "rss_mib": 7736.53515625,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279797.5439246,
+      "processes": 31,
+      "cpu_percent": 435.59999999999985,
+      "rss_mib": 7736.53515625,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279798.666461,
+      "processes": 31,
+      "cpu_percent": 431.1,
+      "rss_mib": 7736.53515625,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279799.8062365,
+      "processes": 31,
+      "cpu_percent": 442.4999999999999,
+      "rss_mib": 7736.53515625,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279800.946834,
+      "processes": 31,
+      "cpu_percent": 418.7999999999999,
+      "rss_mib": 7736.53515625,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279802.0833466,
+      "processes": 31,
+      "cpu_percent": 436.9,
+      "rss_mib": 7736.5390625,
+      "threads": 957,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279803.216198,
+      "processes": 31,
+      "cpu_percent": 410.29999999999995,
+      "rss_mib": 7736.53125,
+      "threads": 956,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279804.3514502,
+      "processes": 31,
+      "cpu_percent": 403.70000000000005,
+      "rss_mib": 7736.515625,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279805.4839048,
+      "processes": 31,
+      "cpu_percent": 414.80000000000007,
+      "rss_mib": 7736.515625,
+      "threads": 955,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279806.61981,
+      "processes": 31,
+      "cpu_percent": 401.49999999999994,
+      "rss_mib": 7736.515625,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279807.7627194,
+      "processes": 31,
+      "cpu_percent": 411.8999999999997,
+      "rss_mib": 7736.515625,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279808.9000056,
+      "processes": 31,
+      "cpu_percent": 408.29999999999995,
+      "rss_mib": 7736.515625,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279810.037018,
+      "processes": 31,
+      "cpu_percent": 397.9,
+      "rss_mib": 7736.515625,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279811.1684513,
+      "processes": 31,
+      "cpu_percent": 412.3,
+      "rss_mib": 7736.515625,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279812.3060513,
+      "processes": 31,
+      "cpu_percent": 411.50000000000006,
+      "rss_mib": 7736.515625,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279813.4504473,
+      "processes": 31,
+      "cpu_percent": 402.6999999999999,
+      "rss_mib": 7736.515625,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279814.6014,
+      "processes": 31,
+      "cpu_percent": 413.2999999999999,
+      "rss_mib": 7736.515625,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279815.739379,
+      "processes": 31,
+      "cpu_percent": 399.99999999999994,
+      "rss_mib": 7736.515625,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279816.8752153,
+      "processes": 31,
+      "cpu_percent": 411.30000000000007,
+      "rss_mib": 7736.515625,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279818.0099845,
+      "processes": 31,
+      "cpu_percent": 405.4,
+      "rss_mib": 7736.515625,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279819.1465447,
+      "processes": 31,
+      "cpu_percent": 393.7,
+      "rss_mib": 7736.515625,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279820.2852058,
+      "processes": 31,
+      "cpu_percent": 402.7,
+      "rss_mib": 7736.515625,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279821.4124396,
+      "processes": 31,
+      "cpu_percent": 406.39999999999986,
+      "rss_mib": 7736.515625,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279822.5531578,
+      "processes": 31,
+      "cpu_percent": 401.1999999999998,
+      "rss_mib": 7736.515625,
+      "threads": 955,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279823.6894062,
+      "processes": 31,
+      "cpu_percent": 405.40000000000003,
+      "rss_mib": 7736.515625,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279824.8251553,
+      "processes": 31,
+      "cpu_percent": 398.99999999999994,
+      "rss_mib": 7736.515625,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279825.9648147,
+      "processes": 31,
+      "cpu_percent": 396.70000000000005,
+      "rss_mib": 7736.51953125,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279827.1141677,
+      "processes": 31,
+      "cpu_percent": 393.7,
+      "rss_mib": 7736.51953125,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279828.249891,
+      "processes": 31,
+      "cpu_percent": 399.5,
+      "rss_mib": 7736.51953125,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279829.3909793,
+      "processes": 31,
+      "cpu_percent": 422.1,
+      "rss_mib": 7736.51953125,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279830.5247838,
+      "processes": 31,
+      "cpu_percent": 404.09999999999997,
+      "rss_mib": 7736.5234375,
+      "threads": 955,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279831.6641607,
+      "processes": 31,
+      "cpu_percent": 391.7999999999999,
+      "rss_mib": 7736.5234375,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279832.790573,
+      "processes": 31,
+      "cpu_percent": 408.7,
+      "rss_mib": 7736.5234375,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279833.927239,
+      "processes": 31,
+      "cpu_percent": 411.2999999999999,
+      "rss_mib": 7736.5546875,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279835.064408,
+      "processes": 31,
+      "cpu_percent": 396.6999999999998,
+      "rss_mib": 7736.5546875,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279836.1978488,
+      "processes": 31,
+      "cpu_percent": 400.09999999999997,
+      "rss_mib": 7736.5546875,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279837.3321612,
+      "processes": 31,
+      "cpu_percent": 406.49999999999994,
+      "rss_mib": 7736.5546875,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279838.4659002,
+      "processes": 31,
+      "cpu_percent": 414.6,
+      "rss_mib": 7736.5546875,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279839.6047046,
+      "processes": 31,
+      "cpu_percent": 412.70000000000005,
+      "rss_mib": 7736.5546875,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279840.7497568,
+      "processes": 31,
+      "cpu_percent": 421.2999999999999,
+      "rss_mib": 7736.5546875,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279841.883724,
+      "processes": 31,
+      "cpu_percent": 450.3999999999998,
+      "rss_mib": 7736.5546875,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279843.018084,
+      "processes": 31,
+      "cpu_percent": 430.8999999999999,
+      "rss_mib": 7736.5546875,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279844.1499596,
+      "processes": 31,
+      "cpu_percent": 403.4999999999999,
+      "rss_mib": 7736.5546875,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279845.284412,
+      "processes": 31,
+      "cpu_percent": 396.8,
+      "rss_mib": 7736.5546875,
+      "threads": 955,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279846.4211366,
+      "processes": 31,
+      "cpu_percent": 406.1,
+      "rss_mib": 7736.5546875,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279847.5582411,
+      "processes": 31,
+      "cpu_percent": 409.8,
+      "rss_mib": 7736.5546875,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279848.693561,
+      "processes": 31,
+      "cpu_percent": 400.29999999999995,
+      "rss_mib": 7736.5546875,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279849.824701,
+      "processes": 31,
+      "cpu_percent": 411.9999999999999,
+      "rss_mib": 7736.5546875,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279850.9639685,
+      "processes": 31,
+      "cpu_percent": 411.09999999999997,
+      "rss_mib": 7736.5546875,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279852.0962117,
+      "processes": 31,
+      "cpu_percent": 411.4999999999999,
+      "rss_mib": 7736.5546875,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279853.2378573,
+      "processes": 31,
+      "cpu_percent": 417.3000000000001,
+      "rss_mib": 7736.5546875,
+      "threads": 955,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279854.3746936,
+      "processes": 31,
+      "cpu_percent": 415.3,
+      "rss_mib": 7736.5703125,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279855.5110748,
+      "processes": 31,
+      "cpu_percent": 411.19999999999993,
+      "rss_mib": 7736.5703125,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279856.644847,
+      "processes": 31,
+      "cpu_percent": 349.7000000000001,
+      "rss_mib": 7736.5703125,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279857.7860048,
+      "processes": 31,
+      "cpu_percent": 398.1000000000001,
+      "rss_mib": 7736.5703125,
+      "threads": 955,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279858.9199839,
+      "processes": 31,
+      "cpu_percent": 407.50000000000006,
+      "rss_mib": 7736.58203125,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279860.0628555,
+      "processes": 31,
+      "cpu_percent": 396.39999999999986,
+      "rss_mib": 7736.58203125,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279861.2054045,
+      "processes": 31,
+      "cpu_percent": 396.9,
+      "rss_mib": 7736.5859375,
+      "threads": 955,
+      "gpu_memory_mib": 3970.0
+    },
+    {
+      "wall_time": 1793279862.3433096,
+      "processes": 31,
+      "cpu_percent": 406.39999999999986,
+      "rss_mib": 7736.59375,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279863.4831812,
+      "processes": 31,
+      "cpu_percent": 413.3,
+      "rss_mib": 7736.59375,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279864.616108,
+      "processes": 31,
+      "cpu_percent": 401.59999999999997,
+      "rss_mib": 7736.59375,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279865.7535048,
+      "processes": 31,
+      "cpu_percent": 410.5999999999999,
+      "rss_mib": 7736.58984375,
+      "threads": 954,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279866.8844411,
+      "processes": 31,
+      "cpu_percent": 384.09999999999985,
+      "rss_mib": 7736.57421875,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279868.021636,
+      "processes": 31,
+      "cpu_percent": 389.70000000000005,
+      "rss_mib": 7736.57421875,
+      "threads": 953,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279869.1581047,
+      "processes": 31,
+      "cpu_percent": 385.5,
+      "rss_mib": 7736.5703125,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279870.2943022,
+      "processes": 31,
+      "cpu_percent": 381.3,
+      "rss_mib": 7736.5703125,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279871.4263985,
+      "processes": 31,
+      "cpu_percent": 411.5999999999999,
+      "rss_mib": 7736.5703125,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279872.559378,
+      "processes": 31,
+      "cpu_percent": 383.29999999999995,
+      "rss_mib": 7736.57421875,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279873.6982226,
+      "processes": 31,
+      "cpu_percent": 386.6999999999999,
+      "rss_mib": 7736.57421875,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279874.8325598,
+      "processes": 31,
+      "cpu_percent": 388.1,
+      "rss_mib": 7736.57421875,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279875.974423,
+      "processes": 31,
+      "cpu_percent": 390.19999999999993,
+      "rss_mib": 7736.57421875,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279877.110349,
+      "processes": 31,
+      "cpu_percent": 391.99999999999994,
+      "rss_mib": 7736.57421875,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279878.246502,
+      "processes": 31,
+      "cpu_percent": 384.8999999999999,
+      "rss_mib": 7736.57421875,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279879.3820856,
+      "processes": 31,
+      "cpu_percent": 393.90000000000003,
+      "rss_mib": 7736.57421875,
+      "threads": 953,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279880.5215745,
+      "processes": 31,
+      "cpu_percent": 398.7,
+      "rss_mib": 7736.578125,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279881.661876,
+      "processes": 31,
+      "cpu_percent": 386.80000000000007,
+      "rss_mib": 7736.578125,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279882.7949185,
+      "processes": 31,
+      "cpu_percent": 400.7999999999999,
+      "rss_mib": 7736.578125,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279883.9255452,
+      "processes": 31,
+      "cpu_percent": 404.69999999999976,
+      "rss_mib": 7736.578125,
+      "threads": 953,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279885.0573795,
+      "processes": 31,
+      "cpu_percent": 426.2999999999997,
+      "rss_mib": 7737.0,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279886.192545,
+      "processes": 31,
+      "cpu_percent": 439.09999999999985,
+      "rss_mib": 7737.109375,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279887.312939,
+      "processes": 31,
+      "cpu_percent": 416.0999999999998,
+      "rss_mib": 7737.13671875,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279888.445894,
+      "processes": 31,
+      "cpu_percent": 419.4999999999999,
+      "rss_mib": 7737.15234375,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279889.5774953,
+      "processes": 31,
+      "cpu_percent": 406.09999999999974,
+      "rss_mib": 7737.16015625,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279890.7132525,
+      "processes": 31,
+      "cpu_percent": 403.4,
+      "rss_mib": 7737.16796875,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279891.8448265,
+      "processes": 31,
+      "cpu_percent": 384.89999999999986,
+      "rss_mib": 7737.1953125,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279892.9805636,
+      "processes": 31,
+      "cpu_percent": 396.29999999999995,
+      "rss_mib": 7737.19921875,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279894.1250415,
+      "processes": 31,
+      "cpu_percent": 388.7999999999999,
+      "rss_mib": 7737.20703125,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279895.2588208,
+      "processes": 31,
+      "cpu_percent": 392.09999999999997,
+      "rss_mib": 7737.21484375,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279896.3911252,
+      "processes": 31,
+      "cpu_percent": 409.09999999999997,
+      "rss_mib": 7737.265625,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279897.5288873,
+      "processes": 31,
+      "cpu_percent": 420.2999999999999,
+      "rss_mib": 7737.35546875,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279898.6578488,
+      "processes": 31,
+      "cpu_percent": 404.0999999999999,
+      "rss_mib": 7737.3984375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279899.7905185,
+      "processes": 31,
+      "cpu_percent": 404.49999999999994,
+      "rss_mib": 7737.3984375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279900.9258258,
+      "processes": 31,
+      "cpu_percent": 413.29999999999995,
+      "rss_mib": 7737.40234375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279902.062419,
+      "processes": 31,
+      "cpu_percent": 403.2,
+      "rss_mib": 7737.40234375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279903.1986012,
+      "processes": 31,
+      "cpu_percent": 395.2999999999999,
+      "rss_mib": 7737.40234375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279904.334987,
+      "processes": 31,
+      "cpu_percent": 429.80000000000007,
+      "rss_mib": 7737.40234375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279905.460239,
+      "processes": 31,
+      "cpu_percent": 455.29999999999967,
+      "rss_mib": 7737.40234375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279906.594723,
+      "processes": 31,
+      "cpu_percent": 410.9,
+      "rss_mib": 7737.40625,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279907.7282236,
+      "processes": 31,
+      "cpu_percent": 427.10000000000014,
+      "rss_mib": 7737.41015625,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279908.8598368,
+      "processes": 31,
+      "cpu_percent": 407.59999999999974,
+      "rss_mib": 7737.41015625,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279909.9935174,
+      "processes": 31,
+      "cpu_percent": 463.39999999999986,
+      "rss_mib": 7737.47265625,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279911.1294744,
+      "processes": 31,
+      "cpu_percent": 393.3999999999999,
+      "rss_mib": 7737.47265625,
+      "threads": 957,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279912.2680528,
+      "processes": 31,
+      "cpu_percent": 406.49999999999994,
+      "rss_mib": 7737.47265625,
+      "threads": 957,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279913.4005053,
+      "processes": 31,
+      "cpu_percent": 420.4,
+      "rss_mib": 7737.47265625,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279914.533012,
+      "processes": 31,
+      "cpu_percent": 410.30000000000007,
+      "rss_mib": 7737.4765625,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279915.670738,
+      "processes": 31,
+      "cpu_percent": 391.4000000000001,
+      "rss_mib": 7737.4765625,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279916.8057976,
+      "processes": 31,
+      "cpu_percent": 402.00000000000006,
+      "rss_mib": 7737.4765625,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279917.9573977,
+      "processes": 31,
+      "cpu_percent": 412.3999999999998,
+      "rss_mib": 7737.4765625,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279919.0935826,
+      "processes": 31,
+      "cpu_percent": 411.7000000000001,
+      "rss_mib": 7737.4765625,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279920.2274663,
+      "processes": 31,
+      "cpu_percent": 396.1999999999999,
+      "rss_mib": 7737.4765625,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279921.3686855,
+      "processes": 31,
+      "cpu_percent": 403.09999999999997,
+      "rss_mib": 7737.4765625,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279922.5003812,
+      "processes": 31,
+      "cpu_percent": 405.9,
+      "rss_mib": 7737.48046875,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279923.6382928,
+      "processes": 31,
+      "cpu_percent": 403.29999999999995,
+      "rss_mib": 7737.48046875,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279924.7771816,
+      "processes": 31,
+      "cpu_percent": 425.99999999999983,
+      "rss_mib": 7737.48046875,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279925.9100575,
+      "processes": 31,
+      "cpu_percent": 414.59999999999997,
+      "rss_mib": 7737.48046875,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279927.048407,
+      "processes": 31,
+      "cpu_percent": 405.19999999999993,
+      "rss_mib": 7737.48046875,
+      "threads": 957,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279928.1855528,
+      "processes": 31,
+      "cpu_percent": 401.1000000000001,
+      "rss_mib": 7737.48046875,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279929.3291607,
+      "processes": 31,
+      "cpu_percent": 397.4999999999998,
+      "rss_mib": 7737.48046875,
+      "threads": 957,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279930.4623592,
+      "processes": 31,
+      "cpu_percent": 406.0999999999999,
+      "rss_mib": 7737.484375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279931.6036189,
+      "processes": 31,
+      "cpu_percent": 421.80000000000007,
+      "rss_mib": 7737.484375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279932.7399256,
+      "processes": 31,
+      "cpu_percent": 411.3,
+      "rss_mib": 7737.484375,
+      "threads": 957,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279933.8780146,
+      "processes": 31,
+      "cpu_percent": 399.9,
+      "rss_mib": 7737.484375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279935.0148509,
+      "processes": 31,
+      "cpu_percent": 405.9,
+      "rss_mib": 7737.484375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279936.152456,
+      "processes": 31,
+      "cpu_percent": 397.5,
+      "rss_mib": 7737.484375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279937.2953916,
+      "processes": 31,
+      "cpu_percent": 414.8000000000001,
+      "rss_mib": 7737.484375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279938.4301498,
+      "processes": 31,
+      "cpu_percent": 412.8,
+      "rss_mib": 7737.48828125,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279939.564899,
+      "processes": 31,
+      "cpu_percent": 382.7999999999999,
+      "rss_mib": 7737.4921875,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279940.7024283,
+      "processes": 31,
+      "cpu_percent": 417.00000000000017,
+      "rss_mib": 7737.4921875,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279941.8406203,
+      "processes": 31,
+      "cpu_percent": 407.99999999999994,
+      "rss_mib": 7737.49609375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279942.9916189,
+      "processes": 31,
+      "cpu_percent": 406.2999999999998,
+      "rss_mib": 7737.49609375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279944.1294546,
+      "processes": 31,
+      "cpu_percent": 413.79999999999995,
+      "rss_mib": 7737.49609375,
+      "threads": 957,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279945.2671,
+      "processes": 31,
+      "cpu_percent": 396.69999999999993,
+      "rss_mib": 7737.49609375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279946.4112802,
+      "processes": 31,
+      "cpu_percent": 399.89999999999986,
+      "rss_mib": 7737.5,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279947.5415394,
+      "processes": 31,
+      "cpu_percent": 395.3999999999998,
+      "rss_mib": 7737.5,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279948.6819103,
+      "processes": 31,
+      "cpu_percent": 404.19999999999993,
+      "rss_mib": 7737.5,
+      "threads": 957,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279949.8269706,
+      "processes": 31,
+      "cpu_percent": 409.4999999999999,
+      "rss_mib": 7737.5,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279950.9653904,
+      "processes": 31,
+      "cpu_percent": 393.8999999999999,
+      "rss_mib": 7737.5,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279952.1007762,
+      "processes": 31,
+      "cpu_percent": 414.19999999999993,
+      "rss_mib": 7737.5,
+      "threads": 957,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279953.229729,
+      "processes": 31,
+      "cpu_percent": 381.99999999999983,
+      "rss_mib": 7737.5,
+      "threads": 957,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279954.3669987,
+      "processes": 31,
+      "cpu_percent": 410.80000000000007,
+      "rss_mib": 7737.5,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279955.501655,
+      "processes": 31,
+      "cpu_percent": 412.40000000000003,
+      "rss_mib": 7737.50390625,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279956.6348615,
+      "processes": 31,
+      "cpu_percent": 397.8999999999999,
+      "rss_mib": 7737.50390625,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279957.775657,
+      "processes": 31,
+      "cpu_percent": 388.8,
+      "rss_mib": 7737.50390625,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279958.9187567,
+      "processes": 31,
+      "cpu_percent": 396.69999999999993,
+      "rss_mib": 7737.5078125,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279960.061558,
+      "processes": 31,
+      "cpu_percent": 384.2999999999999,
+      "rss_mib": 7737.5078125,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279961.2052252,
+      "processes": 31,
+      "cpu_percent": 405.59999999999985,
+      "rss_mib": 7737.5078125,
+      "threads": 957,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279962.3472855,
+      "processes": 31,
+      "cpu_percent": 385.3999999999998,
+      "rss_mib": 7737.5078125,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279963.4943242,
+      "processes": 31,
+      "cpu_percent": 408.09999999999985,
+      "rss_mib": 7737.51171875,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279964.6322725,
+      "processes": 31,
+      "cpu_percent": 416.7,
+      "rss_mib": 7737.51171875,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279965.7809243,
+      "processes": 31,
+      "cpu_percent": 402.79999999999995,
+      "rss_mib": 7737.51171875,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279966.9190345,
+      "processes": 31,
+      "cpu_percent": 382.89999999999986,
+      "rss_mib": 7737.51171875,
+      "threads": 957,
+      "gpu_memory_mib": 3973.0
+    },
+    {
+      "wall_time": 1793279968.0555513,
+      "processes": 31,
+      "cpu_percent": 387.3999999999999,
+      "rss_mib": 7737.51171875,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279969.191079,
+      "processes": 31,
+      "cpu_percent": 391.49999999999994,
+      "rss_mib": 7737.51171875,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279970.327789,
+      "processes": 31,
+      "cpu_percent": 400.29999999999995,
+      "rss_mib": 7737.51171875,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279971.4617505,
+      "processes": 31,
+      "cpu_percent": 399.7999999999999,
+      "rss_mib": 7737.515625,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279972.6032228,
+      "processes": 31,
+      "cpu_percent": 393.79999999999984,
+      "rss_mib": 7737.51953125,
+      "threads": 957,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279973.7484317,
+      "processes": 31,
+      "cpu_percent": 395.5999999999998,
+      "rss_mib": 7737.51953125,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279974.8816907,
+      "processes": 31,
+      "cpu_percent": 391.4000000000001,
+      "rss_mib": 7737.51953125,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279976.0192068,
+      "processes": 31,
+      "cpu_percent": 408.9,
+      "rss_mib": 7737.51953125,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279977.1522288,
+      "processes": 31,
+      "cpu_percent": 387.6999999999999,
+      "rss_mib": 7737.51953125,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279978.2933574,
+      "processes": 31,
+      "cpu_percent": 399.79999999999995,
+      "rss_mib": 7737.5234375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279979.4260807,
+      "processes": 31,
+      "cpu_percent": 436.79999999999995,
+      "rss_mib": 7737.5234375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279980.5589411,
+      "processes": 31,
+      "cpu_percent": 428.29999999999995,
+      "rss_mib": 7737.52734375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279981.691767,
+      "processes": 31,
+      "cpu_percent": 426.9999999999998,
+      "rss_mib": 7737.51953125,
+      "threads": 956,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279982.8211596,
+      "processes": 31,
+      "cpu_percent": 414.19999999999976,
+      "rss_mib": 7737.50390625,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279983.9571526,
+      "processes": 31,
+      "cpu_percent": 417.8999999999999,
+      "rss_mib": 7737.50390625,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279985.0892031,
+      "processes": 31,
+      "cpu_percent": 420.3999999999999,
+      "rss_mib": 7737.50390625,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279986.225748,
+      "processes": 31,
+      "cpu_percent": 407.5999999999999,
+      "rss_mib": 7737.50390625,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279987.3625662,
+      "processes": 31,
+      "cpu_percent": 417.09999999999997,
+      "rss_mib": 7737.5078125,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279988.5109887,
+      "processes": 31,
+      "cpu_percent": 420.29999999999984,
+      "rss_mib": 7737.5078125,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279989.6456716,
+      "processes": 31,
+      "cpu_percent": 415.69999999999993,
+      "rss_mib": 7737.5078125,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279990.7801907,
+      "processes": 31,
+      "cpu_percent": 392.2,
+      "rss_mib": 7737.51171875,
+      "threads": 955,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793279991.914961,
+      "processes": 31,
+      "cpu_percent": 390.79999999999995,
+      "rss_mib": 7737.5078125,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279993.0472708,
+      "processes": 31,
+      "cpu_percent": 393.79999999999995,
+      "rss_mib": 7737.5078125,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279994.1850808,
+      "processes": 31,
+      "cpu_percent": 408.49999999999983,
+      "rss_mib": 7737.51171875,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279995.3205051,
+      "processes": 31,
+      "cpu_percent": 411.3,
+      "rss_mib": 7737.51171875,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279996.4618716,
+      "processes": 31,
+      "cpu_percent": 413.6000000000001,
+      "rss_mib": 7737.51171875,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279997.5943828,
+      "processes": 31,
+      "cpu_percent": 407.5999999999998,
+      "rss_mib": 7737.51171875,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279998.7331305,
+      "processes": 31,
+      "cpu_percent": 403.09999999999985,
+      "rss_mib": 7737.51171875,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793279999.8715792,
+      "processes": 31,
+      "cpu_percent": 395.50000000000006,
+      "rss_mib": 7737.51171875,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793280001.0048578,
+      "processes": 31,
+      "cpu_percent": 385.89999999999986,
+      "rss_mib": 7737.515625,
+      "threads": 955,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793280002.1443741,
+      "processes": 31,
+      "cpu_percent": 388.5,
+      "rss_mib": 7737.515625,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793280003.2817883,
+      "processes": 31,
+      "cpu_percent": 387.29999999999995,
+      "rss_mib": 7737.515625,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793280004.4169943,
+      "processes": 31,
+      "cpu_percent": 375.5999999999999,
+      "rss_mib": 7737.515625,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793280005.5704668,
+      "processes": 31,
+      "cpu_percent": 375.3999999999999,
+      "rss_mib": 7737.515625,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793280006.704258,
+      "processes": 31,
+      "cpu_percent": 385.7999999999999,
+      "rss_mib": 7737.515625,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793280007.841801,
+      "processes": 31,
+      "cpu_percent": 375.6,
+      "rss_mib": 7737.5234375,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793280008.974416,
+      "processes": 31,
+      "cpu_percent": 386.69999999999993,
+      "rss_mib": 7737.5234375,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793280010.1157863,
+      "processes": 31,
+      "cpu_percent": 389.49999999999994,
+      "rss_mib": 7737.5234375,
+      "threads": 955,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793280011.2541077,
+      "processes": 31,
+      "cpu_percent": 417.7,
+      "rss_mib": 7738.3671875,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793280012.399791,
+      "processes": 31,
+      "cpu_percent": 452.79999999999984,
+      "rss_mib": 7738.7578125,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793280013.534621,
+      "processes": 31,
+      "cpu_percent": 450.49999999999994,
+      "rss_mib": 7738.7578125,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793280014.6673656,
+      "processes": 31,
+      "cpu_percent": 446.49999999999994,
+      "rss_mib": 7738.76171875,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793280015.80379,
+      "processes": 31,
+      "cpu_percent": 451.39999999999986,
+      "rss_mib": 7738.76171875,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793280016.9383023,
+      "processes": 31,
+      "cpu_percent": 448.5,
+      "rss_mib": 7738.76171875,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793280018.0700295,
+      "processes": 31,
+      "cpu_percent": 427.9999999999999,
+      "rss_mib": 7738.76171875,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793280019.2010434,
+      "processes": 31,
+      "cpu_percent": 429.79999999999984,
+      "rss_mib": 7738.76171875,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793280020.336458,
+      "processes": 31,
+      "cpu_percent": 445.8,
+      "rss_mib": 7738.7734375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793280021.4710872,
+      "processes": 31,
+      "cpu_percent": 431.60000000000014,
+      "rss_mib": 7738.7734375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793280022.6091561,
+      "processes": 31,
+      "cpu_percent": 404.8999999999999,
+      "rss_mib": 7738.7734375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793280023.7432516,
+      "processes": 31,
+      "cpu_percent": 401.20000000000005,
+      "rss_mib": 7738.7734375,
+      "threads": 957,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793280024.865699,
+      "processes": 31,
+      "cpu_percent": 402.79999999999984,
+      "rss_mib": 7738.7734375,
+      "threads": 957,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793280026.000511,
+      "processes": 31,
+      "cpu_percent": 408.19999999999993,
+      "rss_mib": 7738.7734375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793280027.1435513,
+      "processes": 31,
+      "cpu_percent": 406.6,
+      "rss_mib": 7738.7734375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793280028.2699358,
+      "processes": 31,
+      "cpu_percent": 395.2999999999999,
+      "rss_mib": 7738.77734375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793280029.406111,
+      "processes": 31,
+      "cpu_percent": 401.49999999999994,
+      "rss_mib": 7738.77734375,
+      "threads": 957,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793280030.539054,
+      "processes": 31,
+      "cpu_percent": 418.5,
+      "rss_mib": 7738.77734375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793280031.6694357,
+      "processes": 31,
+      "cpu_percent": 427.59999999999985,
+      "rss_mib": 7738.77734375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793280032.8027298,
+      "processes": 31,
+      "cpu_percent": 432.79999999999984,
+      "rss_mib": 7738.79296875,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793280033.9359455,
+      "processes": 31,
+      "cpu_percent": 436.69999999999993,
+      "rss_mib": 7738.81640625,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793280035.077451,
+      "processes": 31,
+      "cpu_percent": 430.90000000000003,
+      "rss_mib": 7738.81640625,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793280036.2194092,
+      "processes": 31,
+      "cpu_percent": 434.09999999999985,
+      "rss_mib": 7738.8203125,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793280037.3512073,
+      "processes": 31,
+      "cpu_percent": 430.79999999999995,
+      "rss_mib": 7738.82421875,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793280038.4884155,
+      "processes": 31,
+      "cpu_percent": 440.7999999999998,
+      "rss_mib": 7738.82421875,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793280039.6226337,
+      "processes": 31,
+      "cpu_percent": 447.70000000000005,
+      "rss_mib": 7738.82421875,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793280040.7541313,
+      "processes": 31,
+      "cpu_percent": 444.4,
+      "rss_mib": 7738.82421875,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793280041.8890932,
+      "processes": 31,
+      "cpu_percent": 413.49999999999994,
+      "rss_mib": 7738.82421875,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793280043.0220041,
+      "processes": 31,
+      "cpu_percent": 397.99999999999994,
+      "rss_mib": 7738.83203125,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793280044.1557467,
+      "processes": 31,
+      "cpu_percent": 396.40000000000003,
+      "rss_mib": 7738.83203125,
+      "threads": 957,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793280045.2894495,
+      "processes": 31,
+      "cpu_percent": 409.30000000000007,
+      "rss_mib": 7738.83203125,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793280046.4249551,
+      "processes": 31,
+      "cpu_percent": 410.8,
+      "rss_mib": 7738.83203125,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793280047.5611243,
+      "processes": 31,
+      "cpu_percent": 400.5999999999999,
+      "rss_mib": 7738.83203125,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793280048.6985316,
+      "processes": 31,
+      "cpu_percent": 403.29999999999995,
+      "rss_mib": 7738.8359375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793280049.8308353,
+      "processes": 31,
+      "cpu_percent": 402.59999999999985,
+      "rss_mib": 7738.8359375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793280050.9692116,
+      "processes": 31,
+      "cpu_percent": 412.3000000000001,
+      "rss_mib": 7738.83984375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793280052.1079772,
+      "processes": 31,
+      "cpu_percent": 414.8,
+      "rss_mib": 7738.83984375,
+      "threads": 957,
+      "gpu_memory_mib": 3969.0
+    },
+    {
+      "wall_time": 1793280053.2423804,
+      "processes": 31,
+      "cpu_percent": 393.09999999999985,
+      "rss_mib": 7738.83984375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793280054.3759115,
+      "processes": 31,
+      "cpu_percent": 421.6,
+      "rss_mib": 7738.83984375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793280055.5054026,
+      "processes": 31,
+      "cpu_percent": 431.6999999999997,
+      "rss_mib": 7738.83984375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793280056.6383677,
+      "processes": 31,
+      "cpu_percent": 403.3999999999999,
+      "rss_mib": 7738.83984375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793280057.793703,
+      "processes": 31,
+      "cpu_percent": 397.3,
+      "rss_mib": 7738.84375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793280058.9257245,
+      "processes": 31,
+      "cpu_percent": 410.2,
+      "rss_mib": 7738.84375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793280060.0730917,
+      "processes": 31,
+      "cpu_percent": 388.6999999999999,
+      "rss_mib": 7738.84375,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793280061.203723,
+      "processes": 31,
+      "cpu_percent": 393.9999999999999,
+      "rss_mib": 7738.84765625,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793280062.3418937,
+      "processes": 31,
+      "cpu_percent": 407.9,
+      "rss_mib": 7738.84765625,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793280063.481052,
+      "processes": 31,
+      "cpu_percent": 417.2999999999999,
+      "rss_mib": 7738.84765625,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793280064.6090968,
+      "processes": 31,
+      "cpu_percent": 422.09999999999997,
+      "rss_mib": 7737.84765625,
+      "threads": 957,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793280065.7318738,
+      "processes": 3,
+      "cpu_percent": 213.5,
+      "rss_mib": 69.96484375,
+      "threads": 12,
+      "gpu_memory_mib": 3974.0
+    },
+    {
+      "wall_time": 1793280066.844764,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    },
+    {
+      "wall_time": 1793280067.9582434,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    },
+    {
+      "wall_time": 1793280069.0729241,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    },
+    {
+      "wall_time": 1793280070.184393,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    },
+    {
+      "wall_time": 1793280071.3015952,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    },
+    {
+      "wall_time": 1793280072.4166546,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    },
+    {
+      "wall_time": 1793280073.5317543,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    },
+    {
+      "wall_time": 1793280074.6493464,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    },
+    {
+      "wall_time": 1793280075.7655714,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    },
+    {
+      "wall_time": 1793280076.880201,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    },
+    {
+      "wall_time": 1793280077.9945405,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    },
+    {
+      "wall_time": 1793280079.1131487,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    },
+    {
+      "wall_time": 1793280080.2262826,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    },
+    {
+      "wall_time": 1793280081.3398092,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    },
+    {
+      "wall_time": 1793280082.4551363,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    },
+    {
+      "wall_time": 1793280083.5704837,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    },
+    {
+      "wall_time": 1793280084.6889737,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    },
+    {
+      "wall_time": 1793280085.8076458,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    },
+    {
+      "wall_time": 1793280086.9245045,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    },
+    {
+      "wall_time": 1793280088.0400956,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    },
+    {
+      "wall_time": 1793280089.1588402,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    },
+    {
+      "wall_time": 1793280090.2740524,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    },
+    {
+      "wall_time": 1793280091.389972,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    },
+    {
+      "wall_time": 1793280092.5054545,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    },
+    {
+      "wall_time": 1793280093.6239254,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    },
+    {
+      "wall_time": 1793280094.74187,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    },
+    {
+      "wall_time": 1793280095.8577836,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    },
+    {
+      "wall_time": 1793280096.973338,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    },
+    {
+      "wall_time": 1793280098.0869083,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    },
+    {
+      "wall_time": 1793280099.2041862,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    },
+    {
+      "wall_time": 1793280100.3229692,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    },
+    {
+      "wall_time": 1793280101.4397328,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    },
+    {
+      "wall_time": 1793280102.5558753,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    },
+    {
+      "wall_time": 1793280103.670868,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    },
+    {
+      "wall_time": 1793280104.7878032,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    },
+    {
+      "wall_time": 1793280105.906742,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    },
+    {
+      "wall_time": 1793280107.0226371,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    },
+    {
+      "wall_time": 1793280108.1438444,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    },
+    {
+      "wall_time": 1793280109.2577333,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    },
+    {
+      "wall_time": 1793280110.3781667,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    },
+    {
+      "wall_time": 1793280111.4981601,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    },
+    {
+      "wall_time": 1793280112.619799,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    },
+    {
+      "wall_time": 1793280113.738049,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    },
+    {
+      "wall_time": 1793280114.856152,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    },
+    {
+      "wall_time": 1793280115.9715068,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    },
+    {
+      "wall_time": 1793280117.0866199,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    },
+    {
+      "wall_time": 1793280118.2041016,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    },
+    {
+      "wall_time": 1793280119.317724,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    },
+    {
+      "wall_time": 1793280120.4310272,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    },
+    {
+      "wall_time": 1793280121.5457487,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    },
+    {
+      "wall_time": 1793280122.6692336,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    },
+    {
+      "wall_time": 1793280123.7981443,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    },
+    {
+      "wall_time": 1793280124.914097,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    },
+    {
+      "wall_time": 1793280126.0331979,
+      "processes": 0,
+      "cpu_percent": 0.0,
+      "rss_mib": 0.0,
+      "threads": 0,
+      "gpu_memory_mib": 0
+    }
+  ]
+}

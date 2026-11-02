@@ -614,6 +614,14 @@ def main(args=None):
     # hard reset once
     omni.timeline.get_timeline_interface().stop()
 
+    overlay = None
+    if os.environ.get("ARENA_CROWD_OVERLAY", "false") == "true":
+        try:
+            from arena_isaac.psychology_overlay import PsychologyOverlay
+            overlay = PsychologyOverlay(controller)
+        except Exception as exc:
+            controller.get_logger().warning(f"Crowd overlay unavailable: {exc}")
+
     # mainloop
     was_playing: bool = False
     # Two wall-clock command streams plus pedestrian services can outnumber
@@ -630,6 +638,8 @@ def main(args=None):
             stepped_this_iteration: bool = False
             for _ in range(callback_budget):
                 rclpy.spin_once(controller, timeout_sec=0)
+            if overlay is not None:
+                overlay.update()
             callbacks_finished = time.monotonic()
             frame_phases["ros_callbacks_s"] = callbacks_finished-frame_started
             if controller.running:
@@ -669,7 +679,12 @@ def main(args=None):
                 ):
                     from omni.kit.viewport.utility import capture_viewport_to_file
 
-                    capture_viewport_to_file(stream_viewport, file_path=screenshot_path)
+                    if overlay is not None and not overlay.closed:
+                        # SceneView lives in the UI compositor, outside the camera render product.
+                        from omni.kit.renderer.capture import acquire_renderer_capture_interface
+                        acquire_renderer_capture_interface().capture_next_frame_swapchain(screenshot_path)
+                    else:
+                        capture_viewport_to_file(stream_viewport, file_path=screenshot_path)
                     screenshot_requested = True
                     carb.log_info(f"Arena rendered-frame capture requested: {screenshot_path}")
 
@@ -701,6 +716,8 @@ def main(args=None):
         controller.get_logger().error(traceback.format_exc())
         traceback.print_exc(file=sys.stdout)
     finally:
+        if overlay is not None:
+            overlay.close()
         if timing_stream is not None:
             timing_stream.close()
         controller.get_logger().info('Shutting down ROS 2 node and simulation.')

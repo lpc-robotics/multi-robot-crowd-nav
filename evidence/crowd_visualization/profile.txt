@@ -1,0 +1,38 @@
+         3703662 function calls in 3.369 seconds
+
+   Ordered by: cumulative time
+   List reduced from 289 to 30 due to restriction <30>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.009    0.009    3.369    3.369 /tmp/profile_crowd.py:13(work)
+      500    0.338    0.001    2.903    0.006 /home/lpc/workspace/arena5_multi_ws/src/arena_crowd_visualization/arena_crowd_visualization/node.py:74(update)
+     3000    0.014    0.000    0.968    0.000 /home/lpc/workspace/arena5_ws/.conda/arena_ros/lib/python3.11/site-packages/rclpy/publisher.py:60(publish)
+     3000    0.769    0.000    0.953    0.000 {built-in method rclpy._rclpy_pybind11.publish}
+     1000    0.001    0.000    0.451    0.000 /home/lpc/workspace/arena5_ws/.conda/arena_ros/lib/python3.11/json/__init__.py:183(dumps)
+     1000    0.004    0.000    0.450    0.000 /home/lpc/workspace/arena5_ws/.conda/arena_ros/lib/python3.11/json/encoder.py:183(encode)
+     1000    0.445    0.000    0.445    0.000 /home/lpc/workspace/arena5_ws/.conda/arena_ros/lib/python3.11/json/encoder.py:205(iterencode)
+      500    0.001    0.000    0.302    0.001 /home/lpc/workspace/arena5_ws/.conda/arena_ros/lib/python3.11/json/__init__.py:299(loads)
+      500    0.002    0.000    0.300    0.001 /home/lpc/workspace/arena5_ws/.conda/arena_ros/lib/python3.11/json/decoder.py:332(decode)
+      500    0.296    0.001    0.296    0.001 /home/lpc/workspace/arena5_ws/.conda/arena_ros/lib/python3.11/json/decoder.py:343(raw_decode)
+    14000    0.104    0.000    0.255    0.000 /home/lpc/workspace/arena5_multi_ws/install/arena_crowd_visualization_msgs/lib/python3.11/site-packages/arena_crowd_visualization_msgs/msg/_pedestrian_motion.py:92(__init__)
+      500    0.015    0.000    0.220    0.000 /home/lpc/workspace/arena5_multi_ws/src/arena_crowd_visualization/arena_crowd_visualization/node.py:117(<listcomp>)
+    55448    0.083    0.000    0.214    0.000 {built-in method builtins.all}
+     7000    0.082    0.000    0.205    0.000 /home/lpc/workspace/arena5_multi_ws/install/arena_crowd_visualization_msgs/lib/python3.11/site-packages/arena_crowd_visualization_msgs/msg/_pedestrian_psychology.py:110(__init__)
+      500    0.014    0.000    0.118    0.000 /home/lpc/workspace/arena5_multi_ws/src/arena_crowd_visualization/arena_crowd_visualization/node.py:120(<listcomp>)
+    14028    0.049    0.000    0.116    0.000 /home/lpc/workspace/arena5_ws/.conda/arena_ros/lib/python3.11/site-packages/geometry_msgs/msg/_point.py:77(__init__)
+      500    0.042    0.000    0.102    0.000 /home/lpc/workspace/arena5_multi_ws/src/arena_crowd_visualization/arena_crowd_visualization/model.py:12(project)
+     7000    0.040    0.000    0.097    0.000 /home/lpc/workspace/arena5_multi_ws/install/arena_crowd_visualization_msgs/lib/python3.11/site-packages/arena_crowd_visualization_msgs/msg/_pedestrian_stimulus.py:86(__init__)
+    14000    0.021    0.000    0.070    0.000 /home/lpc/workspace/arena5_multi_ws/src/arena_crowd_visualization/arena_crowd_visualization/node.py:132(marker)
+   119000    0.053    0.000    0.066    0.000 /home/lpc/workspace/arena5_multi_ws/src/arena_crowd_visualization/arena_crowd_visualization/model.py:7(number)
+    51924    0.042    0.000    0.058    0.000 <frozen importlib._bootstrap>:1207(_handle_fromlist)
+   511604    0.051    0.000    0.058    0.000 {built-in method builtins.isinstance}
+   379900    0.051    0.000    0.051    0.000 {method 'get' of 'dict' objects}
+     1000    0.008    0.000    0.048    0.000 /home/lpc/workspace/arena5_multi_ws/install/arena_crowd_visualization_msgs/lib/python3.11/site-packages/arena_crowd_visualization_msgs/msg/_pedestrian_motion_array.py:83(__init__)
+   126000    0.043    0.000    0.043    0.000 /home/lpc/workspace/arena5_multi_ws/install/arena_crowd_visualization_msgs/lib/python3.11/site-packages/arena_crowd_visualization_msgs/msg/_pedestrian_motion.py:93(<genexpr>)
+    17556    0.022    0.000    0.042    0.000 /home/lpc/workspace/arena5_ws/.conda/arena_ros/lib/python3.11/site-packages/std_msgs/msg/_header.py:129(stamp)
+     7000    0.021    0.000    0.039    0.000 /home/lpc/workspace/arena5_multi_ws/src/arena_crowd_visualization/arena_crowd_visualization/model.py:22(<dictcomp>)
+   105000    0.037    0.000    0.037    0.000 /home/lpc/workspace/arena5_multi_ws/install/arena_crowd_visualization_msgs/lib/python3.11/site-packages/arena_crowd_visualization_msgs/msg/_pedestrian_psychology.py:111(<genexpr>)
+     7000    0.026    0.000    0.037    0.000 /home/lpc/workspace/arena5_multi_ws/src/arena_crowd_visualization/arena_crowd_visualization/node.py:27(yaw)
+     2056    0.010    0.000    0.035    0.000 /home/lpc/workspace/arena5_ws/.conda/arena_ros/lib/python3.11/site-packages/std_msgs/msg/_header.py:76(__init__)
+
+

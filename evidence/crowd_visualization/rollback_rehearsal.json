@@ -1,0 +1,16 @@
+{
+  "source_commit": "b5d931cc01af2ae6e7ba9c33685a2afaef2a80d3",
+  "scope": "isolated source restoration, fresh build of 7 baseline packages and 60s actual Isaac runtime; current workspace not overwritten",
+  "restored_workspace": "/tmp/arena_crowd_v2_restore",
+  "source_clean": true,
+  "build_passed": true,
+  "runtime_passed": true,
+  "archive_verification": {
+    "passed": true,
+    "entries": 11537,
+    "differences": [],
+    "tar_warning": "source directory metadata changed; source and restored manifests independently checked"
+  },
+  "full_archive_restored_in_place": false,
+  "passed": true
+}

@@ -1,0 +1,4 @@
+{
+  "reason": "visualizer mean CPU 13.97 percent exceeds planned 10 percent; preserve this trial and optimize marker allocation",
+  "pid": 3035478
+}

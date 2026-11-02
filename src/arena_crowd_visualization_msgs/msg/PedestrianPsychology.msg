@@ -1,0 +1,14 @@
+int32 id
+string name
+string profile
+string mode
+string phase
+int32 target_id
+bool has_surprise
+float64 curiosity
+float64 fear
+float64 surprise
+float64 direct_c
+float64 direct_f
+float64 social_c
+float64 social_f

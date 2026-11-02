@@ -1,0 +1,133 @@
+{
+  "status": "implemented_with_incomplete_runtime_acceptance",
+  "protected_v2": "b5d931cc01af2ae6e7ba9c33685a2afaef2a80d3",
+  "backup_verified_entries": 11537,
+  "build": "9 packages passed",
+  "original_python_tests": 161,
+  "visualization_tests": 10,
+  "cpp_tests": 32,
+  "real_v2_frames_projected": 1000,
+  "single_person_live_topics": "passed",
+  "isaac_ui_labels": "visible in isaac_fourteen_ui.png (3fb4893); screenshot is visual evidence, not longrun acceptance",
+  "known_failed_trial": "isaac_ui_smoke.log: local omni import scope; fixed and rebuilt",
+  "pending": [
+    "final-version 30-minute moving-robot acceptance: two failed attempts retained",
+    "RTF degradation comparison: visualization-off baseline failed readiness",
+    "Windows WebRTC client verification",
+    "Foxglove desktop layout verification"
+  ],
+  "combined_python_tests": 171,
+  "live_websocket": "passed: six topics, fourteen people",
+  "recording_replay": {
+    "fourteen_person_message_replay": "passed; historical wall-time bag, client plot range not tested",
+    "sim_time_recording": {
+      "passed": true,
+      "scope": "actual Isaac single-person recording with --use-sim-time; bag timestamps compared with actual headers",
+      "samples": 137,
+      "max_bag_header_offset_s": 0.050000001,
+      "source_commit": "3fb489300df738372661f1ba5ddee384a92a3c88"
+    },
+    "sim_time_replay": {
+      "domain": 90,
+      "counts": {
+        "actual": 137,
+        "psychology": 62
+      },
+      "passed": true,
+      "clock_messages": 602,
+      "clock_matches_header_domain": true
+    }
+  },
+  "performance": {
+    "target_cpu_percent_one_core": 10,
+    "valid_cases": {
+      "isaac": {
+        "passed": true,
+        "samples": 513,
+        "cpu_percent_one_core_mean": 374.43859649122794,
+        "viz_cpu_percent_one_core_mean": 7.5682261208577,
+        "rtf": 0.47492232805486884,
+        "duration_wall_s": 600.0454877899028
+      },
+      "both": {
+        "passed": true,
+        "samples": 513,
+        "cpu_percent_one_core_mean": 380.8629629629628,
+        "viz_cpu_percent_one_core_mean": 7.588499025341131,
+        "rtf": 0.5020030640441487,
+        "duration_wall_s": 600.0461383110378
+      }
+    },
+    "visualizer_cpu_target_passed": true,
+    "four_mode_acceptance_passed": false,
+    "rtf_comparison_available": false,
+    "scope": "same fourteen-person scenario, stationary robots, no desktop subscriber; 60s warmup excluded",
+    "overlay_update": {
+      "scope": "SceneView updates, histogram upper bound 0.1ms bins",
+      "samples": 1600,
+      "mean_ms": 0.2688061307708267,
+      "max_ms": 1.517163123935461,
+      "p95_upper_bound_ms": 0.4,
+      "passed": true
+    },
+    "historical_short_mean_cpu_percent_one_core": 7.333333333333333
+  },
+  "latest_candidate": "3fb4893",
+  "rollback_rehearsal": "passed: isolated restoration of b5d931c, fresh seven-package build and 60s Isaac runtime",
+  "failed_final_trial": {
+    "source_commit": "cfaf91a",
+    "report": "final_longrun/acceptance.json",
+    "wall_s": 1252.7970113761257,
+    "failures": [
+      "robot_1 guard: lidar_stale",
+      "finite Nav2 demonstration incomplete"
+    ],
+    "note": "Other validation ran concurrently during this attempt; no causal attribution. Preserved; retry is sequential."
+  },
+  "noop_compatibility_fix": "3fb4893 handles schema-1 noop heartbeat as unavailable psychology and retains actual labels; targeted regression passed",
+  "compatibility": {
+    "noop_six_fixed": {
+      "source_commit": "3fb489300df738372661f1ba5ddee384a92a3c88",
+      "actual_count": 6,
+      "psychology_count": 0,
+      "has_surprise": null,
+      "marker_count": 8,
+      "runtime_exit": 0,
+      "passed": true
+    },
+    "v1_eight": {
+      "source_commit": "3fb489300df738372661f1ba5ddee384a92a3c88",
+      "actual_count": 8,
+      "psychology_count": 8,
+      "has_surprise": false,
+      "marker_count": 11,
+      "runtime_exit": 0,
+      "passed": true
+    }
+  },
+  "serial_final_trial": {
+    "passed": false,
+    "wall_s": 367.20466848509386,
+    "sim_s": 163.075,
+    "failures": [
+      "finite Nav2 demonstration incomplete",
+      "missing actual forward occupancy and completed yield: 14",
+      "missing actual stopped aligned observation: 14",
+      "unhealthy"
+    ],
+    "source_commit": "3fb4893",
+    "note": "Original clock pause protection reported unhealthy. Cause not established; four-mode comparison in progress."
+  },
+  "updated_date": "2026-10-30",
+  "historical_longrun": {
+    "source_commit": "8fab9bb",
+    "passed": true,
+    "wall_s": 1800.0503162650857,
+    "sim_s": 875.525,
+    "minimum_robot_gap_m": 0.2558720823935501,
+    "max_display_error_m": 0.051901528815553356
+  },
+  "full_archive_restore_in_place": false,
+  "backup_archive_sha256": "b82550bce89a1770e6b3798b7c89a69069572a3fc8dabf49668b39c7c7e63e85",
+  "baseline_protection_checks": 30
+}

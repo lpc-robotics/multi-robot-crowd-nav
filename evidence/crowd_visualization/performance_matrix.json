@@ -1,0 +1,38 @@
+{
+  "scope": "same fourteen-person scenario, stationary robots, no desktop subscriber; 60s warmup excluded",
+  "cases": {
+    "off": {
+      "passed": false,
+      "samples": 0,
+      "cpu_percent_one_core_mean": null,
+      "viz_cpu_percent_one_core_mean": null,
+      "rtf": null,
+      "duration_wall_s": 0
+    },
+    "foxglove": {
+      "passed": false,
+      "samples": 0,
+      "cpu_percent_one_core_mean": null,
+      "viz_cpu_percent_one_core_mean": null,
+      "rtf": null,
+      "duration_wall_s": 0
+    },
+    "isaac": {
+      "passed": true,
+      "samples": 513,
+      "cpu_percent_one_core_mean": 374.43859649122794,
+      "viz_cpu_percent_one_core_mean": 7.5682261208577,
+      "rtf": 0.47492232805486884,
+      "duration_wall_s": 600.0454877899028
+    },
+    "both": {
+      "passed": true,
+      "samples": 513,
+      "cpu_percent_one_core_mean": 380.8629629629628,
+      "viz_cpu_percent_one_core_mean": 7.588499025341131,
+      "rtf": 0.5020030640441487,
+      "duration_wall_s": 600.0461383110378
+    }
+  },
+  "passed": false
+}

@@ -1,6 +1,12 @@
 # 发布与恢复
 
-## V2 首选恢复入口：2026-10-26 完整快照
+## 可视化开发前最新 V2
+
+最新 V2 为 `b5d931c`，保护标签 `backup/pre-crowd-viz-20261029`。
+完整备份及恢复步骤见 [CROWD_VISUALIZATION.md](CROWD_VISUALIZATION.md)。
+该备份与下文 V2 开发前的 f170bc7 不同，不要混用。
+
+## V2 开发前旧快照：2026-10-26（不是本次可视化恢复点）
 
 V2 开发基线 `f170bc72a90aeec44621f816551bb6b656f93cd3`，原分支
 `feature/dynamic-psychology-v1`；保护标签 `backup-dynamic-psychology-v2-20261027`。

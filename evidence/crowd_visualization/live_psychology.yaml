@@ -1,0 +1,26 @@
+header:
+  stamp:
+    sec: 88
+    nanosec: 450000034
+  frame_id: map
+input_stamp:
+  sec: 88
+  nanosec: 425000034
+epoch: 13439605618023675997
+step: 3446
+people:
+- id: 1
+  name: person_1
+  profile: standard
+  mode: REGULAR
+  phase: none
+  target_id: 0
+  has_surprise: true
+  curiosity: 0.10706212025506176
+  fear: 0.0
+  surprise: 1.392769194454312e-25
+  direct_c: 0.03198735890290083
+  direct_f: 0.0
+  social_c: 0.0
+  social_f: 0.0
+---

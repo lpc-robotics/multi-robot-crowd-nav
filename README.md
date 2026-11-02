@@ -9,6 +9,12 @@ Nav2 导航、控制守护、同伴机器人代价地图、多机器人社会力
 Dijkstra 或 A*，局部控制使用 DWB。各机器人独立导航；当前未实现集中式多机器人
 路径协调、预约调度或死锁消解。
 
+当前最新：2026-11-02 心理状态可视化开发版本，源快照 `86db90a`。
+新增 Isaac 场景标签/刺激箭头与 Foxglove 心理曲线、状态和轨迹布局，分别以
+`crowd_viz:=true`、`isaac_overlay:=true` 启用；默认关闭。
+[可视化使用与恢复](docs/CROWD_VISUALIZATION.md)及[实际验证与已知限制](evidence/crowd_visualization/README.md)。
+功能和兼容性检查已有通过记录；最终版30分钟移动导航及完整性能对照尚未通过。
+
 当前 V2：2026-10-29 同步开发快照 `b5d931c`。十四人场景包含心理免疫、静态障碍响应、
 惊讶停步观察、少量玩闹式前向占位，以及受保护的原任务恢复。
 [V2设计与使用](docs/DYNAMIC_PSYCHOLOGY_V2.md)、[三个种子实际验收与对照边界](docs/DYNAMIC_PSYCHOLOGY_V2_VALIDATION_20261028.md)、
@@ -31,6 +37,7 @@ Dijkstra 或 A*，局部控制使用 DWB。各机器人独立导航；当前未�
 - `sis_cf_v1` 双通道心理模型：机器人刺激 → 好奇/恐惧激活与局部传播 → 行为变化 → 运动反馈。
 - 心理模型扩展协议、候选状态回滚和健康心跳；保留 `noop` 与原 v1 社会力接口。
 - WebRTC / Foxglove 可视化、轨迹对比、故障注入和运行指标采集工具。
+- 独立只读心理显示节点：实际/核心位置、C/F/S激活、行为标签及焦点行人刺激箭头；保留各自仿真时间戳。
 
 ## 源码结构
 
@@ -43,6 +50,8 @@ Dijkstra 或 A*，局部控制使用 DWB。各机器人独立导航；当前未�
 | `src/arena_multi_hunav/` | HuNav 适配、共同时间快照和心理模型接口 |
 | `src/arena_multi_hunav_core/` | C++ 社会力计算服务、基准、固定版 LightSFM |
 | `src/arena_multi_hunav_msgs/` | 多机社会力服务与消息接口 |
+| `src/arena_crowd_visualization/` | 独立显示节点、Foxglove布局和有界缓存 |
+| `src/arena_crowd_visualization_msgs/` | 心理状态、刺激和运动显示消息 |
 | `src/arena_people_msgs/`、`src/isaacsim_msgs/` | Isaac 行人和场景消息源码 |
 | `config/` | 场景、行人、地图、世界、URDF 和任务配置 |
 | `scripts/` | 构建、运行、清理、验证与发布工具 |
@@ -156,8 +165,14 @@ ARENA_WEBRTC_SIGNAL_PORT=49100 \
 ARENA_WEBRTC_MEDIA_PORT=47998 \
 ARENA_FOXGLOVE_PORT=8765 \
 LIVESTREAM=true \
-./scripts/run_multirobot.sh config/scenarios/two_robots_multi_sfm_14_multigoal_psychology_v2_nav2.yaml auto_demo:=true
+./scripts/run_multirobot.sh config/scenarios/two_robots_multi_sfm_14_multigoal_psychology_v2_nav2.yaml auto_demo:=true crowd_viz:=true isaac_overlay:=true
 ```
+
+八人 V1 同样支持两个显示开关。只看 Foxglove 时使用 `crowd_viz:=true isaac_overlay:=false`。
+Foxglove 导入 `config/foxglove/crowd_visualization.json`；用布局变量 `person` 选择曲线，
+用 `ros2 param set /crowd_visualizer focus_id 14` 切换箭头焦点。
+实际动画数据最多10Hz、心理量/图形最多5Hz；缺失不填零，V1惊讶量标记不可用。
+录包/回放与时间域说明见[可视化说明](docs/CROWD_VISUALIZATION.md)。
 
 去掉 `auto_demo:=true` 后人工发送机器人目标。潜变量与参数为未拟合的工程模型；
 参数台账137项，83项列为未来拟合候选。数据导出保留核心、机器人观测和实际显示来源，
@@ -182,10 +197,16 @@ scripts/cleanup.sh
 
 ## 测试与历史证据
 
-当前开发版本通过 161 项 Python、32 项 C++ 测试，以及场景/地图/Nav2、HuNav
+当前开发版本通过 171 项 Python、32 项 C++ 测试，以及场景/地图/Nav2、HuNav
 配置、环境重复加载、underlay 与固定版 LightSFM 检查。构建后使用
 `scripts/validate_offline.sh` 执行完整离线流程。详细运行测试和指标命令见
 [RUNBOOK.md](docs/RUNBOOK.md)。
+
+2026-11-02 可视化发布重建9个overlay包并执行离线回归。原可视化记录中，14人静止机器人
+Isaac显示/双端显示各通过600秒，显示节点平均CPU为单核的7.57%/7.59%。SceneView更新耗时
+不是完整仿真帧耗时。最终功能源码的30分钟移动机器人检查中止，关闭显示基线也不可用，
+不能据此宣称完整耐久/性能矩阵通过或计算可视化导致的RTF下降。
+历史V2本身的三个种子通过记录保留原适用范围；本次不重跑GPU仿真。
 
 2026-10-29 V2 同步包含原开发工作区的种子11/12/13完整演示与独立对照记录。
 种子11通过1800.045秒墙钟、1067.975秒仿真；种子12/13分别通过1386.915/1405.847秒墙钟。

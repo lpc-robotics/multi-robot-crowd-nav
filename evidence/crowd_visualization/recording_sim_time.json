@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "scope": "actual Isaac single-person recording with --use-sim-time; bag timestamps compared with actual headers",
+  "samples": 137,
+  "max_bag_header_offset_s": 0.050000001,
+  "source_commit": "3fb489300df738372661f1ba5ddee384a92a3c88"
+}

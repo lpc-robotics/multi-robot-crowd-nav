@@ -136,7 +136,10 @@ def _launch(context):
     bringup_share = Path(get_package_share_directory("arena_multi_bringup"))
     nav2_params = bringup_share / "config/nav2_multirobot.yaml"
     urdf_xml = urdf_path.read_text(encoding="utf-8")
+    overlay_enabled = LaunchConfiguration("isaac_overlay", default="false").perform(context).lower() == "true"
+    viz_enabled = overlay_enabled or LaunchConfiguration("crowd_viz", default="false").perform(context).lower() == "true"
     actions = [
+        SetEnvironmentVariable("ARENA_CROWD_OVERLAY", str(overlay_enabled).lower()),
         SetEnvironmentVariable("ARENA_ROBOT_NAMES", ",".join(robot_names)),
         SetEnvironmentVariable("ARENA_RANDOM_SEED", str(scenario.random_seed)),
         SetEnvironmentVariable("ARENA_NORMALIZED_SCAN_SEED", str(scenario.random_seed)),
@@ -254,6 +257,10 @@ def _launch(context):
             ),
         ])
 
+    if viz_enabled:
+        actions.append(Node(package="arena_crowd_visualization", executable="crowd_visualizer", output="screen",
+            parameters=[{"people_config": scenario.pedestrian_config, "robot_names": robot_names,
+                "focus_id": ParameterValue(LaunchConfiguration("viz_focus_id", default="13"), value_type=int)}]))
     if auto_demo == "true":
         actions.append(Node(package="arena_multi_hunav", executable="psychology_demo", output="screen",
                             parameters=[{"use_sim_time": True, "tasks_file": scenario.demo_tasks}]))
@@ -278,6 +285,9 @@ def generate_launch_description():
         DeclareLaunchArgument("map", default_value=str(root / "config/maps/map.yaml")),
         DeclareLaunchArgument("world", default_value=str(root / "config/world/arena.yaml")),
         DeclareLaunchArgument("headless", default_value="true"),
+        DeclareLaunchArgument("crowd_viz", default_value="false"),
+        DeclareLaunchArgument("isaac_overlay", default_value="false"),
+        DeclareLaunchArgument("viz_focus_id", default_value="13"),
         DeclareLaunchArgument("auto_demo", default_value="false"),
         DeclareLaunchArgument("livestream", default_value="true"),
         DeclareLaunchArgument("webrtc_ip", default_value=os.environ.get("ARENA_WEBRTC_IP", "127.0.0.1")),

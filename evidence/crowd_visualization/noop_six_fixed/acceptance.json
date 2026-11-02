@@ -1,0 +1,130 @@
+{
+  "passed": true,
+  "scope": "runtime health and synchronized rendered geometry; not task acceptance",
+  "duration_wall_s": 60.0,
+  "agent_samples": 1743,
+  "actual_samples": 845,
+  "checked_samples": 845,
+  "skipped_samples": 0,
+  "minimum_actual_clearance_m": 4.217041653013065,
+  "maximum_display_error_m": 0.03937615834840188,
+  "maximum_error_sample": {
+    "stamp_ns": 30000000447,
+    "name": "person_4",
+    "actual": [
+      16.921775817871094,
+      9.931305885314941
+    ],
+    "predicted": [
+      16.893268086392034,
+      9.904143575173935
+    ],
+    "velocity": [
+      0.19696889441909995,
+      0.15530289844398382
+    ],
+    "status": {
+      "backend": "multi_sfm",
+      "clock_stall_recoveries": 0,
+      "compute": 1096,
+      "display_lag_s": 0.125000409,
+      "epoch": 10250144520053179909,
+      "fault": "",
+      "fault_details": {},
+      "healthy": true,
+      "integration_lag_s": 0.050000409,
+      "interaction_scope": "all_robots",
+      "last_clock_stall_wall_s": 0.0,
+      "max_compute_wall_s": 0.035651345970109105,
+      "max_dt": 0.025,
+      "paused": false,
+      "psychology_model": "noop",
+      "robots": [
+        "robot_1",
+        "robot_2"
+      ],
+      "step": 1096,
+      "updates": 359
+    }
+  },
+  "influence_pairs": [
+    [
+      1,
+      "robot_1"
+    ],
+    [
+      1,
+      "robot_2"
+    ],
+    [
+      2,
+      "robot_1"
+    ],
+    [
+      2,
+      "robot_2"
+    ],
+    [
+      3,
+      "robot_1"
+    ],
+    [
+      3,
+      "robot_2"
+    ],
+    [
+      4,
+      "robot_1"
+    ],
+    [
+      4,
+      "robot_2"
+    ],
+    [
+      5,
+      "robot_1"
+    ],
+    [
+      5,
+      "robot_2"
+    ],
+    [
+      6,
+      "robot_1"
+    ],
+    [
+      6,
+      "robot_2"
+    ]
+  ],
+  "guard_samples": {
+    "robot_1": 58,
+    "robot_2": 58
+  },
+  "real_time_factor": 0.7043333666373827,
+  "last_status": {
+    "backend": "multi_sfm",
+    "clock_stall_recoveries": 0,
+    "compute": 1730,
+    "display_lag_s": 0.100000645,
+    "epoch": 10250144520053179909,
+    "fault": "",
+    "fault_details": {},
+    "healthy": true,
+    "integration_lag_s": 6.45e-07,
+    "interaction_scope": "all_robots",
+    "last_clock_stall_wall_s": 0.0,
+    "max_compute_wall_s": 0.035651345970109105,
+    "max_dt": 0.025,
+    "paused": false,
+    "psychology_model": "noop",
+    "robots": [
+      "robot_1",
+      "robot_2"
+    ],
+    "step": 1730,
+    "updates": 563
+  },
+  "failures": [],
+  "failure_events": []
+}

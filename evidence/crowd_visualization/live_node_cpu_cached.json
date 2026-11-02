@@ -1,0 +1,21 @@
+{
+  "scope": "single live visualization process after marker reuse",
+  "samples": [
+    12.5,
+    9.0,
+    12.5,
+    12.5,
+    12.5,
+    13.0,
+    13.0,
+    12.0,
+    13.0,
+    12.0,
+    12.0,
+    11.5,
+    12.5,
+    12.5,
+    13.0
+  ],
+  "mean": 12.233333333333333
+}

@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "scenario": "/home/lpc/workspace/arena5_multi_ws/config/scenarios/two_robots_multi_sfm_14_multigoal_psychology_v2_nav2.yaml",
+  "requested_min_wall_s": 120.0,
+  "run_dir": "/home/lpc/workspace/arena5_multi_ws/evidence/crowd_visualization/bounded_smoke/runs/20261029_222609_two_robots_multi_sfm_14_multigoal_psychology_v2_nav2_gpu1",
+  "probe_exit": 0,
+  "driver_wall_s": 204.72423162404448
+}

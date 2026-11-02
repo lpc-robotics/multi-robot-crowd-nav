@@ -1,0 +1,7 @@
+{
+  "scope": "CPU JSON decode + all-person projections; no ROS/rendering",
+  "frames": 1000,
+  "mean_ms": 0.9098095200000007,
+  "p95_ms": 0.9535119999999342,
+  "one_core_percent_at_5hz": 0.45490476000000035
+}

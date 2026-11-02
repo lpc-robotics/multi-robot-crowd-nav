@@ -13,8 +13,8 @@ python -m py_compile \
     "$ARENA_MULTI_WS"/src/arena_multi_bringup/arena_multi_bringup/*.py \
     "$ARENA_MULTI_WS"/src/arena_multi_bringup/launch/*.py \
     "$ARENA_MULTI_WS"/src/arena_multi_hunav/arena_multi_hunav/*.py
-PYTHONPATH="$ARENA_MULTI_WS/src/arena_multi_control:$ARENA_MULTI_WS/src/arena_multi_hunav${PYTHONPATH:+:$PYTHONPATH}" \
-    PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 pytest -q "$ARENA_MULTI_WS/src/arena_multi_control/test" "$ARENA_MULTI_WS/src/arena_multi_hunav/test"
+PYTHONPATH="${ARENA_MULTI_WS}/src/arena_crowd_visualization:$ARENA_MULTI_WS/src/arena_multi_control:$ARENA_MULTI_WS/src/arena_multi_hunav${PYTHONPATH:+:$PYTHONPATH}" \
+    PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 pytest -q "$ARENA_MULTI_WS/src/arena_multi_control/test" "$ARENA_MULTI_WS/src/arena_multi_hunav/test" "$ARENA_MULTI_WS/src/arena_crowd_visualization/test"
 "$ARENA_MULTI_WS/build/arena_multi_hunav_core/test_core"
 python "$ARENA_MULTI_WS/scripts/verify_multi_sfm_vendor.py"
 ros2 launch arena_multi_bringup multirobot.launch.py --show-args >/dev/null

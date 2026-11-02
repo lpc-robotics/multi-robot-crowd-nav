@@ -1,0 +1,21 @@
+{
+  "scope": "live fourteen-person display with bounded callback draining",
+  "samples": [
+    7.0,
+    7.5,
+    7.5,
+    7.5,
+    6.5,
+    7.0,
+    7.0,
+    6.5,
+    7.5,
+    6.5,
+    8.5,
+    7.5,
+    8.0,
+    7.5,
+    8.0
+  ],
+  "mean": 7.333333333333333
+}

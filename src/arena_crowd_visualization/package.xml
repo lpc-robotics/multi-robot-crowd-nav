@@ -1,0 +1,5 @@
+<?xml version="1.0"?><package format="3"><name>arena_crowd_visualization</name><version>0.1.0</version>
+<description>Bounded, read-only pedestrian visualization.</description><maintainer email="lpc-robotics@users.noreply.github.com">lpc-robotics</maintainer><license>Apache-2.0</license>
+<buildtool_depend>ament_python</buildtool_depend><depend>rclpy</depend><depend>arena_crowd_visualization_msgs</depend>
+<depend>arena_people_msgs</depend><depend>std_msgs</depend><depend>geometry_msgs</depend><depend>nav_msgs</depend>
+<depend>visualization_msgs</depend><depend>python3-yaml</depend><export><build_type>ament_python</build_type></export></package>

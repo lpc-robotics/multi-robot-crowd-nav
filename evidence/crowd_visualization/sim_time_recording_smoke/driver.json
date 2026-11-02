@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "scenario": "/home/lpc/workspace/arena5_multi_ws/config/scenarios/one_robot_multi_sfm_1_playful_v2_validation.yaml",
+  "requested_min_wall_s": 90.0,
+  "run_dir": "/home/lpc/workspace/arena5_multi_ws/evidence/crowd_visualization/sim_time_recording_smoke/runs/20261030_103329_one_robot_multi_sfm_1_playful_v2_validation_gpu1",
+  "probe_exit": 0,
+  "driver_wall_s": 141.34996124799363
+}

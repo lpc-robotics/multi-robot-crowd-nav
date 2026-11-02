@@ -31,6 +31,10 @@ def main():
     p=argparse.ArgumentParser();p.add_argument('scenario');p.add_argument('--output-dir',required=True)
     p.add_argument('--duration-wall',type=float,default=1800);p.add_argument('--seed',type=int)
     p.add_argument('--require-gaze',nargs='*',default=['13','14']);p.add_argument('--require-playful',nargs='*',default=['13','14'])
+    p.add_argument('--crowd-viz',action='store_true')
+    p.add_argument('--isaac-overlay',action='store_true')
+    p.add_argument('--livestream',action='store_true')
+    p.add_argument('--foxglove',action='store_true')
     p.add_argument('--no-demo',action='store_true');a=p.parse_args()
     if os.environ.get('ROS_DOMAIN_ID') in (None,'51','71'):raise SystemExit('Use an isolated ROS domain')
     output=Path(a.output_dir).resolve();output.mkdir(parents=True,exist_ok=False)
@@ -40,7 +44,7 @@ def main():
         for key in ('pedestrian_config','psychology_config','demo_tasks'):
             if data.get(key):data[key]=str((scenario.parent/data[key]).resolve())
         scenario=output/'scenario_override.yaml';scenario.write_text(yaml.safe_dump(data,sort_keys=False))
-    env=os.environ.copy();env.update(LIVESTREAM='false',FOXGLOVE='false',ARENA_PEDESTRIAN_TELEMETRY='true',
+    env=os.environ.copy();env.update(LIVESTREAM=str(a.livestream).lower(),FOXGLOVE=str(a.foxglove).lower(),ARENA_PEDESTRIAN_TELEMETRY='true',
                                     ARENA_MULTI_LOG_ROOT=str(output/'runs'))
     children=[];streams=[];report=dict(passed=False,scenario=str(scenario),requested_min_wall_s=a.duration_wall)
     start=time.monotonic()
@@ -51,6 +55,8 @@ def main():
     try:
         command=[str(ROOT/'scripts/run_multirobot.sh'),str(scenario)]
         if not a.no_demo:command.append('auto_demo:=true')
+        if a.crowd_viz:command.append('crowd_viz:=true')
+        if a.isaac_overlay:command.append('isaac_overlay:=true')
         launcher=launch(command,'launch.log')
         timing=launch([sys.executable,str(ROOT/'scripts/monitor_runtime_timing.py'),
             '--duration',str(a.duration_wall+1560),'--output',str(output/'timing.json')],'timing.log')

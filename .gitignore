@@ -31,3 +31,10 @@ evidence/multigoal_20261010/**/*.log
 evidence/psychology_v2_20261027/**/*.jsonl
 evidence/psychology_v2_20261027/**/launch*.txt
 evidence/psychology_v2_20261027/**/*launch*.txt
+
+# Crowd visualization raw artifacts stay on the original experiment host.
+evidence/crowd_visualization/**/*.jsonl
+evidence/crowd_visualization/**/*.log
+evidence/crowd_visualization/**/runs/
+evidence/crowd_visualization/recording/
+evidence/crowd_visualization/recording_sim_time/

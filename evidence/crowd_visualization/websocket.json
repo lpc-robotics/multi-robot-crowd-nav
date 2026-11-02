@@ -1,0 +1,106 @@
+{
+  "channels": {
+    "35": "/multirobot/viz/stimulus",
+    "37": "/multirobot/viz/status",
+    "54": "/multirobot/viz/markers",
+    "38": "/multirobot/viz/psychology",
+    "40": "/multirobot/viz/actual",
+    "39": "/multirobot/viz/core"
+  },
+  "schema": {
+    "35": "arena_crowd_visualization_msgs/msg/PedestrianStimulusArray",
+    "37": "std_msgs/msg/String",
+    "54": "visualization_msgs/msg/MarkerArray",
+    "38": "arena_crowd_visualization_msgs/msg/PedestrianPsychologyArray",
+    "40": "arena_crowd_visualization_msgs/msg/PedestrianMotionArray",
+    "39": "arena_crowd_visualization_msgs/msg/PedestrianMotionArray"
+  },
+  "received": {
+    "/multirobot/viz/actual": 109,
+    "/multirobot/viz/psychology": 45,
+    "/multirobot/viz/stimulus": 45,
+    "/multirobot/viz/core": 45,
+    "/multirobot/viz/markers": 45,
+    "/multirobot/viz/status": 45
+  },
+  "latest": {
+    "/multirobot/viz/actual": {
+      "count": 14,
+      "ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ]
+    },
+    "/multirobot/viz/psychology": {
+      "count": 14,
+      "ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ]
+    },
+    "/multirobot/viz/stimulus": {
+      "count": 14,
+      "ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ]
+    },
+    "/multirobot/viz/core": {
+      "count": 14,
+      "ids": [
+        1,
+        10,
+        11,
+        12,
+        13,
+        14,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    "/multirobot/viz/status": "{\"focus_id\": 13, \"actual_fresh\": true, \"psychology_fresh\": true, \"paused_or_stale\": false}"
+  },
+  "passed": true
+}

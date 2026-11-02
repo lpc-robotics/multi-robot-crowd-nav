@@ -1,0 +1,156 @@
+{
+  "configById": {
+    "Plot!0": {
+      "title": "Actual animation motion (finite difference)",
+      "paths": [
+        {
+          "value": "/multirobot/viz/actual.people[:]{id==$person}.x",
+          "enabled": true,
+          "timestampMethod": "headerStamp"
+        },
+        {
+          "value": "/multirobot/viz/actual.people[:]{id==$person}.y",
+          "enabled": true,
+          "timestampMethod": "headerStamp"
+        },
+        {
+          "value": "/multirobot/viz/actual.people[:]{id==$person}.yaw",
+          "enabled": true,
+          "timestampMethod": "headerStamp"
+        },
+        {
+          "value": "/multirobot/viz/actual.people[:]{id==$person}.vx",
+          "enabled": true,
+          "timestampMethod": "headerStamp"
+        },
+        {
+          "value": "/multirobot/viz/actual.people[:]{id==$person}.vy",
+          "enabled": true,
+          "timestampMethod": "headerStamp"
+        },
+        {
+          "value": "/multirobot/viz/actual.people[:]{id==$person}.speed",
+          "enabled": true,
+          "timestampMethod": "headerStamp"
+        }
+      ],
+      "xAxisVal": "timestamp",
+      "followingViewWidth": 60,
+      "showLegend": true
+    },
+    "Plot!1": {
+      "title": "Model latent activation (not measured psychology)",
+      "paths": [
+        {
+          "value": "/multirobot/viz/psychology.people[:]{id==$person}.curiosity",
+          "enabled": true,
+          "timestampMethod": "headerStamp"
+        },
+        {
+          "value": "/multirobot/viz/psychology.people[:]{id==$person}.fear",
+          "enabled": true,
+          "timestampMethod": "headerStamp"
+        },
+        {
+          "value": "/multirobot/viz/psychology.people[:]{id==$person}{has_surprise==true}.surprise",
+          "enabled": true,
+          "timestampMethod": "headerStamp"
+        }
+      ],
+      "xAxisVal": "timestamp",
+      "followingViewWidth": 60,
+      "showLegend": true
+    },
+    "Plot!2": {
+      "title": "Stimulus inputs (input simulation time)",
+      "paths": [
+        {
+          "value": "/multirobot/viz/stimulus.people[:]{id==$person}.direct_c",
+          "enabled": true,
+          "timestampMethod": "headerStamp"
+        },
+        {
+          "value": "/multirobot/viz/stimulus.people[:]{id==$person}.direct_f",
+          "enabled": true,
+          "timestampMethod": "headerStamp"
+        },
+        {
+          "value": "/multirobot/viz/stimulus.people[:]{id==$person}.social_c",
+          "enabled": true,
+          "timestampMethod": "headerStamp"
+        },
+        {
+          "value": "/multirobot/viz/stimulus.people[:]{id==$person}.social_f",
+          "enabled": true,
+          "timestampMethod": "headerStamp"
+        }
+      ],
+      "xAxisVal": "timestamp",
+      "followingViewWidth": 60,
+      "showLegend": true
+    },
+    "3D!crowd": {
+      "cameraState": {
+        "distance": 35,
+        "perspective": false,
+        "target": [
+          15,
+          11.5,
+          0
+        ]
+      },
+      "followTf": "map",
+      "topics": {
+        "/multirobot/viz/markers": {
+          "visible": true
+        },
+        "/map": {
+          "visible": true
+        }
+      }
+    },
+    "RawMessages!state": {
+      "topicPath": "/multirobot/viz/psychology.people[:]{id==$person}"
+    },
+    "RawMessages!status": {
+      "topicPath": "/multirobot/viz/status"
+    },
+    "StateTransitions!mode": {
+      "paths": [
+        {
+          "value": "/multirobot/viz/psychology.people[:]{id==$person}.mode",
+          "timestampMethod": "headerStamp"
+        },
+        {
+          "value": "/multirobot/viz/psychology.people[:]{id==$person}.phase",
+          "timestampMethod": "headerStamp"
+        }
+      ]
+    }
+  },
+  "globalVariables": {
+    "person": 13
+  },
+  "userNodes": {},
+  "layout": {
+    "direction": "row",
+    "first": {
+      "direction": "column",
+      "first": "3D!crowd",
+      "second": "RawMessages!status"
+    },
+    "second": {
+      "direction": "column",
+      "first": "Plot!0",
+      "second": {
+        "direction": "column",
+        "first": "Plot!1",
+        "second": {
+          "direction": "column",
+          "first": "Plot!2",
+          "second": "StateTransitions!mode"
+        }
+      }
+    }
+  }
+}

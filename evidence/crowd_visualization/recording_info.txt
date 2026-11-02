@@ -1,0 +1,20 @@
+
+Files:             recording_0.db3
+Bag size:          1.5 MiB
+Storage id:        sqlite3
+Duration:          14.243853441s
+Start:             Oct 29 2026 21:13:09.969665010 (1793279589.969665010)
+End:               Oct 29 2026 21:13:24.213518451 (1793279604.213518451)
+Messages:          1431
+Topic information: Topic: /multirobot/viz/status | Type: std_msgs/msg/String | Count: 45 | Serialization Format: cdr
+                   Topic: /multirobot/viz/stimulus | Type: arena_crowd_visualization_msgs/msg/PedestrianStimulusArray | Count: 48 | Serialization Format: cdr
+                   Topic: /multirobot/viz/psychology | Type: arena_crowd_visualization_msgs/msg/PedestrianPsychologyArray | Count: 48 | Serialization Format: cdr
+                   Topic: /multirobot/viz/core | Type: arena_crowd_visualization_msgs/msg/PedestrianMotionArray | Count: 48 | Serialization Format: cdr
+                   Topic: /multirobot/viz/actual | Type: arena_crowd_visualization_msgs/msg/PedestrianMotionArray | Count: 127 | Serialization Format: cdr
+                   Topic: /map | Type: nav_msgs/msg/OccupancyGrid | Count: 1 | Serialization Format: cdr
+                   Topic: /robot_2/odom | Type: nav_msgs/msg/Odometry | Count: 132 | Serialization Format: cdr
+                   Topic: /robot_1/odom | Type: nav_msgs/msg/Odometry | Count: 132 | Serialization Format: cdr
+                   Topic: /multirobot/viz/markers | Type: visualization_msgs/msg/MarkerArray | Count: 48 | Serialization Format: cdr
+                   Topic: /tf_static | Type: tf2_msgs/msg/TFMessage | Count: 4 | Serialization Format: cdr
+                   Topic: /tf | Type: tf2_msgs/msg/TFMessage | Count: 798 | Serialization Format: cdr
+

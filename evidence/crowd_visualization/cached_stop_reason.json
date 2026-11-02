@@ -1,0 +1,3 @@
+{
+  "reason": "CPU mean 12.23 percent exceeds 10 percent target; optimize input decoding and sphere batching"
+}

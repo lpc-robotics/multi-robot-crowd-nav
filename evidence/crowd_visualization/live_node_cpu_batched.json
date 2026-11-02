@@ -1,0 +1,21 @@
+{
+  "scope": "single live visualization process; deferred decode and batched spheres",
+  "samples": [
+    11.0,
+    14.0,
+    12.5,
+    12.5,
+    14.0,
+    12.0,
+    13.0,
+    13.0,
+    13.0,
+    13.0,
+    14.5,
+    14.5,
+    14.5,
+    13.0,
+    13.5
+  ],
+  "mean": 13.2
+}
