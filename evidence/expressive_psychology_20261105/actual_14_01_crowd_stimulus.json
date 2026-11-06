@@ -1,0 +1,275 @@
+{
+  "schema_version": 1,
+  "passed": true,
+  "error": "",
+  "config": {
+    "schema_version": 1,
+    "robots": [
+      "robot_1",
+      "robot_2"
+    ],
+    "startup_timeout_wall_s": 300.0,
+    "experiment_timeout_wall_s": 600.0,
+    "stages": [
+      {
+        "name": "settle_and_observe",
+        "duration_s": 8.0,
+        "commands": {
+          "robot_1": {
+            "kind": "hold",
+            "speed": 0.0,
+            "acceleration": 0.8
+          },
+          "robot_2": {
+            "kind": "hold",
+            "speed": 0.0,
+            "acceleration": 0.8
+          }
+        }
+      },
+      {
+        "name": "playful_13_slow_pass",
+        "duration_s": 28.0,
+        "commands": {
+          "robot_1": {
+            "kind": "point",
+            "speed": 0.1,
+            "acceleration": 0.8,
+            "point": [
+              13.0,
+              5.0
+            ]
+          },
+          "robot_2": {
+            "kind": "hold",
+            "speed": 0.0,
+            "acceleration": 0.8
+          }
+        }
+      },
+      {
+        "name": "transfer_toward_crowd",
+        "duration_s": 8.0,
+        "commands": {
+          "robot_1": {
+            "kind": "point",
+            "speed": 0.5,
+            "acceleration": 0.8,
+            "point": [
+              17.0,
+              6.0
+            ]
+          },
+          "robot_2": {
+            "kind": "point",
+            "speed": 0.4,
+            "acceleration": 0.8,
+            "point": [
+              13.0,
+              15.0
+            ]
+          }
+        }
+      },
+      {
+        "name": "playful_14_and_curious_crowd",
+        "duration_s": 18.0,
+        "commands": {
+          "robot_1": {
+            "kind": "follow",
+            "speed": 0.12,
+            "acceleration": 0.4,
+            "person": "person_1",
+            "target_gap": 1.2
+          },
+          "robot_2": {
+            "kind": "point",
+            "speed": 0.1,
+            "acceleration": 0.8,
+            "point": [
+              18.0,
+              15.0
+            ]
+          }
+        }
+      },
+      {
+        "name": "sudden_directed_approach",
+        "duration_s": 6.0,
+        "commands": {
+          "robot_1": {
+            "kind": "follow",
+            "speed": 0.9,
+            "acceleration": 1.5,
+            "person": "person_1",
+            "target_gap": 0.0
+          },
+          "robot_2": {
+            "kind": "follow",
+            "speed": 0.9,
+            "acceleration": 1.5,
+            "person": "person_14",
+            "target_gap": 0.0
+          }
+        }
+      },
+      {
+        "name": "stop_after_approach",
+        "duration_s": 5.0,
+        "commands": {
+          "robot_1": {
+            "kind": "hold",
+            "speed": 0.0,
+            "acceleration": 0.8
+          },
+          "robot_2": {
+            "kind": "hold",
+            "speed": 0.0,
+            "acceleration": 0.8
+          }
+        }
+      },
+      {
+        "name": "withdraw_and_recover",
+        "duration_s": 12.0,
+        "commands": {
+          "robot_1": {
+            "kind": "point",
+            "speed": 0.6,
+            "acceleration": 0.8,
+            "point": [
+              10.0,
+              2.0
+            ]
+          },
+          "robot_2": {
+            "kind": "point",
+            "speed": 0.6,
+            "acceleration": 0.8,
+            "point": [
+              10.0,
+              21.0
+            ]
+          }
+        }
+      },
+      {
+        "name": "immune_and_static_pass",
+        "duration_s": 24.0,
+        "commands": {
+          "robot_1": {
+            "kind": "point",
+            "speed": 0.4,
+            "acceleration": 0.8,
+            "point": [
+              22.0,
+              3.5
+            ]
+          },
+          "robot_2": {
+            "kind": "point",
+            "speed": 0.4,
+            "acceleration": 0.8,
+            "point": [
+              27.0,
+              19.5
+            ]
+          }
+        }
+      },
+      {
+        "name": "recovery_and_task_return",
+        "duration_s": 25.0,
+        "commands": {
+          "robot_1": {
+            "kind": "hold",
+            "speed": 0.0,
+            "acceleration": 0.8
+          },
+          "robot_2": {
+            "kind": "hold",
+            "speed": 0.0,
+            "acceleration": 0.8
+          }
+        }
+      }
+    ]
+  },
+  "active_sim_s": 134.050001998,
+  "wall_s": 345.24284692504443,
+  "samples": 2681,
+  "transitions": [
+    {
+      "index": 0,
+      "name": "settle_and_observe",
+      "active_ns": 50000001
+    },
+    {
+      "index": 1,
+      "name": "playful_13_slow_pass",
+      "active_ns": 8050000120
+    },
+    {
+      "index": 2,
+      "name": "transfer_toward_crowd",
+      "active_ns": 36050000537
+    },
+    {
+      "index": 3,
+      "name": "playful_14_and_curious_crowd",
+      "active_ns": 44050000656
+    },
+    {
+      "index": 4,
+      "name": "sudden_directed_approach",
+      "active_ns": 62050000925
+    },
+    {
+      "index": 5,
+      "name": "stop_after_approach",
+      "active_ns": 68050001014
+    },
+    {
+      "index": 6,
+      "name": "withdraw_and_recover",
+      "active_ns": 73050001089
+    },
+    {
+      "index": 7,
+      "name": "immune_and_static_pass",
+      "active_ns": 85050001267
+    },
+    {
+      "index": 8,
+      "name": "recovery_and_task_return",
+      "active_ns": 109050001625
+    }
+  ],
+  "minimum_sampled_gap_m": 0.2480104163089908,
+  "scope": "robot stimulus execution only; no psychological mode is assigned",
+  "clearance_policy": "record_only",
+  "input_knowledge": "actual person positions and robot odometry only",
+  "last_status": {
+    "backend": "multi_sfm",
+    "clock_stall_recoveries": 0,
+    "compute": 5454,
+    "display_lag_s": 0.075002032,
+    "epoch": 11694984057342005742,
+    "fault": "",
+    "fault_details": {},
+    "healthy": true,
+    "integration_lag_s": 2.032e-06,
+    "interaction_scope": "all_robots",
+    "last_clock_stall_wall_s": 0.0,
+    "max_compute_wall_s": 0.40297151007689536,
+    "max_dt": 0.025,
+    "paused": false,
+    "psychology_model": "sis_cf_v2",
+    "robots": [
+      "robot_1",
+      "robot_2"
+    ],
+    "step": 5454,
+    "updates": 2401
+  }
+}

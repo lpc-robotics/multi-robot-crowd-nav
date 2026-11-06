@@ -1,9 +1,9 @@
 # Source import
 
 Source workspace: `/home/lpc/workspace/arena5_multi_ws`.
-Current source branch: `feature/crowd-visualization`.
-Current source commit: `86db90a34835d519c24a24044412ffe0dee66a0a`.
-Last source synchronization: 2026-11-02 (Asia/Shanghai).
+Current source branch: `feature/expressive-psychology-20261105`.
+Current source commit: `4db438ad59f3d0287688cc3923a1849c69844ad3`.
+Last source synchronization: 2026-11-06 (Asia/Shanghai).
 Initial snapshot: `f330dfcd29c6a1f711e3f091798e36852fac742d`, 2026-09-30.
 
 This independent repository publishes the tracked core source from that commit:
@@ -157,3 +157,26 @@ Generated logs, raw high-frequency traces, bags, build/install trees, caches, no
 external environments and credentials remain excluded. Original raw artifacts stay on the development
 host and their inventories/hashes remain in evidence. Repository README, ignore rules, AGENTS.md and
 publication metadata are maintained separately from imported source files.
+
+
+## 2026-11-06 expressive psychology and specialist update
+
+Source snapshot `4db438ad59f3d0287688cc3923a1849c69844ad3`, branch `feature/expressive-psychology-20261105`.
+Imported tracked runtime source, scenarios, parameters, tests, documentation, compact actual-run reports,
+failed-trial records and inventories. Untracked research/reference/figure materials remain local.
+Generated raw logs/traces, recordings, caches, builds, notebook checkpoints and credentials are excluded.
+All imported bytes and executable modes are checked. Independent publication history is preserved.
+
+The update includes bounded intrusive/considerate/body-FOV SCARED experiments, isolated immune/static/playful
+scenarios, observed-clearance outcomes separated from crowd-model validity, 10-second playful occupancy,
+motion/TTC-aware playful fear, and bounded attention. The existing fourteen-person filename still ends
+in _nav2.yaml, but its current configuration is a two-robot EXTERNAL velocity sequence and does not start
+Nav2/DWB motion control. Legacy V1 and original V2 configuration files remain available.
+
+Expressive GPU records were made on source `6092b25`; the current source's runtime src/scripts/config
+files match that recorded version. Existing fourteen-person and two-person actual demonstrations retain
+their short, single-seed scope. Earlier specialist immune health failures, visualization longrun failures,
+and incomplete performance baselines remain recorded as such. Default robot-clearance policy is now
+record for crowd-response experiments, while strict is retained and old strict reports remain unchanged.
+No new GPU simulation is run for publication. Rebuild, regression, registry and hash checks are recorded
+in `evidence/publication_20261106/publication.json`.

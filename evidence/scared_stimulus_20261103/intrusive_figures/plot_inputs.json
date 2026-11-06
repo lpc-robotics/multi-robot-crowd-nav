@@ -1,0 +1,14 @@
+{
+  "exports": [
+    "/home/lpc/workspace/arena5_multi_ws/evidence/runs/scared_stimulus_20261103/intrusive_export"
+  ],
+  "input_manifest_sha256": {
+    "/home/lpc/workspace/arena5_multi_ws/evidence/runs/scared_stimulus_20261103/intrusive_export": "2e36d33c7ca7ad2d7174af3a86a5b395c3e23a831c8d11659c24734cfc25afa3"
+  },
+  "processor_sha256": "7d968490d7e18ae996df3aebf3cf1f688e66681c941e7984847b707a2fd18d22",
+  "labels": [
+    "Intrusive, sustained attention"
+  ],
+  "participant": "person_1",
+  "semantics": "simulator latents are not human emotion measurements"
+}

@@ -28,8 +28,11 @@ class CrowdMentalStateV2(CrowdMentalState):
     playful_returning: bool = False
     playful_outcome: str = ""
     playful_blockers: list[str] = field(default_factory=list)
+    attention_until_ns: dict[int, int] = field(default_factory=dict)
 
     def validate(self):
+        if any(type(i) is not int or i >= 0 or i not in self.memories or type(t) is not int or t < 0 for i,t in self.attention_until_ns.items()):
+            raise ValueError('invalid attention lease')
         # Validate the shared geometry/activation contract without teaching V1 new modes.
         CrowdMentalState(self.variables, self.compartments, replace(self.behavior, mode='REGULAR'),
                          self.memories, self.neighbors).validate()

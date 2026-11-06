@@ -74,9 +74,10 @@ def select_target(scores, previous, stamp_ns, cfg, emergency=False):
     return best
 
 
-def choose_behavior(me, c, f, previous, known, visible_interest, direct_fear, stamp_ns, cfg):
+def choose_behavior(me, c, f, previous, known, visible_interest, direct_fear, stamp_ns, cfg, fear_known=None):
     # known maps robot id to (personally observed/predicted entity, risk, confidence).
-    threats = {i: r * confidence for i, (_, r, confidence) in known.items() if r > 0}
+    fear_known = known if fear_known is None else fear_known
+    threats = {i: r * confidence for i, (_, r, confidence) in fear_known.items() if r > 0}
     emergency = max(threats.values(), default=0.) >= cfg.emergency_risk
     vigilance = (f > cfg.vigilance_off if previous.vigilant else f >= cfg.vigilance_on)
     curious_safe = f <= cfg.curiosity_max_fear and direct_fear <= cfg.curiosity_max_risk
@@ -134,7 +135,7 @@ def choose_behavior(me, c, f, previous, known, visible_interest, direct_fear, st
         else:
             # All personally known threats contribute; cancellation falls back to the selected threat.
             ax = ay = 0.; speed = 0.
-            for item, r, confidence in known.values():
+            for item, r, confidence in fear_known.values():
                 tx, ty = me.x - item.x, me.y - item.y
                 norm = math.hypot(tx, ty)
                 if r > 0:

@@ -1,0 +1,8 @@
+{
+  "passed": false,
+  "scenario": "/home/lpc/workspace/arena5_multi_ws/config/scenarios/one_robot_multi_sfm_6_scared_intrusive_external.yaml",
+  "requested_min_wall_s": 120.0,
+  "run_dir": "/home/lpc/workspace/arena5_multi_ws/evidence/runs/scared_stimulus_20261103/actual_intrusive_02/runs/20261103_113206_one_robot_multi_sfm_6_scared_intrusive_external_gpu1",
+  "probe_exit": 1,
+  "driver_wall_s": 173.00818970310502
+}

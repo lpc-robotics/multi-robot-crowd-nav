@@ -1,0 +1,155 @@
+{
+  "passed": false,
+  "scope": "CPU C++ closed loop; geometric robot point follower, no Isaac",
+  "checks": {
+    "protocol": true,
+    "geometry": true,
+    "acceleration": true,
+    "scared": false,
+    "immune": true
+  },
+  "variant": "intrusive",
+  "stimulus": {
+    "robot": "robot_1",
+    "target_person": "person_1",
+    "variant": "intrusive",
+    "warmup_s": 8.0,
+    "approach_s": 24.0,
+    "recovery_s": 25.0,
+    "withdraw_timeout_s": 45.0,
+    "startup_timeout_wall_s": 240.0,
+    "experiment_timeout_wall_s": 360.0,
+    "max_linear": 1.0,
+    "max_angular": 1.0,
+    "target_gap": 0.21,
+    "abort_gap": 0.18,
+    "robot_radius": 0.35,
+    "distance_gain": 8.0,
+    "yaw_gain": 2.0,
+    "home_x": 7.0,
+    "home_y": 10.0,
+    "arrival_radius": 0.25
+  },
+  "phase": "complete",
+  "error": "",
+  "transitions": [
+    {
+      "phase": "warmup",
+      "stamp_ns": 0
+    },
+    {
+      "phase": "approach",
+      "stamp_ns": 8000000000
+    },
+    {
+      "phase": "withdraw",
+      "stamp_ns": 32000000000
+    },
+    {
+      "phase": "recovery",
+      "stamp_ns": 44625000000
+    },
+    {
+      "phase": "complete",
+      "stamp_ns": 69625000000
+    }
+  ],
+  "sim_s": 69.65,
+  "min_gap_m": 0.24725619519179776,
+  "maximum_acceleration": 2.5725587564799475,
+  "modes": {
+    "1": {
+      "REGULAR": 1639,
+      "SURPRISED": 84,
+      "CURIOUS": 1063
+    },
+    "2": {
+      "REGULAR": 883,
+      "SURPRISED": 84,
+      "CURIOUS": 1819
+    },
+    "3": {
+      "REGULAR": 2522,
+      "SURPRISED": 111,
+      "CURIOUS": 153
+    },
+    "4": {
+      "REGULAR": 2367,
+      "SURPRISED": 84,
+      "CURIOUS": 335
+    },
+    "5": {
+      "REGULAR": 2786
+    },
+    "6": {
+      "REGULAR": 2786
+    }
+  },
+  "reasons": {
+    "1": {
+      "task": 1555,
+      "surprise_started": 1,
+      "observing": 83,
+      "surprise_completed": 1,
+      "curiosity": 1062,
+      "target_or_activation_expired": 4,
+      "approach_blocked": 1,
+      "approach_wait": 79
+    },
+    "2": {
+      "task": 881,
+      "surprise_started": 1,
+      "observing": 83,
+      "surprise_completed": 1,
+      "curiosity": 1818,
+      "target_or_activation_expired": 2
+    },
+    "3": {
+      "task": 2442,
+      "surprise_started": 1,
+      "observing": 110,
+      "surprise_completed": 1,
+      "curiosity": 152,
+      "approach_blocked": 1,
+      "approach_wait": 79
+    },
+    "4": {
+      "task": 2366,
+      "surprise_started": 1,
+      "observing": 83,
+      "surprise_completed": 1,
+      "curiosity": 334,
+      "target_or_activation_expired": 1
+    },
+    "5": {
+      "initial": 2786
+    },
+    "6": {
+      "initial": 2786
+    }
+  },
+  "peak_fear": {
+    "1": 0.14227018676262587,
+    "2": 0.13734815980924908,
+    "3": 2.664342237724343e-06,
+    "4": 0.0,
+    "5": 0.0,
+    "6": 0.0
+  },
+  "peak_direct_F": {
+    "1": 0.36627062803262656,
+    "2": 0.18798662102332175,
+    "3": 0.0,
+    "4": 0.0,
+    "5": 0.0,
+    "6": 0.0
+  },
+  "final_fear": {
+    "1": 2.214823475939086e-05,
+    "2": 3.0100751888483784e-06,
+    "3": 2.2457680623931474e-10,
+    "4": 0.0,
+    "5": 0.0,
+    "6": 0.0
+  }
+}

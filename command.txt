@@ -25,8 +25,30 @@ export ARENA_FOXGLOVE_PORT=8765
 # 动态心理八人多目标场景：自动执行有限轮双机 Nav2 演示任务
 ./scripts/run_multirobot.sh config/scenarios/two_robots_multi_sfm_8_multigoal_psychology_nav2.yaml auto_demo:=true  crowd_viz:=true  isaac_overlay:=true
 
-# 动态心理 V2 十四人多目标场景：普通、免疫、静态障碍响应与两名错峰玩闹者
+# V2 十四人重构：双机外部速度序列，慢行互动→突然逼近→撤离恢复；不启动DWB
 ./scripts/run_multirobot.sh config/scenarios/two_robots_multi_sfm_14_multigoal_psychology_v2_nav2.yaml auto_demo:=true  crowd_viz:=true  isaac_overlay:=true
 
-# V2 人工发送机器人目标：去掉 auto_demo:=true
+# V2 十四人手动实验：向 /robot_1/cmd_vel_external 与 /robot_2/cmd_vel_external 发送速度
 ./scripts/run_multirobot.sh config/scenarios/two_robots_multi_sfm_14_multigoal_psychology_v2_nav2.yaml
+
+# SCARED 专项：0.8m/s 有界外部逼近，1号持续注意机器人；不启动 DWB
+./scripts/run_multirobot.sh config/scenarios/one_robot_multi_sfm_6_scared_intrusive_external.yaml auto_demo:=true crowd_viz:=true isaac_overlay:=true viz_focus_id:=1
+
+# SCARED 礼让对照：先结束上一轮，再独立启动
+./scripts/run_multirobot.sh config/scenarios/one_robot_multi_sfm_6_scared_considerate_external.yaml auto_demo:=true crowd_viz:=true isaac_overlay:=true viz_focus_id:=1
+
+# SCARED 感知诊断：保持原200度心理视野，可能不触发；保留未触发结果
+./scripts/run_multirobot.sh config/scenarios/one_robot_multi_sfm_6_scared_body_fov_external.yaml auto_demo:=true crowd_viz:=true isaac_overlay:=true viz_focus_id:=1
+
+# V2 免疫专项：1人动态避让，心理量始终为零
+./scripts/run_multirobot.sh config/scenarios/one_robot_multi_sfm_1_immune_v2_nav2.yaml auto_demo:=true crowd_viz:=true isaac_overlay:=true viz_focus_id:=1
+
+# V2 静态障碍响应专项：相同路线配对比较，忽略机器人速度预测
+./scripts/run_multirobot.sh config/scenarios/one_robot_multi_sfm_1_static_v2_nav2.yaml auto_demo:=true crowd_viz:=true isaac_overlay:=true viz_focus_id:=1
+
+# V2 玩闹专项：单机器人先后与13、14号互动，占位最多10秒，低速近距不直接吓退，迎面碰撞风险优先避让
+./scripts/run_multirobot.sh config/scenarios/one_robot_multi_sfm_2_playful_v2_nav2.yaml auto_demo:=true crowd_viz:=true isaac_overlay:=true viz_focus_id:=13
+
+# 验收说明：V2/SCARED 验证器默认记录低人机净距及后续反应，不因此单独判模型失败。
+# 历史严格验收可指定 --robot-clearance-policy strict；上述启动命令无需增加参数。
+# 说明：docs/CROWD_RESPONSE_ACCEPTANCE_20261105.md

@@ -1,0 +1,14 @@
+{
+  "/home/lpc/workspace/arena5_multi_ws/evidence/runs/scared_stimulus_20261103/cpu_intrusive_03/core.log": {
+    "bytes": 65,
+    "sha256": "6294255d5463f2c0b7df2ba7b554dea66fb496c018b4bd9c31ad23f2be48f7f7"
+  },
+  "/home/lpc/workspace/arena5_multi_ws/evidence/runs/scared_stimulus_20261103/cpu_intrusive_03/closed_loop.jsonl": {
+    "bytes": 14046504,
+    "sha256": "963e5be5622902e0418d8618bacf59dd77bc87cc9ca488dc5eecc480fa3c2780"
+  },
+  "/home/lpc/workspace/arena5_multi_ws/evidence/runs/scared_stimulus_20261103/cpu_intrusive_03/report.json": {
+    "bytes": 44849,
+    "sha256": "7970210de9513a60c71a95350566dc869026a835300f7b69593c0f87fcc88356"
+  }
+}

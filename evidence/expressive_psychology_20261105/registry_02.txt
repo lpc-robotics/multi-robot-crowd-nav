@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "parameters": 145,
+  "psychology_parameters": 87,
+  "fit_candidates": 89,
+  "calibration": "no fitted parameters"
+}

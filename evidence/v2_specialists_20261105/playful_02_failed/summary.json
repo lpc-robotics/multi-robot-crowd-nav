@@ -1,0 +1,286 @@
+{
+  "source": "/home/lpc/workspace/arena5_multi_ws/evidence/runs/v2_specialists_20261105/playful_02/runs/20261105_121633_one_robot_multi_sfm_2_playful_v2_nav2_gpu1/psychology_10180191997405032926.jsonl",
+  "source_sha256": "e3c89e85c130fd24d1de72e70f97cd60b0548c09ccea2c766f9a3e6cfb1b7771",
+  "people": {
+    "13": {
+      "modes": {
+        "REGULAR": 12463,
+        "SURPRISED": 84,
+        "CURIOUS": 307,
+        "THREATENING": 462,
+        "SCARED": 79
+      },
+      "phases": {
+        "none": 12933,
+        "intercept": 64,
+        "occupy": 320,
+        "yield": 78
+      },
+      "events": [
+        {
+          "sim_s": 2.35000003,
+          "event": "surprise_started",
+          "reason": "",
+          "outcome": ""
+        },
+        {
+          "sim_s": 4.45000003,
+          "event": "surprise_completed",
+          "reason": "surprise_completed",
+          "outcome": ""
+        },
+        {
+          "sim_s": 12.12500003,
+          "event": "playful_started",
+          "reason": "",
+          "outcome": ""
+        },
+        {
+          "sim_s": 13.72500003,
+          "event": "playful_occupied",
+          "reason": "",
+          "outcome": ""
+        },
+        {
+          "sim_s": 21.72500003,
+          "event": "playful_yield_started",
+          "reason": "occupancy_complete",
+          "outcome": "occupancy_complete"
+        },
+        {
+          "sim_s": 23.67500003,
+          "event": "playful_completed",
+          "reason": "yield_reached",
+          "outcome": "occupancy_complete"
+        },
+        {
+          "sim_s": 37.67500003,
+          "event": "playful_task_resumed",
+          "reason": "",
+          "outcome": "occupancy_complete"
+        }
+      ],
+      "intervals": [
+        {
+          "start_sim_s": 2.07500003,
+          "end_sim_s": 2.35000003,
+          "mode": "REGULAR",
+          "phase": "none"
+        },
+        {
+          "start_sim_s": 2.35000003,
+          "end_sim_s": 4.45000003,
+          "mode": "SURPRISED",
+          "phase": "none"
+        },
+        {
+          "start_sim_s": 4.45000003,
+          "end_sim_s": 12.12500003,
+          "mode": "CURIOUS",
+          "phase": "none"
+        },
+        {
+          "start_sim_s": 12.12500003,
+          "end_sim_s": 13.72500003,
+          "mode": "THREATENING",
+          "phase": "intercept"
+        },
+        {
+          "start_sim_s": 13.72500003,
+          "end_sim_s": 21.72500003,
+          "mode": "THREATENING",
+          "phase": "occupy"
+        },
+        {
+          "start_sim_s": 21.72500003,
+          "end_sim_s": 23.67500003,
+          "mode": "THREATENING",
+          "phase": "yield"
+        },
+        {
+          "start_sim_s": 23.67500003,
+          "end_sim_s": 32.60000003,
+          "mode": "REGULAR",
+          "phase": "none"
+        },
+        {
+          "start_sim_s": 32.60000003,
+          "end_sim_s": 33.27500003,
+          "mode": "SCARED",
+          "phase": "none"
+        },
+        {
+          "start_sim_s": 33.27500003,
+          "end_sim_s": 35.35000003,
+          "mode": "REGULAR",
+          "phase": "none"
+        },
+        {
+          "start_sim_s": 35.35000003,
+          "end_sim_s": 36.02500003,
+          "mode": "SCARED",
+          "phase": "none"
+        },
+        {
+          "start_sim_s": 36.02500003,
+          "end_sim_s": 177.62500003,
+          "mode": "REGULAR",
+          "phase": "none"
+        },
+        {
+          "start_sim_s": 177.62500003,
+          "end_sim_s": 178.25000003,
+          "mode": "SCARED",
+          "phase": "none"
+        },
+        {
+          "start_sim_s": 178.25000003,
+          "end_sim_s": 336.92500003,
+          "mode": "REGULAR",
+          "phase": "none"
+        }
+      ],
+      "max_latents": {
+        "curiosity": 0.7832252517650211,
+        "fear": 0.6518098819329579,
+        "surprise": 1.0
+      },
+      "max_robot_social_force": 1.3190492273828438,
+      "max_robot_static_force": 0.0
+    },
+    "14": {
+      "modes": {
+        "REGULAR": 12451,
+        "SURPRISED": 119,
+        "CURIOUS": 172,
+        "THREATENING": 603,
+        "SCARED": 50
+      },
+      "phases": {
+        "none": 12792,
+        "intercept": 206,
+        "occupy": 320,
+        "yield": 77
+      },
+      "events": [
+        {
+          "sim_s": 171.22500003,
+          "event": "surprise_started",
+          "reason": "",
+          "outcome": ""
+        },
+        {
+          "sim_s": 174.20000003,
+          "event": "surprise_completed",
+          "reason": "surprise_completed",
+          "outcome": ""
+        },
+        {
+          "sim_s": 178.50000003,
+          "event": "playful_started",
+          "reason": "",
+          "outcome": ""
+        },
+        {
+          "sim_s": 183.65000003,
+          "event": "playful_occupied",
+          "reason": "",
+          "outcome": ""
+        },
+        {
+          "sim_s": 191.65000003,
+          "event": "playful_yield_started",
+          "reason": "occupancy_complete",
+          "outcome": "occupancy_complete"
+        },
+        {
+          "sim_s": 193.57500003,
+          "event": "playful_completed",
+          "reason": "yield_reached",
+          "outcome": "occupancy_complete"
+        },
+        {
+          "sim_s": 197.52500003,
+          "event": "playful_task_resumed",
+          "reason": "",
+          "outcome": "occupancy_complete"
+        }
+      ],
+      "intervals": [
+        {
+          "start_sim_s": 2.07500003,
+          "end_sim_s": 171.22500003,
+          "mode": "REGULAR",
+          "phase": "none"
+        },
+        {
+          "start_sim_s": 171.22500003,
+          "end_sim_s": 174.20000003,
+          "mode": "SURPRISED",
+          "phase": "none"
+        },
+        {
+          "start_sim_s": 174.20000003,
+          "end_sim_s": 178.50000003,
+          "mode": "CURIOUS",
+          "phase": "none"
+        },
+        {
+          "start_sim_s": 178.50000003,
+          "end_sim_s": 183.65000003,
+          "mode": "THREATENING",
+          "phase": "intercept"
+        },
+        {
+          "start_sim_s": 183.65000003,
+          "end_sim_s": 191.65000003,
+          "mode": "THREATENING",
+          "phase": "occupy"
+        },
+        {
+          "start_sim_s": 191.65000003,
+          "end_sim_s": 193.57500003,
+          "mode": "THREATENING",
+          "phase": "yield"
+        },
+        {
+          "start_sim_s": 193.57500003,
+          "end_sim_s": 313.52500003,
+          "mode": "REGULAR",
+          "phase": "none"
+        },
+        {
+          "start_sim_s": 313.52500003,
+          "end_sim_s": 314.12500003,
+          "mode": "SCARED",
+          "phase": "none"
+        },
+        {
+          "start_sim_s": 314.12500003,
+          "end_sim_s": 316.85000003,
+          "mode": "REGULAR",
+          "phase": "none"
+        },
+        {
+          "start_sim_s": 316.85000003,
+          "end_sim_s": 317.50000003,
+          "mode": "SCARED",
+          "phase": "none"
+        },
+        {
+          "start_sim_s": 317.50000003,
+          "end_sim_s": 336.92500003,
+          "mode": "REGULAR",
+          "phase": "none"
+        }
+      ],
+      "max_latents": {
+        "curiosity": 0.7832252517650211,
+        "fear": 0.6506040635094144,
+        "surprise": 1.0
+      },
+      "max_robot_social_force": 1.381078357272056,
+      "max_robot_static_force": 0.0
+    }
+  }
+}

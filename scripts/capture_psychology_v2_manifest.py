@@ -27,6 +27,11 @@ def capture(scenario_path, run_dir):
     files = [Path(scenario_path), Path(scenario.pedestrian_config), Path(scenario.psychology_config),
              registry, ROOT/'config/world/arena.yaml']
     if scenario.demo_tasks: files.append(Path(scenario.demo_tasks))
+    if scenario.sequence_tasks: files.append(Path(scenario.sequence_tasks))
+    if scenario.sequence_tasks or Path(scenario.psychology_config).name == "sis_cf_v2_playful_showcase.yaml":
+        files.append(ROOT/"docs/expressive_experiment_registry_20261105.yaml")
+    if scenario.stimulus_tasks:
+        files.extend([Path(scenario.stimulus_tasks), ROOT/'config/psychology/scared_stimulus_experiment_registry.yaml'])
     hashes = {}
     for path in files:
         dest = inputs/path.name

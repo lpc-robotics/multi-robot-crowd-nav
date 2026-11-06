@@ -160,8 +160,10 @@ def playful_step(me, old, new, intent, known, visible, neighbors, profile, cfg, 
         speed = math.hypot(obj.vx, obj.vy)
         heading = math.atan2(obj.vy, obj.vx)
         turn = abs(math.remainder(heading-old.robot_heading, 2*math.pi))
-        reason = ('robot_stopped' if speed < cfg.playful_min_robot_speed else
-                  'robot_turned' if turn > math.radians(cfg.playful_turn_limit_deg) else
+        stationary = speed < cfg.playful_min_robot_speed
+        hold_stopped = cfg.playful_hold_when_stopped == 1 and old.phase == 'occupy'
+        reason = ('robot_stopped' if stationary and not hold_stopped else
+                  'robot_turned' if not stationary and turn > math.radians(cfg.playful_turn_limit_deg) else
                   'playful_risk' if danger > cfg.playful_max_risk or new.variables['fear'] > cfg.playful_max_fear else '')
         if not reason and old.phase == 'intercept':
             # Intercept the moving robot's personally observed forward region.

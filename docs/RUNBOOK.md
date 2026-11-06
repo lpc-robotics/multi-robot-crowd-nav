@@ -22,12 +22,21 @@ cd /home/lpc/workspace/arena5_multi_ws
 ./scripts/run_multirobot.sh config/scenarios/two_robots_multi_sfm_14_multigoal_psychology_v2_nav2.yaml auto_demo:=true
 ```
 
-去掉 `auto_demo:=true` 可人工发送目标。原六人、八人入口保留。
+当前十四人入口已改为外部速度刺激，文件名保留；去掉 `auto_demo:=true` 后由外部算法向
+`/robot_1/cmd_vel_external`、`/robot_2/cmd_vel_external` 发速度。原六人、八人入口保留。
 13、14 号分别对 robot_1、robot_2 展示有条件的惊讶、好奇、前方占位和任务恢复；
-9～12 号不接受或转发机器人相关心理激活。自动脚本只发送机器人导航目标。
+9～12 号不接受或转发机器人相关心理激活。自动脚本只控制机器人运动，不设置心理值或行人模式。
+最新时序、危险感知与验证边界见 [展示重构](EXPRESSIVE_PSYCHOLOGY_20261105.md)。
 具体参数、实际验收边界及恢复入口见 [DYNAMIC_PSYCHOLOGY_V2.md](DYNAMIC_PSYCHOLOGY_V2.md)。
 
 ## 开发工作区
+
+SCARED外部速度专项场景、礼让对照、持续注意假设及未来导航算法接口见
+[SCARED_STIMULUS_20261103.md](SCARED_STIMULUS_20261103.md)，启动命令已加入`command.txt`。
+
+需要优先观察免疫、静态障碍响应或两名玩闹者时，使用
+[V2三个专项场景](V2_SPECIALISTS_20261105.md)。配对专项保持同样路线；玩闹专项
+现在允许到位后最多10秒占位观察，危险可提前终止。专项仍用Nav2；十四人同名入口已重构。
 
 ```bash
 cd /home/lpc/workspace/arena5_multi_ws
@@ -142,3 +151,5 @@ scripts/compare_algorithms.py RUN_DIJKSTRA/navigation_benchmark.json \
 保持原观测超时、近场参数和几何验收阈值；保护触发后整轮判失败并重启场景。
 `env.sh`会保留调用者的`ROS_DOMAIN_ID`和`ROS_LOCALHOST_ONLY`；重复source后也保持一致。
 `validate_offline.sh`包含这项检查，避免场景和监测工具使用不同的ROS发现范围。
+
+V2/SCARED人群反应验收默认 `--robot-clearance-policy record`：人机低净距作为导航交互数据保留，旧strict可显式启用。人工启动命令不变；控制器保护与验收参考线不同。见 [验收口径说明](CROWD_RESPONSE_ACCEPTANCE_20261105.md)。

@@ -5,17 +5,23 @@
 Nav2 导航、控制守护、同伴机器人代价地图、多机器人社会力后端及动态行人心理模型。
 
 项目采用一个 Isaac Sim 进程、共享 `/clock` 和 `map`，每台 Jackal 使用独立的
-`robot_N` 命名空间、Nav2 action、odometry、TF 和雷达话题。规划器可选择 NavFn
-Dijkstra 或 A*，局部控制使用 DWB。各机器人独立导航；当前未实现集中式多机器人
-路径协调、预约调度或死锁消解。
+`robot_N` 命名空间、odometry、TF 和雷达话题。Nav2场景可选择NavFn Dijkstra或A*，
+局部控制使用DWB；external场景接受独立速度输入。最新十四人展示和SCARED专项使用外部
+机器人刺激控制，不启动Nav2/DWB。当前未实现集中式多机器人路径协调、预约调度或死锁消解。
 
-当前最新：2026-11-02 心理状态可视化开发版本，源快照 `86db90a`。
+当前最新：2026-11-06同步源码 `4db438a`，模型仍注册为 `sis_cf_v2`（2.1）。
+包括SCARED专项、免疫/静态/玩闹专项，以及重构十四人外部速度展示。
+玩闹者支持运动方向/TTC风险与有限注意，前向占位上限10秒；可视化六类中IMPASSIVE
+是固定类型显示，数据层仍为REGULAR。[最新展示说明](docs/EXPRESSIVE_PSYCHOLOGY_20261105.md)。
+人群反应验收默认记录低人机净距及后续响应；导航结果与模型有效性分开解释，历史strict报告保留。
+
+2026-11-02 心理状态可视化开发版本，源快照 `86db90a`。
 新增 Isaac 场景标签/刺激箭头与 Foxglove 心理曲线、状态和轨迹布局，分别以
 `crowd_viz:=true`、`isaac_overlay:=true` 启用；默认关闭。
 [可视化使用与恢复](docs/CROWD_VISUALIZATION.md)及[实际验证与已知限制](evidence/crowd_visualization/README.md)。
 功能和兼容性检查已有通过记录；最终版30分钟移动导航及完整性能对照尚未通过。
 
-当前 V2：2026-10-29 同步开发快照 `b5d931c`。十四人场景包含心理免疫、静态障碍响应、
+历史 V2：2026-10-29 同步开发快照 `b5d931c`。十四人场景包含心理免疫、静态障碍响应、
 惊讶停步观察、少量玩闹式前向占位，以及受保护的原任务恢复。
 [V2设计与使用](docs/DYNAMIC_PSYCHOLOGY_V2.md)、[三个种子实际验收与对照边界](docs/DYNAMIC_PSYCHOLOGY_V2_VALIDATION_20261028.md)、
 [参数台账与数据接口](docs/PSYCHOLOGY_V2_DATA.md)。
@@ -38,6 +44,8 @@ Dijkstra 或 A*，局部控制使用 DWB。各机器人独立导航；当前未�
 - 心理模型扩展协议、候选状态回滚和健康心跳；保留 `noop` 与原 v1 社会力接口。
 - WebRTC / Foxglove 可视化、轨迹对比、故障注入和运行指标采集工具。
 - 独立只读心理显示节点：实际/核心位置、C/F/S激活、行为标签及焦点行人刺激箭头；保留各自仿真时间戳。
+- 独立恐惧压力/礼让/身体视野诊断协议，以及免疫、静态障碍响应和双人玩闹展示。
+- 玩闹者运动风险、有限注意、10秒占位与受保护回归；低净距观测和失败结果完整保留。
 
 ## 源码结构
 
@@ -124,9 +132,13 @@ GPU_ID=3 scripts/run_multirobot.sh config/scenarios/two_robots_multi_sfm_6_nav2.
 | `two_robots_multi_sfm_6_multigoal_nav2.yaml` | 双机 + 六人多目标路线 | 0.26 / 1.0 |
 | `two_robots_multi_sfm_6_multigoal_psychology_nav2.yaml` | 双机 + 六人动态心理与多目标路线 | 0.26 / 1.0 |
 | `two_robots_multi_sfm_8_multigoal_psychology_nav2.yaml` | 双机 + 八人独立四点路线与动态心理 | 0.26 / 1.0 |
-| `two_robots_multi_sfm_14_multigoal_psychology_v2_nav2.yaml` | 双机 + 十四人 V2 动态心理场景 | 0.26 / 1.0 |
-| `two_robots_multi_sfm_14_multigoal_psychology_v2_control_nav2.yaml` | V2 禁用玩闹挡路的匹配对照 | 0.26 / 1.0 |
+| `two_robots_multi_sfm_14_multigoal_psychology_v2_nav2.yaml` | 最新十四人展示：双机external序列，保留历史文件名 | 1.0 / 1.0 |
+| `two_robots_multi_sfm_14_multigoal_psychology_v2_control_nav2.yaml` | 历史V2禁用挡路对照，按历史配置使用 | 0.26 / 1.0 |
 | `two_robots_multi_sfm_1_external.yaml`、`two_robots_multi_sfm_6_external.yaml` | 普通行人 + 外部控制 | 0.5 / 1.0 |
+| `one_robot_multi_sfm_6_scared_intrusive_external.yaml`、`one_robot_multi_sfm_6_scared_body_fov_external.yaml` | 恐惧压力与200°身体视野诊断 | 0.8 / 1.0 |
+| `one_robot_multi_sfm_6_scared_considerate_external.yaml` | 礼让对照；协议最高速度0.15m/s | 场景限幅0.5 / 1.0 |
+| `one_robot_multi_sfm_1_immune_v2_nav2.yaml`、`one_robot_multi_sfm_1_static_v2_nav2.yaml` | 心理免疫及静态障碍响应专项 | 0.26 / 1.0 |
+| `one_robot_multi_sfm_2_playful_v2_nav2.yaml` | 13/14号错峰玩闹，仍为Nav2专项 | 0.1 / 1.0 |
 | `eight_robots_capacity.yaml` | 八机容量探测 | 0.5 / 1.0 |
 
 默认开发端口为 WebRTC TCP/UDP `49130/48030`、Foxglove `8795`，ROS domain 为
@@ -152,11 +164,11 @@ LIVESTREAM=false FOXGLOVE=false scripts/run_multirobot.sh config/scenarios/two_r
 ./scripts/run_multirobot.sh config/scenarios/two_robots_multi_sfm_8_multigoal_psychology_nav2.yaml auto_demo:=true
 ```
 
-去掉 `auto_demo:=true` 则只启动场景，目标由人工发送。自动演示只安排机器人目标，
-行人心理、传播和行为均由模型计算。常用入口见 [command.txt](command.txt)，
+上面六人/八人的Nav2场景去掉 `auto_demo:=true` 则由人工发送目标。
+自动脚本只提供机器人目标或速度刺激；行人心理、传播和行为均由模型计算。常用入口见 [command.txt](command.txt)，
 模型、参数和适用范围见 [动态心理开发文档](docs/DYNAMIC_PSYCHOLOGY.md)。
 
-V2 十四人场景使用自己的任务序列。Windows 保持 Server `10.16.205.165`、Signal `49100`、
+最新十四人入口保留历史文件名，内部为双机外部速度序列。Windows 保持 Server `10.16.205.165`、Signal `49100`、
 Stream `47998`；Linux 可用以下命令显式固定人工连接端口：
 
 ```bash
@@ -168,14 +180,30 @@ LIVESTREAM=true \
 ./scripts/run_multirobot.sh config/scenarios/two_robots_multi_sfm_14_multigoal_psychology_v2_nav2.yaml auto_demo:=true crowd_viz:=true isaac_overlay:=true
 ```
 
+最新十四人去掉 `auto_demo:=true` 后，向 `/robot_1/cmd_vel_external` 和
+`/robot_2/cmd_vel_external` 提供算法速度；该入口不接收Nav2导航任务。不要同时向同一机器人
+启动两组控制器。历史V2对照与最新expressive布局不同，不可直接混作同条件配对。
+
+```bash
+# 有界恐惧压力：1号采用显式持续注意条件
+./scripts/run_multirobot.sh config/scenarios/one_robot_multi_sfm_6_scared_intrusive_external.yaml auto_demo:=true crowd_viz:=true isaac_overlay:=true viz_focus_id:=1
+# 感知诊断：200°身体视野允许出现未触发SCARED的结果
+./scripts/run_multirobot.sh config/scenarios/one_robot_multi_sfm_6_scared_body_fov_external.yaml auto_demo:=true crowd_viz:=true isaac_overlay:=true viz_focus_id:=1
+# 原Nav2双人玩闹专项
+./scripts/run_multirobot.sh config/scenarios/one_robot_multi_sfm_2_playful_v2_nav2.yaml auto_demo:=true crowd_viz:=true isaac_overlay:=true viz_focus_id:=13
+```
+
+详细对照、参数与边界见[SCARED专项](docs/SCARED_STIMULUS_20261103.md)、
+[免疫/静态/玩闹专项](docs/V2_SPECIALISTS_20261105.md)及[验收口径](docs/CROWD_RESPONSE_ACCEPTANCE_20261105.md)。
+
 八人 V1 同样支持两个显示开关。只看 Foxglove 时使用 `crowd_viz:=true isaac_overlay:=false`。
 Foxglove 导入 `config/foxglove/crowd_visualization.json`；用布局变量 `person` 选择曲线，
 用 `ros2 param set /crowd_visualizer focus_id 14` 切换箭头焦点。
 实际动画数据最多10Hz、心理量/图形最多5Hz；缺失不填零，V1惊讶量标记不可用。
 录包/回放与时间域说明见[可视化说明](docs/CROWD_VISUALIZATION.md)。
 
-去掉 `auto_demo:=true` 后人工发送机器人目标。潜变量与参数为未拟合的工程模型；
-参数台账137项，83项列为未来拟合候选。数据导出保留核心、机器人观测和实际显示来源，
+各场景的人工入口由 `control_mode` 决定：Nav2发送目标，external发送速度。
+潜变量与参数为未拟合的工程模型；当前主参数台账145项，89项列为未来拟合候选。数据导出保留核心、机器人观测和实际显示来源，
 记录未触发、提前退出、失败及缺失；潜变量不能充当真人心理测量。
 
 在第二个终端进入同一仓库并加载环境：
@@ -197,10 +225,18 @@ scripts/cleanup.sh
 
 ## 测试与历史证据
 
-当前开发版本通过 171 项 Python、32 项 C++ 测试，以及场景/地图/Nav2、HuNav
+当前开发版本通过 227 项 Python、32 项 C++ 测试，以及场景/地图/Nav2、HuNav
 配置、环境重复加载、underlay 与固定版 LightSFM 检查。构建后使用
 `scripts/validate_offline.sh` 执行完整离线流程。详细运行测试和指标命令见
 [RUNBOOK.md](docs/RUNBOOK.md)。
+
+2026-11-06发布保留最新表达性心理模型的实际证据：十四人场景在源码6092b25、种子11下
+完成134秒机器人协议，13/14号实际前向占位10.00/9.95秒；普通1号自然出现SCARED，F峰值0.664。
+双人Nav2专项约283.6秒仿真，实际占位10.05/10.00秒，主动侧让并恢复任务。
+十四人14号有记录的yield_timeout后恢复任务，不改记为完成侧让。上述为固定配置单种子短时展示，
+不是多种子、30分钟耐久或真人拟合。免疫专项完整运行的健康超时仍未解决，原失败记录保持失败。
+默认record策略保留低人机净距及后续行为，strict可复现旧门槛；控制器看门狗、原物理约束
+及人际/墙体检查保持。SCARED协议自身0.18m停止条件独立保留。本次仅重建和离线核验，不重跑GPU。
 
 2026-11-02 可视化发布重建9个overlay包并执行离线回归。原可视化记录中，14人静止机器人
 Isaac显示/双端显示各通过600秒，显示节点平均CPU为单核的7.57%/7.59%。SceneView更新耗时

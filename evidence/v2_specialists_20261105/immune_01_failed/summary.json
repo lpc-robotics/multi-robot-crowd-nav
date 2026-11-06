@@ -1,0 +1,30 @@
+{
+  "source": "/home/lpc/workspace/arena5_multi_ws/evidence/runs/v2_specialists_20261105/immune_01/runs/20261105_123243_one_robot_multi_sfm_1_immune_v2_nav2_gpu1/psychology_11077653445418736292.jsonl",
+  "source_sha256": "ce08df268d4cc0668af798e9166776545d2db0101dbfeab63b10101029341a24",
+  "people": {
+    "1": {
+      "modes": {
+        "REGULAR": 3002
+      },
+      "phases": {
+        "none": 3002
+      },
+      "events": [],
+      "intervals": [
+        {
+          "start_sim_s": 2.375000035,
+          "end_sim_s": 77.400000035,
+          "mode": "REGULAR",
+          "phase": "none"
+        }
+      ],
+      "max_latents": {
+        "curiosity": 0.0,
+        "fear": 0.0,
+        "surprise": 0.0
+      },
+      "max_robot_social_force": 1.5061529377247127,
+      "max_robot_static_force": 0.0
+    }
+  }
+}

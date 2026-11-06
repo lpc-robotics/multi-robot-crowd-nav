@@ -26,7 +26,7 @@ def arrows(document,focus,threshold=.02):
     result=[]; visible=document['agents'].get(str(focus),{}).get('visible_robots',{})
     robots=[]
     for key,v in visible.items():
-        c=number(v['visibility'])*number(v['novelty']); f=number(v['visibility'])*number(v['risk'])
+        c=number(v.get('curiosity_visibility',v['visibility']))*number(v['novelty']); f=number(v['visibility'])*number(v.get('fear_risk',v['risk']))
         robots.append((max(c,f),int(key),c,f,'robot'))
     humans=[]
     for e in document.get('edges',[]):

@@ -1,5 +1,34 @@
 # 发布与恢复
 
+## 2026-11-05 展示重构保护点
+
+`backup-expressive-psychology-20261105` 指向 `8d8ec2d`，开发分支为
+`feature/expressive-psychology-20261105`。开发前双人/十四人关键配置复制至
+`evidence/expressive_psychology_20261105/baseline/`。最终运行源码提交 `6092b25`；验证证据见 `evidence/expressive_psychology_20261105/`。
+最新实现说明见
+[展示重构](EXPRESSIVE_PSYCHOLOGY_20261105.md)。这次按用户要求修改两个既有入口，
+旧六人/八人配置不变。恢复前先保留整个开发目录（含原始运行数据和用户文档），
+源码切换后重新构建overlay。2026-10-26完整快照仍按下文步骤恢复，不能用源码标签代替。
+
+## 2026-11-05 专项场景保护点
+
+`backup-v2-specialists-20261105` 指向开发前提交 `8b87590`，新开发在
+`feature/v2-specialists-20261105`。三个专项入口与可选停车占位策略见
+[V2_SPECIALISTS_20261105.md](V2_SPECIALISTS_20261105.md)。旧场景配置未覆盖。
+切换源码前保存当前完整目录及未跟踪个人文档，切换后重新构建 overlay；
+源码标签不包含忽略的高频运行数据，也不能代替原2026-10-26完整快照。
+
+
+## 2026-11-03 SCARED 专项开发前
+
+源码86db90a（含V2和人群可视化）保护标签为`backup-scared-stimulus-20261103`。
+专项开发位于`feature/scared-stimulus-20261103`；新场景、刺激任务和心理感知条件均使用独立文件。
+回到该标签前先保存当前工作，切换后重新执行`./scripts/build.sh`，稳定underlay保持只读。
+这是一份源码保护点，不能替代包含原始实验轨迹、环境和安装产物的完整目录备份。
+专项设计及实验限制见 [SCARED_STIMULUS_20261103.md](SCARED_STIMULUS_20261103.md)。
+本次实际验收的运行源码为5a82112，最终结果保护标签为`validated-scared-stimulus-20261103`；
+最终提交仅在此之后增加离线绘图和证据文档，未修改已验收的行为、控制和场景配置。
+
 ## 可视化开发前最新 V2
 
 最新 V2 为 `b5d931c`，保护标签 `backup/pre-crowd-viz-20261029`。
@@ -176,3 +205,7 @@ git --no-optional-locks -C /home/lpc/workspace/arena5_multi_ws status --short
 备份必须恢复到原绝对路径，因为安装目录内有绝对路径引用；先移动保留更新目录可以
 避免覆盖升级后的代码和新证据。若仅切换代码标签，需先保存当前工作成果并重新构建，
 不能继续将新 build/install 视为旧版本。
+
+本次最终源码保护标签为 `implemented-v2-specialists-20261105`，表示实现与已记录的验证范围，
+不表示免疫专项的健康时序问题已解决。实际成功运行模型源码为8b51642（玩闹）与5c10e51（静态），
+之后的验收工具按用户要求将人机净距改为默认记录；旧运行报告不改写。

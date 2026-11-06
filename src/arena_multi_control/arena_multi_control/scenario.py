@@ -32,6 +32,9 @@ class Scenario:
     physics_dt: float = 1.0 / 60.0
     psychology_config: str = ""
     demo_tasks: str = ""
+    stimulus_tasks: str = ""
+    sequence_tasks: str = ""
+    allow_high_speed_external: bool = False
 
 
 def _finite_number(value: Any, field: str) -> float:
@@ -100,6 +103,11 @@ def load_scenario(path: str | Path) -> Scenario:
         raise ValueError("unsupported psychology model")
     psychology_config = str(document.get("psychology_config", ""))
     demo_tasks = str(document.get("demo_tasks", ""))
+    stimulus_tasks = str(document.get("stimulus_tasks", ""))
+    sequence_tasks = str(document.get("sequence_tasks", ""))
+    allow_high_speed_external = document.get("allow_high_speed_external", False)
+    if type(allow_high_speed_external) is not bool:
+        raise ValueError("allow_high_speed_external must be boolean")
     if psychology in ("sis_cf_v1", "sis_cf_v2"):
         if backend != "multi_sfm" or not psychology_config:
             raise ValueError("SIS psychology requires multi_sfm and psychology_config")
@@ -108,6 +116,23 @@ def load_scenario(path: str | Path) -> Scenario:
             raise ValueError("psychology_config does not exist")
     elif psychology_config:
         raise ValueError("noop accepts no psychology_config")
+    if stimulus_tasks:
+        from .fear_stimulus import load_stimulus
+        stimulus_tasks = str((Path(path).resolve().parent / stimulus_tasks).resolve())
+        if demo_tasks or psychology != 'sis_cf_v2' or len(robots) != 1 or robots[0].control_mode != 'external':
+            raise ValueError('fear stimulus requires one external V2 robot and no Nav2 demo')
+        stimulus = load_stimulus(stimulus_tasks)
+        if stimulus.robot != robots[0].name:
+            raise ValueError('stimulus robot identity mismatch')
+    if sequence_tasks:
+        from .crowd_stimulus import load_sequence
+        sequence_tasks = str((Path(path).resolve().parent / sequence_tasks).resolve())
+        if stimulus_tasks or demo_tasks or psychology != 'sis_cf_v2' or any(r.control_mode != 'external' for r in robots):
+            raise ValueError('crowd sequence requires external V2 robots and no other demo')
+        sequence = load_sequence(sequence_tasks)
+        if set(sequence['robots']) != names: raise ValueError('sequence robot identities mismatch')
+    if allow_high_speed_external and (not (stimulus_tasks or sequence_tasks) or any(r.control_mode != 'external' for r in robots)):
+        raise ValueError('high speed is reserved for explicit external fear stimulus experiments')
     if demo_tasks:
         demo_tasks = str((Path(path).resolve().parent / demo_tasks).resolve())
         if not Path(demo_tasks).is_file() or psychology == "noop" or any(r.control_mode != "nav2" for r in robots):
@@ -125,10 +150,17 @@ def load_scenario(path: str | Path) -> Scenario:
         config = str((Path(path).resolve().parent / config).resolve())
         if not Path(config).is_file():
             raise ValueError("pedestrian_config does not exist")
-        if max_linear > 0.5 or max_angular > 1.0:
+        if (max_linear > 0.5 and not allow_high_speed_external) or max_angular > 1.0:
             raise ValueError("multi_sfm requires explicit limits <= 0.5 m/s and 1.0 rad/s")
     elif config:
         raise ValueError("pedestrian_config is only supported by multi_sfm")
+    if stimulus_tasks:
+        if stimulus.max_linear > max_linear or stimulus.max_angular > max_angular:
+            raise ValueError('stimulus command exceeds scenario limits')
+        if abs(stimulus.home_x-robots[0].x) > 1e-6 or abs(stimulus.home_y-robots[0].y) > 1e-6:
+            raise ValueError('stimulus home must match robot spawn')
+    if sequence_tasks and any(c['speed'] > max_linear for s in sequence['stages'] for c in s['commands'].values()):
+        raise ValueError('sequence exceeds scenario speed limit')
     return Scenario(
         robots=tuple(robots),
         planner_algorithm=algorithm,
@@ -142,4 +174,7 @@ def load_scenario(path: str | Path) -> Scenario:
         physics_dt=physics_dt,
         psychology_config=psychology_config,
         demo_tasks=demo_tasks,
+        stimulus_tasks=stimulus_tasks,
+        sequence_tasks=sequence_tasks,
+        allow_high_speed_external=allow_high_speed_external,
     )

@@ -1,0 +1,12 @@
+{
+  "person_id": 1,
+  "source": "Isaac actual finite-difference velocity; latest committed target robot <=250ms old",
+  "projection": "dot(actual human velocity, unit vector from observed target robot to actual human)",
+  "samples": 31,
+  "first_sim_s": 69.600001037,
+  "last_sim_s": 71.100001059,
+  "net_displacement_m": 1.4547041448223879,
+  "median_away_speed_mps": 0.9992640937245577,
+  "positive_away_fraction": 1.0,
+  "limitations": "Descriptive reaction metric; no causal navigation benchmark or true psychological-state identification"
+}

@@ -1,0 +1,7 @@
+# Robot stimulus settings; not fitted psychological parameters.
+schema_version: 1
+parameters:
+  variant: intrusive
+  max_linear: 0.8
+  target_gap: 0.35
+  distance_gain: 4.0

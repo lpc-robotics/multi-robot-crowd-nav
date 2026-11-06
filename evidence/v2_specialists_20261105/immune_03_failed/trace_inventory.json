@@ -1,0 +1,14 @@
+{
+  "/home/lpc/workspace/arena5_multi_ws/evidence/runs/v2_specialists_20261105/immune_03/runs/20261105_163033_one_robot_multi_sfm_1_immune_v2_nav2_gpu0/psychology_11908606450202582128.jsonl": {
+    "bytes": 13934751,
+    "sha256": "5802aeb32f8c17b7c0245fe16bc54244b4e9c92ff6c61b137f84c78a73062ea2"
+  },
+  "/home/lpc/workspace/arena5_multi_ws/evidence/runs/v2_specialists_20261105/immune_03/acceptance.actual.jsonl": {
+    "bytes": 607729,
+    "sha256": "a000f2cc1905be784d42bb3d5572e2da63dd1529e6968ab7b0c3fa7846adbcb2"
+  },
+  "/home/lpc/workspace/arena5_multi_ws/evidence/runs/v2_specialists_20261105/immune_03/launch.log": {
+    "bytes": 131172,
+    "sha256": "8c3a09f6d94921c526b7035c01f495d9720f8026e1ba419d6aa4002e54e2f6f4"
+  }
+}

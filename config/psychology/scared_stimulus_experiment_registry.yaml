@@ -1,0 +1,247 @@
+schema_version: 1
+scope: Supplement to parameter_registry_v2.yaml; all protocol settings excluded from
+  psychological fitting
+parameters:
+- id: scared_experiment.robot
+  location: arena_multi_control/fear_stimulus.py:Stimulus.robot
+  unit: identifier
+  default: robot_1
+  values:
+    intrusive: robot_1
+    considerate: robot_1
+  category: engineering_experiment
+  fit_candidate: false
+  calibration_status: not_applicable
+  source: 2026-11-03 simulation stress protocol; no human data basis
+- id: scared_experiment.target_person
+  location: arena_multi_control/fear_stimulus.py:Stimulus.target_person
+  unit: identifier
+  default: person_1
+  values:
+    intrusive: person_1
+    considerate: person_1
+  category: engineering_experiment
+  fit_candidate: false
+  calibration_status: not_applicable
+  source: 2026-11-03 simulation stress protocol; no human data basis
+- id: scared_experiment.variant
+  location: arena_multi_control/fear_stimulus.py:Stimulus.variant
+  unit: category
+  default: intrusive
+  values:
+    intrusive: intrusive
+    considerate: considerate
+  category: engineering_experiment
+  fit_candidate: false
+  calibration_status: not_applicable
+  source: 2026-11-03 simulation stress protocol; no human data basis
+- id: scared_experiment.warmup_s
+  location: arena_multi_control/fear_stimulus.py:Stimulus.warmup_s
+  unit: s active simulation time
+  default: 8.0
+  values:
+    intrusive: 8.0
+    considerate: 8.0
+  category: engineering_experiment
+  fit_candidate: false
+  calibration_status: not_applicable
+  source: 2026-11-03 simulation stress protocol; no human data basis
+- id: scared_experiment.approach_s
+  location: arena_multi_control/fear_stimulus.py:Stimulus.approach_s
+  unit: s active simulation time
+  default: 24.0
+  values:
+    intrusive: 24.0
+    considerate: 24.0
+  category: engineering_experiment
+  fit_candidate: false
+  calibration_status: not_applicable
+  source: 2026-11-03 simulation stress protocol; no human data basis
+- id: scared_experiment.recovery_s
+  location: arena_multi_control/fear_stimulus.py:Stimulus.recovery_s
+  unit: s active simulation time
+  default: 25.0
+  values:
+    intrusive: 25.0
+    considerate: 25.0
+  category: engineering_experiment
+  fit_candidate: false
+  calibration_status: not_applicable
+  source: 2026-11-03 simulation stress protocol; no human data basis
+- id: scared_experiment.withdraw_timeout_s
+  location: arena_multi_control/fear_stimulus.py:Stimulus.withdraw_timeout_s
+  unit: s active simulation time
+  default: 45.0
+  values:
+    intrusive: 45.0
+    considerate: 45.0
+  category: engineering_experiment
+  fit_candidate: false
+  calibration_status: not_applicable
+  source: 2026-11-03 simulation stress protocol; no human data basis
+- id: scared_experiment.startup_timeout_wall_s
+  location: arena_multi_control/fear_stimulus.py:Stimulus.startup_timeout_wall_s
+  unit: s wall time
+  default: 240.0
+  values:
+    intrusive: 240.0
+    considerate: 240.0
+  category: engineering_experiment
+  fit_candidate: false
+  calibration_status: not_applicable
+  source: 2026-11-03 simulation stress protocol; no human data basis
+- id: scared_experiment.experiment_timeout_wall_s
+  location: arena_multi_control/fear_stimulus.py:Stimulus.experiment_timeout_wall_s
+  unit: s wall time
+  default: 360.0
+  values:
+    intrusive: 360.0
+    considerate: 360.0
+  category: engineering_experiment
+  fit_candidate: false
+  calibration_status: not_applicable
+  source: 2026-11-03 simulation stress protocol; no human data basis
+- id: scared_experiment.max_linear
+  location: arena_multi_control/fear_stimulus.py:Stimulus.max_linear
+  unit: m/s
+  default: 0.5
+  values:
+    intrusive: 0.8
+    considerate: 0.15
+  category: engineering_experiment
+  fit_candidate: false
+  calibration_status: not_applicable
+  source: 2026-11-03 simulation stress protocol; no human data basis
+- id: scared_experiment.max_angular
+  location: arena_multi_control/fear_stimulus.py:Stimulus.max_angular
+  unit: rad/s
+  default: 1.0
+  values:
+    intrusive: 1.0
+    considerate: 1.0
+  category: engineering_experiment
+  fit_candidate: false
+  calibration_status: not_applicable
+  source: 2026-11-03 simulation stress protocol; no human data basis
+- id: scared_experiment.target_gap
+  location: arena_multi_control/fear_stimulus.py:Stimulus.target_gap
+  unit: m net surface clearance
+  default: 0.35
+  values:
+    intrusive: 0.35
+    considerate: 1.8
+  category: engineering_experiment
+  fit_candidate: false
+  calibration_status: not_applicable
+  source: 2026-11-03 simulation stress protocol; no human data basis
+- id: scared_experiment.abort_gap
+  location: arena_multi_control/fear_stimulus.py:Stimulus.abort_gap
+  unit: m net surface clearance
+  default: 0.18
+  values:
+    intrusive: 0.18
+    considerate: 0.18
+  category: engineering_experiment
+  fit_candidate: false
+  calibration_status: not_applicable
+  source: 2026-11-03 simulation stress protocol; no human data basis
+- id: scared_experiment.robot_radius
+  location: arena_multi_control/fear_stimulus.py:Stimulus.robot_radius
+  unit: m envelope radius
+  default: 0.35
+  values:
+    intrusive: 0.35
+    considerate: 0.35
+  category: engineering_experiment
+  fit_candidate: false
+  calibration_status: not_applicable
+  source: 2026-11-03 simulation stress protocol; no human data basis
+- id: scared_experiment.distance_gain
+  location: arena_multi_control/fear_stimulus.py:Stimulus.distance_gain
+  unit: 1/s
+  default: 1.0
+  values:
+    intrusive: 4.0
+    considerate: 1.0
+  category: engineering_experiment
+  fit_candidate: false
+  calibration_status: not_applicable
+  source: 2026-11-03 simulation stress protocol; no human data basis
+- id: scared_experiment.yaw_gain
+  location: arena_multi_control/fear_stimulus.py:Stimulus.yaw_gain
+  unit: 1/s
+  default: 2.0
+  values:
+    intrusive: 2.0
+    considerate: 2.0
+  category: engineering_experiment
+  fit_candidate: false
+  calibration_status: not_applicable
+  source: 2026-11-03 simulation stress protocol; no human data basis
+- id: scared_experiment.home_x
+  location: arena_multi_control/fear_stimulus.py:Stimulus.home_x
+  unit: m map
+  default: 7.0
+  values:
+    intrusive: 7.0
+    considerate: 7.0
+  category: engineering_experiment
+  fit_candidate: false
+  calibration_status: not_applicable
+  source: 2026-11-03 simulation stress protocol; no human data basis
+- id: scared_experiment.home_y
+  location: arena_multi_control/fear_stimulus.py:Stimulus.home_y
+  unit: m map
+  default: 10.0
+  values:
+    intrusive: 10.0
+    considerate: 10.0
+  category: engineering_experiment
+  fit_candidate: false
+  calibration_status: not_applicable
+  source: 2026-11-03 simulation stress protocol; no human data basis
+- id: scared_experiment.arrival_radius
+  location: arena_multi_control/fear_stimulus.py:Stimulus.arrival_radius
+  unit: m center distance
+  default: 0.25
+  values:
+    intrusive: 0.25
+    considerate: 0.25
+  category: engineering_experiment
+  fit_candidate: false
+  calibration_status: not_applicable
+  source: 2026-11-03 simulation stress protocol; no human data basis
+perception_condition:
+  id: psychology.robot_fov_deg
+  participant_id: 1
+  value: 360.0
+  unit: degrees total psychological robot FOV
+  calibration_status: unfitted
+  source: experimental sustained attention assumption; not a measured human FOV
+  physical_sfm_fov_deg: 200.0
+  limitation: No independent head gaze; this condition removes loss of threat perception
+    when the body turns away. Default-200-degree negative runs retained.
+motion_condition:
+  base_desired_speed_mps:
+    1_to_4: 0.3
+    5_to_6: 0.4
+  hard_person_speed_mps: 1.0
+  source: experimental slow walking routes; not fitted locomotion parameters
+watchdogs:
+  stimulus_status_timeout_wall_s: 2.0
+  stimulus_wall_freshness_s: 0.6
+  stimulus_max_sim_age_s: 0.25
+  stimulus_max_sim_step_s: 0.25
+  robot_guard: existing unchanged command_guard and pedestrian health gates
+acceptance:
+  actual_min_robot_gap_m: 0.1
+  actual_min_human_gap_m: 0.0
+  max_display_error_m: 0.25
+  core_max_speed_mps: 1.0
+  core_max_acceleration_mps2: 3.0
+  focal_peak_fear_min: 0.65
+  fear_triggered_scared_s_min: 0.5
+  actual_outward_s_min: 0.5
+  actual_outward_distance_m_min: 0.1
+  task_resumed_samples_min: 20
+  category: engineering_validation_not_fitting

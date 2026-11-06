@@ -22,6 +22,7 @@ from arena_multi_control.scenario import load_scenario
 from arena_multi_hunav.multi_adapter import load_people
 from arena_multi_hunav.timeline import Timeline, Sample
 from diagnostic_msgs.msg import DiagnosticArray
+from interaction_outcomes import ClearanceObservations
 
 
 def stamp(msg):
@@ -41,8 +42,10 @@ class FailureLog(set):
 
 
 class Probe(Node):
-    def __init__(self, scenario):
+    def __init__(self, scenario, robot_clearance_policy='strict', clearance_path=None):
         super().__init__("multi_sfm_runtime_probe")
+        self.clearance_observations = ClearanceObservations(robot_clearance_policy)
+        self.clearance_stream = None if clearance_path is None else Path(clearance_path).open('x')
         people, _ = load_people(scenario.pedestrian_config)
         self.radii = {p.name: p.radius for p in people.agents}
         self.names = [r.name for r in scenario.robots]
@@ -133,14 +136,25 @@ class Probe(Node):
                         self.maximum_error_sample={'stamp_ns':t,'name':a.name,'actual':[p.x,p.y],
                             'predicted':[predicted.x,predicted.y],'velocity':[predicted.vx,predicted.vy],
                             'status':self.status[-1] if self.status else None}
-                    for history in self.robot_history.values():
+                    for name, history in self.robot_history.items():
                         r=history.at(t)
                         clearance=math.hypot(p.x-r.x,p.y-r.y)-self.radii[a.name]-.35
                         self.min_clearance=min(self.min_clearance,clearance)
-                        if clearance < .1-1e-5: self.failures.add('actual clearance below 0.10 m')
+                        self.clearance_observations.observe(a.name, name, t, clearance)
+                        if self.clearance_stream is not None:
+                            self.clearance_stream.write(json.dumps(dict(stamp_ns=t, person=a.name, robot=name,
+                                clearance_m=clearance, actual_person_xy=[p.x,p.y], robot_xy=[r.x,r.y],
+                                robot_source='odometry_interpolated_to_actual_stamp',
+                                below_reference=clearance < .1, envelope_overlap=clearance < 0.), allow_nan=False)+'\n')
+                        if self.clearance_observations.policy == 'strict' and clearance < .1-1e-5:
+                            self.failures.add('actual clearance below 0.10 m')
                 self.checked_samples+=1
             except ValueError as e:
                 self.skipped_samples+=1; self.failures.add(str(e))
+
+    def destroy_node(self):
+        if self.clearance_stream is not None: self.clearance_stream.close()
+        return super().destroy_node()
 
 
 def main():

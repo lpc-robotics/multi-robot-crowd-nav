@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "checks": {
+    "static_zero_psychology": true,
+    "static_force_only": true,
+    "immune_zero_psychology": true,
+    "immune_dynamic_force_only": true,
+    "playful_actual_occupancy_at_least_5s_each": true,
+    "playful_nonoverlapping": true
+  },
+  "scope": "observed mechanisms only; immune complete trial failed health watchdog and is not approved as a passed run"
+}

@@ -1,0 +1,22 @@
+{
+  "export": {
+    "passed": true,
+    "observations": 45534,
+    "events": 35,
+    "sources": [
+      "core_committed",
+      "isaac_actual",
+      "robot_observation"
+    ]
+  },
+  "validation": {
+    "passed": true,
+    "observations": 45534,
+    "events": 35,
+    "sources": [
+      "core_committed",
+      "isaac_actual",
+      "robot_observation"
+    ]
+  }
+}

@@ -165,8 +165,12 @@ class Visualizer(Node):
             dots.colors.append(ColorRGBA(r=color[0],g=color[1],b=color[2],a=1.))
             m=marker(Marker.TEXT_VIEW_FACING,i,'labels');m.pose.position=Point(x=x,y=y,z=2.1)
             m.scale.z=.22;m.color.r,m.color.g,m.color.b=color
-            m.text=f'P{i} {mode}'
+            display_mode = 'IMPASSIVE / REGULAR' if r and r['profile'] in ('immune_dynamic','impassive_static') else mode
+            m.text=f'P{i} {display_mode}'
             if r:
+                m.text+='\n'+r['profile']
+                if self.doc['agents'][str(i)]['behavior'].get('vigilant'):
+                    m.text+=' [vigilant]'
                 s=f"{r['surprise']:.2f}" if r['has_surprise'] else 'N/A'
                 m.text+=f"\nC:{r['curiosity']:.2f} F:{r['fear']:.2f} S:{s}"
                 if r['phase']!='none':m.text+=' '+r['phase']

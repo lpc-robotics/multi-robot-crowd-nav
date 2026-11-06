@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "scenario": "/home/lpc/workspace/arena5_multi_ws/config/scenarios/one_robot_multi_sfm_6_scared_considerate_external.yaml",
+  "requested_min_wall_s": 120.0,
+  "run_dir": "/home/lpc/workspace/arena5_multi_ws/evidence/runs/scared_stimulus_20261103/actual_considerate_01/runs/20261103_114149_one_robot_multi_sfm_6_scared_considerate_external_gpu1",
+  "probe_exit": 0,
+  "driver_wall_s": 172.79254697007127
+}

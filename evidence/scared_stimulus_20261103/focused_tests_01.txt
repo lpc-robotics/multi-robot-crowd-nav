@@ -1,0 +1,114 @@
+...........FF.                                                           [100%]
+=================================== FAILURES ===================================
+__________ test_external_stimulus_launch_has_no_dwb_controller[false] __________
+
+tmp_path = PosixPath('/tmp/pytest-of-lpc/pytest-53/test_external_stimulus_launch_0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x74a435121690>
+auto = 'false'
+
+    @pytest.mark.parametrize('auto',['false','true'])
+    def test_external_stimulus_launch_has_no_dwb_controller(tmp_path,monkeypatch,auto):
+        spec = importlib.util.spec_from_file_location('fear_launch',ROOT/'src/arena_multi_bringup/launch/multirobot.launch.py')
+        module = importlib.util.module_from_spec(spec); spec.loader.exec_module(module)
+        monkeypatch.setenv('ARENA_MULTI_RUN_DIR',str(tmp_path))
+        context = LaunchContext(); context.launch_configurations.update(dict(
+            scenario=str(SCENARIO),urdf=str(ROOT/'config/urdf/jackal.urdf'),map=str(ROOT/'config/maps/map.yaml'),
+            world=str(ROOT/'config/world/arena.yaml'),auto_demo=auto,foxglove='false',headless='true',livestream='false',
+            webrtc_ip='127.0.0.1',webrtc_signal_port='49130',webrtc_media_port='48030'))
+>       actions = module._launch(context)
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+
+src/arena_multi_control/test/test_fear_stimulus.py:89: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/arena_multi_bringup/launch/multirobot.launch.py:126: in _launch
+    from arena_multi_hunav.multi_adapter import load_people
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    """One authoritative pedestrian world with a stateless multi-robot SFM backend."""
+    from __future__ import annotations
+    
+    import copy
+    from dataclasses import asdict
+    import json
+    import math
+    import os
+    from pathlib import Path
+    import time
+    import uuid
+    
+    import rclpy
+    from rclpy.node import Node
+    from rclpy.clock import Clock, ClockType
+    from rclpy.qos import qos_profile_sensor_data
+    from rclpy.time import Time
+    from std_msgs.msg import Bool, String
+    from rosgraph_msgs.msg import Clock as ClockMsg
+    from nav_msgs.msg import Odometry
+    from geometry_msgs.msg import Pose, Twist
+>   from hunav_msgs.msg import Agent, Agents
+E   ModuleNotFoundError: No module named 'hunav_msgs'
+
+src/arena_multi_hunav/arena_multi_hunav/multi_adapter.py:22: ModuleNotFoundError
+__________ test_external_stimulus_launch_has_no_dwb_controller[true] ___________
+
+tmp_path = PosixPath('/tmp/pytest-of-lpc/pytest-53/test_external_stimulus_launch_1')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x74a435248710>
+auto = 'true'
+
+    @pytest.mark.parametrize('auto',['false','true'])
+    def test_external_stimulus_launch_has_no_dwb_controller(tmp_path,monkeypatch,auto):
+        spec = importlib.util.spec_from_file_location('fear_launch',ROOT/'src/arena_multi_bringup/launch/multirobot.launch.py')
+        module = importlib.util.module_from_spec(spec); spec.loader.exec_module(module)
+        monkeypatch.setenv('ARENA_MULTI_RUN_DIR',str(tmp_path))
+        context = LaunchContext(); context.launch_configurations.update(dict(
+            scenario=str(SCENARIO),urdf=str(ROOT/'config/urdf/jackal.urdf'),map=str(ROOT/'config/maps/map.yaml'),
+            world=str(ROOT/'config/world/arena.yaml'),auto_demo=auto,foxglove='false',headless='true',livestream='false',
+            webrtc_ip='127.0.0.1',webrtc_signal_port='49130',webrtc_media_port='48030'))
+>       actions = module._launch(context)
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+
+src/arena_multi_control/test/test_fear_stimulus.py:89: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/arena_multi_bringup/launch/multirobot.launch.py:126: in _launch
+    from arena_multi_hunav.multi_adapter import load_people
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    """One authoritative pedestrian world with a stateless multi-robot SFM backend."""
+    from __future__ import annotations
+    
+    import copy
+    from dataclasses import asdict
+    import json
+    import math
+    import os
+    from pathlib import Path
+    import time
+    import uuid
+    
+    import rclpy
+    from rclpy.node import Node
+    from rclpy.clock import Clock, ClockType
+    from rclpy.qos import qos_profile_sensor_data
+    from rclpy.time import Time
+    from std_msgs.msg import Bool, String
+    from rosgraph_msgs.msg import Clock as ClockMsg
+    from nav_msgs.msg import Odometry
+    from geometry_msgs.msg import Pose, Twist
+>   from hunav_msgs.msg import Agent, Agents
+E   ModuleNotFoundError: No module named 'hunav_msgs'
+
+src/arena_multi_hunav/arena_multi_hunav/multi_adapter.py:22: ModuleNotFoundError
+=============================== warnings summary ===============================
+../arena5_ws/.conda/arena_ros/lib/python3.11/site-packages/lark/utils.py:163
+  /home/lpc/workspace/arena5_ws/.conda/arena_ros/lib/python3.11/site-packages/lark/utils.py:163: DeprecationWarning: module 'sre_parse' is deprecated
+    import sre_parse
+
+../arena5_ws/.conda/arena_ros/lib/python3.11/site-packages/lark/utils.py:164
+  /home/lpc/workspace/arena5_ws/.conda/arena_ros/lib/python3.11/site-packages/lark/utils.py:164: DeprecationWarning: module 'sre_constants' is deprecated
+    import sre_constants
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED src/arena_multi_control/test/test_fear_stimulus.py::test_external_stimulus_launch_has_no_dwb_controller[false]
+FAILED src/arena_multi_control/test/test_fear_stimulus.py::test_external_stimulus_launch_has_no_dwb_controller[true]
+2 failed, 12 passed, 2 warnings in 0.55s

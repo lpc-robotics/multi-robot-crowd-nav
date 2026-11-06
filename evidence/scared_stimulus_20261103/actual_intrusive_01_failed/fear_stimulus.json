@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "passed": false,
+  "error": "actual_people_identity_or_frame_changed",
+  "variant": "intrusive",
+  "stimulus": {
+    "robot": "robot_1",
+    "target_person": "person_1",
+    "variant": "intrusive",
+    "warmup_s": 8.0,
+    "approach_s": 24.0,
+    "recovery_s": 25.0,
+    "withdraw_timeout_s": 45.0,
+    "startup_timeout_wall_s": 240.0,
+    "experiment_timeout_wall_s": 360.0,
+    "max_linear": 0.8,
+    "max_angular": 1.0,
+    "target_gap": 0.35,
+    "abort_gap": 0.18,
+    "robot_radius": 0.35,
+    "distance_gain": 4.0,
+    "yaw_gain": 2.0,
+    "home_x": 7.0,
+    "home_y": 10.0,
+    "arrival_radius": 0.25
+  },
+  "phase": "failed",
+  "transitions": [],
+  "protocol_transitions": [
+    {
+      "phase": "failed",
+      "stamp_ns": 0
+    }
+  ],
+  "active_sim_s": 0.0,
+  "wall_s": 30.351813199929893,
+  "samples": 0,
+  "minimum_sampled_gap_m": null,
+  "scope": "geometric external robot stimulus execution; psychological and actual-motion evidence assessed independently",
+  "knowledge": "Isaac actual person positions, robot odometry; no mental states or human goals read"
+}

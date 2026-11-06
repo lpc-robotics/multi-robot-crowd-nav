@@ -40,6 +40,19 @@ class ParametersV2(PsychologyConfig):
     playful_yield_distance: float = 1.2
     # Experimental ablation; not a latent psychological parameter.
     playful_enabled: float = 1.
+    # Opt-in experiment: a robot stopping does not end an already reached
+    # occupancy. The original occupancy deadline and safety exits still apply.
+    playful_hold_when_stopped: float = 0.
+    # Opt-in appraisal of robot motion, never inferred from age or appearance.
+    playful_motion_fear: float = 0.
+    playful_proximity_fear_gain: float = .05
+    playful_danger_approach_speed: float = .35
+    playful_danger_horizon_s: float = 3.
+    playful_imminent_ttc_s: float = 1.5
+    playful_collision_margin: float = .1
+    # Bounded attention to an already visually acquired interaction target.
+    # Fear perception only; curiosity stimulus remains body-FOV based.
+    threat_attention_s: float = 0.
     # Open-world geometry, must match the physical scenario.
     world_width: float = 30.
     world_height: float = 23.
@@ -68,8 +81,16 @@ class ParametersV2(PsychologyConfig):
                     "playful_max_fear", "playful_max_risk", "playful_enabled"):
             if not 0 <= getattr(self, key) <= 1:
                 raise ValueError(key + " outside [0,1]")
-        if self.playful_enabled not in (0., 1.) or self.playful_max_episodes != int(self.playful_max_episodes):
+        if (self.playful_enabled not in (0., 1.) or self.playful_hold_when_stopped not in (0., 1.)
+                or self.playful_motion_fear not in (0., 1.)
+                or self.playful_max_episodes != int(self.playful_max_episodes)):
             raise ValueError("invalid playful switch/count")
+        if not 0 <= self.playful_proximity_fear_gain <= 1 or self.playful_danger_approach_speed <= 0:
+            raise ValueError('invalid playful motion appraisal')
+        if not 0 < self.playful_imminent_ttc_s < self.playful_danger_horizon_s or self.playful_collision_margin < 0:
+            raise ValueError('invalid playful collision prediction')
+        if not 0 <= self.threat_attention_s <= 5:
+            raise ValueError('threat attention must be bounded to [0,5] seconds')
         if not 0 < self.surprise_off < 1 or self.surprise_timeout_s < self.observation_hold_s:
             raise ValueError("invalid surprise completion bounds")
         if not 0 < self.observation_angle_deg <= 180 or not 0 < self.playful_turn_limit_deg <= 180:

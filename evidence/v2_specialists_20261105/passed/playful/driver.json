@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "scenario": "/home/lpc/workspace/arena5_multi_ws/config/scenarios/one_robot_multi_sfm_2_playful_v2_nav2.yaml",
+  "requested_min_wall_s": 180.0,
+  "run_dir": "/home/lpc/workspace/arena5_multi_ws/evidence/runs/v2_specialists_20261105/playful_04/runs/20261105_162408_one_robot_multi_sfm_2_playful_v2_nav2_gpu0",
+  "probe_exit": 0,
+  "driver_wall_s": 385.046794511145
+}

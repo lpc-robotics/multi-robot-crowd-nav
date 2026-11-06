@@ -33,15 +33,17 @@ def main():
     p.add_argument('--require-gaze',nargs='*',default=['13','14']);p.add_argument('--require-playful',nargs='*',default=['13','14'])
     p.add_argument('--crowd-viz',action='store_true')
     p.add_argument('--isaac-overlay',action='store_true')
+    p.add_argument('--require-expressive',action='store_true')
     p.add_argument('--livestream',action='store_true')
     p.add_argument('--foxglove',action='store_true')
+    p.add_argument('--robot-clearance-policy',choices=('record','strict'),default='record')
     p.add_argument('--no-demo',action='store_true');a=p.parse_args()
     if os.environ.get('ROS_DOMAIN_ID') in (None,'51','71'):raise SystemExit('Use an isolated ROS domain')
     output=Path(a.output_dir).resolve();output.mkdir(parents=True,exist_ok=False)
     scenario=Path(a.scenario).resolve()
     if a.seed is not None:
         data=yaml.safe_load(scenario.read_text());data['random_seed']=a.seed
-        for key in ('pedestrian_config','psychology_config','demo_tasks'):
+        for key in ('pedestrian_config','psychology_config','demo_tasks','stimulus_tasks','sequence_tasks'):
             if data.get(key):data[key]=str((scenario.parent/data[key]).resolve())
         scenario=output/'scenario_override.yaml';scenario.write_text(yaml.safe_dump(data,sort_keys=False))
     env=os.environ.copy();env.update(LIVESTREAM=str(a.livestream).lower(),FOXGLOVE=str(a.foxglove).lower(),ARENA_PEDESTRIAN_TELEMETRY='true',
@@ -68,10 +70,18 @@ def main():
             time.sleep(.2)
         else:raise RuntimeError('runtime manifest timeout')
         run=manifests[0].parent;report['run_dir']=str(run)
-        command=[sys.executable,str(ROOT/'scripts/validate_psychology_v2_runtime.py'),str(scenario),
-            '--duration-wall',str(a.duration_wall),'--output',str(output/'acceptance.json'),'--run-dir',str(run),
-            '--require-gaze',*a.require_gaze,'--require-playful',*a.require_playful]
-        if not a.no_demo:command.extend(['--require-demo','--until-demo-complete'])
+        if yaml.safe_load(scenario.read_text()).get('stimulus_tasks') and not a.no_demo:
+            command=[sys.executable,str(ROOT/'scripts/validate_scared_stimulus_runtime.py'),str(scenario),
+                '--duration-wall',str(a.duration_wall),'--output',str(output/'acceptance.json'),'--run-dir',str(run)]
+        else:
+            command=[sys.executable,str(ROOT/'scripts/validate_psychology_v2_runtime.py'),str(scenario),
+                '--duration-wall',str(a.duration_wall),'--output',str(output/'acceptance.json'),'--run-dir',str(run),
+                '--require-gaze',*a.require_gaze,'--require-playful',*a.require_playful]
+            if not a.no_demo:
+                flag='--require-sequence' if yaml.safe_load(scenario.read_text()).get('sequence_tasks') else '--require-demo'
+                command.extend([flag,'--until-demo-complete'])
+        if a.require_expressive: command.append('--require-expressive')
+        command.extend(['--robot-clearance-policy',a.robot_clearance_policy])
         probe=launch(command,'probe.log')
         report['probe_exit']=probe.wait(timeout=a.duration_wall+1560)
         result=json.loads((output/'acceptance.json').read_text());report['passed']=result['passed']

@@ -1,0 +1,14 @@
+{
+  "/home/lpc/workspace/arena5_multi_ws/evidence/runs/v2_specialists_20261105/playful_03/runs/20261105_122555_one_robot_multi_sfm_2_playful_v2_nav2_gpu1/psychology_9859729184272706849.jsonl": {
+    "bytes": 91520609,
+    "sha256": "0b8502a1c54301c5df031714d21148409da3ddcc30b12a3de724a5017e18e680"
+  },
+  "/home/lpc/workspace/arena5_multi_ws/evidence/runs/v2_specialists_20261105/playful_03/acceptance.actual.jsonl": {
+    "bytes": 2717418,
+    "sha256": "046f2f67fa9db5b4a925e05260eb6807d7fcf06a8723b0d42f13d081c44e2431"
+  },
+  "/home/lpc/workspace/arena5_multi_ws/evidence/runs/v2_specialists_20261105/playful_03/launch.log": {
+    "bytes": 132413,
+    "sha256": "ec79de0202cbf7013416e2ff34f6baf77abcd1841e1c841a9552c18021854d27"
+  }
+}

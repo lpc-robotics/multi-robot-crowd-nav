@@ -19,6 +19,8 @@ setup(
     entry_points={
         "console_scripts": [
             "command_guard = arena_multi_control.command_guard:main",
+            "fear_stimulus = arena_multi_control.fear_stimulus_node:main",
+            "crowd_stimulus = arena_multi_control.crowd_stimulus_node:main",
             "wheel_visualizer = arena_multi_control.wheel_visualizer:main",
             "multi_nav_goal = arena_multi_control.task_cli:goal_main",
             "multi_nav_waypoints = arena_multi_control.task_cli:waypoints_main",

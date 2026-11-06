@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "runtime_reference_commit": "5a82112d8b6b7a7dd140efb70cef618e0e2ddcf4",
+  "scope": "Only the new offline plotting tool differs in src/scripts/config after actual acceptance",
+  "new_analysis_files": {
+    "scripts/plot_scared_stimulus.py": "42bcd2087f64c1d60b2f127e5e9dedb427b3962d170caf522d05ab9874b81000"
+  }
+}

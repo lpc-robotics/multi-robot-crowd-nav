@@ -7,14 +7,14 @@ from .psychology_sis import exponential_step
 from .psychology_v2_state import CrowdMentalStateV2
 from .interaction_v2 import surprise_step, playful_step
 from .behavior_v2 import IntentV3
-from .perception import visibility, risk, propagation_graph, approach_conflict
+from .perception import visibility, risk, propagation_graph, approach_conflict, playful_motion_risk
 from .behavior import BehaviorState, RobotMemory, NeighborMemory, choose_behavior, avoid_neighbors, Intent, MODES
 from .psychology import Entity, MentalState, Modifiers, Proposal
 
 
 class SocialPsychologyV2:
     name = "sis_cf_v2"
-    version = "2.0"
+    version = "2.1"
 
     def initialize(self, config, agent_ids, seed):
         self.config = PsychologyConfigV2.parse(config)
@@ -84,19 +84,34 @@ class SocialPsychologyV2:
                     "behavior": asdict(new.behavior), "intent": asdict(intent), "target_knowledge": "none"}
                 continue
             known = {}; interest = {}; visible = {}; fear_complement = curiosity_complement = 1.
+            geometric_complement = 1.; fear_known = {}; appraisals = {}
+            motion_fear = profile.profile == 'playful' and cfg.playful_motion_fear == 1
+            new.attention_until_ns = {i:t for i,t in old.attention_until_ns.items()
+                                      if cfg.threat_attention_s > 0 and t > context.stamp_ns}
             for robot in sorted(context.robots, key=lambda r: r.id):
-                v = visibility(me, robot, cfg.robot_visual_range, cfg.robot_fov_deg, cfg.robot_fov_fade_deg)
+                body_v = visibility(me, robot, cfg.robot_visual_range, cfg.robot_fov_deg, cfg.robot_fov_fade_deg)
+                tracked = (robot.id in new.attention_until_ns and math.hypot(me.x-robot.x,me.y-robot.y) < cfg.robot_visual_range)
+                v = body_v if body_v > 0 else float(tracked)
                 if v <= 0:
                     continue
+                if body_v > 0 and cfg.threat_attention_s > 0 and old.behavior.target_robot_id == robot.id and old.behavior.mode in ('CURIOUS','SURPRISED','THREATENING','SCARED'):
+                    new.attention_until_ns[robot.id] = end_ns+round(cfg.threat_attention_s*1e9)
                 novelty = old.memories[robot.id].novelty if robot.id in old.memories else 1.
                 r = risk(me, robot, cfg)
-                fear_complement *= 1 - v * r; curiosity_complement *= 1 - v * novelty
-                if not profile.preferred_robot_id or robot.id == profile.preferred_robot_id:
-                    interest[robot.id] = v * novelty * (1 - r)
+                fr = r
+                if motion_fear:
+                    fr, appraisals[robot.id] = playful_motion_risk(me, robot, r, cfg)
+                fear_complement *= 1 - v * fr; curiosity_complement *= 1 - body_v * novelty
+                geometric_complement *= 1 - body_v * r
+                if body_v > 0 and (not profile.preferred_robot_id or robot.id == profile.preferred_robot_id):
+                    interest[robot.id] = body_v * novelty * (1 - r)
                 known[robot.id] = (robot, r * v, 1.)
-                visible[robot.id] = {"visibility": v, "risk": r, "novelty": novelty, "knowledge": "visible"}
+                fear_known[robot.id] = (robot, fr * v, 1.)
+                visible[robot.id] = {"visibility": v, "curiosity_visibility": body_v, "risk": r, "novelty": novelty,
+                    "knowledge": "visible" if body_v > 0 else "tracked_attention"}
+                if motion_fear: visible[robot.id]['fear_risk'] = fr
                 new.memories[robot.id] = RobotMemory(robot.id, robot.name, robot.x, robot.y, robot.vx, robot.vy,
-                    robot.radius, context.stamp_ns, novelty * math.exp(-cfg.novelty_decay * v * context.dt))
+                    robot.radius, context.stamp_ns, novelty * math.exp(-cfg.novelty_decay * body_v * context.dt))
             for i, memory in old.memories.items():
                 if i in known:
                     continue
@@ -109,14 +124,21 @@ class SocialPsychologyV2:
                     predicted = Entity(i, memory.name, memory.x + memory.vx * horizon, memory.y + memory.vy * horizon,
                                        memory.vx, memory.vy, memory.radius)
                     known[i] = (predicted, risk(me, predicted, cfg), confidence)
-            sf = 1 - fear_complement; sc = (1 - sf) * (1 - curiosity_complement)
+                    fr = known[i][1]
+                    if motion_fear:
+                        fr, appraisals[i] = playful_motion_risk(me, predicted, fr, cfg)
+                    fear_known[i] = (predicted, fr, confidence)
+            sf = 1 - fear_complement
+            geometric_sf = 1 - geometric_complement
+            sc = (1 - geometric_sf) * (1 - curiosity_complement)
             lc = cfg.alpha_C * sc + cfg.beta_C * social[me.id][0]
             lf = cfg.alpha_F * sf + cfg.beta_F * social[me.id][1]
             c0, f0 = old.variables["curiosity"], old.variables["fear"]
             c = exponential_step(c0, lc, cfg.mu_C + cfg.kappa * f0, context.dt)
             f = exponential_step(f0, lf, cfg.mu_F, context.dt)
             new.variables = {"curiosity": c, "fear": f}
-            new.behavior, intent = choose_behavior(me, c, f, old.behavior, known, interest, sf, end_ns, cfg)
+            new.behavior, intent = choose_behavior(me, c, f, old.behavior, known, interest, geometric_sf, end_ns, cfg,
+                                                   fear_known=fear_known if motion_fear else None)
             neighbors = {}
             new.neighbors = {}
             for p in sorted(context.people,key=lambda p:p.id):
@@ -135,7 +157,8 @@ class SocialPsychologyV2:
                         horizon = min(age,cfg.memory_prediction_horizon)
                         neighbors[p.id] = Entity(p.id,memory.name,memory.x+memory.vx*horizon,
                             memory.y+memory.vy*horizon,memory.vx,memory.vy,memory.radius)
-            intent = surprise_step(me, old, new, IntentV3.from_legacy(intent), known, interest, visible, cfg, end_ns, context.dt)
+            interaction_known = fear_known if motion_fear else known
+            intent = surprise_step(me, old, new, IntentV3.from_legacy(intent), interaction_known, interest, visible, cfg, end_ns, context.dt)
             conflicts = []
             if intent.mode == "CURIOUS":
                 conflicts = [p.id for p in neighbors.values() if
@@ -145,7 +168,7 @@ class SocialPsychologyV2:
                         target_since_ns=end_ns, reason="approach_blocked",
                         approach_blocked_until_ns=end_ns+round(cfg.approach_retry_delay*1e9))
                     intent = IntentV3(vigilant=new.behavior.vigilant, override_desired_velocity=True)
-            intent = playful_step(me, old, new, intent, known, visible, neighbors, profile, cfg, end_ns)
+            intent = playful_step(me, old, new, intent, interaction_known, visible, neighbors, profile, cfg, end_ns)
             # Temporary behaviors can leave an agent far from its original route.
             # Keep anticipating neighbors until it reaches the saved next goal.
             anchor = old.behavior.return_goal or (me.goals[0] if me.goals else None)
@@ -164,12 +187,13 @@ class SocialPsychologyV2:
                 "recovery_C": cfg.mu_C * c0, "recovery_F": cfg.mu_F * f0, "inhibition_C": cfg.kappa * f0 * c0,
                 "derivative_semantics": "pre_step_instantaneous", "behavior": asdict(new.behavior),
                 "surprise": new.surprise, "event": new.event, "exit_reason": new.exit_reason,
+                "motion_fear_appraisal": appraisals, "geometric_direct_risk": geometric_sf,
                 "phase": new.phase, "motivation": "playful" if new.phase != "none" else "none",
                 "playful_blockers": new.playful_blockers, "playful_outcome": new.playful_outcome,
                 "episode_counts": new.episode_counts, "cooldown_until_ns": new.cooldown_until_ns,
                 "visible_robots": visible, "target_age_s": None if not target else
                 (context.stamp_ns - new.memories[target].last_seen_ns) / 1e9,
-                "target_knowledge": "none" if not target else ("visible" if target in visible else "memory"),
+                "target_knowledge": "none" if not target else (visible[target]['knowledge'] if target in visible else "memory"),
                 "intent": asdict(intent)}
             diagnostics[me.id]["approach_conflicts"] = sorted(conflicts)
             diagnostics[me.id]["avoidance_conflicts"] = sorted(avoidance_conflicts)

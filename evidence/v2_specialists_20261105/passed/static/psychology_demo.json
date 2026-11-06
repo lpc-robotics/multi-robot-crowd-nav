@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "passed": true,
+  "error": "",
+  "tasks": "/home/lpc/workspace/arena5_multi_ws/config/tasks/psychology_v2_static_showcase.yaml",
+  "rounds_requested": 2,
+  "rounds": [
+    {
+      "round": 1,
+      "robots": {
+        "robot_1": {
+          "sent_ns": 11700000174,
+          "status": 4,
+          "completed_ns": 42150000628
+        }
+      }
+    },
+    {
+      "round": 2,
+      "robots": {
+        "robot_1": {
+          "sent_ns": 57150000851,
+          "status": 4,
+          "completed_ns": 90850001353
+        }
+      }
+    }
+  ],
+  "wall_duration_s": 165.0068590741139,
+  "sim_stamp_ns": 105900001578,
+  "scope": "robot_action_execution; psychological mechanisms require separate evidence"
+}

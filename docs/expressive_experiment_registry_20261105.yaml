@@ -1,0 +1,1117 @@
+schema_version: 1
+status: engineering_initial_unfitted
+parameter_registry: config/psychology/parameter_registry_v2.yaml
+scope: experiment settings and overrides; no fitted values or statistical priors
+robot_clearance_policy: record_only
+human_geometry_policy: retain overlap failures
+curiosity: unchanged equations and thresholds; body FOV inputs
+six_display_categories:
+- REGULAR
+- IMPASSIVE (immune_dynamic / impassive_static, underlying REGULAR)
+- SURPRISED
+- CURIOUS
+- SCARED
+- THREATENING
+inputs:
+  config/psychology/sis_cf_v2_playful_showcase.yaml:
+    sha256: aca78bde7b603fd1bd67146216e393552ff77bd00f416f80f3d75c4ccf04ff9d
+    content:
+      schema_version: 2
+      model: sis_cf_v2
+      occlusion_model: none_open_space
+      parameters:
+        alpha_C: 0.6
+        alpha_F: 1.0
+        beta_C: 0.06
+        beta_F: 0.12
+        mu_C: 0.12
+        mu_F: 0.25
+        kappa: 0.0
+        novelty_decay: 0.05
+        expressivity_C: 0.8
+        expressivity_F: 0.8
+        robot_visual_range: 8.0
+        spread_range: 3.0
+        robot_fov_deg: 200.0
+        human_fov_deg: 200.0
+        robot_fov_fade_deg: 10.0
+        human_fov_fade_deg: 10.0
+        prediction_horizon: 2.0
+        gap_warn: 0.8
+        gap_critical: 0.15
+        predicted_gap_warn: 0.8
+        closing_speed_ref: 0.5
+        curiosity_on: 0.6
+        curiosity_off: 0.35
+        fear_on: 0.65
+        fear_off: 0.35
+        vigilance_on: 0.08
+        vigilance_off: 0.04
+        curiosity_max_fear: 0.25
+        curiosity_max_risk: 0.25
+        emergency_risk: 0.85
+        min_mode_hold: 0.5
+        target_switch_margin: 0.15
+        target_min_hold: 1.0
+        memory_ttl: 2.0
+        memory_tau: 0.8
+        memory_prediction_horizon: 0.75
+        minimum_memory_confidence: 0.2
+        curiosity_standoff_gap: 0.9
+        curiosity_stop_band: 0.15
+        curiosity_speed: 0.35
+        curiosity_gap_gain: 0.7
+        curiosity_retreat_cap: 0.2
+        scared_target_gap: 1.5
+        scared_speed: 0.8
+        scared_gap_gain: 0.8
+        vigilant_speed_gain: 0.4
+        human_visual_range: 5.0
+        approach_clearance: 0.35
+        approach_retry_delay: 2.0
+        surprise_visible_s: 0.3
+        surprise_novelty: 0.6
+        surprise_max_risk: 0.25
+        surprise_tau: 1.5
+        surprise_off: 0.25
+        observation_stop_speed: 0.05
+        observation_yaw_rate: 1.0
+        observation_angle_deg: 15.0
+        observation_hold_s: 1.0
+        surprise_timeout_s: 4.0
+        playful_curiosity: 0.7
+        playful_max_fear: 0.2
+        playful_max_risk: 0.25
+        playful_curious_s: 4.0
+        playful_front_gap: 1.0
+        playful_lookahead_s: 1.0
+        playful_intercept_s: 4.0
+        playful_occupy_s: 2.0
+        playful_yield_s: 3.0
+        playful_cooldown_s: 30.0
+        playful_max_episodes: 1.0
+        playful_min_robot_speed: 0.05
+        playful_turn_limit_deg: 45.0
+        playful_speed: 0.6
+        playful_arrival_radius: 0.25
+        playful_yield_distance: 1.2
+        playful_enabled: 1.0
+        world_width: 30.0
+        world_height: 23.0
+      individuals:
+        13:
+          profile: playful
+          preferred_robot_id: -1
+          parameters:
+            memory_tau: 2.0
+            memory_ttl: 4.0
+            playful_occupy_s: 10.0
+            playful_hold_when_stopped: 1.0
+            playful_cooldown_s: 8.0
+            playful_max_episodes: 3.0
+            playful_front_gap: 1.8
+            playful_intercept_s: 6.0
+            playful_min_robot_speed: 0.02
+            playful_motion_fear: 1.0
+            fear_on: 0.8
+            scared_target_gap: 2.0
+            threat_attention_s: 4.0
+        14:
+          profile: playful
+          preferred_robot_id: -1
+          parameters:
+            memory_tau: 2.0
+            memory_ttl: 4.0
+            playful_occupy_s: 10.0
+            playful_hold_when_stopped: 1.0
+            playful_cooldown_s: 8.0
+            playful_max_episodes: 3.0
+            playful_front_gap: 1.8
+            playful_intercept_s: 6.0
+            playful_min_robot_speed: 0.02
+            playful_motion_fear: 1.0
+            fear_on: 0.8
+            scared_target_gap: 2.0
+            threat_attention_s: 4.0
+  config/psychology/sis_cf_v2_expressive.yaml:
+    sha256: 73eeb737969d9b601fc64edae4cbdd440a938f0077e64238b32f9de3a97f2e17
+    content:
+      schema_version: 2
+      model: sis_cf_v2
+      occlusion_model: none_open_space
+      parameters:
+        alpha_C: 0.6
+        alpha_F: 1.0
+        beta_C: 0.06
+        beta_F: 0.12
+        mu_C: 0.12
+        mu_F: 0.25
+        kappa: 0.0
+        novelty_decay: 0.05
+        expressivity_C: 0.8
+        expressivity_F: 0.8
+        robot_visual_range: 8.0
+        spread_range: 3.0
+        robot_fov_deg: 200.0
+        human_fov_deg: 200.0
+        robot_fov_fade_deg: 10.0
+        human_fov_fade_deg: 10.0
+        prediction_horizon: 2.0
+        gap_warn: 0.8
+        gap_critical: 0.15
+        predicted_gap_warn: 0.8
+        closing_speed_ref: 0.5
+        curiosity_on: 0.6
+        curiosity_off: 0.35
+        fear_on: 0.65
+        fear_off: 0.35
+        vigilance_on: 0.08
+        vigilance_off: 0.04
+        curiosity_max_fear: 0.25
+        curiosity_max_risk: 0.25
+        emergency_risk: 0.85
+        min_mode_hold: 0.5
+        target_switch_margin: 0.15
+        target_min_hold: 1.0
+        memory_ttl: 2.0
+        memory_tau: 0.8
+        memory_prediction_horizon: 0.75
+        minimum_memory_confidence: 0.2
+        curiosity_standoff_gap: 0.9
+        curiosity_stop_band: 0.15
+        curiosity_speed: 0.35
+        curiosity_gap_gain: 0.7
+        curiosity_retreat_cap: 0.2
+        scared_target_gap: 1.5
+        scared_speed: 0.8
+        scared_gap_gain: 0.8
+        vigilant_speed_gain: 0.4
+        human_visual_range: 5.0
+        approach_clearance: 0.35
+        approach_retry_delay: 2.0
+        surprise_visible_s: 0.3
+        surprise_novelty: 0.6
+        surprise_max_risk: 0.25
+        surprise_tau: 1.5
+        surprise_off: 0.25
+        observation_stop_speed: 0.05
+        observation_yaw_rate: 1.0
+        observation_angle_deg: 15.0
+        observation_hold_s: 1.0
+        observation_display_margin_s: 0.15
+        surprise_timeout_s: 4.0
+        playful_curiosity: 0.7
+        playful_max_fear: 0.2
+        playful_max_risk: 0.25
+        playful_curious_s: 4.0
+        playful_front_gap: 1.0
+        playful_lookahead_s: 1.0
+        playful_intercept_s: 4.0
+        playful_occupy_s: 2.0
+        playful_yield_s: 3.0
+        playful_cooldown_s: 30.0
+        playful_max_episodes: 1.0
+        playful_min_robot_speed: 0.05
+        playful_turn_limit_deg: 45.0
+        playful_speed: 0.6
+        playful_arrival_radius: 0.25
+        playful_yield_distance: 1.2
+        playful_enabled: 1.0
+        world_width: 30.0
+        world_height: 23.0
+        threat_attention_s: 4.0
+      individuals:
+        1:
+          profile: standard
+          preferred_robot_id: 0
+          parameters: {}
+        2:
+          profile: standard
+          preferred_robot_id: 0
+          parameters: {}
+        3:
+          profile: standard
+          preferred_robot_id: 0
+          parameters: {}
+        4:
+          profile: standard
+          preferred_robot_id: 0
+          parameters: {}
+        5:
+          profile: standard
+          preferred_robot_id: 0
+          parameters: {}
+        6:
+          profile: standard
+          preferred_robot_id: 0
+          parameters: {}
+        7:
+          profile: standard
+          preferred_robot_id: 0
+          parameters: {}
+        8:
+          profile: standard
+          preferred_robot_id: 0
+          parameters: {}
+        9:
+          profile: immune_dynamic
+          preferred_robot_id: 0
+          parameters: {}
+        10:
+          profile: immune_dynamic
+          preferred_robot_id: 0
+          parameters: {}
+        11:
+          profile: impassive_static
+          preferred_robot_id: 0
+          parameters: {}
+        12:
+          profile: impassive_static
+          preferred_robot_id: 0
+          parameters: {}
+        13:
+          profile: playful
+          preferred_robot_id: -1
+          parameters:
+            memory_tau: 2.0
+            memory_ttl: 4.0
+            playful_occupy_s: 10.0
+            playful_hold_when_stopped: 1.0
+            playful_cooldown_s: 8.0
+            playful_max_episodes: 3.0
+            playful_front_gap: 1.8
+            playful_intercept_s: 6.0
+            playful_min_robot_speed: 0.02
+            playful_motion_fear: 1.0
+            fear_on: 0.8
+            scared_target_gap: 2.0
+            threat_attention_s: 4.0
+        14:
+          profile: playful
+          preferred_robot_id: -2
+          parameters:
+            memory_tau: 2.0
+            memory_ttl: 4.0
+            playful_occupy_s: 10.0
+            playful_hold_when_stopped: 1.0
+            playful_cooldown_s: 8.0
+            playful_max_episodes: 3.0
+            playful_front_gap: 1.8
+            playful_intercept_s: 6.0
+            playful_min_robot_speed: 0.02
+            playful_motion_fear: 1.0
+            fear_on: 0.8
+            scared_target_gap: 2.0
+            threat_attention_s: 4.0
+  config/tasks/psychology_v2_expressive_sequence.yaml:
+    sha256: c298c5e4e1d6becedcaf95ab79d8a2807149c5d5fdf8d0a3b93dbf880a997c15
+    content:
+      schema_version: 1
+      robots:
+      - robot_1
+      - robot_2
+      startup_timeout_wall_s: 300.0
+      experiment_timeout_wall_s: 600.0
+      stages:
+      - name: settle_and_observe
+        duration_s: 8.0
+        commands:
+          robot_1:
+            kind: hold
+            speed: 0.0
+            acceleration: 0.8
+          robot_2:
+            kind: hold
+            speed: 0.0
+            acceleration: 0.8
+      - name: playful_13_slow_pass
+        duration_s: 28.0
+        commands:
+          robot_1:
+            kind: point
+            speed: 0.1
+            acceleration: 0.8
+            point:
+            - 13.0
+            - 5.0
+          robot_2:
+            kind: hold
+            speed: 0.0
+            acceleration: 0.8
+      - name: transfer_toward_crowd
+        duration_s: 8.0
+        commands:
+          robot_1:
+            kind: point
+            speed: 0.5
+            acceleration: 0.8
+            point:
+            - 17.0
+            - 6.0
+          robot_2:
+            kind: point
+            speed: 0.4
+            acceleration: 0.8
+            point:
+            - 13.0
+            - 15.0
+      - name: playful_14_and_curious_crowd
+        duration_s: 18.0
+        commands:
+          robot_1:
+            kind: follow
+            speed: 0.12
+            acceleration: 0.4
+            person: person_1
+            target_gap: 1.2
+          robot_2:
+            kind: point
+            speed: 0.1
+            acceleration: 0.8
+            point:
+            - 18.0
+            - 15.0
+      - name: sudden_directed_approach
+        duration_s: 6.0
+        commands:
+          robot_1:
+            kind: follow
+            speed: 0.9
+            acceleration: 1.5
+            person: person_1
+            target_gap: 0.0
+          robot_2:
+            kind: follow
+            speed: 0.9
+            acceleration: 1.5
+            person: person_14
+            target_gap: 0.0
+      - name: stop_after_approach
+        duration_s: 5.0
+        commands:
+          robot_1:
+            kind: hold
+            speed: 0.0
+            acceleration: 0.8
+          robot_2:
+            kind: hold
+            speed: 0.0
+            acceleration: 0.8
+      - name: withdraw_and_recover
+        duration_s: 12.0
+        commands:
+          robot_1:
+            kind: point
+            speed: 0.6
+            acceleration: 0.8
+            point:
+            - 10.0
+            - 2.0
+          robot_2:
+            kind: point
+            speed: 0.6
+            acceleration: 0.8
+            point:
+            - 10.0
+            - 21.0
+      - name: immune_and_static_pass
+        duration_s: 24.0
+        commands:
+          robot_1:
+            kind: point
+            speed: 0.4
+            acceleration: 0.8
+            point:
+            - 22.0
+            - 3.5
+          robot_2:
+            kind: point
+            speed: 0.4
+            acceleration: 0.8
+            point:
+            - 27.0
+            - 19.5
+      - name: recovery_and_task_return
+        duration_s: 25.0
+        commands:
+          robot_1:
+            kind: hold
+            speed: 0.0
+            acceleration: 0.8
+          robot_2:
+            kind: hold
+            speed: 0.0
+            acceleration: 0.8
+  config/hunav/multi_14_psychology_expressive.yaml:
+    sha256: fc223083e489f6e4e9cbd87da36dab4845a458f351e7b19f5301761f7f23f143
+    content:
+      hunav_loader:
+        ros__parameters:
+          map: multi_sfm_arena
+          agents:
+          - person_1
+          - person_2
+          - person_3
+          - person_4
+          - person_5
+          - person_6
+          - person_7
+          - person_8
+          - person_9
+          - person_10
+          - person_11
+          - person_12
+          - person_13
+          - person_14
+          person_1:
+            id: 1
+            skin: 0
+            group_id: -1
+            max_vel: 0.3
+            radius: 0.4
+            behavior:
+              type: 1
+              configuration: 1
+              duration: 40.0
+              once: true
+              vel: 0.6
+              dist: 0.0
+              goal_force_factor: 2.0
+              obstacle_force_factor: 10.0
+              social_force_factor: 5.0
+              other_force_factor: 20.0
+            init_pose:
+              x: 23.0
+              y: 10.0
+              h: 3.141592653589793
+            goal_radius: 0.3
+            cyclic_goals: true
+            goals:
+            - g0
+            - g1
+            - g2
+            - g3
+            g0:
+              x: 18.0
+              y: 10.0
+              h: 0.0
+            g1:
+              x: 18.0
+              y: 8.0
+              h: 0.0
+            route_mode: loop
+            g2:
+              x: 23.0
+              y: 8.0
+              h: 0.0
+            g3:
+              x: 23.0
+              y: 10.0
+              h: 0.0
+          person_2:
+            id: 2
+            skin: 0
+            group_id: -1
+            max_vel: 0.3
+            radius: 0.4
+            behavior:
+              type: 1
+              configuration: 1
+              duration: 40.0
+              once: true
+              vel: 0.6
+              dist: 0.0
+              goal_force_factor: 2.0
+              obstacle_force_factor: 10.0
+              social_force_factor: 5.0
+              other_force_factor: 20.0
+            init_pose:
+              x: 23.0
+              y: 13.5
+              h: 3.141592653589793
+            goal_radius: 0.3
+            cyclic_goals: true
+            goals:
+            - g0
+            - g1
+            - g2
+            - g3
+            g0:
+              x: 20.0
+              y: 13.5
+              h: 0.0
+            g1:
+              x: 20.0
+              y: 12.0
+              h: 0.0
+            route_mode: loop
+            g2:
+              x: 23.0
+              y: 12.0
+              h: 0.0
+            g3:
+              x: 23.0
+              y: 13.5
+              h: 0.0
+          person_3:
+            id: 3
+            skin: 0
+            group_id: -1
+            max_vel: 0.3
+            radius: 0.4
+            behavior:
+              type: 1
+              configuration: 1
+              duration: 40.0
+              once: true
+              vel: 0.6
+              dist: 0.0
+              goal_force_factor: 2.0
+              obstacle_force_factor: 10.0
+              social_force_factor: 5.0
+              other_force_factor: 20.0
+            init_pose:
+              x: 28.0
+              y: 6.5
+              h: 3.141592653589793
+            goal_radius: 0.3
+            cyclic_goals: true
+            goals:
+            - g0
+            - g1
+            - g2
+            - g3
+            g0:
+              x: 25.0
+              y: 6.5
+              h: 0.0
+            g1:
+              x: 25.0
+              y: 5.0
+              h: 0.0
+            route_mode: loop
+            g2:
+              x: 28.0
+              y: 5.0
+              h: 0.0
+            g3:
+              x: 28.0
+              y: 6.5
+              h: 0.0
+          person_4:
+            id: 4
+            skin: 0
+            group_id: -1
+            max_vel: 0.3
+            radius: 0.4
+            behavior:
+              type: 1
+              configuration: 1
+              duration: 40.0
+              once: true
+              vel: 0.6
+              dist: 0.0
+              goal_force_factor: 2.0
+              obstacle_force_factor: 10.0
+              social_force_factor: 5.0
+              other_force_factor: 20.0
+            init_pose:
+              x: 28.0
+              y: 10.5
+              h: 3.141592653589793
+            goal_radius: 0.3
+            cyclic_goals: true
+            goals:
+            - g0
+            - g1
+            - g2
+            - g3
+            g0:
+              x: 25.0
+              y: 10.5
+              h: 0.0
+            g1:
+              x: 25.0
+              y: 9.0
+              h: 0.0
+            route_mode: loop
+            g2:
+              x: 28.0
+              y: 9.0
+              h: 0.0
+            g3:
+              x: 28.0
+              y: 10.5
+              h: 0.0
+          person_5:
+            id: 5
+            skin: 0
+            group_id: -1
+            max_vel: 0.3
+            radius: 0.4
+            behavior:
+              type: 1
+              configuration: 1
+              duration: 40.0
+              once: true
+              vel: 0.6
+              dist: 0.0
+              goal_force_factor: 2.0
+              obstacle_force_factor: 10.0
+              social_force_factor: 5.0
+              other_force_factor: 20.0
+            init_pose:
+              x: 7.0
+              y: 13.5
+              h: 3.141592653589793
+            goal_radius: 0.3
+            cyclic_goals: true
+            goals:
+            - g0
+            - g1
+            - g2
+            - g3
+            g0:
+              x: 4.0
+              y: 13.5
+              h: 0.0
+            g1:
+              x: 4.0
+              y: 12.0
+              h: 0.0
+            route_mode: loop
+            g2:
+              x: 7.0
+              y: 12.0
+              h: 0.0
+            g3:
+              x: 7.0
+              y: 13.5
+              h: 0.0
+          person_6:
+            id: 6
+            skin: 0
+            group_id: -1
+            max_vel: 0.3
+            radius: 0.4
+            behavior:
+              type: 1
+              configuration: 1
+              duration: 40.0
+              once: true
+              vel: 0.6
+              dist: 0.0
+              goal_force_factor: 2.0
+              obstacle_force_factor: 10.0
+              social_force_factor: 5.0
+              other_force_factor: 20.0
+            init_pose:
+              x: 7.0
+              y: 17.5
+              h: 3.141592653589793
+            goal_radius: 0.3
+            cyclic_goals: true
+            goals:
+            - g0
+            - g1
+            - g2
+            - g3
+            g0:
+              x: 4.0
+              y: 17.5
+              h: 0.0
+            g1:
+              x: 4.0
+              y: 16.0
+              h: 0.0
+            route_mode: loop
+            g2:
+              x: 7.0
+              y: 16.0
+              h: 0.0
+            g3:
+              x: 7.0
+              y: 17.5
+              h: 0.0
+          person_7:
+            id: 7
+            skin: 0
+            group_id: -1
+            max_vel: 0.3
+            radius: 0.4
+            behavior:
+              type: 1
+              configuration: 1
+              duration: 40.0
+              once: true
+              vel: 0.6
+              dist: 0.0
+              goal_force_factor: 2.0
+              obstacle_force_factor: 10.0
+              social_force_factor: 5.0
+              other_force_factor: 20.0
+            init_pose:
+              x: 7.0
+              y: 21.5
+              h: 3.141592653589793
+            goal_radius: 0.3
+            cyclic_goals: true
+            goals:
+            - g0
+            - g1
+            - g2
+            - g3
+            g0:
+              x: 4.0
+              y: 21.5
+              h: 0.0
+            g1:
+              x: 4.0
+              y: 20.0
+              h: 0.0
+            route_mode: loop
+            g2:
+              x: 7.0
+              y: 20.0
+              h: 0.0
+            g3:
+              x: 7.0
+              y: 21.5
+              h: 0.0
+          person_8:
+            id: 8
+            skin: 0
+            group_id: -1
+            max_vel: 0.3
+            radius: 0.4
+            behavior:
+              type: 1
+              configuration: 1
+              duration: 40.0
+              once: true
+              vel: 0.6
+              dist: 0.0
+              goal_force_factor: 2.0
+              obstacle_force_factor: 10.0
+              social_force_factor: 5.0
+              other_force_factor: 20.0
+            init_pose:
+              x: 28.0
+              y: 13.5
+              h: 3.141592653589793
+            goal_radius: 0.3
+            cyclic_goals: true
+            goals:
+            - g0
+            - g1
+            - g2
+            - g3
+            g0:
+              x: 25.0
+              y: 13.5
+              h: 0.0
+            g1:
+              x: 25.0
+              y: 12.0
+              h: 0.0
+            route_mode: loop
+            g2:
+              x: 28.0
+              y: 12.0
+              h: 0.0
+            g3:
+              x: 28.0
+              y: 13.5
+              h: 0.0
+          person_9:
+            id: 9
+            skin: 0
+            group_id: -1
+            max_vel: 0.4
+            radius: 0.4
+            behavior:
+              type: 1
+              configuration: 1
+              duration: 40.0
+              once: true
+              vel: 0.6
+              dist: 0.0
+              goal_force_factor: 2.0
+              obstacle_force_factor: 10.0
+              social_force_factor: 5.0
+              other_force_factor: 20.0
+            init_pose:
+              x: 17.0
+              y: 4.0
+              h: 3.141592653589793
+            goal_radius: 0.3
+            cyclic_goals: true
+            goals:
+            - g0
+            - g1
+            - g2
+            - g3
+            g0:
+              x: 15.0
+              y: 4.0
+              h: 0.0
+            g1:
+              x: 15.0
+              y: 3.0
+              h: 0.0
+            route_mode: loop
+            g2:
+              x: 17.0
+              y: 3.0
+              h: 0.0
+            g3:
+              x: 17.0
+              y: 4.0
+              h: 0.0
+          person_10:
+            id: 10
+            skin: 0
+            group_id: -1
+            max_vel: 0.4
+            radius: 0.4
+            behavior:
+              type: 1
+              configuration: 1
+              duration: 40.0
+              once: true
+              vel: 0.6
+              dist: 0.0
+              goal_force_factor: 2.0
+              obstacle_force_factor: 10.0
+              social_force_factor: 5.0
+              other_force_factor: 20.0
+            init_pose:
+              x: 17.0
+              y: 20.0
+              h: 3.141592653589793
+            goal_radius: 0.3
+            cyclic_goals: true
+            goals:
+            - g0
+            - g1
+            - g2
+            - g3
+            g0:
+              x: 15.0
+              y: 20.0
+              h: 0.0
+            g1:
+              x: 15.0
+              y: 19.0
+              h: 0.0
+            route_mode: loop
+            g2:
+              x: 17.0
+              y: 19.0
+              h: 0.0
+            g3:
+              x: 17.0
+              y: 20.0
+              h: 0.0
+          person_11:
+            id: 11
+            skin: 0
+            group_id: -1
+            max_vel: 0.4
+            radius: 0.4
+            behavior:
+              type: 1
+              configuration: 1
+              duration: 40.0
+              once: true
+              vel: 0.6
+              dist: 0.0
+              goal_force_factor: 2.0
+              obstacle_force_factor: 10.0
+              social_force_factor: 5.0
+              other_force_factor: 20.0
+            init_pose:
+              x: 21.0
+              y: 4.0
+              h: 3.141592653589793
+            goal_radius: 0.3
+            cyclic_goals: true
+            goals:
+            - g0
+            - g1
+            - g2
+            - g3
+            g0:
+              x: 19.0
+              y: 4.0
+              h: 0.0
+            g1:
+              x: 19.0
+              y: 3.0
+              h: 0.0
+            route_mode: loop
+            g2:
+              x: 21.0
+              y: 3.0
+              h: 0.0
+            g3:
+              x: 21.0
+              y: 4.0
+              h: 0.0
+          person_12:
+            id: 12
+            skin: 0
+            group_id: -1
+            max_vel: 0.4
+            radius: 0.4
+            behavior:
+              type: 1
+              configuration: 1
+              duration: 40.0
+              once: true
+              vel: 0.6
+              dist: 0.0
+              goal_force_factor: 2.0
+              obstacle_force_factor: 10.0
+              social_force_factor: 5.0
+              other_force_factor: 20.0
+            init_pose:
+              x: 27.0
+              y: 20.0
+              h: 3.141592653589793
+            goal_radius: 0.3
+            cyclic_goals: true
+            goals:
+            - g0
+            - g1
+            - g2
+            - g3
+            g0:
+              x: 25.0
+              y: 20.0
+              h: 0.0
+            g1:
+              x: 25.0
+              y: 19.0
+              h: 0.0
+            route_mode: loop
+            g2:
+              x: 27.0
+              y: 19.0
+              h: 0.0
+            g3:
+              x: 27.0
+              y: 20.0
+              h: 0.0
+          person_13:
+            id: 13
+            skin: 0
+            group_id: -1
+            max_vel: 1.0
+            radius: 0.4
+            behavior:
+              type: 1
+              configuration: 1
+              duration: 40.0
+              once: true
+              vel: 0.6
+              dist: 0.0
+              goal_force_factor: 2.0
+              obstacle_force_factor: 10.0
+              social_force_factor: 5.0
+              other_force_factor: 20.0
+            init_pose:
+              x: 12.0
+              y: 6.5
+              h: -2.498091544796509
+            goal_radius: 0.3
+            cyclic_goals: true
+            goals:
+            - g0
+            - g1
+            - g2
+            - g3
+            g0:
+              x: 10.0
+              y: 5.0
+              h: 0.0
+            g1:
+              x: 10.0
+              y: 8.0
+              h: 0.0
+            route_mode: loop
+            g2:
+              x: 13.0
+              y: 8.0
+              h: 0.0
+            g3:
+              x: 12.0
+              y: 6.5
+              h: 0.0
+          person_14:
+            id: 14
+            skin: 0
+            group_id: -1
+            max_vel: 1.0
+            radius: 0.4
+            behavior:
+              type: 1
+              configuration: 1
+              duration: 40.0
+              once: true
+              vel: 0.6
+              dist: 0.0
+              goal_force_factor: 2.0
+              obstacle_force_factor: 10.0
+              social_force_factor: 5.0
+              other_force_factor: 20.0
+            init_pose:
+              x: 22.0
+              y: 16.5
+              h: -2.498091544796509
+            goal_radius: 0.3
+            cyclic_goals: true
+            goals:
+            - g0
+            - g1
+            - g2
+            - g3
+            g0:
+              x: 20.0
+              y: 15.0
+              h: 0.0
+            g1:
+              x: 20.0
+              y: 18.0
+              h: 0.0
+            route_mode: loop
+            g2:
+              x: 23.0
+              y: 18.0
+              h: 0.0
+            g3:
+              x: 22.0
+              y: 16.5
+              h: 0.0
+      arena_multi_hunav:
+        character_models:
+        - original_female_adult_business_02
+        - original_female_adult_business_02
+        - original_female_adult_business_02
+        - original_female_adult_business_02
+        - original_female_adult_business_02
+        - original_female_adult_business_02
+        - original_female_adult_business_02
+        - original_female_adult_business_02
+        - original_female_adult_business_02
+        - original_female_adult_business_02
+        - original_female_adult_business_02
+        - original_female_adult_business_02
+        - original_female_adult_business_02
+        - original_female_adult_business_02
+limitations:
+- playful profile does not infer age from appearance
+- bounded attention is an uncalibrated perception hypothesis, not measured gaze
+- display selection cannot estimate population prevalence
+- fixed-time stages are exposure durations, not guaranteed navigation arrivals
+- robot follow target is observed position, never latent state

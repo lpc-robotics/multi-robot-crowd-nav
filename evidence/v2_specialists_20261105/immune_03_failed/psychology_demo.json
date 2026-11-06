@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "passed": true,
+  "error": "",
+  "tasks": "/home/lpc/workspace/arena5_multi_ws/config/tasks/psychology_v2_immune_showcase.yaml",
+  "rounds_requested": 2,
+  "rounds": [
+    {
+      "round": 1,
+      "robots": {
+        "robot_1": {
+          "sent_ns": 13150000195,
+          "status": 4,
+          "completed_ns": 43650000650
+        }
+      }
+    },
+    {
+      "round": 2,
+      "robots": {
+        "robot_1": {
+          "sent_ns": 58700000874,
+          "status": 4,
+          "completed_ns": 91950001370
+        }
+      }
+    }
+  ],
+  "wall_duration_s": 149.5545134798158,
+  "sim_stamp_ns": 106950001593,
+  "scope": "robot_action_execution; psychological mechanisms require separate evidence"
+}

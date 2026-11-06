@@ -1,0 +1,22 @@
+{
+  "/home/lpc/workspace/arena5_multi_ws/evidence/runs/scared_stimulus_20261103/actual_considerate_01/launch.log": {
+    "bytes": 107845,
+    "sha256": "9176297cc57bc9aaca3071244f09e4982a64389fc7189cceb15538237f3a05f0"
+  },
+  "/home/lpc/workspace/arena5_multi_ws/evidence/runs/scared_stimulus_20261103/actual_considerate_01/acceptance.actual.jsonl": {
+    "bytes": 3253243,
+    "sha256": "5bc9ec744cdd2c98261167a5998f986678d43be295e6d0f633aab7d764acdb4e"
+  },
+  "/home/lpc/workspace/arena5_multi_ws/evidence/runs/scared_stimulus_20261103/actual_considerate_01/runs/20261103_114149_one_robot_multi_sfm_6_scared_considerate_external_gpu1/psychology_9475609021572039073.jsonl": {
+    "bytes": 101215467,
+    "sha256": "eaa24089a1e6339f125186c0056381f8efb1247be6c85bb48977ff785912134c"
+  },
+  "/home/lpc/workspace/arena5_multi_ws/evidence/runs/scared_stimulus_20261103/actual_considerate_01/runs/20261103_114149_one_robot_multi_sfm_6_scared_considerate_external_gpu1/isaac_slow_frames.jsonl": {
+    "bytes": 860,
+    "sha256": "6767d3ca6b1e2cb133f642f1786b6021502f03b3a23c7124c60ca4ce83fcf461"
+  },
+  "/home/lpc/workspace/arena5_multi_ws/evidence/runs/scared_stimulus_20261103/actual_considerate_01/runs/20261103_114149_one_robot_multi_sfm_6_scared_considerate_external_gpu1/fear_stimulus.jsonl": {
+    "bytes": 429682,
+    "sha256": "c488c3bbcb402c730a3171429798a5d1485c838a5781f1eaa4a4133224934055"
+  }
+}

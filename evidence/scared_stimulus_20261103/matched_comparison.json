@@ -1,0 +1,140 @@
+{
+  "passed": true,
+  "checks": {
+    "reports_passed": true,
+    "runtime_source_identical": true,
+    "effective_psychology_identical": true,
+    "model_config_identical": true,
+    "same_seed": true,
+    "same_people": true,
+    "same_clock": true
+  },
+  "scope": "one descriptive paired simulation with explicit sustained-attention assumption; not human-data validation or statistical causality",
+  "runtime_source_commit": "5a82112d8b6b7a7dd140efb70cef618e0e2ddcf4",
+  "conditions": {
+    "intrusive": {
+      "metrics": {
+        "variant": "intrusive",
+        "wall_s": 120.06656223000027,
+        "sim_s": 119.125,
+        "peak_fear": {
+          "1": 0.6546480548595855,
+          "2": 0.05036088949033778,
+          "3": 0.010341218591972847,
+          "4": 0.0005665525852391485,
+          "5": 0.0,
+          "6": 0.0
+        },
+        "final_fear": {
+          "1": 6.921422581157851e-10,
+          "2": 2.4947485772292025e-12,
+          "3": 5.423175875813562e-11,
+          "4": 3.2292500016965734e-11,
+          "5": 0.0,
+          "6": 0.0
+        },
+        "scared_sim_s": {
+          "1": 17.0500000000001
+        },
+        "fear_triggered_scared_sim_s": {
+          "1": 17.0500000000001
+        },
+        "scared_reasons": {
+          "1:fear": 682
+        },
+        "actual_outward_s": 17.050000255000125,
+        "actual_outward_displacement_m": 13.706530388368831,
+        "task_resumed_samples": 3272,
+        "minimum_robot_gap_m": 0.3784088122072131,
+        "minimum_human_gap_m": 0.6981845244495556,
+        "max_display_error_m": 0.03919433488283942,
+        "core_max_speed_mps": 0.932074635945944,
+        "core_max_acceleration_mps2": 3.0000000000000004
+      },
+      "stimulus": {
+        "robot": "robot_1",
+        "target_person": "person_1",
+        "variant": "intrusive",
+        "warmup_s": 8.0,
+        "approach_s": 24.0,
+        "recovery_s": 25.0,
+        "withdraw_timeout_s": 45.0,
+        "startup_timeout_wall_s": 240.0,
+        "experiment_timeout_wall_s": 360.0,
+        "max_linear": 0.8,
+        "max_angular": 1.0,
+        "target_gap": 0.35,
+        "abort_gap": 0.18,
+        "robot_radius": 0.35,
+        "distance_gain": 4.0,
+        "yaw_gain": 2.0,
+        "home_x": 7.0,
+        "home_y": 10.0,
+        "arrival_radius": 0.25
+      }
+    },
+    "considerate": {
+      "metrics": {
+        "variant": "considerate",
+        "wall_s": 120.04655443993397,
+        "sim_s": 127.225,
+        "peak_fear": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.0,
+          "5": 0.0,
+          "6": 0.0
+        },
+        "final_fear": {
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0,
+          "4": 0.0,
+          "5": 0.0,
+          "6": 0.0
+        },
+        "scared_sim_s": {},
+        "fear_triggered_scared_sim_s": {},
+        "scared_reasons": {},
+        "actual_outward_s": 0.0,
+        "actual_outward_displacement_m": 0.0,
+        "task_resumed_samples": 0,
+        "minimum_robot_gap_m": 0.9568166923448188,
+        "minimum_human_gap_m": 0.5922719334100552,
+        "max_display_error_m": 0.031913212666094426,
+        "core_max_speed_mps": 0.40000000596046453,
+        "core_max_acceleration_mps2": 2.2784770780317265
+      },
+      "stimulus": {
+        "robot": "robot_1",
+        "target_person": "person_1",
+        "variant": "considerate",
+        "warmup_s": 8.0,
+        "approach_s": 24.0,
+        "recovery_s": 25.0,
+        "withdraw_timeout_s": 45.0,
+        "startup_timeout_wall_s": 240.0,
+        "experiment_timeout_wall_s": 360.0,
+        "max_linear": 0.15,
+        "max_angular": 1.0,
+        "target_gap": 1.8,
+        "abort_gap": 0.18,
+        "robot_radius": 0.35,
+        "distance_gain": 1.0,
+        "yaw_gain": 2.0,
+        "home_x": 7.0,
+        "home_y": 10.0,
+        "arrival_radius": 0.25
+      }
+    }
+  },
+  "interpretation": "Speed, approach gain and desired clearance vary together. No individual factor effect or real population prevalence is estimated.",
+  "input_sha256": {
+    "actual_intrusive_passed/acceptance.json": "eebe5a8dbd89906da7317a901acbe1b85ca442c6bc308917cd7e89fa505aaaad",
+    "actual_intrusive_passed/source_manifest.json": "7f2ee00c15c8404873fbb86dce85d1d3c7f8ab38aa0bf50afa0d945e2fae8a24",
+    "actual_considerate_passed/acceptance.json": "a1402076ed499f08e924a60b291a6e1a468203e5c4a92457549f670b86059d2d",
+    "actual_considerate_passed/source_manifest.json": "67d66d813fd1c956b66b02d3deee6b630904fed982b756ab858e5bb7ca2dc884"
+  },
+  "processor_sha256": "bbc7a1878307245c3a42026a7bdb1f5702e8bb1306474c4e18a40ba9a6feb02d"
+}

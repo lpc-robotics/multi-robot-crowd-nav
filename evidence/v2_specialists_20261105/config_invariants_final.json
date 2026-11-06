@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "checks": {
+    "all_global_psychology_parameters_unchanged": true,
+    "person_13_only_seven_behavior_overrides": true,
+    "person_14_only_seven_behavior_overrides": true,
+    "paired_hunav_identical": true,
+    "paired_tasks_identical": true,
+    "paired_psychology_only_profile_differs": true
+  },
+  "allowed_overrides": [
+    "playful_cooldown_s",
+    "playful_front_gap",
+    "playful_hold_when_stopped",
+    "playful_intercept_s",
+    "playful_max_episodes",
+    "playful_min_robot_speed",
+    "playful_occupy_s"
+  ],
+  "model_hashes": {
+    "old": "7d738306e208f903bd40508ec5c3d511779447f1e80c03abe8863e145865b4b7",
+    "showcase": "cb3cff5d7dfefd4bf1d906fa8af38d7a62b7f9ddeaa5e009384f58db1085c593"
+  },
+  "source_commit": "8b51642"
+}

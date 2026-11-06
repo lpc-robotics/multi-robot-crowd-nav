@@ -61,3 +61,33 @@ def approach_conflict(me, intent, other, cfg):
     t = max(0., min(cfg.prediction_horizon, -(dx*ux+dy*uy)/u2)) if u2 > 1e-12 else 0.
     predicted_gap = math.hypot(dx+ux*t, dy+uy*t)-me.radius-other.radius
     return predicted_gap < cfg.approach_clearance
+
+
+def playful_motion_risk(me, robot, geometric_risk, cfg):
+    """Hypothesized low proximity sensitivity, with looming collision precedence.
+
+    Both relative trajectory and robot-directed approach are required: a person
+    walking into a stationary robot is not labelled a robot charging at them.
+    The collision envelope is prediction geometry, not a minimum-gap constraint.
+    """
+    dx, dy = robot.x-me.x, robot.y-me.y
+    distance = math.hypot(dx, dy)
+    ux, uy = robot.vx-me.vx, robot.vy-me.vy
+    robot_approach = -(dx*robot.vx+dy*robot.vy)/max(distance, 1e-9)
+    relative_approach = -(dx*ux+dy*uy)/max(distance, 1e-9)
+    radius = me.radius+robot.radius+cfg.playful_collision_margin
+    a = ux*ux+uy*uy; b = 2*(dx*ux+dy*uy); c = distance*distance-radius*radius
+    ttc = None
+    if relative_approach > 0:
+        if c <= 0:
+            ttc = 0.
+        elif a > 1e-12 and b*b-4*a*c >= 0:
+            candidate = (-b-math.sqrt(max(0., b*b-4*a*c)))/(2*a)
+            if candidate >= 0: ttc = candidate
+    urgency = 0.
+    if robot_approach >= cfg.playful_danger_approach_speed and ttc is not None:
+        urgency = clip01((cfg.playful_danger_horizon_s-ttc)/
+                         (cfg.playful_danger_horizon_s-cfg.playful_imminent_ttc_s))
+    appraised = max(cfg.playful_proximity_fear_gain*geometric_risk, urgency)
+    return appraised, dict(robot_approach_mps=robot_approach, relative_approach_mps=relative_approach,
+        envelope_ttc_s=ttc, collision_urgency=urgency, geometric_risk=geometric_risk, fear_risk=appraised)

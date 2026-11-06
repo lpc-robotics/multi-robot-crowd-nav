@@ -6,6 +6,7 @@
   <maintainer email="lpc-robotics@users.noreply.github.com">lpc-robotics</maintainer>
   <license>Apache-2.0</license>
   <depend>rclpy</depend>
+  <depend>arena_people_msgs</depend>
   <depend>action_msgs</depend>
   <depend>diagnostic_msgs</depend>
   <depend>geometry_msgs</depend>

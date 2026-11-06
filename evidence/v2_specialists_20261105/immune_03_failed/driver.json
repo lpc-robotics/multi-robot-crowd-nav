@@ -1,0 +1,8 @@
+{
+  "passed": false,
+  "scenario": "/home/lpc/workspace/arena5_multi_ws/config/scenarios/one_robot_multi_sfm_1_immune_v2_nav2.yaml",
+  "requested_min_wall_s": 120.0,
+  "run_dir": "/home/lpc/workspace/arena5_multi_ws/evidence/runs/v2_specialists_20261105/immune_03/runs/20261105_163033_one_robot_multi_sfm_1_immune_v2_nav2_gpu0",
+  "probe_exit": 1,
+  "driver_wall_s": 160.17722738487646
+}

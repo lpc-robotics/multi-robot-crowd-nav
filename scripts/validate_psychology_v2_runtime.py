@@ -15,9 +15,10 @@ from multigoal_evidence import provenance
 
 
 class V2Probe(Probe):
-    def __init__(self, scenario, output):
-        super().__init__(scenario)
+    def __init__(self, scenario, output, robot_clearance_policy='record'):
+        super().__init__(scenario, robot_clearance_policy, output.with_suffix('.clearance.jsonl'))
         self.psych = deque(maxlen=600)
+        self.peak_fear = {}; self.exit_reasons = Counter()
         self.modes = {}; self.events = Counter(); self.phase_counts = Counter()
         self.gaze_s = {}; self.front_s = {}; self.last_actual = None
         self.min_human = math.inf; self.max_speed = 0.; self.psych_seen = None
@@ -45,6 +46,8 @@ class V2Probe(Probe):
             self.core_max_acceleration=max(self.core_max_acceleration,math.hypot(*d['acceleration']))
         for key, state in data['states'].items():
             info = data['agents'][key]; mode = state['behavior']['mode']
+            self.peak_fear[key] = max(self.peak_fear.get(key,0.),state['variables']['fear'])
+            if state.get('event') and state.get('exit_reason'): self.exit_reasons[(key,state['exit_reason'])] += 1
             self.modes.setdefault(key, set()).add(mode)
             if state.get('event'): self.events[(key, state['event'])] += 1
             self.phase_counts[(key, state.get('phase', 'none'))] += 1
@@ -97,7 +100,7 @@ class V2Probe(Probe):
                 dx, dy = p.x-robot['x'], p.y-robot['y']
                 front = dx*math.cos(heading)+dy*math.sin(heading)
                 lateral = abs(-dx*math.sin(heading)+dy*math.cos(heading))
-                if front > radius+robot['radius']+.1 and lateral <= radius+robot['radius']:
+                if front > 0. and lateral <= radius+robot['radius']:
                     self.front_s[key] = self.front_s.get(key, 0.)+max(0., min(.15, dt))
                     if state['phase']=='occupy' and state['target_point'] and math.dist((p.x,p.y),state['target_point'])<=.35:
                         self.occupy_s[key]=self.occupy_s.get(key,0.)+max(0.,min(.15,dt))
@@ -117,11 +120,14 @@ def main():
     ap.add_argument('--duration-wall', type=float, default=60); ap.add_argument('--ready-timeout', type=float, default=300)
     ap.add_argument('--require-gaze', nargs='*', default=[]); ap.add_argument('--require-playful', nargs='*', default=[])
     ap.add_argument('--run-dir'); ap.add_argument('--require-demo',action='store_true')
+    ap.add_argument('--require-sequence',action='store_true')
+    ap.add_argument('--require-expressive',action='store_true')
     ap.add_argument('--until-demo-complete',action='store_true')
+    ap.add_argument('--robot-clearance-policy', choices=('record','strict'), default='record')
     args = ap.parse_args(); output = Path(args.output); output.parent.mkdir(parents=True, exist_ok=True)
     root = Path(__file__).resolve().parents[1]
     before = provenance(args.scenario, root/'config/world/arena.yaml')
-    rclpy.init(); node = V2Probe(load_scenario(args.scenario), output)
+    rclpy.init(); node = V2Probe(load_scenario(args.scenario), output, args.robot_clearance_policy)
     deadline = time.monotonic()+args.ready_timeout
     try:
         while time.monotonic() < deadline and not (node.ready() and node.psych):
@@ -137,10 +143,10 @@ def main():
                 if time.monotonic()-node.health_seen > .6: node.failures.add('health missing')
                 if node.failures: break
                 if time.monotonic()-node.started>=args.duration_wall:
-                    demo_path=Path(args.run_dir)/'psychology_demo.json' if args.run_dir else None
+                    demo_path=Path(args.run_dir)/('crowd_stimulus.json' if args.require_sequence else 'psychology_demo.json') if args.run_dir else None
                     if not args.until_demo_complete or (demo_path and demo_path.exists()):break
         if node.checked_samples < 2: node.failures.add('insufficient actual geometry')
-        if node.min_clearance < .1: node.failures.add('robot gap below .10m')
+        if node.clearance_observations.strict_failure(): node.failures.add('robot gap below .10m')
         if node.max_display_error > .25: node.failures.add('display error above .25m')
         if node.core_max_speed>1.00001 or node.core_max_acceleration>3.00001: node.failures.add('core motion bound exceeded')
         for key in args.require_gaze:
@@ -149,13 +155,24 @@ def main():
         for key in args.require_playful:
             if node.occupy_s.get(key, 0.) < .25 or not node.events[(key, 'playful_completed')] or not node.events[(key, 'playful_task_resumed')]:
                 node.failures.add('missing actual forward occupancy and completed yield: '+key)
+        if args.require_expressive:
+            if set().union(*node.modes.values()) != {'REGULAR','SURPRISED','CURIOUS','SCARED','THREATENING'}:
+                node.failures.add('expressive five mode coverage missing')
+            if node.occupy_s.get('13',0.) < 8.:
+                node.failures.add('expressive long actual occupancy missing: 13')
+            if node.occupy_s.get('14',0.) < .5 or not node.events[('14','playful_task_resumed')]:
+                node.failures.add('expressive actual occupancy and return missing: 14')
+            if not (node.events[('14','playful_completed')] or node.events[('14','playful_aborted')]):
+                node.failures.add('expressive interaction termination missing: 14')
         demo=None
-        if args.run_dir and (Path(args.run_dir)/'psychology_demo.json').exists():
-            demo=json.loads((Path(args.run_dir)/'psychology_demo.json').read_text())
-        if args.require_demo and (not demo or not demo['passed']): node.failures.add('finite Nav2 demonstration incomplete')
+        demo_path=Path(args.run_dir)/('crowd_stimulus.json' if args.require_sequence else 'psychology_demo.json') if args.run_dir else None
+        if demo_path and demo_path.exists(): demo=json.loads(demo_path.read_text())
+        if (args.require_demo or args.require_sequence) and (not demo or not demo['passed']): node.failures.add('finite robot demonstration incomplete')
         if provenance(args.scenario, root/'config/world/arena.yaml') != before:
             node.failures.add('source changed during validation')
-        report = dict(passed=not node.failures, scope='actual Character Graph and committed V3 transactions',
+        report = dict(passed=not node.failures, acceptance_version='crowd_response_v2.1',
+            navigation_interaction=node.clearance_observations.report(),
+            scope='actual Character Graph and committed V3 transactions; robot clearance is an interaction outcome in record mode',
             requested_wall_s=args.duration_wall, wall_s=0 if node.started is None else time.monotonic()-node.started,
             sim_s=0 if node.first_stamp is None else (node.last_stamp-node.first_stamp)/1e9,
             actual_samples=node.actual_samples, matched_samples=node.checked_samples,
@@ -165,9 +182,11 @@ def main():
             core_max_speed_mps=node.core_max_speed, core_max_acceleration_mps2=node.core_max_acceleration,
             modes={k: sorted(v) for k,v in node.modes.items()}, actual_aligned_observation_s=node.gaze_s,
             actual_front_occupancy_s=node.front_s, events={f'{k[0]}:{k[1]}':v for k,v in node.events.items()},
-            actual_occupy_at_target_s=node.occupy_s, robot_during_interaction=node.robot_response, demo=demo,
+            actual_occupy_at_target_s=node.occupy_s, robot_during_interaction=node.robot_response,
+            demo=None if args.require_sequence else demo, stimulus_execution=demo if args.require_sequence else None,
             phases={f'{k[0]}:{k[1]}':v for k,v in node.phase_counts.items()}, cycles=dict(node.cycles),
-            pause_checks=node.pause_checks, last_status=node.status[-1] if node.status else None,
+            peak_fear=node.peak_fear, exit_reasons={f'{k[0]}:{k[1]}':v for k,v in node.exit_reasons.items()},
+            expressive_checks_requested=args.require_expressive, pause_checks=node.pause_checks, last_status=node.status[-1] if node.status else None,
             failures=sorted(node.failures), provenance=before)
         output.write_text(json.dumps(report, indent=2, allow_nan=False)+'\n')
         print(json.dumps({k:v for k,v in report.items() if k != 'provenance'}, indent=2), flush=True)

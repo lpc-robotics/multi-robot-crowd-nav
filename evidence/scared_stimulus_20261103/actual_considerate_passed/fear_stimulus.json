@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "passed": true,
+  "error": "",
+  "variant": "considerate",
+  "stimulus": {
+    "robot": "robot_1",
+    "target_person": "person_1",
+    "variant": "considerate",
+    "warmup_s": 8.0,
+    "approach_s": 24.0,
+    "recovery_s": 25.0,
+    "withdraw_timeout_s": 45.0,
+    "startup_timeout_wall_s": 240.0,
+    "experiment_timeout_wall_s": 360.0,
+    "max_linear": 0.15,
+    "max_angular": 1.0,
+    "target_gap": 1.8,
+    "abort_gap": 0.18,
+    "robot_radius": 0.35,
+    "distance_gain": 1.0,
+    "yaw_gain": 2.0,
+    "home_x": 7.0,
+    "home_y": 10.0,
+    "arrival_radius": 0.25
+  },
+  "phase": "complete",
+  "transitions": [
+    {
+      "phase": "warmup",
+      "stamp_ns": 8850000131,
+      "active_ns": 50000000
+    },
+    {
+      "phase": "approach",
+      "stamp_ns": 16850000251,
+      "active_ns": 8050000120
+    },
+    {
+      "phase": "withdraw",
+      "stamp_ns": 40850000608,
+      "active_ns": 32050000477
+    },
+    {
+      "phase": "recovery",
+      "stamp_ns": 47150000702,
+      "active_ns": 38350000571
+    },
+    {
+      "phase": "complete",
+      "stamp_ns": 72150001075,
+      "active_ns": 63350000944
+    }
+  ],
+  "protocol_transitions": [
+    {
+      "phase": "warmup",
+      "stamp_ns": 50000000
+    },
+    {
+      "phase": "approach",
+      "stamp_ns": 8050000120
+    },
+    {
+      "phase": "withdraw",
+      "stamp_ns": 32050000477
+    },
+    {
+      "phase": "recovery",
+      "stamp_ns": 38350000571
+    },
+    {
+      "phase": "complete",
+      "stamp_ns": 63350000944
+    }
+  ],
+  "active_sim_s": 63.350000944,
+  "wall_s": 111.89913661498576,
+  "samples": 1160,
+  "minimum_sampled_gap_m": 0.9568166923448133,
+  "final_observation_status": {
+    "healthy": true,
+    "status": {
+      "backend": "multi_sfm",
+      "clock_stall_recoveries": 0,
+      "compute": 2737,
+      "display_lag_s": 0.15000102,
+      "epoch": 9475609021572039073,
+      "fault": "",
+      "fault_details": {},
+      "healthy": true,
+      "integration_lag_s": 0.02500102,
+      "interaction_scope": "all_robots",
+      "last_clock_stall_wall_s": 0.0,
+      "max_compute_wall_s": 0.03997093695215881,
+      "max_dt": 0.025,
+      "paused": false,
+      "psychology_model": "sis_cf_v2",
+      "robots": [
+        "robot_1"
+      ],
+      "step": 2738,
+      "updates": 606
+    },
+    "wall_ages_s": {
+      "health": 0.043199378065764904,
+      "status": 0.7366102871019393,
+      "robot": 0.03941290220245719,
+      "actual": 0.005193981109187007
+    },
+    "robot_stamp_ns": 72150001075,
+    "actual_stamp_ns": 72150001075,
+    "clock_ns": 72150001075
+  },
+  "scope": "geometric external robot stimulus execution; psychological and actual-motion evidence assessed independently",
+  "knowledge": "Isaac actual person positions, robot odometry; no mental states or human goals read"
+}

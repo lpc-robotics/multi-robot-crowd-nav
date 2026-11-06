@@ -1,0 +1,16 @@
+{
+  "implementation_complete": true,
+  "all_actual_trials_passed": false,
+  "actual_static_passed": true,
+  "actual_playful_passed": true,
+  "actual_immune_passed": false,
+  "immune_limitation": "repeated health heartbeat timeout; navigation and zero-psychology observations retained; root cause unconfirmed",
+  "python_tests": 203,
+  "cpp_tests": 32,
+  "acceptance_version": "crowd_response_v2.1",
+  "robot_clearance_default_policy": "record",
+  "actual_reports_use_prior_strict_policy": true,
+  "baseline_tag": "backup-v2-specialists-20261105",
+  "runtime_playful_commit": "8b51642",
+  "runtime_static_commit": "5c10e51"
+}

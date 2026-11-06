@@ -1,0 +1,160 @@
+{
+  "schema_version": 1,
+  "files": [
+    {
+      "path": "evidence/runs/expressive_psychology_20261105/cpu_14_01/report.json",
+      "size_bytes": 52240,
+      "sha256": "668d189512c3eabdb7c7300995fdc3a637649e5caf35fcf92b0a0f501a040e4b"
+    },
+    {
+      "path": "evidence/runs/expressive_psychology_20261105/cpu_14_01/trace.jsonl",
+      "size_bytes": 72861370,
+      "sha256": "903025848c3aba3f982da7ffc03d24a8a420b92e04eec1e889c94cd21c830254"
+    },
+    {
+      "path": "evidence/runs/expressive_psychology_20261105/cpu_14_02/report.json",
+      "size_bytes": 53653,
+      "sha256": "0c03292f5af6286a474f6cbb5500e04b11db41940f4691917cac8a83bc2e5a4e"
+    },
+    {
+      "path": "evidence/runs/expressive_psychology_20261105/cpu_14_02/trace.jsonl",
+      "size_bytes": 75258906,
+      "sha256": "758cbf6800d143c9807616acdc2153de9e6dc6da4abceb0ceba36dd39d80b6d5"
+    },
+    {
+      "path": "evidence/runs/expressive_psychology_20261105/cpu_14_03/report.json",
+      "size_bytes": 53563,
+      "sha256": "c8e268669c902f0f886549b13d41463eebf2c1c7f9bb030c07789fadbff6de01"
+    },
+    {
+      "path": "evidence/runs/expressive_psychology_20261105/cpu_14_03/trace.jsonl",
+      "size_bytes": 73969098,
+      "sha256": "0dfff17398c1ae12f8f6df7ac7f0a09fb33a9a4ed5776faad8b4dd1d58c47a5a"
+    },
+    {
+      "path": "evidence/runs/expressive_psychology_20261105/cpu_playful_02/report.json",
+      "size_bytes": 50421,
+      "sha256": "b30aeb84c0bbcac420a9e7d9a37e2e59274990cc55d1be11f505f4d6d38ff28b"
+    },
+    {
+      "path": "evidence/runs/expressive_psychology_20261105/cpu_playful_02/trace.jsonl",
+      "size_bytes": 2891055,
+      "sha256": "22485e0864873917bfa83ac8302e2fa66b0b8099c55c4c42eee4e28f2aadd5ad"
+    },
+    {
+      "path": "evidence/runs/expressive_psychology_20261105/actual_14_01/acceptance.json",
+      "size_bytes": 74680,
+      "sha256": "c8c5d1258ab9db0ac45afe5ec9de171d1f376fb8638009f9d2838e00e22e5f56"
+    },
+    {
+      "path": "evidence/runs/expressive_psychology_20261105/actual_14_01/acceptance.actual.jsonl",
+      "size_bytes": 7795891,
+      "sha256": "781a417a5352b0220399e1eaf881d147899feda84289b9ce3f298b678fe56054"
+    },
+    {
+      "path": "evidence/runs/expressive_psychology_20261105/actual_14_01/acceptance.clearance.jsonl",
+      "size_bytes": 24207236,
+      "sha256": "eec4286e658d580432ca2a69bd228415597039b4f3beb2a8d61ed920af9fa1d2"
+    },
+    {
+      "path": "evidence/runs/expressive_psychology_20261105/actual_14_01/driver.json",
+      "size_bytes": 428,
+      "sha256": "6a0d2b025bfb9eb1f21783ee083c9d3c304b5388b4855c380e308bcf5beb4cd4"
+    },
+    {
+      "path": "evidence/runs/expressive_psychology_20261105/actual_14_01/runs/20261105_174520_two_robots_multi_sfm_14_multigoal_psychology_v2_nav2_gpu0/source_manifest.json",
+      "size_bytes": 91374,
+      "sha256": "a796e1705c1c33f4ea2ce58a9d737d7b5fe8bc4643658d545c04a99e1a2611bf"
+    },
+    {
+      "path": "evidence/runs/expressive_psychology_20261105/actual_14_01/runs/20261105_174520_two_robots_multi_sfm_14_multigoal_psychology_v2_nav2_gpu0/psychology_11694984057342005742.jsonl",
+      "size_bytes": 281601388,
+      "sha256": "9e446fb0b2e376c158bbcab6d69e2ccf8c20e09617cb27edabbddad33d9853f0"
+    },
+    {
+      "path": "evidence/runs/expressive_psychology_20261105/actual_14_01/runs/20261105_174520_two_robots_multi_sfm_14_multigoal_psychology_v2_nav2_gpu0/crowd_stimulus.json",
+      "size_bytes": 6155,
+      "sha256": "9f8a600cfa1714216214723db8a1fac316e741185240765834be504438221fdc"
+    },
+    {
+      "path": "evidence/runs/expressive_psychology_20261105/actual_14_01/runs/20261105_174520_two_robots_multi_sfm_14_multigoal_psychology_v2_nav2_gpu0/crowd_stimulus.jsonl",
+      "size_bytes": 3330128,
+      "sha256": "cc0d28e4d1749f4f6c9f99dba0da274852da31351ac11e29455084d50591c26b"
+    },
+    {
+      "path": "evidence/runs/expressive_psychology_20261105/actual_14_01/export/manifest.json",
+      "size_bytes": 96867,
+      "sha256": "9e3a1edad1a9798be220043ddff502a131f93302284588ed5e15f96f6d12a636"
+    },
+    {
+      "path": "evidence/runs/expressive_psychology_20261105/actual_14_01/export/latents.csv",
+      "size_bytes": 8075766,
+      "sha256": "247ec66a2914d0fbd430b0d8fab640b9cabfcf0d38b8053040814fa06250e6c1"
+    },
+    {
+      "path": "evidence/runs/expressive_psychology_20261105/actual_14_01/export/observations.csv",
+      "size_bytes": 26380690,
+      "sha256": "2df18239c5141f7bae61816bcd0b35054191cbaf42d2eef0eb6be23e3cf3106c"
+    },
+    {
+      "path": "evidence/runs/expressive_psychology_20261105/actual_14_01/export/events.csv",
+      "size_bytes": 17586,
+      "sha256": "ed4e6262d7373aed0139cf8dfabafe7ecb5be611d87f7b20812815c72963794a"
+    },
+    {
+      "path": "evidence/runs/expressive_psychology_20261105/actual_playful_01/acceptance.json",
+      "size_bytes": 51288,
+      "sha256": "abfa2d032db3408764df923f0a9d4e90c241b285c74f75e0db79298bf9a973e7"
+    },
+    {
+      "path": "evidence/runs/expressive_psychology_20261105/actual_playful_01/acceptance.actual.jsonl",
+      "size_bytes": 2730578,
+      "sha256": "0e0f90335e34c2f5e99dbeddf780c5ef0e6439cd0628e02339a004e4988093b5"
+    },
+    {
+      "path": "evidence/runs/expressive_psychology_20261105/actual_playful_01/acceptance.clearance.jsonl",
+      "size_bytes": 3682748,
+      "sha256": "0aeb3713d18a1d959ba7a947be500c51bb8f3da5f4e57b28f868f0d55ec925e8"
+    },
+    {
+      "path": "evidence/runs/expressive_psychology_20261105/actual_playful_01/driver.json",
+      "size_bytes": 404,
+      "sha256": "be66c81ce7aec2cd9780b64f58a1ad045f0adc8f18a3c9cf5823929678db7d69"
+    },
+    {
+      "path": "evidence/runs/expressive_psychology_20261105/actual_playful_01/runs/20261105_175147_one_robot_multi_sfm_2_playful_v2_nav2_gpu0/source_manifest.json",
+      "size_bytes": 54471,
+      "sha256": "ed899dbc72286670ce207707223566346e8b4008edc87fba647c0bb703f2d015"
+    },
+    {
+      "path": "evidence/runs/expressive_psychology_20261105/actual_playful_01/runs/20261105_175147_one_robot_multi_sfm_2_playful_v2_nav2_gpu0/psychology_9405596296411796596.jsonl",
+      "size_bytes": 97065456,
+      "sha256": "5ffc070855091f4c8bb08acd08d00a84fbf55c72893504177c717d9509710555"
+    },
+    {
+      "path": "evidence/runs/expressive_psychology_20261105/actual_playful_01/runs/20261105_175147_one_robot_multi_sfm_2_playful_v2_nav2_gpu0/psychology_demo.json",
+      "size_bytes": 731,
+      "sha256": "2b058de47561fe4d196172349816dcc8a9848743b0dbfa9e5d00be311990eacb"
+    },
+    {
+      "path": "evidence/runs/expressive_psychology_20261105/actual_playful_01/export/manifest.json",
+      "size_bytes": 57684,
+      "sha256": "2641781df71374d5f1b44e920db695bd97a88ccc7c86e6a2dbb42c1cf88b2a54"
+    },
+    {
+      "path": "evidence/runs/expressive_psychology_20261105/actual_playful_01/export/latents.csv",
+      "size_bytes": 2553938,
+      "sha256": "54ad40726585cee90916ec288d8fb968843ee339a3dacf67228563205a5d8f84"
+    },
+    {
+      "path": "evidence/runs/expressive_psychology_20261105/actual_playful_01/export/observations.csv",
+      "size_bytes": 9570138,
+      "sha256": "71410580f6b54c2dd166a05f84be3c87b808bc36368ec9ae0d00e64d25880a45"
+    },
+    {
+      "path": "evidence/runs/expressive_psychology_20261105/actual_playful_01/export/events.csv",
+      "size_bytes": 4454,
+      "sha256": "a2735a299076fbbd8ef8352720cb0f338012205474aeb97783d5b69fff12bfb4"
+    }
+  ]
+}

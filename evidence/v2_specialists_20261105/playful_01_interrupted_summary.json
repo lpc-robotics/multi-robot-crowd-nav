@@ -1,0 +1,132 @@
+{
+  "source": "evidence/runs/v2_specialists_20261105/playful_01/runs/20261105_121238_one_robot_multi_sfm_2_playful_v2_nav2_gpu1/psychology_11114684613446880278.jsonl",
+  "source_sha256": "885c5c7c7e92f54bc64f5adb925e684fe539a943871dad98662d96f4af5988ff",
+  "people": {
+    "13": {
+      "modes": {
+        "REGULAR": 932,
+        "SURPRISED": 84,
+        "CURIOUS": 1486,
+        "THREATENING": 144
+      },
+      "phases": {
+        "none": 2502,
+        "intercept": 49,
+        "occupy": 95
+      },
+      "events": [
+        {
+          "sim_s": 2.550000033,
+          "event": "surprise_started",
+          "reason": "",
+          "outcome": ""
+        },
+        {
+          "sim_s": 4.650000033,
+          "event": "surprise_completed",
+          "reason": "surprise_completed",
+          "outcome": ""
+        },
+        {
+          "sim_s": 12.175000033,
+          "event": "playful_started",
+          "reason": "",
+          "outcome": ""
+        },
+        {
+          "sim_s": 13.400000033,
+          "event": "playful_occupied",
+          "reason": "",
+          "outcome": ""
+        },
+        {
+          "sim_s": 15.775000033,
+          "event": "playful_aborted",
+          "reason": "playful_target_lost",
+          "outcome": "playful_target_lost"
+        },
+        {
+          "sim_s": 29.600000033,
+          "event": "playful_task_resumed",
+          "reason": "",
+          "outcome": "playful_target_lost"
+        }
+      ],
+      "intervals": [
+        {
+          "start_sim_s": 2.275000033,
+          "end_sim_s": 2.550000033,
+          "mode": "REGULAR",
+          "phase": "none"
+        },
+        {
+          "start_sim_s": 2.550000033,
+          "end_sim_s": 4.650000033,
+          "mode": "SURPRISED",
+          "phase": "none"
+        },
+        {
+          "start_sim_s": 4.650000033,
+          "end_sim_s": 12.175000033,
+          "mode": "CURIOUS",
+          "phase": "none"
+        },
+        {
+          "start_sim_s": 12.175000033,
+          "end_sim_s": 13.400000033,
+          "mode": "THREATENING",
+          "phase": "intercept"
+        },
+        {
+          "start_sim_s": 13.400000033,
+          "end_sim_s": 15.775000033,
+          "mode": "THREATENING",
+          "phase": "occupy"
+        },
+        {
+          "start_sim_s": 15.775000033,
+          "end_sim_s": 38.800000033,
+          "mode": "REGULAR",
+          "phase": "none"
+        },
+        {
+          "start_sim_s": 38.800000033,
+          "end_sim_s": 68.400000033,
+          "mode": "CURIOUS",
+          "phase": "none"
+        }
+      ],
+      "max_latents": {
+        "curiosity": 0.7832252517650211,
+        "fear": 0.39016385926279884,
+        "surprise": 1.0
+      },
+      "max_robot_social_force": 1.374758740529563,
+      "max_robot_static_force": 0.0
+    },
+    "14": {
+      "modes": {
+        "REGULAR": 2646
+      },
+      "phases": {
+        "none": 2646
+      },
+      "events": [],
+      "intervals": [
+        {
+          "start_sim_s": 2.275000033,
+          "end_sim_s": 68.400000033,
+          "mode": "REGULAR",
+          "phase": "none"
+        }
+      ],
+      "max_latents": {
+        "curiosity": 0.0,
+        "fear": 0.0,
+        "surprise": 0.0
+      },
+      "max_robot_social_force": 4.73670403524846e-05,
+      "max_robot_static_force": 0.0
+    }
+  }
+}

@@ -1,0 +1,72 @@
+MULTIROBOT_ENV_REENTRY_OK
+{
+  "passed": true,
+  "checks": 30,
+  "failures": []
+}
+{
+  "passed": true,
+  "checks": 142,
+  "failures": []
+}
+{
+  "passed": true,
+  "checks": 8,
+  "failures": []
+}
+........................................................................ [ 32%]
+....................................F................................... [ 64%]
+........................................................................ [ 96%]
+........                                                                 [100%]
+=================================== FAILURES ===================================
+_ test_attention_is_bounded_transactional_and_does_not_discover_hidden_robots __
+
+    def test_attention_is_bounded_transactional_and_does_not_discover_hidden_robots():
+        m=SocialPsychologyV2()
+        m.initialize(PsychologyConfigV2(ParametersV2(threat_attention_s=.1),{}).document(),(1,),11)
+        me=Entity(1,'p',0.,0.,0.,0.,.4,((5.,0.),))
+        robot=Entity(-1,'r',2.,0.,-.4,0.,.35)
+        states=m.initial_states()
+        states[1].behavior=replace(states[1].behavior,mode='CURIOUS',target_robot_id=-1)
+        before=copy.deepcopy(states)
+>       p,_=prepare_step(m,make_context(0,.025,(me,),(robot,)),states)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+src/arena_multi_hunav/test/test_playful_motion_fear.py:76: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/arena_multi_hunav/arena_multi_hunav/psychology.py:111: in prepare_step
+    proposal = model.step(context, copy.deepcopy(previous_state))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/arena_multi_hunav/arena_multi_hunav/psychology_v2.py:53: in step
+    state.validate()
+src/arena_multi_hunav/arena_multi_hunav/psychology_v2_state.py:38: in validate
+    self.memories, self.neighbors).validate()
+                                   ^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = CrowdMentalState(variables={'curiosity': 0.0, 'fear': 0.0}, compartments={}, behavior=BehaviorState(mode='REGULAR', vi..., reason='initial', approach_blocked_until_ns=0, returning_to_task=False, return_goal=None), memories={}, neighbors={})
+
+    def validate(self):
+        if set(self.variables) != {"curiosity", "fear"} or not all(0 <= v <= 1 for v in self.variables.values()):
+            raise ValueError("activation outside [0,1]")
+        b = self.behavior
+        if b.mode not in MODES or min(b.entered_ns,b.target_since_ns,b.approach_blocked_until_ns)<0:
+            raise ValueError("invalid behavior state")
+        if b.target_robot_id and b.target_robot_id not in self.memories:
+>           raise ValueError("behavior target has no observation memory")
+E           ValueError: behavior target has no observation memory
+
+src/arena_multi_hunav/arena_multi_hunav/psychology_sis.py:25: ValueError
+=============================== warnings summary ===============================
+../arena5_ws/.conda/arena_ros/lib/python3.11/site-packages/lark/utils.py:163
+  /home/lpc/workspace/arena5_ws/.conda/arena_ros/lib/python3.11/site-packages/lark/utils.py:163: DeprecationWarning: module 'sre_parse' is deprecated
+    import sre_parse
+
+../arena5_ws/.conda/arena_ros/lib/python3.11/site-packages/lark/utils.py:164
+  /home/lpc/workspace/arena5_ws/.conda/arena_ros/lib/python3.11/site-packages/lark/utils.py:164: DeprecationWarning: module 'sre_constants' is deprecated
+    import sre_constants
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED src/arena_multi_hunav/test/test_playful_motion_fear.py::test_attention_is_bounded_transactional_and_does_not_discover_hidden_robots
+1 failed, 223 passed, 2 warnings in 5.48s

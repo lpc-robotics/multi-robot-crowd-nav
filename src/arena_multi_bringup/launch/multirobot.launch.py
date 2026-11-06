@@ -113,8 +113,8 @@ def _launch(context):
     auto_demo = LaunchConfiguration("auto_demo").perform(context).lower()
     if auto_demo not in ("true", "false"):
         raise ValueError("auto_demo must be true or false")
-    if auto_demo == "true" and not scenario.demo_tasks:
-        raise ValueError("auto_demo requires demo_tasks in the scenario")
+    if auto_demo == "true" and not (scenario.demo_tasks or scenario.stimulus_tasks or scenario.sequence_tasks):
+        raise ValueError("auto_demo requires demo_tasks or stimulus_tasks in the scenario")
     robot_names = [robot.name for robot in scenario.robots]
     if scenario.demo_tasks:
         from arena_multi_hunav.demo import load_tasks
@@ -126,8 +126,19 @@ def _launch(context):
         from arena_multi_hunav.multi_adapter import load_people
         world = yaml.safe_load(world_path.read_text())
         # Reject bad routes before returning any Isaac or Nav2 launch actions.
-        load_people(scenario.pedestrian_config,
-                    world_bounds=(world["width"], world["height"]))
+        people, _ = load_people(scenario.pedestrian_config,
+                              world_bounds=(world["width"], world["height"]))
+        if scenario.stimulus_tasks:
+            from arena_multi_control.fear_stimulus import load_stimulus
+            stimulus = load_stimulus(scenario.stimulus_tasks)
+            if stimulus.target_person not in {p.name for p in people.agents}:
+                raise ValueError('stimulus target missing from pedestrian configuration')
+        if scenario.sequence_tasks:
+            from arena_multi_control.crowd_stimulus import load_sequence
+            for stage in load_sequence(scenario.sequence_tasks)['stages']:
+                for cmd in stage['commands'].values():
+                    if cmd['kind']=='follow' and cmd['person'] not in {p.name for p in people.agents}:
+                        raise ValueError('sequence target missing from pedestrian configuration')
         if scenario.psychology_config:
             from arena_multi_hunav.psychology_config import load_psychology_config
             load_psychology_config(scenario.psychology_config)
@@ -262,8 +273,17 @@ def _launch(context):
             parameters=[{"people_config": scenario.pedestrian_config, "robot_names": robot_names,
                 "focus_id": ParameterValue(LaunchConfiguration("viz_focus_id", default="13"), value_type=int)}]))
     if auto_demo == "true":
-        actions.append(Node(package="arena_multi_hunav", executable="psychology_demo", output="screen",
-                            parameters=[{"use_sim_time": True, "tasks_file": scenario.demo_tasks}]))
+        if scenario.sequence_tasks:
+            actions.append(Node(package="arena_multi_control", executable="crowd_stimulus", output="screen",
+                parameters=[{"use_sim_time": True, "tasks_file": scenario.sequence_tasks,
+                             "people_file": scenario.pedestrian_config}]))
+        elif scenario.stimulus_tasks:
+            actions.append(Node(package="arena_multi_control", executable="fear_stimulus", output="screen",
+                parameters=[{"use_sim_time": True, "tasks_file": scenario.stimulus_tasks,
+                             "people_file": scenario.pedestrian_config}]))
+        else:
+            actions.append(Node(package="arena_multi_hunav", executable="psychology_demo", output="screen",
+                                parameters=[{"use_sim_time": True, "tasks_file": scenario.demo_tasks}]))
     if LaunchConfiguration("foxglove").perform(context).lower() == "true":
         actions.append(Node(
             package="foxglove_bridge", executable="foxglove_bridge", name="foxglove_bridge", output="screen",

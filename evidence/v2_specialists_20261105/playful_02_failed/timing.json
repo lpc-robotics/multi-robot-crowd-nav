@@ -1,0 +1,2301 @@
+{
+  "wall_duration_s": 464.7831027021166,
+  "samples": {
+    "/multirobot/hunav/status": {
+      "count": 437,
+      "max_wall_gap_s": 1.2420026639010757
+    },
+    "/clock": {
+      "count": 6731,
+      "max_wall_gap_s": 3.8883661890868098,
+      "first_sim_s": 0.250000003,
+      "last_sim_s": 336.700005017
+    },
+    "/robot_1/odom": {
+      "count": 6731,
+      "max_wall_gap_s": 3.888346621999517,
+      "first_position": [
+        9.0,
+        5.0
+      ],
+      "last_position": [
+        12.129940032958984,
+        14.81680679321289
+      ]
+    }
+  },
+  "gaps_over_0_4s": [
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 6.207288440084085,
+      "gap_s": 1.0002628220245242
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 7.306931138969958,
+      "gap_s": 1.099642698885873
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 8.307682394050062,
+      "gap_s": 1.0007512550801039
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 9.407032010145485,
+      "gap_s": 1.0993496160954237
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 10.407188923098147,
+      "gap_s": 1.0001569129526615
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 11.407474005129188,
+      "gap_s": 1.0002850820310414
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 12.507455584127456,
+      "gap_s": 1.0999815789982677
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 13.607308533973992,
+      "gap_s": 1.099852949846536
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 14.607315639965236,
+      "gap_s": 1.0000071059912443
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 15.607284868136048,
+      "gap_s": 0.9999692281708121
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 16.607392725069076,
+      "gap_s": 1.0001078569330275
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 17.707353319972754,
+      "gap_s": 1.0999605949036777
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 18.807092944160104,
+      "gap_s": 1.0997396241873503
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 19.90697675407864,
+      "gap_s": 1.0998838099185377
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 20.90764300315641,
+      "gap_s": 1.0006662490777671
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 22.00741094117984,
+      "gap_s": 1.099767938023433
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 23.108021305175498,
+      "gap_s": 1.1006103639956564
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 24.207614755025133,
+      "gap_s": 1.0995934498496354
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 25.30729272798635,
+      "gap_s": 1.0996779729612172
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 26.30745389102958,
+      "gap_s": 1.0001611630432308
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 27.40724315098487,
+      "gap_s": 1.099789259955287
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 28.407246303046122,
+      "gap_s": 1.0000031520612538
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 29.40758123714477,
+      "gap_s": 1.000334934098646
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 30.40765031101182,
+      "gap_s": 1.0000690738670528
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 31.507486548041925,
+      "gap_s": 1.0998362370301038
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 32.507712570019066,
+      "gap_s": 1.0002260219771415
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 33.60753002506681,
+      "gap_s": 1.0998174550477415
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 34.60774750402197,
+      "gap_s": 1.0002174789551646
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 35.60819912306033,
+      "gap_s": 1.0004516190383583
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 36.70802021306008,
+      "gap_s": 1.0998210899997503
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 37.80756763718091,
+      "gap_s": 1.0995474241208285
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 38.807918592123315,
+      "gap_s": 1.0003509549424052
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 39.80809251498431,
+      "gap_s": 1.000173922860995
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 40.80811456311494,
+      "gap_s": 1.0000220481306314
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 41.90807236311957,
+      "gap_s": 1.0999578000046313
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 43.00753022218123,
+      "gap_s": 1.0994578590616584
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 44.00796822505072,
+      "gap_s": 1.0004380028694868
+    },
+    {
+      "topic": "/clock",
+      "wall_elapsed_s": 44.44344259495847,
+      "gap_s": 3.043274762807414
+    },
+    {
+      "topic": "/robot_1/odom",
+      "wall_elapsed_s": 44.44456100510433,
+      "gap_s": 3.043117541121319
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 45.107959205051884,
+      "gap_s": 1.0999909800011665
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 46.107825618004426,
+      "gap_s": 0.9998664129525423
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 47.10825387015939,
+      "gap_s": 1.0004282521549612
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 48.10821825196035,
+      "gap_s": 0.9999643818009645
+    },
+    {
+      "topic": "/clock",
+      "wall_elapsed_s": 48.33180878404528,
+      "gap_s": 3.8883661890868098
+    },
+    {
+      "topic": "/robot_1/odom",
+      "wall_elapsed_s": 48.33290762710385,
+      "gap_s": 3.888346621999517
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 49.108981151133776,
+      "gap_s": 1.0007628991734236
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 50.20849569514394,
+      "gap_s": 1.0995145440101624
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 51.30986969801597,
+      "gap_s": 1.101374002872035
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 52.317765683168545,
+      "gap_s": 1.0078959851525724
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 53.40816934406757,
+      "gap_s": 1.0904036608990282
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 54.41353305103257,
+      "gap_s": 1.0053637069649994
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 55.51379378512502,
+      "gap_s": 1.1002607340924442
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 56.60952411103062,
+      "gap_s": 1.0957303259056062
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 57.61467469506897,
+      "gap_s": 1.005150584038347
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 58.715108059113845,
+      "gap_s": 1.100433364044875
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 59.80903535615653,
+      "gap_s": 1.0939272970426828
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 60.81442107213661,
+      "gap_s": 1.0053857159800828
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 61.90803234814666,
+      "gap_s": 1.0936112760100514
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 62.90941088506952,
+      "gap_s": 1.0013785369228572
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 63.91317923995666,
+      "gap_s": 1.0037683548871428
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 65.01323410915211,
+      "gap_s": 1.1000548691954464
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 66.11041717603803,
+      "gap_s": 1.0971830668859184
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 67.20825848309323,
+      "gap_s": 1.097841307055205
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 68.20825287909247,
+      "gap_s": 0.9999943959992379
+    },
+    {
+      "topic": "/clock",
+      "wall_elapsed_s": 68.61315211211331,
+      "gap_s": 0.4732478871010244
+    },
+    {
+      "topic": "/robot_1/odom",
+      "wall_elapsed_s": 68.61422654311173,
+      "gap_s": 0.47298777801916003
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 69.21606383705512,
+      "gap_s": 1.007810957962647
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 70.3106560241431,
+      "gap_s": 1.094592187087983
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 71.31315521895885,
+      "gap_s": 1.002499194815755
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 72.31346316915005,
+      "gap_s": 1.0003079501911998
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 73.41329502104782,
+      "gap_s": 1.0998318518977612
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 74.50809873803519,
+      "gap_s": 1.0948037169873714
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 75.50828272104263,
+      "gap_s": 1.000183983007446
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 76.5083364059683,
+      "gap_s": 1.0000536849256605
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 77.61328385118395,
+      "gap_s": 1.1049474452156574
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 78.7085553330835,
+      "gap_s": 1.0952714818995446
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 79.71122609800659,
+      "gap_s": 1.0026707649230957
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 80.71506602317095,
+      "gap_s": 1.0038399251643568
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 81.80842114100233,
+      "gap_s": 1.0933551178313792
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 82.80874637211673,
+      "gap_s": 1.0003252311144024
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 83.80865555116907,
+      "gap_s": 0.999909179052338
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 84.90875339508057,
+      "gap_s": 1.1000978439114988
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 85.91104080504738,
+      "gap_s": 1.0022874099668115
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 87.00841547804885,
+      "gap_s": 1.0973746730014682
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 88.00984037714079,
+      "gap_s": 1.001424899091944
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 89.10900337412022,
+      "gap_s": 1.0991629969794303
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 90.21434483397752,
+      "gap_s": 1.1053414598573
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 91.31508377403952,
+      "gap_s": 1.1007389400620013
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 92.41543803410605,
+      "gap_s": 1.1003542600665241
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 93.5102825241629,
+      "gap_s": 1.0948444900568575
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 94.51487273606472,
+      "gap_s": 1.0045902119018137
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 95.61324131814763,
+      "gap_s": 1.0983685820829123
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 96.71440105396323,
+      "gap_s": 1.1011597358155996
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 97.80951028317213,
+      "gap_s": 1.0951092292089015
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 98.81091698911041,
+      "gap_s": 1.0014067059382796
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 99.90853584208526,
+      "gap_s": 1.097618852974847
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 100.9147217310965,
+      "gap_s": 1.006185889011249
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 102.00927400495857,
+      "gap_s": 1.0945522738620639
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 103.00910330796614,
+      "gap_s": 0.9998293030075729
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 104.01681184209883,
+      "gap_s": 1.0077085341326892
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 105.10908709908836,
+      "gap_s": 1.0922752569895238
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 106.11023649410345,
+      "gap_s": 1.0011493950150907
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 107.11350166797638,
+      "gap_s": 1.0032651738729328
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 108.11395653616637,
+      "gap_s": 1.0004548681899905
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 109.11421791696921,
+      "gap_s": 1.00026138080284
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 110.21353885205463,
+      "gap_s": 1.0993209350854158
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 111.31366018112749,
+      "gap_s": 1.1001213290728629
+    },
+    {
+      "topic": "/clock",
+      "wall_elapsed_s": 112.00902289804071,
+      "gap_s": 0.4906862510833889
+    },
+    {
+      "topic": "/robot_1/odom",
+      "wall_elapsed_s": 112.01010212814435,
+      "gap_s": 0.4907691041007638
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 112.40908274007961,
+      "gap_s": 1.095422558952123
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 113.41021565115079,
+      "gap_s": 1.0011329110711813
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 114.51122715510428,
+      "gap_s": 1.1010115039534867
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 115.51363729010336,
+      "gap_s": 1.0024101349990815
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 116.6087376230862,
+      "gap_s": 1.0951003329828382
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 117.61433568107896,
+      "gap_s": 1.0055980579927564
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 118.7157511790283,
+      "gap_s": 1.101415497949347
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 119.7174109260086,
+      "gap_s": 1.0016597469802946
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 120.8169157630764,
+      "gap_s": 1.0995048370677978
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 121.9110272990074,
+      "gap_s": 1.094111535931006
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 122.91395107912831,
+      "gap_s": 1.0029237801209092
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 124.0136648521293,
+      "gap_s": 1.0997137730009854
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 125.11559515609406,
+      "gap_s": 1.1019303039647639
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 126.20933805918321,
+      "gap_s": 1.0937429030891508
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 127.31550422310829,
+      "gap_s": 1.1061661639250815
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 128.40935784997419,
+      "gap_s": 1.0938536268658936
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 129.409857067978,
+      "gap_s": 1.0004992180038244
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 130.5143408931326,
+      "gap_s": 1.1044838251546025
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 131.61122633703053,
+      "gap_s": 1.0968854438979179
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 132.61140522314236,
+      "gap_s": 1.0001788861118257
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 133.6165108231362,
+      "gap_s": 1.0051055999938399
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 134.71418411307968,
+      "gap_s": 1.0976732899434865
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 135.81405968614854,
+      "gap_s": 1.0998755730688572
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 136.8146044211462,
+      "gap_s": 1.0005447349976748
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 137.91652715508826,
+      "gap_s": 1.1019227339420468
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 139.01451901113614,
+      "gap_s": 1.0979918560478836
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 140.115068907151,
+      "gap_s": 1.1005498960148543
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 141.11683463817462,
+      "gap_s": 1.0017657310236245
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 142.20967877097428,
+      "gap_s": 1.0928441327996552
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 143.21158049907535,
+      "gap_s": 1.0019017281010747
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 144.21655550017022,
+      "gap_s": 1.0049750010948628
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 145.31845458108,
+      "gap_s": 1.1018990809097886
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 146.40954583417624,
+      "gap_s": 1.0910912530962378
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 147.41061254707165,
+      "gap_s": 1.0010667128954083
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 148.51229412807152,
+      "gap_s": 1.1016815809998661
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 149.6145722749643,
+      "gap_s": 1.102278146892786
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 150.70950649306178,
+      "gap_s": 1.0949342180974782
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 151.71007711114362,
+      "gap_s": 1.000570618081838
+    },
+    {
+      "topic": "/clock",
+      "wall_elapsed_s": 152.47708481014706,
+      "gap_s": 0.43266828008927405
+    },
+    {
+      "topic": "/robot_1/odom",
+      "wall_elapsed_s": 152.47839670907706,
+      "gap_s": 0.4327664540614933
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 152.71452279016376,
+      "gap_s": 1.0044456790201366
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 153.80998108908534,
+      "gap_s": 1.095458298921585
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 154.8098401860334,
+      "gap_s": 0.9998590969480574
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 155.8152598249726,
+      "gap_s": 1.0054196389392018
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 156.91192441503517,
+      "gap_s": 1.0966645900625736
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 158.01429172116332,
+      "gap_s": 1.1023673061281443
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 159.11715077213012,
+      "gap_s": 1.1028590509667993
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 160.21016598003916,
+      "gap_s": 1.0930152079090476
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 161.21613567718305,
+      "gap_s": 1.0059696971438825
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 162.31003963109106,
+      "gap_s": 1.0939039539080113
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 163.31177227711305,
+      "gap_s": 1.001732646021992
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 164.31168054509908,
+      "gap_s": 0.9999082679860294
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 165.41027397103608,
+      "gap_s": 1.098593425936997
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 166.62324154400267,
+      "gap_s": 1.2129675729665905
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 167.71030182112008,
+      "gap_s": 1.0870602771174163
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 168.71554304496385,
+      "gap_s": 1.0052412238437682
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 169.81042754417285,
+      "gap_s": 1.0948844992090017
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 170.8132849249523,
+      "gap_s": 1.00285738077946
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 171.9153840490617,
+      "gap_s": 1.1020991241093725
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 173.0106587470509,
+      "gap_s": 1.0952746979892254
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 174.01570534310304,
+      "gap_s": 1.005046596052125
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 175.1123901810497,
+      "gap_s": 1.0966848379466683
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 176.21722404798493,
+      "gap_s": 1.1048338669352233
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 177.21765496698208,
+      "gap_s": 1.0004309189971536
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 178.3120625661686,
+      "gap_s": 1.0944075991865247
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 179.41178550501354,
+      "gap_s": 1.099722938844934
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 180.51009909505956,
+      "gap_s": 1.0983135900460184
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 181.51107761403546,
+      "gap_s": 1.0009785189758986
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 182.51421939511783,
+      "gap_s": 1.0031417810823768
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 183.61071986914612,
+      "gap_s": 1.0965004740282893
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 184.61619674717076,
+      "gap_s": 1.0054768780246377
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 185.71009426098317,
+      "gap_s": 1.0938975138124079
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 186.71035692817532,
+      "gap_s": 1.0002626671921462
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 187.7107240720652,
+      "gap_s": 1.0003671438898891
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 188.8106827251613,
+      "gap_s": 1.0999586530961096
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 189.91551375412382,
+      "gap_s": 1.1048310289625078
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 191.012685226975,
+      "gap_s": 1.097171472851187
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 192.11238766810857,
+      "gap_s": 1.0997024411335588
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 193.2121739659924,
+      "gap_s": 1.0997862978838384
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 194.31083127995953,
+      "gap_s": 1.0986573139671236
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 195.41468363418244,
+      "gap_s": 1.1038523542229086
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 196.51478866813704,
+      "gap_s": 1.1001050339546055
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 197.5174006500747,
+      "gap_s": 1.0026119819376618
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 198.6107960450463,
+      "gap_s": 1.0933953949715942
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 199.71215435909107,
+      "gap_s": 1.1013583140447736
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 200.71535418205895,
+      "gap_s": 1.003199822967872
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 201.81088295206428,
+      "gap_s": 1.0955287700053304
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 202.81341382698156,
+      "gap_s": 1.0025308749172837
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 203.8161357131321,
+      "gap_s": 1.002721886150539
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 204.81696984916925,
+      "gap_s": 1.000834136037156
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 205.91095400997438,
+      "gap_s": 1.093984160805121
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 206.91142064216547,
+      "gap_s": 1.0004666321910918
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 208.01979637006298,
+      "gap_s": 1.10837572789751
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 209.1176273310557,
+      "gap_s": 1.0978309609927237
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 210.11822347110137,
+      "gap_s": 1.0005961400456727
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 211.21106485510245,
+      "gap_s": 1.0928413840010762
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 212.21099917497486,
+      "gap_s": 0.9999343198724091
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 213.21243820316158,
+      "gap_s": 1.0014390281867236
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 214.21590774599463,
+      "gap_s": 1.0034695428330451
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 215.31310577108525,
+      "gap_s": 1.09719802509062
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 216.4109321681317,
+      "gap_s": 1.0978263970464468
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 217.41136730415747,
+      "gap_s": 1.0004351360257715
+    },
+    {
+      "topic": "/clock",
+      "wall_elapsed_s": 217.62946046702564,
+      "gap_s": 0.40016093384474516
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 218.41383210616186,
+      "gap_s": 1.002464802004397
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 219.47004318097606,
+      "gap_s": 1.0562110748142004
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 220.5155168690253,
+      "gap_s": 1.045473688049242
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 221.61303825303912,
+      "gap_s": 1.0975213840138167
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 222.61918059107848,
+      "gap_s": 1.0061423380393535
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 223.71115686395206,
+      "gap_s": 1.0919762728735805
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 224.8141839990858,
+      "gap_s": 1.1030271351337433
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 225.91136256512254,
+      "gap_s": 1.097178566036746
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 226.91362832998857,
+      "gap_s": 1.0022657648660243
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 228.0181858490687,
+      "gap_s": 1.1045575190801173
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 229.11296168295667,
+      "gap_s": 1.0947758338879794
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 230.21148400311358,
+      "gap_s": 1.098522320156917
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 231.21414156700484,
+      "gap_s": 1.0026575638912618
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 232.31243332405575,
+      "gap_s": 1.0982917570509017
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 233.41364736109972,
+      "gap_s": 1.1012140370439738
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 234.41906748409383,
+      "gap_s": 1.00542012299411
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 235.51146786706522,
+      "gap_s": 1.092400382971391
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 236.51797200809233,
+      "gap_s": 1.0065041410271078
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 237.61664973408915,
+      "gap_s": 1.0986777259968221
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 238.71139840898104,
+      "gap_s": 1.094748674891889
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 239.71170884510502,
+      "gap_s": 1.000310436123982
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 240.71190057112835,
+      "gap_s": 1.0001917260233313
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 241.71739362413064,
+      "gap_s": 1.005493053002283
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 242.81185411498882,
+      "gap_s": 1.0944604908581823
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 243.81171921500936,
+      "gap_s": 0.9998651000205427
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 244.81446059211157,
+      "gap_s": 1.0027413771022111
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 245.81701104016975,
+      "gap_s": 1.002550448058173
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 246.8192716841586,
+      "gap_s": 1.0022606439888477
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 247.91700776596554,
+      "gap_s": 1.0977360818069428
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 248.91892414912581,
+      "gap_s": 1.0019163831602782
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 250.01833846815862,
+      "gap_s": 1.0994143190328032
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 251.11190869216807,
+      "gap_s": 1.0935702240094543
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 252.2120289891027,
+      "gap_s": 1.1001202969346195
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 253.31379448599182,
+      "gap_s": 1.1017654968891293
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 254.41948711615987,
+      "gap_s": 1.1056926301680505
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 255.51369936414994,
+      "gap_s": 1.0942122479900718
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 256.51355046010576,
+      "gap_s": 0.9998510959558189
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 257.5151783679612,
+      "gap_s": 1.0016279078554362
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 258.61239282716997,
+      "gap_s": 1.0972144592087716
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 259.71314324601553,
+      "gap_s": 1.1007504188455641
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 260.7168625171762,
+      "gap_s": 1.0037192711606622
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 261.8119606631808,
+      "gap_s": 1.0950981460046023
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 262.8186804340221,
+      "gap_s": 1.0067197708413005
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 263.8194268080406,
+      "gap_s": 1.0007463740184903
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 264.91784808412194,
+      "gap_s": 1.0984212760813534
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 266.0122173000127,
+      "gap_s": 1.0943692158907652
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 267.01251631602645,
+      "gap_s": 1.0002990160137415
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 268.11256018816493,
+      "gap_s": 1.1000438721384853
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 269.2184369561728,
+      "gap_s": 1.1058767680078745
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 270.31856556306593,
+      "gap_s": 1.1001286068931222
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 271.41557163000107,
+      "gap_s": 1.097006066935137
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 272.4196248711087,
+      "gap_s": 1.0040532411076128
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 273.5226847620215,
+      "gap_s": 1.1030598909128457
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 274.61383839906193,
+      "gap_s": 1.0911536370404065
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 275.7137778219767,
+      "gap_s": 1.0999394229147583
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 276.81827890500426,
+      "gap_s": 1.1045010830275714
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 277.9134917811025,
+      "gap_s": 1.0952128760982305
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 279.15549444500357,
+      "gap_s": 1.2420026639010757
+    },
+    {
+      "topic": "/clock",
+      "wall_elapsed_s": 279.1729256371036,
+      "gap_s": 0.4979337169788778
+    },
+    {
+      "topic": "/robot_1/odom",
+      "wall_elapsed_s": 279.1742173731327,
+      "gap_s": 0.4979780230205506
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 280.2182075411547,
+      "gap_s": 1.0627130961511284
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 281.3152185580693,
+      "gap_s": 1.097011016914621
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 282.4204162801616,
+      "gap_s": 1.1051977220922709
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 283.5134308640845,
+      "gap_s": 1.0930145839229226
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 284.6175971729681,
+      "gap_s": 1.1041663088835776
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 285.7192327680532,
+      "gap_s": 1.1016355950850993
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 286.81354562402703,
+      "gap_s": 1.0943128559738398
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 287.914711187128,
+      "gap_s": 1.101165563100949
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 288.91850328212604,
+      "gap_s": 1.0037920949980617
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 290.01458003907464,
+      "gap_s": 1.0960767569486052
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 291.11283036414534,
+      "gap_s": 1.098250325070694
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 292.11291769496165,
+      "gap_s": 1.0000873308163136
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 293.1195438541472,
+      "gap_s": 1.0066261591855437
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 294.21482687303796,
+      "gap_s": 1.0952830188907683
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 295.31476354715414,
+      "gap_s": 1.0999366741161793
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 296.3174595681485,
+      "gap_s": 1.0026960209943354
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 297.41949948109686,
+      "gap_s": 1.1020399129483849
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 298.5194151380565,
+      "gap_s": 1.099915656959638
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 299.6127991890535,
+      "gap_s": 1.093384050996974
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 300.71294752298854,
+      "gap_s": 1.100148333935067
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 301.71331176906824,
+      "gap_s": 1.0003642460796982
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 302.81645717914216,
+      "gap_s": 1.103145410073921
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 303.818566627102,
+      "gap_s": 1.0021094479598105
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 304.91549051902257,
+      "gap_s": 1.0969238919205964
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 306.01276643318124,
+      "gap_s": 1.097275914158672
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 307.01531932200305,
+      "gap_s": 1.0025528888218105
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 308.11807294306345,
+      "gap_s": 1.1027536210604012
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 309.2128396569751,
+      "gap_s": 1.0947667139116675
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 310.21403326513246,
+      "gap_s": 1.0011936081573367
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 311.2184828110039,
+      "gap_s": 1.0044495458714664
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 312.3129695439711,
+      "gap_s": 1.094486732967198
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 313.41475671716034,
+      "gap_s": 1.1017871731892228
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 314.42018051003106,
+      "gap_s": 1.0054237928707153
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 315.517948460998,
+      "gap_s": 1.0977679509669542
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 316.522160272114,
+      "gap_s": 1.0042118111159652
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 317.6137805629987,
+      "gap_s": 1.091620290884748
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 318.6164341380354,
+      "gap_s": 1.0026535750366747
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 319.62083892617375,
+      "gap_s": 1.0044047881383449
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 320.7137949161697,
+      "gap_s": 1.0929559899959713
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 321.7189659390133,
+      "gap_s": 1.0051710228435695
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 322.8188961951528,
+      "gap_s": 1.099930256139487
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 323.91371602611616,
+      "gap_s": 1.094819830963388
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 324.91515029314905,
+      "gap_s": 1.0014342670328915
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 325.9163177111186,
+      "gap_s": 1.0011674179695547
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 326.9188797650859,
+      "gap_s": 1.0025620539672673
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 328.0133719141595,
+      "gap_s": 1.0944921490736306
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 329.01366209308617,
+      "gap_s": 1.0002901789266616
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 330.0169522140641,
+      "gap_s": 1.0032901209779084
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 331.02039598999545,
+      "gap_s": 1.0034437759313732
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 332.12050081416965,
+      "gap_s": 1.1001048241741955
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 333.2186706440989,
+      "gap_s": 1.0981698299292475
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 334.32147561898455,
+      "gap_s": 1.1028049748856574
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 335.41387484711595,
+      "gap_s": 1.0923992281313986
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 336.4173101510387,
+      "gap_s": 1.0034353039227426
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 337.5137626901269,
+      "gap_s": 1.0964525390882045
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 338.5145460299682,
+      "gap_s": 1.0007833398412913
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 339.6135381059721,
+      "gap_s": 1.098992076003924
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 340.614087437978,
+      "gap_s": 1.0005493320059031
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 341.71387797617353,
+      "gap_s": 1.0997905381955206
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 342.71387266600505,
+      "gap_s": 0.9999946898315102
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 343.71618673717603,
+      "gap_s": 1.0023140711709857
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 344.7164070380386,
+      "gap_s": 1.0002203008625656
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 345.7213549450971,
+      "gap_s": 1.004947907058522
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 346.8155242269859,
+      "gap_s": 1.0941692818887532
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 347.8215236761607,
+      "gap_s": 1.0059994491748512
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 348.9141077341046,
+      "gap_s": 1.0925840579438955
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 349.9163756261114,
+      "gap_s": 1.0022678920067847
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 351.0137390480377,
+      "gap_s": 1.097363421926275
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 352.01588098402135,
+      "gap_s": 1.0021419359836727
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 353.0187484831549,
+      "gap_s": 1.002867499133572
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 354.11600033496507,
+      "gap_s": 1.0972518518101424
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 355.2137771639973,
+      "gap_s": 1.0977768290322274
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 356.21436546207406,
+      "gap_s": 1.0005882980767637
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 357.2159862399567,
+      "gap_s": 1.0016207778826356
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 358.21969181718305,
+      "gap_s": 1.0037055772263557
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 359.317183481995,
+      "gap_s": 1.0974916648119688
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 360.4188579930924,
+      "gap_s": 1.1016745110973716
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 361.5142162160482,
+      "gap_s": 1.0953582229558378
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 362.5143041310366,
+      "gap_s": 1.0000879149883986
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 363.5143912730273,
+      "gap_s": 1.0000871419906616
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 364.5153375181835,
+      "gap_s": 1.0009462451562285
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 365.6148949151393,
+      "gap_s": 1.0995573969557881
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 366.61955276108347,
+      "gap_s": 1.0046578459441662
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 367.7144319291692,
+      "gap_s": 1.094879168085754
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 368.7163327941671,
+      "gap_s": 1.0019008649978787
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 369.7169643631205,
+      "gap_s": 1.000631568953395
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 370.8208999100607,
+      "gap_s": 1.1039355469401926
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 371.91479107015766,
+      "gap_s": 1.0938911600969732
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 372.9172772031743,
+      "gap_s": 1.002486133016646
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 373.9192821411416,
+      "gap_s": 1.0020049379672855
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 375.0169904839713,
+      "gap_s": 1.0977083428297192
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 376.1142835330684,
+      "gap_s": 1.0972930490970612
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 377.1211456831079,
+      "gap_s": 1.0068621500395238
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 378.21825474803336,
+      "gap_s": 1.097109064925462
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 379.31456958898343,
+      "gap_s": 1.0963148409500718
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 380.4214438700583,
+      "gap_s": 1.1068742810748518
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 381.5175064781215,
+      "gap_s": 1.096062608063221
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 382.61660680617206,
+      "gap_s": 1.0991003280505538
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 383.71457470511086,
+      "gap_s": 1.0979678989388049
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 384.7146691570524,
+      "gap_s": 1.0000944519415498
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 385.71471028216183,
+      "gap_s": 1.0000411251094192
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 386.72168991016224,
+      "gap_s": 1.0069796280004084
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 387.81493398407474,
+      "gap_s": 1.0932440739125013
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 388.81541548506357,
+      "gap_s": 1.0004815009888262
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 389.81581457098946,
+      "gap_s": 1.000399085925892
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 390.9164837859571,
+      "gap_s": 1.1006692149676383
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 392.0146857460495,
+      "gap_s": 1.0982019600924104
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 393.0149731361307,
+      "gap_s": 1.000287390081212
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 394.0220966699999,
+      "gap_s": 1.0071235338691622
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 395.1164713741746,
+      "gap_s": 1.0943747041746974
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 396.1176464459859,
+      "gap_s": 1.0011750718113035
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 397.11752017308027,
+      "gap_s": 0.999873727094382
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 398.12340541696176,
+      "gap_s": 1.0058852438814938
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 399.22223525098525,
+      "gap_s": 1.0988298340234905
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 400.316661558114,
+      "gap_s": 1.0944263071287423
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 401.4166840889957,
+      "gap_s": 1.100022530881688
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 402.5154241339769,
+      "gap_s": 1.0987400449812412
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 403.519889078103,
+      "gap_s": 1.0044649441260844
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 404.6241571260616,
+      "gap_s": 1.1042680479586124
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 405.72094695596024,
+      "gap_s": 1.0967898298986256
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 406.72186856507324,
+      "gap_s": 1.0009216091129929
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 407.8153190249577,
+      "gap_s": 1.0934504598844796
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 408.82320113806054,
+      "gap_s": 1.0078821131028235
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 409.92108039418235,
+      "gap_s": 1.0978792561218143
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 411.02129926602356,
+      "gap_s": 1.1002188718412071
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 412.12028133217245,
+      "gap_s": 1.098982066148892
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 413.2153714001179,
+      "gap_s": 1.0950900679454207
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 414.22310934914276,
+      "gap_s": 1.007737949024886
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 415.32045876118354,
+      "gap_s": 1.097349412040785
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 416.32051556999795,
+      "gap_s": 1.0000568088144064
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 417.41718578897417,
+      "gap_s": 1.0966702189762145
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 418.5154228170868,
+      "gap_s": 1.098237028112635
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 419.51597118307836,
+      "gap_s": 1.0005483659915626
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 420.51563298515975,
+      "gap_s": 0.9996618020813912
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 421.52339515299536,
+      "gap_s": 1.0077621678356081
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 422.615874459967,
+      "gap_s": 1.0924793069716543
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 423.7159676409792,
+      "gap_s": 1.1000931810121983
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 424.71615460701287,
+      "gap_s": 1.0001869660336524
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 425.71825587097555,
+      "gap_s": 1.002101263962686
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 426.7209553690627,
+      "gap_s": 1.0026994980871677
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 427.8159257401712,
+      "gap_s": 1.0949703711085021
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 428.8213651010301,
+      "gap_s": 1.0054393608588725
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 429.9158615099732,
+      "gap_s": 1.0944964089430869
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 430.92114934208803,
+      "gap_s": 1.0052878321148455
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 432.0158531430643,
+      "gap_s": 1.0947038009762764
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 433.01600102405064,
+      "gap_s": 1.000147880986333
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 434.1179671830032,
+      "gap_s": 1.101966158952564
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 435.2160173521843,
+      "gap_s": 1.0980501691810787
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 436.22054612403736,
+      "gap_s": 1.0045287718530744
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 437.22347584110685,
+      "gap_s": 1.0029297170694917
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 438.31644595903344,
+      "gap_s": 1.0929701179265976
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 439.3161453441717,
+      "gap_s": 0.9996993851382285
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 440.31654021400027,
+      "gap_s": 1.0003948698285967
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 441.3212749590166,
+      "gap_s": 1.0047347450163215
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 442.423307799967,
+      "gap_s": 1.1020328409504145
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 443.51621702313423,
+      "gap_s": 1.0929092231672257
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 444.52232874999754,
+      "gap_s": 1.0061117268633097
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 445.5230632091407,
+      "gap_s": 1.000734459143132
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 446.6185636490118,
+      "gap_s": 1.0955004398711026
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 447.71608067210764,
+      "gap_s": 1.097517023095861
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 448.71842929604463,
+      "gap_s": 1.0023486239369959
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 449.8199044750072,
+      "gap_s": 1.1014751789625734
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 450.8237803641241,
+      "gap_s": 1.0038758891168982
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 451.9219876739662,
+      "gap_s": 1.0982073098421097
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 453.01674868608825,
+      "gap_s": 1.094761012122035
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 454.11817178712226,
+      "gap_s": 1.1014231010340154
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 455.1217238330282,
+      "gap_s": 1.0035520459059626
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 456.2165324881207,
+      "gap_s": 1.0948086550924927
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 457.2168229969684,
+      "gap_s": 1.0002905088476837
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 458.2241049071308,
+      "gap_s": 1.007281910162419
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 459.31947054108605,
+      "gap_s": 1.0953656339552253
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 460.42208700603805,
+      "gap_s": 1.102616464952007
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 461.52451895410195,
+      "gap_s": 1.102431948063895
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 462.6166696520522,
+      "gap_s": 1.0921506979502738
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 463.61851084511727,
+      "gap_s": 1.0018411930650473
+    },
+    {
+      "topic": "/clock",
+      "wall_elapsed_s": 464.5609521451406,
+      "gap_s": 0.8470915399957448
+    },
+    {
+      "topic": "/robot_1/odom",
+      "wall_elapsed_s": 464.56192915700376,
+      "gap_s": 0.8471146540250629
+    },
+    {
+      "topic": "/multirobot/hunav/status",
+      "wall_elapsed_s": 464.5880584390834,
+      "gap_s": 0.9695475939661264
+    }
+  ],
+  "status": {
+    "backend": "multi_sfm",
+    "clock_stall_recoveries": 1,
+    "compute": 13379,
+    "display_lag_s": 0.150004985,
+    "epoch": 10180191997405032926,
+    "fault": "",
+    "fault_details": {},
+    "healthy": true,
+    "integration_lag_s": 0.075004985,
+    "interaction_scope": "all_robots",
+    "last_clock_stall_wall_s": 0.8815147280693054,
+    "max_compute_wall_s": 0.1799656639341265,
+    "max_dt": 0.025,
+    "paused": false,
+    "psychology_model": "sis_cf_v2",
+    "robots": [
+      "robot_1"
+    ],
+    "step": 13380,
+    "updates": 3731
+  }
+}

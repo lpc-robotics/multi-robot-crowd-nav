@@ -195,3 +195,64 @@ def test_cached_snapshot_isolated_and_reset_invalidates_old_configuration():
     cfg=PsychologyConfigV2(ParametersV2(alpha_C=.3),{})
     m.initialize(cfg.document(),(1,),11)
     with pytest.raises(ValueError):m.restore(original)
+
+
+@pytest.mark.parametrize('enabled', [0., 1.])
+def test_stopped_occupancy_opt_in_keeps_deadline_and_never_chases(enabled):
+    m, states, me, robot, t = qualified_playful(playful_hold_when_stopped=enabled, playful_occupy_s=8.)
+    # State-machine boundary fixture; physical occupancy is checked separately.
+    s = states[1]; s.phase = 'occupy'; s.phase_since_ns = t
+    point = s.target_point
+    me = replace(me, x=point[0], y=point[1], yaw=math.pi)
+    robot = replace(robot, vx=0.)
+    before = copy.deepcopy(states)
+    p, _ = prepare_step(m, make_context(t, .025, (me,), (robot,)), states)
+    assert states == before  # an uncommitted proposal cannot advance this timer
+    if not enabled:
+        assert p.states[1].phase == 'yield'
+        assert p.states[1].exit_reason == 'robot_stopped'
+        return
+    for k in range(320):
+        p = m.step(make_context(t+k*25_000_000, .025, (me,), (robot,)), states)
+        states = p.states
+        if k < 319:
+            assert states[1].phase == 'occupy'
+            assert states[1].target_point == point and states[1].phase_since_ns == t
+            assert p.intents[1].desired_velocity_x == p.intents[1].desired_velocity_y == 0.
+        else:
+            assert states[1].phase == 'yield'
+            assert states[1].exit_reason == 'occupancy_complete'
+    assert states[1].episode_counts == {-1: 1}
+
+
+@pytest.mark.parametrize('kind', ['intercept_stop', 'risk', 'lost', 'turned'])
+def test_stopped_occupancy_option_does_not_bypass_other_exits(kind):
+    m, states, me, robot, t = qualified_playful(playful_hold_when_stopped=1., playful_occupy_s=8.)
+    if kind != 'intercept_stop':
+        s = states[1]; s.phase = 'occupy'; s.phase_since_ns = t
+        me = replace(me, x=s.target_point[0], y=s.target_point[1], yaw=math.pi)
+    if kind == 'risk': robot = replace(robot, x=me.x-.8, y=me.y, vx=.2)
+    elif kind == 'turned': robot = replace(robot, vx=0., vy=.2)
+    else: robot = replace(robot, vx=0.)
+    for k in range(200):
+        p = m.step(make_context(t+k*25_000_000, .025, (me,), () if kind == 'lost' else (robot,)), states)
+        states = p.states
+        if states[1].phase != 'occupy': break
+    assert states[1].phase != 'occupy'
+    assert states[1].episode_counts == {-1: 1}
+
+
+def test_stopped_occupancy_switch_rejects_nonbinary_values():
+    for value in (-1., .5, 2.):
+        with pytest.raises(ValueError): ParametersV2.from_values({'playful_hold_when_stopped': value})
+
+
+@pytest.mark.parametrize('speed,continues', [(0.04737, True), (0., False)])
+def test_showcase_low_speed_threshold_preserves_actual_stop_exit(speed, continues):
+    m, states, me, robot, t = qualified_playful(playful_min_robot_speed=.02)
+    p = m.step(make_context(t, .025, (me,), (replace(robot, vx=speed),)), states)
+    if continues:
+        assert p.states[1].phase == 'intercept'
+    else:
+        assert p.states[1].phase == 'yield'
+        assert p.states[1].exit_reason == 'robot_stopped'

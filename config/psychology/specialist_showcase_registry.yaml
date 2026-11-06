@@ -1,0 +1,81 @@
+schema_version: 1
+experiment: v2_specialists_20261105
+status: engineering_initial_values_not_fitted
+base_registry: parameter_registry_v2.yaml
+scope: isolated scenes only; old fourteen-person scenario unchanged
+psychology_unchanged:
+  - all SIS curiosity/fear parameters and thresholds
+  - perception FOV and memory defaults (playful memory overrides retained)
+  - risk thresholds, near protection, speed and acceleration caps
+playful_individual_overrides:
+  ids: [13, 14]
+  parameters:
+    playful_occupy_s:
+      value: 8.0
+      original: 2.0
+      unit: simulation_seconds
+      meaning: maximum occupancy measured from first arrival; never reset by robot stop
+      calibration_status: unfitted
+    playful_hold_when_stopped:
+      value: 1.0
+      original: 0.0
+      unit: binary_switch
+      meaning: allow safe stationary observation only after reaching occupancy
+      fit_candidate: false
+    playful_front_gap:
+      value: 1.5
+      original: 1.0
+      unit: meters_surface_clearance_before_speed_lookahead
+      calibration_status: unfitted
+      meaning: forward goal clearance; allows physical settling and body rotation
+    playful_intercept_s:
+      value: 6.0
+      original: 4.0
+      unit: simulation_seconds
+      calibration_status: unfitted
+      meaning: bounded approach to the farther forward goal
+    playful_min_robot_speed:
+      value: 0.02
+      original: 0.05
+      unit: m/s
+      calibration_status: unfitted
+      meaning: distinguish low-speed travel from stationary motion for this 0.10m/s robot
+    playful_cooldown_s:
+      value: 8.0
+      original: 30.0
+      unit: simulation_seconds
+      meaning: minimum interval after termination; original task return is also required
+      calibration_status: unfitted
+    playful_max_episodes:
+      value: 3.0
+      original: 1.0
+      unit: episodes_per_person_robot_epoch
+      meaning: maximum attempts, including failed attempts; not forced repetitions
+      fit_candidate: false
+  interpretation: no child-specific empirical claim; curiosity must still naturally qualify each attempt
+experimental_inputs:
+  population: {immune: 1, static: 1, playful: 2}
+  seed: 11
+  robot_max_linear_mps: {immune: 0.26, static: 0.26, playful: 0.10}
+  robot_max_angular_radps: 1.0
+  round_hold_sim_s: 15.0
+  initial_observation_delay_sim_s: 8.0
+  geometry_and_routes: captured verbatim from scenario, pedestrian_config and demo_tasks
+  fit_candidate: false
+identifiability:
+  - Latent c/f/s are not measured human psychology.
+  - Long occupancy and repeated episodes require independent annotations and dedicated excitation.
+  - Fixed demonstration membership does not estimate population prevalence.
+  - Static response uses instantaneous robot position and ignores robot velocity; it is not a motionless human.
+acceptance_v2_1:
+  source: user-directed separation of crowd response from navigation outcomes, 2026-11-05
+  default_robot_clearance_policy: record
+  legacy_robot_clearance_policy: strict
+  reference_clearance_m: 0.10
+  reference_semantics: reporting line, not an identified discomfort threshold
+  maximum_contiguous_sample_interval_s: 0.25
+  interval_semantics: statistical duration accounting only; no change to control timeout
+  category: engineering_experiment
+  fit_candidate: false
+  calibration_status: not_a_fit_parameter
+  location: scripts/interaction_outcomes.py

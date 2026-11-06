@@ -3383,13 +3383,13 @@ parameters:
 - id: acceptance.robot_gap
   current_value: 0.1
   unit: m (surface gap)
-  meaning: 冻结的验收要求 robot_gap
-  location: docs/DYNAMIC_PSYCHOLOGY_V2.md; scripts/validate_psychology_v2_runtime.py
+  meaning: 人机净距报告参考线；V2.1默认只记录，旧strict验收才作为失败门槛
+  location: scripts/interaction_outcomes.py; scripts/validate_psychology_v2_runtime.py
   category: engineering_experiment
   scope: global
   per_agent_overrides: {}
   legal_range:
-    constraints: frozen acceptance requirement; not a fit target
+    constraints: reporting reference in record mode; legacy gate in strict mode; not a fit target
   fit_candidate: false
   calibration_status: not_a_fit_parameter
   runtime_effective: true
@@ -3656,6 +3656,216 @@ parameters:
   source: current code/config engineering value; not empirical calibration
   dataset: null
   fit_result: null
+- id: psychology.playful_hold_when_stopped
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_v2_config.py:ParametersV2.playful_hold_when_stopped
+  meaning: 已到达占位点后允许机器人停下时保持占位，绝不延长原始占位截止时间
+  unit: boolean switch (0/1)
+  current_value: 0.0
+  scope: global with explicit per-agent overrides
+  legal_range:
+    enum:
+    - 0.0
+    - 1.0
+  category: engineering_experiment
+  fit_candidate: false
+  calibration_status: engineering_unfitted
+  observations:
+  - actual forward occupancy
+  - robot motion
+  - risk and exit reasons
+  coupled_parameters:
+  - psychology.playful_occupy_s
+  - psychology.playful_max_risk
+  identifiability: scenario policy switch, not an identified child trait
+  fit_bounds: null
+  source: isolated showcase experiment 2026-11-05
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+- id: psychology.playful_motion_fear
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_v2_config.py:ParametersV2.playful_motion_fear
+  meaning: 仅playful启用机器人运动危险评估
+  unit: binary switch
+  current_value: 0.0
+  scope: global with explicit per-agent overrides
+  legal_range:
+    constraints: ParametersV2.validate; legal bounds are not statistical priors
+  category: engineering_experiment
+  fit_candidate: false
+  calibration_status: not_a_fit_parameter
+  observations:
+  - robot and human trajectories, headings and speed
+  - independent threat/affect annotations, non-trigger trials
+  coupled_parameters:
+  - psychology.fear_on
+  - psychology.alpha_F
+  - psychology.mu_F
+  identifiability: engineering hypothesis, not child-specific evidence; separate geometry,
+    visibility, stimulation and thresholds in fitting
+  fit_bounds: null
+  source: motion-aware playful appraisal, 2026-11-05
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+- id: psychology.playful_proximity_fear_gain
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_v2_config.py:ParametersV2.playful_proximity_fear_gain
+  meaning: 近距几何风险进入恐惧刺激的缩放；不修改好奇刺激
+  unit: dimensionless
+  current_value: 0.05
+  scope: global with explicit per-agent overrides
+  legal_range:
+    constraints: ParametersV2.validate; legal bounds are not statistical priors
+  category: perception_memory
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - robot and human trajectories, headings and speed
+  - independent threat/affect annotations, non-trigger trials
+  coupled_parameters:
+  - psychology.fear_on
+  - psychology.alpha_F
+  - psychology.mu_F
+  identifiability: engineering hypothesis, not child-specific evidence; separate geometry,
+    visibility, stimulation and thresholds in fitting
+  fit_bounds: null
+  source: motion-aware playful appraisal, 2026-11-05
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+- id: psychology.playful_danger_approach_speed
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_v2_config.py:ParametersV2.playful_danger_approach_speed
+  meaning: 机器人朝向个人的最小径向速度，非行人自身接近速度
+  unit: m/s
+  current_value: 0.35
+  scope: global with explicit per-agent overrides
+  legal_range:
+    constraints: ParametersV2.validate; legal bounds are not statistical priors
+  category: perception_memory
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - robot and human trajectories, headings and speed
+  - independent threat/affect annotations, non-trigger trials
+  coupled_parameters:
+  - psychology.fear_on
+  - psychology.alpha_F
+  - psychology.mu_F
+  identifiability: engineering hypothesis, not child-specific evidence; separate geometry,
+    visibility, stimulation and thresholds in fitting
+  fit_bounds: null
+  source: motion-aware playful appraisal, 2026-11-05
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+- id: psychology.playful_danger_horizon_s
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_v2_config.py:ParametersV2.playful_danger_horizon_s
+  meaning: 个人观察下预测碰撞时间视窗
+  unit: s
+  current_value: 3.0
+  scope: global with explicit per-agent overrides
+  legal_range:
+    constraints: ParametersV2.validate; legal bounds are not statistical priors
+  category: perception_memory
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - robot and human trajectories, headings and speed
+  - independent threat/affect annotations, non-trigger trials
+  coupled_parameters:
+  - psychology.fear_on
+  - psychology.alpha_F
+  - psychology.mu_F
+  identifiability: engineering hypothesis, not child-specific evidence; separate geometry,
+    visibility, stimulation and thresholds in fitting
+  fit_bounds: null
+  source: motion-aware playful appraisal, 2026-11-05
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+- id: psychology.playful_imminent_ttc_s
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_v2_config.py:ParametersV2.playful_imminent_ttc_s
+  meaning: 碰撞紧迫性达到1的预计首次包络交叉时间
+  unit: s
+  current_value: 1.5
+  scope: global with explicit per-agent overrides
+  legal_range:
+    constraints: ParametersV2.validate; legal bounds are not statistical priors
+  category: perception_memory
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - robot and human trajectories, headings and speed
+  - independent threat/affect annotations, non-trigger trials
+  coupled_parameters:
+  - psychology.fear_on
+  - psychology.alpha_F
+  - psychology.mu_F
+  identifiability: engineering hypothesis, not child-specific evidence; separate geometry,
+    visibility, stimulation and thresholds in fitting
+  fit_bounds: null
+  source: motion-aware playful appraisal, 2026-11-05
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+- id: psychology.playful_collision_margin
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_v2_config.py:ParametersV2.playful_collision_margin
+  meaning: 预测碰撞包络裕量，不是实际净距约束
+  unit: m
+  current_value: 0.1
+  scope: global with explicit per-agent overrides
+  legal_range:
+    constraints: ParametersV2.validate; legal bounds are not statistical priors
+  category: perception_memory
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - robot and human trajectories, headings and speed
+  - independent threat/affect annotations, non-trigger trials
+  coupled_parameters:
+  - psychology.fear_on
+  - psychology.alpha_F
+  - psychology.mu_F
+  identifiability: engineering hypothesis, not child-specific evidence; separate geometry,
+    visibility, stimulation and thresholds in fitting
+  fit_bounds: null
+  source: motion-aware playful appraisal, 2026-11-05
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
+- id: psychology.threat_attention_s
+  location: src/arena_multi_hunav/arena_multi_hunav/psychology_v2_config.py:ParametersV2.threat_attention_s
+  meaning: 仅已见互动对象的短时恐惧视觉注意；身体视野外不能续期，不激活好奇刺激
+  unit: s (simulation)
+  current_value: 0.0
+  scope: global with explicit per-agent overrides
+  legal_range:
+    minimum: 0.0
+    maximum: 5.0
+  category: perception_memory
+  fit_candidate: true
+  calibration_status: unfitted
+  observations:
+  - robot and human trajectories, headings and speed
+  - independent threat/affect annotations, non-trigger trials
+  coupled_parameters:
+  - psychology.fear_on
+  - psychology.alpha_F
+  - psychology.mu_F
+  identifiability: requires gaze/attention annotations; trajectory alone cannot identify
+    attention; abstract attention has no animated independent head gaze
+  fit_bounds: null
+  source: motion-aware playful appraisal, 2026-11-05
+  dataset: null
+  fit_result: null
+  runtime_effective: true
+  per_agent_overrides: {}
 notes:
 - Legal bounds are not statistical priors or confidence intervals.
 - c/f/s are latent simulator states, never required as measured human inputs.

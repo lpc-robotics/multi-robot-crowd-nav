@@ -1,0 +1,9 @@
+source_commit=5c10e51fb832caab5b8f15149aee6508a71161ac
+scenario=/home/lpc/workspace/arena5_multi_ws/config/scenarios/one_robot_multi_sfm_1_static_v2_nav2.yaml
+scenario_sha256=fa242e828c10bd43866d0bd0bd9d34a44416c12b9319e43fabfbfdb5d5e45738
+gpu_id=1
+gpu_free_mib=16722
+ros_domain_id=86
+isaac_cpu_threads=8
+cpu_affinity=0-27,56-83
+random_seed=11

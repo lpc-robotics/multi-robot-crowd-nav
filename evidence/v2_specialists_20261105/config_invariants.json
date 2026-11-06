@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "checks": {
+    "immune_static_same_people": true,
+    "immune_static_same_tasks": true,
+    "immune_static_only_profile_changes": true,
+    "all_global_psychology_parameters_unchanged": true,
+    "person_13_only_allowed_behavior_overrides": true,
+    "person_14_only_allowed_behavior_overrides": true
+  },
+  "allowed_engineering_overrides": [
+    "playful_cooldown_s",
+    "playful_front_gap",
+    "playful_hold_when_stopped",
+    "playful_intercept_s",
+    "playful_max_episodes",
+    "playful_occupy_s"
+  ],
+  "comparison_semantics": "effective resolved parameters including defaults; the validation template omits observation_display_margin_s, which resolves to the same 0.15s"
+}

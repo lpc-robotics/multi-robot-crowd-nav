@@ -1,0 +1,6 @@
+# Experimental robot stimulus settings; not fitted psychological parameters.
+schema_version: 1
+parameters:
+  variant: considerate
+  max_linear: 0.15
+  target_gap: 1.8

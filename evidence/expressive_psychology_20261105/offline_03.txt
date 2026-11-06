@@ -1,0 +1,59 @@
+MULTIROBOT_ENV_REENTRY_OK
+{
+  "passed": true,
+  "checks": 30,
+  "failures": []
+}
+{
+  "passed": true,
+  "checks": 142,
+  "failures": []
+}
+{
+  "passed": true,
+  "checks": 8,
+  "failures": []
+}
+........................................................................ [ 31%]
+.......................................F................................ [ 63%]
+........................................................................ [ 95%]
+...........                                                              [100%]
+=================================== FAILURES ===================================
+_ test_attention_is_bounded_transactional_and_does_not_discover_hidden_robots __
+
+    def test_attention_is_bounded_transactional_and_does_not_discover_hidden_robots():
+        m=SocialPsychologyV2()
+        m.initialize(PsychologyConfigV2(ParametersV2(threat_attention_s=.1),{}).document(),(1,),11)
+        me=Entity(1,'p',0.,0.,0.,0.,.4,((5.,0.),))
+        robot=Entity(-1,'r',2.,0.,-.4,0.,.35)
+        states=m.initial_states()
+        from arena_multi_hunav.behavior import RobotMemory
+        states[1].memories[-1]=RobotMemory(-1,'r',2.,0.,-.4,0.,.35,0,1.)
+        states[1].behavior=replace(states[1].behavior,mode='CURIOUS',target_robot_id=-1)
+        before=copy.deepcopy(states)
+        p,_=prepare_step(m,make_context(0,.025,(me,),(robot,)),states)
+        assert states==before and p.states[1].attention_until_ns[-1]==125_000_000
+        states=p.states
+        behind=replace(me,yaw=math.pi)
+        unseen=Entity(-2,'unseen',1.,0.,-.9,0.,.35)
+        for k in range(1,5):
+            p=m.step(make_context(k*25_000_000,.025,(behind,),(robot,unseen)),states)
+            d=p.diagnostics['agents'][1]
+            assert d['visible_robots'][-1]['knowledge']=='tracked_attention'
+>           assert d['direct_F']>0 and d['direct_C']==0
+E           assert (0.0 > 0)
+
+src/arena_multi_hunav/test/test_playful_motion_fear.py:87: AssertionError
+=============================== warnings summary ===============================
+../arena5_ws/.conda/arena_ros/lib/python3.11/site-packages/lark/utils.py:163
+  /home/lpc/workspace/arena5_ws/.conda/arena_ros/lib/python3.11/site-packages/lark/utils.py:163: DeprecationWarning: module 'sre_parse' is deprecated
+    import sre_parse
+
+../arena5_ws/.conda/arena_ros/lib/python3.11/site-packages/lark/utils.py:164
+  /home/lpc/workspace/arena5_ws/.conda/arena_ros/lib/python3.11/site-packages/lark/utils.py:164: DeprecationWarning: module 'sre_constants' is deprecated
+    import sre_constants
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED src/arena_multi_hunav/test/test_playful_motion_fear.py::test_attention_is_bounded_transactional_and_does_not_discover_hidden_robots
+1 failed, 226 passed, 2 warnings in 5.05s

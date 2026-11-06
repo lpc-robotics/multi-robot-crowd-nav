@@ -1,0 +1,30 @@
+{
+  "/home/lpc/workspace/arena5_multi_ws/evidence/runs/scared_stimulus_20261103/cpu_body_fov_layout02/multi_6_scared_stimulus.yaml": {
+    "bytes": 5084,
+    "sha256": "3dcd5b11e3d08e04f001460af4cf7a1977971de55419332ea35b07a84f8f8156"
+  },
+  "/home/lpc/workspace/arena5_multi_ws/evidence/runs/scared_stimulus_20261103/cpu_body_fov_layout02/one_robot_multi_sfm_6_scared_body_fov_external.yaml": {
+    "bytes": 539,
+    "sha256": "f895b5899deb40ea598fa7a0d2dd7a53784bc224a3fe55e9f3da0862e4cbdca8"
+  },
+  "/home/lpc/workspace/arena5_multi_ws/evidence/runs/scared_stimulus_20261103/cpu_body_fov_layout02/core.log": {
+    "bytes": 65,
+    "sha256": "6b49060d5792084ce9e7c44a55f1f2ca1c805ee89183209223a1e1288a0cfcc7"
+  },
+  "/home/lpc/workspace/arena5_multi_ws/evidence/runs/scared_stimulus_20261103/cpu_body_fov_layout02/sis_cf_v2_scared_body_fov.yaml": {
+    "bytes": 2519,
+    "sha256": "09044e62b4d581ccbb83eb6ab16d29ad021fb8d0cd207b66b354f8b23eca2c02"
+  },
+  "/home/lpc/workspace/arena5_multi_ws/evidence/runs/scared_stimulus_20261103/cpu_body_fov_layout02/closed_loop.jsonl": {
+    "bytes": 13600283,
+    "sha256": "3cc00c70e57d9ad9cb0f1d91fa48a64959cdd9564f5b1c3268400e50af1b7ccd"
+  },
+  "/home/lpc/workspace/arena5_multi_ws/evidence/runs/scared_stimulus_20261103/cpu_body_fov_layout02/scared_stimulus_intrusive.yaml": {
+    "bytes": 173,
+    "sha256": "ecc1f848f403ffae2fa061253b8cffe5ceb92a8a63752ad709c7934b24fdcf5b"
+  },
+  "/home/lpc/workspace/arena5_multi_ws/evidence/runs/scared_stimulus_20261103/cpu_body_fov_layout02/report.json": {
+    "bytes": 48749,
+    "sha256": "3c21c91634fd543a3478b825127bad193ad6ced294e03d7a9587c28f07c7705c"
+  }
+}
